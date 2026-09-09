@@ -1,5 +1,9 @@
 # Super Mario World example changelog
 
+## Unreleased
+
+- Translated gallery descriptions, rights summaries and descriptive manifest notes into English at the owner's request. No geometry, artwork, release files, tags or checksums changed.
+
 ## 0.1.0 — 2026-09-09
 
 - Published the existing textured cartridge as a separate public example with its own version, source package and attribution.

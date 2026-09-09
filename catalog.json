@@ -8,11 +8,11 @@
       "title": "SNES early North American cartridge — neutral labels",
       "latest": "0.1.0",
       "manifest": "assets/snes-ntsc-u/versions/0.1.0.json",
-      "displayTitle": "SNES · Edição neutra",
-      "kind": "MODELO BASE",
-      "description": "A forma do cartucho americano, com etiquetas sem impressão. Uma vista limpa da carcaça, das curvas e dos detalhes moldados.",
+      "displayTitle": "SNES · Neutral edition",
+      "kind": "BASE MODEL",
+      "description": "The North American cartridge shape with unprinted labels. A clear view of the shell, its curves and molded details.",
       "credits": "CREDITS.md",
-      "rights": "Contribuições originais: CC BY-NC-ND 4.0. Crédito obrigatório, uso não comercial e sem redistribuição de adaptações."
+      "rights": "Original contributions: CC BY-NC-ND 4.0. Attribution required, noncommercial use only and no redistribution of adaptations."
     },
     {
       "id": "snes-super-mario-world",
@@ -20,10 +20,10 @@
       "latest": "0.1.0",
       "manifest": "assets/snes-super-mario-world/versions/0.1.0.json",
       "displayTitle": "Super Mario World",
-      "kind": "EXEMPLO TEXTURIZADO · SNES",
-      "description": "O cartucho com a etiqueta restaurada de Super Mario World, título no topo e detalhes traseiros. Um exemplo de como a mesma forma ganha sua identidade.",
+      "kind": "TEXTURED EXAMPLE · SNES",
+      "description": "The cartridge with a restored Super Mario World label, top title and rear details. An example of how the same shape takes on its identity.",
       "credits": "assets/snes-super-mario-world/CREDITS.md",
-      "rights": "Modelagem original: CC BY-NC-ND 4.0. Arte de Super Mario World e marcas Nintendo não estão incluídas nessa licença."
+      "rights": "Original modeling: CC BY-NC-ND 4.0. Super Mario World artwork and Nintendo marks are excluded from this license."
     }
   ]
 }

@@ -16,6 +16,10 @@ Put pending changes under `Unreleased`. When publishing a model release, move it
 
 A change is not complete and must not be committed or published without its corresponding changelog entry. A correction solely to a changelog may be recorded in the corrected entry itself; it does not require an endlessly recursive entry about editing the changelog.
 
+## English-only authored content
+
+Write all repository and gallery content in English: UI text, accessibility labels, loading/error messages, descriptions, metadata, documentation, rules, changelogs and release notes. Use English number formatting. Preserve proper names and authentic third-party artwork rather than translating text printed on the modeled object.
+
 ## Models and releases
 
 Follow `VERSIONING.md`. Each model has its own version, changelog, previews and manifest. Published tags, release archives, manifests and preview snapshots must remain unchanged; publish a new model version for changes to a released asset.

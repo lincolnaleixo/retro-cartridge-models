@@ -43,8 +43,8 @@ def main():
         gallery['assets'].append(item)
         current=next(v for v in item['versions'] if v['version']==item['latest']);esc=html.escape
         cards.append(f'''<article class="card" data-asset="{esc(item['id'])}">
-<a class="card-image" href="#{esc(item['id'])}" data-explore="{esc(item['id'])}" aria-label="Explorar {esc(item['displayTitle'])}"><img src="{esc(current['previews'][0]['url'])}" alt="{esc(item['displayTitle'])}" width="600" height="400"></a>
-<div class="card-copy"><div class="meta"><span>{esc(item['kind'])}</span><span>v{esc(item['latest'])}</span></div><h3>{esc(item['displayTitle'])}</h3><p>{esc(item['description'])}</p><div class="card-links"><a href="#{esc(item['id'])}" data-explore="{esc(item['id'])}">Explorar em 3D ↗</a><a href="{esc(current['releaseUrl'])}">Blender + GLB ↓</a></div></div></article>''')
+<a class="card-image" href="#{esc(item['id'])}" data-explore="{esc(item['id'])}" aria-label="Explore {esc(item['displayTitle'])}"><img src="{esc(current['previews'][0]['url'])}" alt="{esc(item['displayTitle'])}" width="600" height="400"></a>
+<div class="card-copy"><div class="meta"><span>{esc(item['kind'])}</span><span>v{esc(item['latest'])}</span></div><h3>{esc(item['displayTitle'])}</h3><p>{esc(item['description'])}</p><div class="card-links"><a href="#{esc(item['id'])}" data-explore="{esc(item['id'])}">Explore in 3D ↗</a><a href="{esc(current['releaseUrl'])}">Blender + GLB ↓</a></div></div></article>''')
     template=(output/'index.html').read_text()
     (output/'index.html').write_text(template.replace('<!-- ASSET_CARDS -->','\n'.join(cards)))
     (output/'gallery.json').write_text(json.dumps(gallery,indent=2,ensure_ascii=False)+'\n')
