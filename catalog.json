@@ -7,7 +7,23 @@
       "id": "snes-ntsc-u",
       "title": "SNES early North American cartridge — neutral labels",
       "latest": "0.1.0",
-      "manifest": "assets/snes-ntsc-u/versions/0.1.0.json"
+      "manifest": "assets/snes-ntsc-u/versions/0.1.0.json",
+      "displayTitle": "SNES · Edição neutra",
+      "kind": "MODELO BASE",
+      "description": "A forma do cartucho americano, com etiquetas sem impressão. Uma vista limpa da carcaça, das curvas e dos detalhes moldados.",
+      "credits": "CREDITS.md",
+      "rights": "Contribuições originais: CC BY-NC-ND 4.0. Crédito obrigatório, uso não comercial e sem redistribuição de adaptações."
+    },
+    {
+      "id": "snes-super-mario-world",
+      "title": "SNES — Super Mario World example",
+      "latest": "0.1.0",
+      "manifest": "assets/snes-super-mario-world/versions/0.1.0.json",
+      "displayTitle": "Super Mario World",
+      "kind": "EXEMPLO TEXTURIZADO · SNES",
+      "description": "O cartucho com a etiqueta restaurada de Super Mario World, título no topo e detalhes traseiros. Um exemplo de como a mesma forma ganha sua identidade.",
+      "credits": "assets/snes-super-mario-world/CREDITS.md",
+      "rights": "Modelagem original: CC BY-NC-ND 4.0. Arte de Super Mario World e marcas Nintendo não estão incluídas nessa licença."
     }
   ]
 }

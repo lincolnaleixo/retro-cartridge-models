@@ -1,5 +1,9 @@
 # SNES NTSC-U changelog
 
+## Unreleased
+
+- Added the unchanged 0.1.0 model to the public gallery with orbit/zoom, six camera presets, version selection and release links. The existing model package and preview hashes are preserved.
+
 ## 0.1.0 — 2026-09-09
 
 Initial public baseline, derived from the latest photo-reviewed reconstruction.

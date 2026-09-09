@@ -2,6 +2,10 @@
 
 Versioned 3D cartridge reconstructions by **Lincoln Aleixo**. Each model has editable Blender sources, a portable GLB, preview images, a changelog and checksums tied to a release.
 
+**[Explore the public 3D gallery →](https://lincolnaleixo.github.io/retro-cartridge-models/)**
+
+Rotate each model on a black background, inspect six camera angles, browse renders and select published versions on desktop or mobile.
+
 ![SNES cartridge — neutral labels](assets/snes-ntsc-u/previews/0.1.0/hero.png)
 
 ## Models
@@ -9,6 +13,13 @@ Versioned 3D cartridge reconstructions by **Lincoln Aleixo**. Each model has edi
 | Model | Current version | Files | Changes |
 | --- | --- | --- | --- |
 | [SNES — early North American shell](assets/snes-ntsc-u/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/snes-ntsc-u-v0.1.0) | [Changelog](assets/snes-ntsc-u/CHANGELOG.md) |
+| [SNES — Super Mario World example](assets/snes-super-mario-world/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/snes-super-mario-world-v0.1.0) | [Changelog](assets/snes-super-mario-world/CHANGELOG.md) |
+
+### Super Mario World example
+
+[![Super Mario World example](assets/snes-super-mario-world/previews/0.1.0/hero.png)](https://lincolnaleixo.github.io/retro-cartridge-models/#snes-super-mario-world)
+
+The existing textured demonstration is also available in the gallery and as its own versioned package. Nintendo artwork and marks are excluded from the original-contributions license; [source credits and rights scope](assets/snes-super-mario-world/CREDITS.md) remain explicit.
 
 The initial public model uses neutral, unprinted labels. It includes the curved top, the label folded around that curve, rounded side details, and blind lower latch recesses with solid backing. Dimensions are estimates from physical references, not official manufacturing drawings.
 
@@ -26,6 +37,12 @@ python3 tools/verify.py --download snes-ntsc-u 0.1.0
 See [VERSIONING.md](VERSIONING.md) for the release workflow and comparison rules.
 
 Before contributing changes, read [rules.md](rules.md). Every change requires a [collection changelog](CHANGELOG.md) update; model changes also belong in that model's changelog.
+
+## Gallery publishing
+
+The GitHub Pages gallery is generated from `catalog.json` and the version manifests. Add a model's display title, description, credits and rights summary to the catalog; publish its verified release package. The Pages workflow builds and deploys on main-branch changes and published releases.
+
+To preview locally, run `python3 tools/build_site.py`, then `python3 -m http.server 8080 --directory _site`. The builder downloads and verifies release archives and copies only the site, GLBs, previews and public notices into `_site`. Model binaries stay outside Git; the browser loads them from the same Pages origin. `site/vendor/` contains the pinned viewer and its software license.
 
 ## License and attribution
 

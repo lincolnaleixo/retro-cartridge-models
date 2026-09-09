@@ -9,3 +9,7 @@ The initial `snes-ntsc-u` public package has unprinted labels, no game artwork, 
 The legally operative text is the unmodified LICENSE, not this summary. Nothing here restricts rights granted by that license or by applicable law. Format conversion alone does not necessarily create an adaptation; the NoDerivatives condition concerns sharing adapted material, not a blanket ban on private editing.
 
 Any future third-party inclusion must identify its source and rights separately. Attribution alone must not be represented as permission to relicense third-party work.
+
+The separately identified `snes-super-mario-world` demonstration includes Nintendo artwork and marks. Its credits identify the Near scan source, restoration and reconstructed typography. Those third-party elements remain outside the CC BY-NC-ND grant; neither the public gallery nor its downloads grant a license to them. See `assets/snes-super-mario-world/CREDITS.md`.
+
+The gallery's bundled model-viewer software retains its Apache-2.0 license and bundled notices, available under `site/vendor/`; the collection license does not replace those terms.

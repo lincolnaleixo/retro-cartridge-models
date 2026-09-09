@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c0d0e">
+  <meta name="description" content="Cartuchos reconstruídos em 3D por Lincoln Aleixo. Explore cada detalhe, compare versões e baixe os arquivos Blender e GLB.">
+  <title>Retro Cartridge Models — coleção 3D</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='3' y='8' width='34' height='26' rx='4' fill='%23e9b976'/%3E%3Crect x='11' y='9' width='18' height='12' rx='2' fill='%23111214'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="vendor/model-viewer.min.js"></script>
+  <script type="module" src="gallery.js"></script>
+</head>
+<body>
+  <a class="skip" href="#collection">Pular para a coleção</a>
+  <header class="masthead"><a class="wordmark" href="./"><span class="mark" aria-hidden="true">▤</span> RETRO CARTRIDGE MODELS</a><a class="quiet" href="https://github.com/lincolnaleixo/retro-cartridge-models">GitHub ↗</a></header>
+  <main>
+    <section class="intro"><p class="eyebrow">UMA COLEÇÃO POR LINCOLN ALEIXO</p><h1>Memória física.<br><em>Em três dimensões.</em></h1><p class="lede">Cartuchos reconstruídos, um detalhe de cada vez.<br>Explore a forma, acompanhe as versões e veja o que mudou.</p><a class="text-link" href="#collection">Explorar a coleção <span aria-hidden="true">↓</span></a></section>
+    <section id="collection" aria-labelledby="collection-heading"><div class="section-head"><h2 id="collection-heading">A coleção</h2><span id="count" class="meta">Carregando catálogo…</span></div><div id="cards" class="cards"><!-- ASSET_CARDS --></div></section>
+    <section id="explorer" aria-labelledby="model-title" hidden>
+      <div class="section-head explorer-heading"><div><p class="eyebrow" id="model-kind"></p><h2 id="model-title"></h2></div><label class="version-label">Versão <select id="version" aria-label="Versão do modelo"></select></label></div>
+      <div class="workbench">
+        <div class="stage">
+          <div class="stage-caption"><span>VISUALIZAÇÃO 3D</span><span id="load-state" role="status" aria-live="polite">Carregando…</span></div>
+          <model-viewer id="viewer" camera-controls touch-action="pan-y" shadow-intensity="0" environment-image="neutral" exposure="0.9" tone-mapping="aces" interaction-prompt="none" camera-orbit="30deg 68deg auto" min-camera-orbit="auto 0deg auto" max-camera-orbit="auto 180deg auto" alt="Modelo 3D do cartucho selecionado"></model-viewer>
+          <p class="gesture">Arraste para girar · Role ou faça pinça para aproximar</p>
+          <div id="views" class="views" aria-label="Vistas do cartucho"><button data-view="hero" aria-pressed="true">3/4</button><button data-view="front" aria-pressed="false">Frente</button><button data-view="back" aria-pressed="false">Traseira</button><button data-view="top" aria-pressed="false">Topo</button><button data-view="bottom" aria-pressed="false">Base</button><button data-view="side" aria-pressed="false">Lateral</button></div>
+        </div>
+        <aside class="details"><p id="description"></p><dl><div><dt>Escala</dt><dd id="dimensions"></dd></div><div><dt>Formato</dt><dd>Blender + GLB · metros · Y-up</dd></div><div><dt>Reconstrução</dt><dd>Lincoln Aleixo</dd></div></dl><a id="download" class="primary">Baixar pacote <span aria-hidden="true">↗</span></a><a id="history" class="secondary">Histórico de versões ↗</a><p id="rights" class="rights"></p><a id="credits" class="quiet">Créditos e fontes ↗</a><div class="changes"><h3>Nesta versão</h3><ul id="changes"></ul></div></aside>
+      </div>
+      <div class="section-head render-heading"><h3>Olhe mais de perto</h3><span class="meta">RENDERS DO MODELO</span></div><div id="renders" class="renders"></div>
+    </section>
+    <p id="error" role="alert" hidden></p>
+    <noscript><p>Ative o JavaScript para girar os modelos. Os previews e links de release acima continuam disponíveis.</p></noscript>
+    <section class="collection-note"><h2>Uma coleção em evolução.</h2><p>Cada modelo tem versões próprias, imagens e um registro das melhorias. As medidas são aproximações de referências reais. Novos modelos entram aqui conforme são publicados no repositório.</p></section>
+  </main>
+  <footer><span>© 2026 Lincoln Aleixo</span><p>Contribuições originais: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>. Arte e marcas Nintendo têm direitos próprios. Coleção independente, sem afiliação à Nintendo.</p><a href="vendor/NOTICE.md">Software do visualizador</a></footer>
+</body>
+</html>
