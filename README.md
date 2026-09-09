@@ -25,6 +25,8 @@ python3 tools/verify.py --download snes-ntsc-u 0.1.0
 
 See [VERSIONING.md](VERSIONING.md) for the release workflow and comparison rules.
 
+Before contributing changes, read [rules.md](rules.md). Every change requires a [collection changelog](CHANGELOG.md) update; model changes also belong in that model's changelog.
+
 ## License and attribution
 
 Original contributions are licensed under **[CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)**: attribution is required, commercial use is not licensed, and adapted material may not be redistributed under this license. The full terms are in [LICENSE](LICENSE). This is a public, source-available collection, not an OSI open-source software project.
