@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "assets": [
+    {
+      "id": "snes-ntsc-u",
+      "title": "SNES early North American cartridge — neutral labels",
+      "latest": "0.1.0",
+      "manifest": "assets/snes-ntsc-u/versions/0.1.0.json"
+    }
+  ]
+}

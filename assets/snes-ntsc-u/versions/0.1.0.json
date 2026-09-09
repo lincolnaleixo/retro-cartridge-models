@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "snes-ntsc-u",
+  "version": "0.1.0",
+  "title": "SNES early North American shell \u2014 neutral labels",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions only; see NOTICE.md",
+  "date": "2026-09-09",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom connector center"
+  },
+  "nominalDimensionsMm": [
+    135.4,
+    88,
+    19.9
+  ],
+  "measurementBasis": "Approximate photo-derived reconstruction; not official manufacturing dimensions",
+  "changes": [
+    "Initial public baseline",
+    "Continuous roof crown and conforming folded label",
+    "Blind lower latch recesses with solid backing webs",
+    "Rounded grip mouths and wing roofs",
+    "Neutral labels and no brand logo geometry; rear occlusion regenerated"
+  ],
+  "validation": {
+    "meshes": 22,
+    "materials": 9,
+    "embeddedImages": 4,
+    "externalImages": 0,
+    "cameras": 0,
+    "lights": 0,
+    "godot": {
+      "version": "4.7.2",
+      "headlessImport": "passed",
+      "sceneCheck": "22 meshes, 9 materials, 4 textures"
+    },
+    "blend": {
+      "packedImages": 4,
+      "relativeTexturePaths": true,
+      "embeddedScripts": 0
+    }
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/snes-ntsc-u/previews/0.1.0/hero.png",
+      "bytes": 533809,
+      "sha256": "fcbf8df5dddbbc00344a8a73c2d301d9075ef19ef2ec01db4c917e0671b31aa6"
+    },
+    {
+      "view": "top",
+      "path": "assets/snes-ntsc-u/previews/0.1.0/top.png",
+      "bytes": 324974,
+      "sha256": "f232c4d30e443c4ebeb6226bcb2a50381aeb4a6a6e6f7c3ed8fe1a7898ab2c6b"
+    },
+    {
+      "view": "bottom",
+      "path": "assets/snes-ntsc-u/previews/0.1.0/bottom.png",
+      "bytes": 601238,
+      "sha256": "aa8fecdf3e54cac4f0a4f588ee24e06c45df33dc42aa2a5982a6d47a3be21747"
+    }
+  ],
+  "release": {
+    "tag": "snes-ntsc-u-v0.1.0",
+    "archive": {
+      "name": "snes-ntsc-u-0.1.0.zip",
+      "bytes": 49318760,
+      "sha256": "f502074501e29d269664107911f70eb8b57427140b8371f10c74418a70740bc7",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/snes-ntsc-u-v0.1.0/snes-ntsc-u-0.1.0.zip"
+    }
+  },
+  "files": {
+    "CREDITS.md": {
+      "bytes": 995,
+      "sha256": "cd2badc7e4a19eaa24e149147e920f3f722cbd853d0abd0aba24b9674b727407"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 1193,
+      "sha256": "218c60800dd08cf330799bb5060468ab65910d346d4a2a4d26a7ae49e9904277"
+    },
+    "README.md": {
+      "bytes": 1189,
+      "sha256": "c65a57033bc7a17fffcbd4c9281ee168161d6d32429887b3f1c3bd59f2d89919"
+    },
+    "bottom.png": {
+      "bytes": 601238,
+      "sha256": "aa8fecdf3e54cac4f0a4f588ee24e06c45df33dc42aa2a5982a6d47a3be21747"
+    },
+    "hero.png": {
+      "bytes": 533809,
+      "sha256": "fcbf8df5dddbbc00344a8a73c2d301d9075ef19ef2ec01db4c917e0671b31aa6"
+    },
+    "snes-ntsc-u.blend": {
+      "bytes": 24143417,
+      "sha256": "1432374fd7d4e09adb2f79fa4fa9b8f5e3db876694dd880204d101b41404115b"
+    },
+    "snes-ntsc-u.glb": {
+      "bytes": 25090772,
+      "sha256": "bc8e005d040a086443ba9312f871860c0e7882fa96b394edc98404d6ee55779f"
+    },
+    "top.png": {
+      "bytes": 324974,
+      "sha256": "f232c4d30e443c4ebeb6226bcb2a50381aeb4a6a6e6f7c3ed8fe1a7898ab2c6b"
+    }
+  },
+  "measuredBoundsMm": [
+    135.4,
+    88.09126,
+    19.76002
+  ]
+}
