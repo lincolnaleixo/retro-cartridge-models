@@ -4,6 +4,7 @@ Model release histories also live in `assets/<asset-id>/CHANGELOG.md`.
 
 ## Unreleased
 
+- Published the [Super Mario World example 0.1.1](assets/snes-super-mario-world/CHANGELOG.md) with standalone front and rear label exports derived from the published GLB, so a consumer can map the artwork onto the shared neutral `snes-ntsc-u` shell.
 - Translated all authored gallery text into English, including metadata, model descriptions, controls, accessibility labels, status/error messages and generated cards. Dimensions now use decimal points.
 - Translated the Super Mario World manifest's descriptive change notes at the owner's request; existing release tags, packages, binaries and checksums remain unchanged.
 - Added an English-only rule for future repository content, gallery copy and release notes.

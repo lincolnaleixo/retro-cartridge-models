@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "id": "snes-super-mario-world",
+  "version": "0.1.1",
+  "title": "SNES \u2014 Super Mario World example",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions only. Nintendo artwork and trademarks excluded; see CREDITS.md and NOTICE.md.",
+  "date": "2026-09-17",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom connector center"
+  },
+  "nominalDimensionsMm": [
+    135.4,
+    88,
+    19.9
+  ],
+  "measurementBasis": "Approximate photo-derived reconstruction; not official manufacturing dimensions",
+  "changes": [
+    "Added standalone front and rear label exports (labels/front.png, labels/rear.png) derived unchanged from the published GLB for mapping onto the shared neutral snes-ntsc-u shell.",
+    "Previews are unchanged from 0.1.0; no geometry, material or UV change."
+  ],
+  "validation": {
+    "meshes": 23,
+    "materials": 10,
+    "embeddedImages": 6,
+    "externalImages": 0,
+    "cameras": 0,
+    "lights": 0,
+    "godot": {
+      "version": "4.7.2",
+      "headlessImport": "passed",
+      "sceneCheck": "23 meshes, 10 materials, 6 textures"
+    }
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/snes-super-mario-world/previews/0.1.0/hero.png",
+      "bytes": 4111230,
+      "sha256": "bbecfc955d7d3de10987c35087f4c4c58223fd8733a16aae8373ef066be4b9cd"
+    },
+    {
+      "view": "top",
+      "path": "assets/snes-super-mario-world/previews/0.1.0/top.png",
+      "bytes": 1463628,
+      "sha256": "380009975f00603b5d1fa35f8a2bede74a47252e9d19af89602650308aeecec2"
+    },
+    {
+      "view": "back",
+      "path": "assets/snes-super-mario-world/previews/0.1.0/back.png",
+      "bytes": 2124153,
+      "sha256": "5e425690dafc040125c747b25e0b6207240a609645ed582209142b8e10db9ef3"
+    },
+    {
+      "view": "side",
+      "path": "assets/snes-super-mario-world/previews/0.1.0/side.png",
+      "bytes": 1067721,
+      "sha256": "0ebcbac442b2b46429aa62fc0163b1bedef9d55803053cadb7f4629cc280b106"
+    },
+    {
+      "view": "bottom",
+      "path": "assets/snes-super-mario-world/previews/0.1.0/bottom.png",
+      "bytes": 1920247,
+      "sha256": "a5af4360f41bb126d345e79b70bda7068c1b3516f3c7603a45db6b34be32b5a2"
+    }
+  ],
+  "release": {
+    "tag": "snes-super-mario-world-v0.1.1",
+    "archive": {
+      "name": "snes-super-mario-world-0.1.1.zip",
+      "bytes": 69931267,
+      "sha256": "9a30fdf70d9a72d6a7733d3be19775597f4d2cee821cfbed68af65edbc3aea6f",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/snes-super-mario-world-v0.1.1/snes-super-mario-world-0.1.1.zip"
+    }
+  },
+  "files": {
+    "CREDITS.md": {
+      "bytes": 1394,
+      "sha256": "4bd7fb29089cd073722f85f278861cbe450f243984e7ad41865abfe9a497d569"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 1746,
+      "sha256": "1248394dcec7068d64bebe596fc1ed4d7cf757202d0c276a35200968c170afa0"
+    },
+    "README.md": {
+      "bytes": 1496,
+      "sha256": "f63734c250f5ec34373c720a0fa9b0f434551fad0240e49a77b952590ba7268c"
+    },
+    "back.png": {
+      "bytes": 2124153,
+      "sha256": "5e425690dafc040125c747b25e0b6207240a609645ed582209142b8e10db9ef3"
+    },
+    "bottom.png": {
+      "bytes": 1920247,
+      "sha256": "a5af4360f41bb126d345e79b70bda7068c1b3516f3c7603a45db6b34be32b5a2"
+    },
+    "hero.png": {
+      "bytes": 4111230,
+      "sha256": "bbecfc955d7d3de10987c35087f4c4c58223fd8733a16aae8373ef066be4b9cd"
+    },
+    "labels/README.md": {
+      "bytes": 927,
+      "sha256": "2e129ac86c7a34fd760e8fb646ff2ca28ebb487dd5105bb88b31cad4f811b39e"
+    },
+    "labels/front.png": {
+      "bytes": 2655936,
+      "sha256": "5a7e9d1fb80fbab4d688f50c0ebba55049a2feb5cbff8938eb051cd07f11dee3"
+    },
+    "labels/rear.png": {
+      "bytes": 1054447,
+      "sha256": "316ee3c12998d5ee182698ead900070b35adf61341f54ff44a54c46c18abe428"
+    },
+    "side.png": {
+      "bytes": 1067721,
+      "sha256": "0ebcbac442b2b46429aa62fc0163b1bedef9d55803053cadb7f4629cc280b106"
+    },
+    "snes-super-mario-world.blend": {
+      "bytes": 28083803,
+      "sha256": "4222f8aadb01bab4a9b2f19cba534f4763da31b295eb3a988d0ef8b71726f5ba"
+    },
+    "snes-super-mario-world.glb": {
+      "bytes": 29230620,
+      "sha256": "28f49df73f4464f016482aa160e59d25bdfcafd6c7cc0769bc9568782e760821"
+    },
+    "top.png": {
+      "bytes": 1463628,
+      "sha256": "380009975f00603b5d1fa35f8a2bede74a47252e9d19af89602650308aeecec2"
+    }
+  },
+  "labels": {
+    "front": {
+      "path": "assets/snes-super-mario-world/labels/front.png",
+      "bytes": 2655936,
+      "sha256": "5a7e9d1fb80fbab4d688f50c0ebba55049a2feb5cbff8938eb051cd07f11dee3"
+    },
+    "rear": {
+      "path": "assets/snes-super-mario-world/labels/rear.png",
+      "bytes": 1054447,
+      "sha256": "316ee3c12998d5ee182698ead900070b35adf61341f54ff44a54c46c18abe428"
+    }
+  }
+}

@@ -1,13 +1,15 @@
 # SNES — Super Mario World example
 
-**Version:** 0.1.0 · **Reconstruction:** Lincoln Aleixo
+**Version:** 0.1.1 · **Reconstruction:** Lincoln Aleixo
 
 ![Super Mario World cartridge](previews/0.1.0/hero.png)
 
-[Explore in 3D](https://lincolnaleixo.github.io/retro-cartridge-models/#snes-super-mario-world) · [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/snes-super-mario-world-v0.1.0) · [Changelog](CHANGELOG.md)
+[Explore in 3D](https://lincolnaleixo.github.io/retro-cartridge-models/#snes-super-mario-world) · [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/snes-super-mario-world-v0.1.1) · [Changelog](CHANGELOG.md)
 
 The existing Super Mario World demonstration, including its restored front label, folded top title, rear warning label and molded emblem. The geometry retains the crowned top and backed lower latch recesses. This is an approximate reconstruction for visualization, not an official manufacturing model.
 
-The package includes editable Blender source, a self-contained GLB and five renders. It uses meters, Y-up and +Z front. Camera, lights and floor are excluded from the GLB.
+The package includes editable Blender source, a self-contained GLB, five renders and standalone label exports. It uses meters, Y-up and +Z front. Camera, lights and floor are excluded from the GLB.
+
+`labels/front.png` and `labels/rear.png` are the label artwork extracted unchanged from the published GLB so an application can map it onto the shared neutral `snes-ntsc-u` shell. Consumers verify the checksums recorded in the version manifest.
 
 Original reconstruction contributions are CC BY-NC-ND 4.0. Super Mario World artwork and Nintendo marks remain third-party content and are excluded from that grant; this example does not provide an open license to those elements. The collection is not affiliated with Nintendo. See [credits](CREDITS.md) and the root [NOTICE.md](../../NOTICE.md).
