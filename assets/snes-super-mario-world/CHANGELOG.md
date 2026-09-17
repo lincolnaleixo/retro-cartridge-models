@@ -4,6 +4,14 @@
 
 - Translated gallery descriptions, rights summaries and descriptive manifest notes into English at the owner's request. No geometry, artwork, release files, tags or checksums changed.
 
+## 0.1.1 — 2026-09-17
+
+- Added `labels/front.png` and `labels/rear.png`, extracted unchanged from the published GLB, so an application can paint the real label on the shared neutral `snes-ntsc-u` shell without loading the complete textured model.
+- Recorded both label files with their sizes and SHA-256 in the version manifest, and packaged them with the source, GLB, renders and notices.
+- Previews are unchanged from 0.1.0; no geometry, material or UV change.
+
+Known limits: the label exports carry the same Nintendo artwork and trademark exclusion as the textured model; they add no license grant beyond what the asset already publishes.
+
 ## 0.1.0 — 2026-09-09
 
 - Published the existing textured cartridge as a separate public example with its own version, source package and attribution.
