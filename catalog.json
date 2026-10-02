@@ -5,10 +5,10 @@
   "assets": [
     {
       "id": "snes-ntsc-u",
-      "title": "SNES early North American cartridge \u2014 neutral labels",
+      "title": "SNES early North American cartridge — neutral labels",
       "latest": "0.1.0",
       "manifest": "assets/snes-ntsc-u/versions/0.1.0.json",
-      "displayTitle": "SNES \u00b7 Neutral edition",
+      "displayTitle": "SNES · Neutral edition",
       "kind": "BASE MODEL",
       "description": "The North American cartridge shape with unprinted labels. A clear view of the shell, its curves and molded details.",
       "credits": "CREDITS.md",
@@ -16,14 +16,36 @@
     },
     {
       "id": "snes-super-mario-world",
-      "title": "SNES \u2014 Super Mario World example",
+      "title": "SNES — Super Mario World example",
       "latest": "0.1.1",
       "manifest": "assets/snes-super-mario-world/versions/0.1.1.json",
       "displayTitle": "Super Mario World",
-      "kind": "TEXTURED EXAMPLE \u00b7 SNES",
+      "kind": "TEXTURED EXAMPLE · SNES",
       "description": "The cartridge with a restored Super Mario World label, top title and rear details, plus standalone front and rear label exports for the shared neutral shell. An example of how the same shape takes on its identity.",
       "credits": "assets/snes-super-mario-world/CREDITS.md",
       "rights": "Original modeling: CC BY-NC-ND 4.0. Super Mario World artwork and Nintendo marks are excluded from this license."
+    },
+    {
+      "id": "mega-drive",
+      "title": "Mega Drive — western cartridge",
+      "latest": "0.1.0",
+      "manifest": "assets/mega-drive/versions/0.1.0.json",
+      "displayTitle": "Mega Drive — western cartridge",
+      "kind": "BASE MODEL",
+      "description": "The western cartridge shell with folded label UVs, molded grip and original ABS surface detail.",
+      "credits": "assets/mega-drive/CREDITS.md",
+      "rights": "Original contributions: CC BY-NC-ND 4.0. Hardware marks excluded; no game artwork included."
+    },
+    {
+      "id": "playstation-1",
+      "title": "PlayStation 1 — standalone CD",
+      "latest": "0.1.0",
+      "manifest": "assets/playstation-1/versions/0.1.0.json",
+      "displayTitle": "PlayStation 1 — standalone CD",
+      "kind": "BASE MODEL",
+      "description": "A standalone CD with a true center hole, transparent hub and dark reading face.",
+      "credits": "assets/playstation-1/CREDITS.md",
+      "rights": "Original contributions: CC BY-NC-ND 4.0. Hardware marks excluded; no game artwork included."
     }
   ]
 }

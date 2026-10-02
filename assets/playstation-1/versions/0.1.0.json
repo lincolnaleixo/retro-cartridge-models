@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "id": "playstation-1",
+  "version": "0.1.0",
+  "title": "PlayStation 1 \u2014 standalone CD",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions only; hardware designs and trademarks excluded. No game artwork included.",
+  "date": "2026-10-02",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center"
+  },
+  "nominalDimensionsMm": [
+    120,
+    120,
+    1.2
+  ],
+  "measurementBasis": "Visualization reconstruction; see asset credits and measurement evidence.",
+  "changes": [
+    "First neutral release with editable source, self-contained GLB and verified export previews.",
+    "Standalone disc with annular front artwork and dark reading side; no case."
+  ],
+  "validation": {
+    "meshes": 5,
+    "triangles": 8704,
+    "materials": 4,
+    "images": 1,
+    "selfContained": true,
+    "godot": {
+      "version": "4.7.2",
+      "headlessImport": "passed",
+      "surfaceInspection": "UV0, embedded roughness maps and label targets verified"
+    }
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/playstation-1/previews/0.1.0/hero.png",
+      "bytes": 1198924,
+      "sha256": "fa76ec2c2ec4493597dbd1cf3e94cdccf40e6712aa0333c6973a79bf9379cbbc"
+    },
+    {
+      "view": "top",
+      "path": "assets/playstation-1/previews/0.1.0/top.png",
+      "bytes": 1165262,
+      "sha256": "0b9fac5f56872f4cfc6ccdedee6e3f94821339f009cdd4a375678f2902c4776a"
+    },
+    {
+      "view": "bottom",
+      "path": "assets/playstation-1/previews/0.1.0/bottom.png",
+      "bytes": 1175526,
+      "sha256": "9d3ef0da927e8cbdea6b95d005a41ca332c25208a6ab26b525989e82b0f1865c"
+    },
+    {
+      "view": "rear",
+      "path": "assets/playstation-1/previews/0.1.0/rear.png",
+      "bytes": 1176792,
+      "sha256": "875bc97d1c62f6f7f1cbeead3ed7953a6f6a1cde45dab886fee38a420b1aac28"
+    },
+    {
+      "view": "left",
+      "path": "assets/playstation-1/previews/0.1.0/left.png",
+      "bytes": 1155860,
+      "sha256": "b6e51ee8681a37d58909552297c48210ec006886ca4d6f8970d0a432ae66d395"
+    }
+  ],
+  "release": {
+    "tag": "playstation-1-v0.1.0",
+    "archive": {
+      "name": "playstation-1-0.1.0.zip",
+      "bytes": 7143966,
+      "sha256": "0a8249ff8a9ba00ada4e3bcdbcdbe24bcae0250b0f308f5dbb5325f9b7cceba5",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/playstation-1-v0.1.0/playstation-1-0.1.0.zip"
+    }
+  },
+  "files": {
+    "CREDITS.md": {
+      "bytes": 2458,
+      "sha256": "8d1042d9640c6e5d279b297b8480acebd9e90c68d692a2a413a6056c744a8bc4"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 1746,
+      "sha256": "1248394dcec7068d64bebe596fc1ed4d7cf757202d0c276a35200968c170afa0"
+    },
+    "README.md": {
+      "bytes": 1875,
+      "sha256": "26d93bc084cfb96e3decd52a19fea64f68ae6f0de314950539ac4459bd52bc38"
+    },
+    "bottom.png": {
+      "bytes": 1175526,
+      "sha256": "9d3ef0da927e8cbdea6b95d005a41ca332c25208a6ab26b525989e82b0f1865c"
+    },
+    "hero.png": {
+      "bytes": 1198924,
+      "sha256": "fa76ec2c2ec4493597dbd1cf3e94cdccf40e6712aa0333c6973a79bf9379cbbc"
+    },
+    "left.png": {
+      "bytes": 1155860,
+      "sha256": "b6e51ee8681a37d58909552297c48210ec006886ca4d6f8970d0a432ae66d395"
+    },
+    "playstation-1.blend": {
+      "bytes": 690158,
+      "sha256": "be3da8add649f9e3eb55398b19430af0971392a0df57ba7b1e857e0a9a174d10"
+    },
+    "playstation-1.glb": {
+      "bytes": 906064,
+      "sha256": "9a60e136e550fb269598728205f2c7375cb6ec4ce344d0b73f593fc1d911504e"
+    },
+    "rear.png": {
+      "bytes": 1176792,
+      "sha256": "875bc97d1c62f6f7f1cbeead3ed7953a6f6a1cde45dab886fee38a420b1aac28"
+    },
+    "top.png": {
+      "bytes": 1165262,
+      "sha256": "0b9fac5f56872f4cfc6ccdedee6e3f94821339f009cdd4a375678f2902c4776a"
+    }
+  }
+}
