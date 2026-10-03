@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "id": "mega-drive",
+  "version": "0.1.0",
+  "title": "Mega Drive \u2014 western cartridge",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions only; hardware designs and trademarks excluded. No game artwork included.",
+  "date": "2026-10-02",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center"
+  },
+  "nominalDimensionsMm": [
+    109,
+    70,
+    17
+  ],
+  "measurementBasis": "Visualization reconstruction; see asset credits and measurement evidence.",
+  "changes": [
+    "First neutral release with editable source, self-contained GLB and verified export previews.",
+    "Western shell, folded label, recessed fasteners and original embedded ABS grain."
+  ],
+  "validation": {
+    "meshes": 10,
+    "triangles": 12152,
+    "materials": 8,
+    "images": 3,
+    "selfContained": true,
+    "godot": {
+      "version": "4.7.2",
+      "headlessImport": "passed",
+      "surfaceInspection": "UV0, embedded roughness maps and label targets verified"
+    }
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/mega-drive/previews/0.1.0/hero.png",
+      "bytes": 1214264,
+      "sha256": "8b87fb4389dfc75a0a9a7754e137a43009fd6eefb91582ac436a716d03afede7"
+    },
+    {
+      "view": "top",
+      "path": "assets/mega-drive/previews/0.1.0/top.png",
+      "bytes": 1232942,
+      "sha256": "e7ed929d2bf0d58d93889ca043880fb557e99848ef4b531363b55a67927f9f9a"
+    },
+    {
+      "view": "bottom",
+      "path": "assets/mega-drive/previews/0.1.0/bottom.png",
+      "bytes": 1217098,
+      "sha256": "f5f0abdab520f7fdbb1e04e557a9223852ed7952799cd66c061f02c56c6183a4"
+    },
+    {
+      "view": "rear",
+      "path": "assets/mega-drive/previews/0.1.0/rear.png",
+      "bytes": 1212250,
+      "sha256": "93cc71f7abda024b00d693cd0b8d78a10d65244efc51b355e214c1ba8f698d6c"
+    },
+    {
+      "view": "left",
+      "path": "assets/mega-drive/previews/0.1.0/left.png",
+      "bytes": 1161501,
+      "sha256": "1a820728c3312e0f070115e7c509704c089855ca7fa0fc40689b7116ed7b5f61"
+    }
+  ],
+  "release": {
+    "tag": "mega-drive-v0.1.0",
+    "archive": {
+      "name": "mega-drive-0.1.0.zip",
+      "bytes": 7720799,
+      "sha256": "b36195b2f275a247eeae686b291c4584caf6e3fd1911bba35487aced44b56a48",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/mega-drive-v0.1.0/mega-drive-0.1.0.zip"
+    }
+  },
+  "files": {
+    "CREDITS.md": {
+      "bytes": 2195,
+      "sha256": "dd64dc83fa2490b54118cdec7f738d6cf17710483bdf73b0a58fed14982a5179"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 1746,
+      "sha256": "1248394dcec7068d64bebe596fc1ed4d7cf757202d0c276a35200968c170afa0"
+    },
+    "README.md": {
+      "bytes": 4182,
+      "sha256": "a9edcaf7db00231208a627ab394da77217e445eec82a742e57bf891171e647c8"
+    },
+    "bottom.png": {
+      "bytes": 1217098,
+      "sha256": "f5f0abdab520f7fdbb1e04e557a9223852ed7952799cd66c061f02c56c6183a4"
+    },
+    "hero.png": {
+      "bytes": 1214264,
+      "sha256": "8b87fb4389dfc75a0a9a7754e137a43009fd6eefb91582ac436a716d03afede7"
+    },
+    "left.png": {
+      "bytes": 1161501,
+      "sha256": "1a820728c3312e0f070115e7c509704c089855ca7fa0fc40689b7116ed7b5f61"
+    },
+    "mega-drive.blend": {
+      "bytes": 868802,
+      "sha256": "9f30da0cb4df07b051e02b9935726d99ff4a0b938b7cfda50ffffa5806b530ee"
+    },
+    "mega-drive.glb": {
+      "bytes": 1425224,
+      "sha256": "7c4da56fd51b01ecf77b2dcc06268d253983eebcb640dfc2e509c863cc17a58c"
+    },
+    "rear.png": {
+      "bytes": 1212250,
+      "sha256": "93cc71f7abda024b00d693cd0b8d78a10d65244efc51b355e214c1ba8f698d6c"
+    },
+    "top.png": {
+      "bytes": 1232942,
+      "sha256": "e7ed929d2bf0d58d93889ca043880fb557e99848ef4b531363b55a67927f9f9a"
+    }
+  }
+}

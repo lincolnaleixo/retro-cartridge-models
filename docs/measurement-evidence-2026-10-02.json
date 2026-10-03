@@ -1,0 +1,192 @@
+{
+  "date": "2026-10-02",
+  "purpose": "Dimensional evidence for an original visualization reconstruction; no third-party mesh geometry is included.",
+  "units": "millimeters",
+  "sources": [
+    {
+      "id": "hdrv-genesis-shell",
+      "publisher": "HD Retrovision LLC",
+      "url": "https://www.hdretrovision.com/free-stuff/",
+      "downloadUrl": "https://www.hdretrovision.com/s/GEN-CART-SHELL.zip",
+      "downloadSha256": "2138b6fb98078fa5015ac0cc6e107e1b4898f7dae3994d74a9689509a445a185",
+      "authority": "Original author of a reverse-engineered non-EA Genesis shell model; hardware supplier, not Sega.",
+      "publisherBasis": "The publisher describes the design as a close dimensional copy of an original Genesis shell and offers it for prototyping.",
+      "method": "Parsed binary STL facets. Computed envelopes from vertex extrema. Isolated coplanar triangles, removed shared interior edges, and measured remaining boundary loops. Circular-loop centers came from opposite extrema. Inspected orthographic projections to identify the rear grip, screw wells, and front label land. No source mesh was imported into a deliverable.",
+      "unitInterpretation": "STL has no native unit declaration. Coordinates are interpreted as millimeters, consistent with the physical scale and independent cartridge measurements.",
+      "files": [
+        {
+          "name": "GEN-CART-SHELL-BOT.STL",
+          "sha256": "ddd2514fc7691272dee400030875c3c99f196f2f7a6c53c0eccaea1ccd2a8b28",
+          "facets": 17610,
+          "width": 108.585,
+          "height": 69.85,
+          "separatePartDepth": 6.985
+        },
+        {
+          "name": "GEN-CART-SHELL-TOP.STL",
+          "sha256": "7f2010fe5d1fe865f2dbb47fe187c8aaed96ca65534774eab7692aaf64ae6fa4",
+          "facets": 18130,
+          "width": 108.712001,
+          "height": 69.697608,
+          "separatePartDepth": 11.557
+        }
+      ],
+      "derivedFeatures": {
+        "rearGripOpeningWidth": 79.375,
+        "rearGripOpeningHeight": 9.525,
+        "rearGripCenterDistanceFromTop": 15.24,
+        "rearGripMaximumDepthBelowOuterPlane": 1.778,
+        "rearScrewCenterSpacing": 69.596,
+        "rearScrewCenterDistanceFromBottom": 36.068,
+        "rearScrewWellOpeningDiameter": 6.2992,
+        "rearScrewBoreDiameter": 2.921,
+        "rearScrewWellDepth": 2.032,
+        "frontScrewPostCenterSpacing": 69.6468,
+        "frontLabelLandWidth": 76.2,
+        "frontLabelLandHeight": 60.5028,
+        "frontLabelLandRecessBelowOuterRaisedPlane": 0.4572,
+        "rearBroadWallThickness": 1.905,
+        "frontLabelLandWallThickness": 1.0668
+      },
+      "limits": [
+        "These are measurements of the publisher's reverse-engineered STL, not fresh measurements of a Sega specimen or official manufacturing dimensions.",
+        "The separate-part depth values must not be added to claim an assembled thickness; the parts include overlapping assembly features.",
+        "The two modeled halves have slightly different screw-center spacing and offsets. Rounded nominal dimensions are more defensible than claiming factory precision.",
+        "No unambiguous complete connector-opening section or official screw dimensions were recovered from this extraction."
+      ]
+    },
+    {
+      "id": "aaltomies-physical-cartridges",
+      "publisher": "Aaltomies",
+      "url": "https://aaltomies.wordpress.com/2016/01/08/games-on-your-wall/",
+      "authority": "First-person physical measurement of cartridges using a ruler and caliper, published in 2016.",
+      "reportedMeasurements": {
+        "megaDriveExternalThickness": 17,
+        "megaDriveConnectorGrooveDepth": 9,
+        "megaDriveConnectorGrooveWidth": "slightly less than 91"
+      },
+      "limits": [
+        "The measurements are informal, with no calibration or uncertainty statement.",
+        "The article separately mentions a 12 mm outer groove height; this must not be substituted for its 9 mm interior depth.",
+        "The article does not establish precise screw spacing or nominal full shell width and height."
+      ]
+    },
+    {
+      "id": "consolemods-genesis-label",
+      "publisher": "ConsoleMods contributors",
+      "url": "https://consolemods.org/wiki/Cart_Labels",
+      "authority": "Community template explicitly marked confirmed through test printing and fitting to an OEM cartridge and label.",
+      "reportedMeasurements": {
+        "unfoldedLabelWidth": 74,
+        "unfoldedLabelHeight": 67,
+        "topFoldDistance": 7,
+        "cornerRadius": 2
+      },
+      "derivedMeasurements": {
+        "nominalFrontPrintedHeightBeforeFold": 60
+      },
+      "limits": [
+        "Fit confirmation is not a Sega engineering drawing or manufacturing tolerance specification.",
+        "The nominal front height is the unfolded height minus the listed top fold, not an independently measured flat surface including bend allowances."
+      ]
+    },
+    {
+      "id": "stoneagegamer-replacement-label",
+      "publisher": "Stone Age Gamer",
+      "url": "https://stoneagegamer.com/mega-everdrive-label.html",
+      "authority": "Primary production artwork specification for the supplier's Mega EverDrive replacement label.",
+      "reportedMeasurements": {
+        "cutWidth": 74.676,
+        "cutHeight": 67.742,
+        "cornerRadius": 3.175,
+        "topFoldDistance": 7.696
+      },
+      "limits": [
+        "This is an aftermarket label specification and differs from the OEM-fit community template. It corroborates overall scale, not exact original dimensions."
+      ]
+    },
+    {
+      "id": "consolemods-shell-envelope",
+      "publisher": "ConsoleMods contributors; Sega row attributed to NagaTen",
+      "url": "https://consolemods.org/wiki/Dimensions_for_Game_Cartridges",
+      "authority": "Community physical-dimension table with a named contributor.",
+      "reportedMeasurements": {
+        "westernShellTableWidthHeightDepth": [109, 70, 17],
+        "westernShellProseMaximumWidthHeightDepth": [108, 67, 17],
+        "westernShellProseNarrowWidth": 95
+      },
+      "limits": [
+        "The table and prose conflict on width and height. Neither is treated as an exact certified dimension.",
+        "HDRV independently supports approximately 109 by 70 mm; Aaltomies independently reports 17 mm thickness."
+      ]
+    },
+    {
+      "id": "cmc-jewel-case",
+      "publisher": "CMC Magnetics Corporation",
+      "url": "https://cmcdisc.com/media-packaging/original-jewel-case/",
+      "authority": "Primary manufacturer's dimensional inspection criteria for its Original Jewel Case product, measured by caliper.",
+      "reportedMeasurements": {
+        "assembledWidthRange": [142.2, 142.5],
+        "assembledHeightRange": [124.6, 124.9],
+        "assembledDepthNominal": 10.4,
+        "assembledDepthTolerance": 0.2,
+        "trayHubDiameterRange": [15.2, 15.4]
+      },
+      "limits": [
+        "CMC specifications apply to its case product. They are a standard-compatible dimensional basis, not proof of exact Sony packaging tooling."
+      ]
+    },
+    {
+      "id": "avery-rear-inlay",
+      "publisher": "Avery Zweckform",
+      "url": "https://www.avery.ae/product/cd-cover-and-inserts-c32250-25",
+      "authority": "Primary product specification for printed inserts intended for standard jewel cases.",
+      "reportedMeasurements": {
+        "flatRearInsertWidth": 151,
+        "flatRearInsertHeight": 118
+      },
+      "limits": [
+        "This source establishes the flat sheet size, not a Sony-specific paper thickness or booklet page count."
+      ]
+    },
+    {
+      "id": "ecma130-disc",
+      "publisher": "Ecma International",
+      "url": "https://ecma-international.org/publications-and-standards/standards/ecma-130/",
+      "documentUrl": "https://ecma-international.org/wp-content/uploads/ECMA-130_2nd_edition_june_1996.pdf",
+      "authority": "CD-ROM physical interchange standard, second edition, June 1996.",
+      "reportedMeasurements": {
+        "section8_2HoleDiameterNominal": 15,
+        "section8_2HoleDiameterToleranceMinus": 0,
+        "section8_2HoleDiameterTolerancePlus": 0.1,
+        "section8_4ClampingHeightNominal": 1.2,
+        "section8_4ClampingHeightToleranceMinus": 0.1,
+        "section8_4ClampingHeightTolerancePlus": 0.3,
+        "section8_6TransparentSubstrateThicknessNominal": 1.2,
+        "section8_6TransparentSubstrateThicknessTolerance": 0.1,
+        "section8_7OuterDiameterNominal": 120,
+        "section8_7OuterDiameterTolerance": 0.3
+      },
+      "limits": [
+        "The standard supports nominal physical dimensions, not the printed artwork, dark PlayStation appearance, or exact extent of a photographed clear center."
+      ]
+    }
+  ],
+  "corroboration": [
+    {
+      "finding": "A western Genesis shell envelope near 109 by 70 by 17 mm is supported as a visualization nominal.",
+      "sources": ["hdrv-genesis-shell", "aaltomies-physical-cartridges", "consolemods-shell-envelope"],
+      "status": "Approximate cross-source agreement; no factory tolerance or new specimen measurement."
+    },
+    {
+      "finding": "The front label occupies about 74 mm width and 60 mm front height, then folds about 7 mm over the top.",
+      "sources": ["consolemods-genesis-label", "stoneagegamer-replacement-label", "hdrv-genesis-shell"],
+      "status": "The sources agree on scale and folded construction but differ on exact cut dimensions and corner radii."
+    },
+    {
+      "finding": "Standard single-disc jewel-case and compact-disc dimensions have independent primary manufacturer or standards sources.",
+      "sources": ["cmc-jewel-case", "avery-rear-inlay", "ecma130-disc"],
+      "status": "These sources do not certify exact historic Sony packaging molds."
+    }
+  ]
+}

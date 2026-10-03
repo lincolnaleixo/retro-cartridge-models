@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Added a reproducible development refinement from the verified 0.1.0 Blender source. Front and back shell edges receive a clamped 0.12 mm bevel; a packed 512 px roughness map gives ABS a subtle grain and softens its previously glossy response. The unprinted label now has a matte paper finish.
+- Retained the continuous folded front label, label UVs, model axes, units and pivot. Before/after hero, top and underside views use the same camera framing, studio lights and Cycles settings. This is a visualization refinement with approximate dimensions, not a manufacturing model or a new published version.
+- Reviewed the actual matched renders and validated the self-contained GLB: 22 meshes, 9 materials, 5 embedded images and 85,772 triangles, versus 66,028 triangles in the baseline. The small bevel uses one segment to limit added geometry; the Blender source keeps it editable. Engine render verification is recorded with the consumer preview.
+
 - Translated the gallery title, description, rights summary and interface to English; the model and release package are unchanged.
 
 - Added the unchanged 0.1.0 model to the public gallery with orbit/zoom, six camera presets, version selection and release links. The existing model package and preview hashes are preserved.
