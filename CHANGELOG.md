@@ -4,6 +4,8 @@ Model release histories also live in `assets/<asset-id>/CHANGELOG.md`.
 
 ## Unreleased
 
+- Improved local printed artwork color fidelity with explicit sRGB inputs and lower dielectric specular reflection. Record the print-material settings in provenance; preserve source pixels and immutable neutral release packages. Regenerated examples pass GLB/UV inspection (12,152 Mega Drive and 8,704 PlayStation triangles), packed-source reopening in Blender and Godot 4.7.2 import. Catalog validation still passes four assets and five versions.
+
 - Published neutral Mega Drive cartridge and standalone PlayStation CD 0.1.0 packages. Replaced the default PlayStation case with a 120 mm CD and annular front-only artwork target. Added owner-supplied Sonic/Crash artwork mapping with provenance; no third-party scans are distributed.
 
 - Refined the development media materials with embedded, original surface maps: physically scaled ABS grain on Mega Drive and restrained concentric optical roughness on the PlayStation disc. Polished the clear case, booklet edges and export efficiency while preserving the reconstructed envelopes and mechanical clearances. Doubled the export-review studio samples to 64 for fine surface detail.
