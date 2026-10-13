@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center"
+  },
+  "nominalDimensionsMm": [
+    109,
+    70,
+    17
+  ],
+  "measurementBasis": "Visualization reconstruction; see asset credits and measurement evidence.",
+  "id": "mega-drive-sonic-the-hedgehog",
+  "version": "0.1.0",
+  "title": "Mega Drive \u2014 Sonic the Hedgehog example",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions only. Sonic the Hedgehog artwork, SEGA marks and source photography are excluded; see CREDITS.md and NOTICE.md.",
+  "date": "2026-10-13",
+  "changes": [
+    "First separately versioned Sonic the Hedgehog (1991) example on the existing western Mega Drive shell; neutral mega-drive 0.1.0 remains unchanged.",
+    "Mapped original 2992 \u00d7 2992 front and top product photographs without modifying their image bytes; the front artwork region has approximately 954 \u00d7 748 source pixels.",
+    "Used sRGB artwork, roughness 0.68 and reduced print specular reflection; kept original ABS surface maps, axes, dimensions and label UVs."
+  ],
+  "validation": {
+    "meshes": 10,
+    "triangles": 12152,
+    "materials": 9,
+    "images": 5,
+    "embeddedImages": 5,
+    "externalImages": 0,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "godot": {
+      "version": "4.7.2",
+      "headlessImport": "passed",
+      "surfaceInspection": "Embedded artwork, UVs and separate print surfaces verified; label specular compensated in the consumer because the importer ignores KHR_materials_specular."
+    },
+    "publicationPreparation": "Original GLB geometry, materials and embedded texture bytes preserved exactly; root metadata updated for publication. Editable sources reopened and packed image and interface paths sanitized.",
+    "previewLighting": "Neutral white lights; Blender Standard view transform, exposure -1.65. Lighting differs from the neutral release previews; no geometry change."
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/mega-drive-sonic-the-hedgehog/previews/0.1.0/hero.png",
+      "bytes": 1054692,
+      "sha256": "2fc3469202e11ecb630041de1fab656ca14d0c451721f6ae6bbebb36796b6ccb"
+    },
+    {
+      "view": "top",
+      "path": "assets/mega-drive-sonic-the-hedgehog/previews/0.1.0/top.png",
+      "bytes": 1075008,
+      "sha256": "29fa79b84e682eefc77ff706ceea8186e3bdef3921e919795162b7fd19c7c7bc"
+    },
+    {
+      "view": "bottom",
+      "path": "assets/mega-drive-sonic-the-hedgehog/previews/0.1.0/bottom.png",
+      "bytes": 913138,
+      "sha256": "f62ac3d54d386838b619b989eed083e07545667c93eab31c2ec0bef5f2762b07"
+    },
+    {
+      "view": "rear",
+      "path": "assets/mega-drive-sonic-the-hedgehog/previews/0.1.0/rear.png",
+      "bytes": 940979,
+      "sha256": "5fb602597d4dd9ca709507bfee20126f9414918b3f7f053a20305b57b342d9ba"
+    }
+  ],
+  "release": {
+    "tag": "mega-drive-sonic-the-hedgehog-v0.1.0",
+    "archive": {
+      "name": "mega-drive-sonic-the-hedgehog-0.1.0.zip",
+      "bytes": 7835006,
+      "sha256": "c9d6da083f29b2077c6bfb4d1d557549fee812c0a85f463a20977ee7aee437d8",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/mega-drive-sonic-the-hedgehog-v0.1.0/mega-drive-sonic-the-hedgehog-0.1.0.zip"
+    }
+  },
+  "files": {
+    "CREDITS.md": {
+      "bytes": 1856,
+      "sha256": "efb904bbd28c69ec5e6024a5be3b97778646cbb64ae8cc1524d43368760d604d"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 1994,
+      "sha256": "d9995e57d2c33374dd18363a753d2b9a8c1be46603fb4d8acc7aa6cf2a82291e"
+    },
+    "README.md": {
+      "bytes": 2079,
+      "sha256": "1eee875cd83889a5e25e17c677a33d90e1f9e3f443e45ddf232008c47b575863"
+    },
+    "artwork-provenance.json": {
+      "bytes": 1068,
+      "sha256": "5419aea980e52c79737a6f1462d45fb04c2a129781137cb15ca71db4ca13c690"
+    },
+    "bottom.png": {
+      "bytes": 913138,
+      "sha256": "f62ac3d54d386838b619b989eed083e07545667c93eab31c2ec0bef5f2762b07"
+    },
+    "hero.png": {
+      "bytes": 1054692,
+      "sha256": "2fc3469202e11ecb630041de1fab656ca14d0c451721f6ae6bbebb36796b6ccb"
+    },
+    "mega-drive-sonic-the-hedgehog.blend": {
+      "bytes": 3450977,
+      "sha256": "1425e47b29bed56535e013ef068f59ee67eddbfee0c1604e43717bd4c679b398"
+    },
+    "mega-drive-sonic-the-hedgehog.glb": {
+      "bytes": 2512680,
+      "sha256": "7023ad270bb2d067fbd447e85f6daaa4ccf0ead625105aa63a314d1a7e316287"
+    },
+    "rear.png": {
+      "bytes": 940979,
+      "sha256": "5fb602597d4dd9ca709507bfee20126f9414918b3f7f053a20305b57b342d9ba"
+    },
+    "top.png": {
+      "bytes": 1075008,
+      "sha256": "29fa79b84e682eefc77ff706ceea8186e3bdef3921e919795162b7fd19c7c7bc"
+    }
+  }
+}

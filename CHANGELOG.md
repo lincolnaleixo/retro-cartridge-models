@@ -4,6 +4,8 @@ Model release histories also live in `assets/<asset-id>/CHANGELOG.md`.
 
 ## Unreleased
 
+- Added the first public [Sonic the Hedgehog Mega Drive example 0.1.0](assets/mega-drive-sonic-the-hedgehog/CHANGELOG.md) and [Crash Bandicoot PlayStation disc example 0.1.0](assets/playstation-1-crash-bandicoot/CHANGELOG.md), dated 2026-10-13. Added independent catalog entries, manifests, previews and versioned release packages while preserving every neutral release. Documented photographic sources, approximate AI color restoration and third-party license exclusions; the artwork tool remains local by default. The complete catalog validates six assets and seven versions, both versioned ZIPs pass package verification, and the published GLB geometry/material/texture bytes match the inspected local examples. Removed host paths from the editable sources.
+
 - Improved local printed artwork color fidelity with explicit sRGB inputs and lower dielectric specular reflection. Record the print-material settings in provenance; preserve source pixels and immutable neutral release packages. Regenerated examples pass GLB/UV inspection (12,152 Mega Drive and 8,704 PlayStation triangles), packed-source reopening in Blender and Godot 4.7.2 import. Catalog validation still passes four assets and five versions.
 
 - Published neutral Mega Drive cartridge and standalone PlayStation CD 0.1.0 packages. Replaced the default PlayStation case with a 120 mm CD and annular front-only artwork target. Added owner-supplied Sonic/Crash artwork mapping with provenance; no third-party scans are distributed.
