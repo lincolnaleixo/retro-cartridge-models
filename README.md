@@ -16,6 +16,8 @@ Rotate each model on a black background, inspect six camera angles, browse rende
 | [SNES — Super Mario World example](assets/snes-super-mario-world/README.md) | 0.1.1 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/snes-super-mario-world-v0.1.1) | [Changelog](assets/snes-super-mario-world/CHANGELOG.md) |
 | [Mega Drive — western cartridge](assets/mega-drive/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/mega-drive-v0.1.0) | [Changelog](assets/mega-drive/CHANGELOG.md) |
 | [PlayStation 1 — standalone CD](assets/playstation-1/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/playstation-1-v0.1.0) | [Changelog](assets/playstation-1/CHANGELOG.md) |
+| [Mega Drive — Sonic the Hedgehog example](assets/mega-drive-sonic-the-hedgehog/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/mega-drive-sonic-the-hedgehog-v0.1.0) | [Changelog](assets/mega-drive-sonic-the-hedgehog/CHANGELOG.md) |
+| [PlayStation 1 — Crash Bandicoot disc example](assets/playstation-1-crash-bandicoot/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/playstation-1-crash-bandicoot-v0.1.0) | [Changelog](assets/playstation-1-crash-bandicoot/CHANGELOG.md) |
 
 ### Super Mario World example
 
@@ -29,7 +31,7 @@ The initial public model uses neutral, unprinted labels. It includes the curved 
 
 ### Mega Drive and PlayStation
 
-The [Mega Drive cartridge](assets/mega-drive/README.md) and [standalone PlayStation CD](assets/playstation-1/README.md) now have neutral 0.1.0 packages in the catalog. PlayStation uses only the CD; the earlier case study remains historical source. [Owner-supplied Sonic and Crash artwork](docs/owner-artwork.md) can be applied locally without changing the released neutral models.
+The [Mega Drive cartridge](assets/mega-drive/README.md) and [standalone PlayStation CD](assets/playstation-1/README.md) have neutral 0.1.0 packages in the catalog. PlayStation uses only the CD; the earlier case study remains historical source. Separate 0.1.0 textured examples provide [Sonic the Hedgehog](assets/mega-drive-sonic-the-hedgehog/README.md) and [Crash Bandicoot](assets/playstation-1-crash-bandicoot/README.md), with editable Blender sources and self-contained GLBs. Sonic uses the original-resolution photographic label; Crash uses an approximately restored orange and blue-violet print. Their credits identify sources and third-party rights exclusions. The neutral models stay unchanged, and the [artwork mapping tool](docs/owner-artwork.md) still supports local studies.
 
 The geometry follows [documented dimensional evidence](docs/measurement-evidence-2026-10-02.json). These are visualization reconstructions, not certified replacement parts. The SNES surface refinement remains development work; its published baseline is unchanged.
 

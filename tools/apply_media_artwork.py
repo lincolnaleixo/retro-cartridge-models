@@ -20,12 +20,18 @@ import create_media_models as api
 def texture(path, name):
     image = bpy.data.images.load(str(path.resolve()), check_existing=True)
     image.name = name
+    # Printed artwork is display-referred color, not a scalar/material map.
+    image.colorspace_settings.name = 'sRGB'
     image.pack()
-    mat = api.material(name, (1, 1, 1), roughness=.52)
+    mat = api.material(name, (1, 1, 1), roughness=.68)
+    shader = mat.node_tree.nodes.get('Principled BSDF')
+    # Keep broad white highlights from washing out printed dark ink. This
+    # exports as KHR_materials_specular; the optical substrate stays separate.
+    shader.inputs['Specular IOR Level'].default_value = .18
     node = mat.node_tree.nodes.new('ShaderNodeTexImage')
     node.image = image
     node.extension = 'EXTEND'
-    mat.node_tree.links.new(node.outputs['Color'], mat.node_tree.nodes.get('Principled BSDF').inputs['Base Color'])
+    mat.node_tree.links.new(node.outputs['Color'], shader.inputs['Base Color'])
     return mat
 
 
@@ -76,6 +82,7 @@ def main():
         'inputs': [{'sha256': hashlib.sha256(p.read_bytes()).hexdigest(), 'bytes': p.stat().st_size} for p in inputs],
         'frontRect': args.front_rect, 'topRect': args.top_rect if args.top else None,
         'method': 'UV mapping only; original image bytes unmodified',
+        'printMaterial': {'colorSpace': 'sRGB', 'roughness': .68, 'specularIORLevel': .18, 'metallic': 0},
     }, indent=2) + '\n')
 
 

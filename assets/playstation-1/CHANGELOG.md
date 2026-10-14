@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Corrected the local owner-artwork material: explicit sRGB color textures, roughness 0.68 and a reduced dielectric specular lobe prevent broad highlights from bleaching the printed ink. Source image pixels and published neutral 0.1.0 assets are unchanged. The regenerated local GLB passes integrity/UV inspection (8,704 triangles) and Godot 4.7.2 import; the editable Blender source reopens with packed sRGB artwork.
+
 - 0.1.0: changed the primary representation to a standalone CD. Removed the case from default generation, preserved the 15 mm hole and dark reading face, and added a separate annular FrontLabel. No rear artwork surface. Five meshes, 8,704 triangles; owner-provided Crash Bandicoot artwork supported separately.
 
 - Refined the clear polystyrene with lower alpha and roughness, outward-facing culling and corrected solid orientation. This reduces layered haze in Godot Compatibility while retaining transmission for other renderers; transparency still depends on scene lighting and object sorting.

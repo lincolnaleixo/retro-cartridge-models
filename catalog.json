@@ -46,6 +46,28 @@
       "description": "A standalone CD with a true center hole, transparent hub and dark reading face.",
       "credits": "assets/playstation-1/CREDITS.md",
       "rights": "Original contributions: CC BY-NC-ND 4.0. Hardware marks excluded; no game artwork included."
+    },
+    {
+      "id": "mega-drive-sonic-the-hedgehog",
+      "title": "Mega Drive — Sonic the Hedgehog example",
+      "latest": "0.1.0",
+      "manifest": "assets/mega-drive-sonic-the-hedgehog/versions/0.1.0.json",
+      "displayTitle": "Sonic the Hedgehog",
+      "kind": "TEXTURED EXAMPLE · MEGA DRIVE",
+      "description": "Sonic the Hedgehog on the western Mega Drive shell, with original-resolution photographic artwork across the front and folded top label.",
+      "credits": "assets/mega-drive-sonic-the-hedgehog/CREDITS.md",
+      "rights": "Original contributions only. Sonic the Hedgehog artwork, SEGA marks and source photography are excluded; see CREDITS.md and NOTICE.md."
+    },
+    {
+      "id": "playstation-1-crash-bandicoot",
+      "title": "PlayStation 1 — Crash Bandicoot disc example",
+      "latest": "0.1.0",
+      "manifest": "assets/playstation-1-crash-bandicoot/versions/0.1.0.json",
+      "displayTitle": "Crash Bandicoot",
+      "kind": "TEXTURED EXAMPLE · PLAYSTATION",
+      "description": "The standalone Crash Bandicoot SCUS-94900 CD with an approximately restored orange and blue-violet label, clear hub and dark reading face.",
+      "credits": "assets/playstation-1-crash-bandicoot/CREDITS.md",
+      "rights": "Original contributions only. Crash Bandicoot artwork, PlayStation and other third-party marks, scan and reference photography are excluded; see CREDITS.md and NOTICE.md."
     }
   ]
 }

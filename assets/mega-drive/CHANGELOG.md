@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Corrected the local owner-artwork material: explicit sRGB color textures, roughness 0.68 and a reduced dielectric specular lobe prevent broad highlights from bleaching the printed ink. Source image pixels and published neutral 0.1.0 assets are unchanged. The regenerated local GLB passes integrity/UV inspection (12,152 triangles) and Godot 4.7.2 import; the editable Blender source reopens with packed sRGB artwork.
+
 - 0.1.0: packaged the reconstructed neutral western shell with original ABS textures, editable source, GLB and reviewed export views. Added local owner-label mapping for Sonic the Hedgehog.
 
 - Replaced the Blender-only Noise/Bump ABS shader, which disappeared during GLB export, with original periodic normal and roughness PNGs. All three 512 × 512 maps are packed in the editable source and embedded in the GLB. An 8 mm repeating surface UV map preserves consistent grain scale separately from the artwork. The front remains satin; the rear is subtly more matte. Grain strength is a restrained visual approximation, with no copied texture or added scratches.

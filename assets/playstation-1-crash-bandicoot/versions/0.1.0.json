@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center"
+  },
+  "nominalDimensionsMm": [
+    120,
+    120,
+    1.2
+  ],
+  "measurementBasis": "Visualization reconstruction; see asset credits and measurement evidence.",
+  "id": "playstation-1-crash-bandicoot",
+  "version": "0.1.0",
+  "title": "PlayStation 1 \u2014 Crash Bandicoot disc example",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions only. Crash Bandicoot artwork, PlayStation and other third-party marks, scan and reference photography are excluded; see CREDITS.md and NOTICE.md.",
+  "date": "2026-10-13",
+  "changes": [
+    "First separately versioned Crash Bandicoot (1996), SCUS-94900 standalone disc example; neutral playstation-1 0.1.0 remains unchanged.",
+    "Applied AI-assisted approximate color restoration to the flat scan, using a photographed physical disc to replace its pink cast with an orange field, blue-violet ink and neutral gray silver areas. Fine lettering may differ from the original scan.",
+    "Used sRGB artwork, roughness 0.68 and reduced print specular reflection. Silver print areas use gray albedo rather than a per-pixel metallic mask; the center hole, clear hub and dark reading face are preserved."
+  ],
+  "validation": {
+    "meshes": 5,
+    "triangles": 8704,
+    "materials": 4,
+    "images": 2,
+    "embeddedImages": 2,
+    "externalImages": 0,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "godot": {
+      "version": "4.7.2",
+      "headlessImport": "passed",
+      "surfaceInspection": "Embedded artwork, UVs and separate print surfaces verified; label specular compensated in the consumer because the importer ignores KHR_materials_specular."
+    },
+    "publicationPreparation": "Original GLB geometry, materials and embedded texture bytes preserved exactly; root metadata updated for publication. Editable sources reopened and packed image and interface paths sanitized.",
+    "previewLighting": "Neutral white lights; Blender Standard view transform, exposure -1.65. Lighting differs from the neutral release previews; no geometry change."
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/playstation-1-crash-bandicoot/previews/0.1.0/hero.png",
+      "bytes": 1267712,
+      "sha256": "4af5bcef279c1da0ff5f5eb8f7c36803efe581fdabae395003dcf6807a4b6532"
+    },
+    {
+      "view": "top",
+      "path": "assets/playstation-1-crash-bandicoot/previews/0.1.0/top.png",
+      "bytes": 1175806,
+      "sha256": "7cc3e57513dda06cd2bf49b48c16a18a49ec876dd252b9ec1bafe0e4828eecc1"
+    },
+    {
+      "view": "bottom",
+      "path": "assets/playstation-1-crash-bandicoot/previews/0.1.0/bottom.png",
+      "bytes": 1226980,
+      "sha256": "fcd2dbeec3903ca6b796fc4f4a332120699a1edbd443e034c48752356eb778e8"
+    },
+    {
+      "view": "rear",
+      "path": "assets/playstation-1-crash-bandicoot/previews/0.1.0/rear.png",
+      "bytes": 950411,
+      "sha256": "8977b560c95ccb5a6312a269c64d7e7f809bed4430ff25a8842055ce1db009c8"
+    }
+  ],
+  "release": {
+    "tag": "playstation-1-crash-bandicoot-v0.1.0",
+    "archive": {
+      "name": "playstation-1-crash-bandicoot-0.1.0.zip",
+      "bytes": 10848759,
+      "sha256": "380e01aa42a2d207d2d0c23aa75dc0bbf5a2bdef3a6330142ad4bf2b71b1c2dc",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/playstation-1-crash-bandicoot-v0.1.0/playstation-1-crash-bandicoot-0.1.0.zip"
+    }
+  },
+  "files": {
+    "CREDITS.md": {
+      "bytes": 2319,
+      "sha256": "1fd12ba2a84e6378df12a8e525299a52175087048d45a0a117846155be467a90"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 1994,
+      "sha256": "d9995e57d2c33374dd18363a753d2b9a8c1be46603fb4d8acc7aa6cf2a82291e"
+    },
+    "README.md": {
+      "bytes": 2172,
+      "sha256": "f4b685149dc900ba3c0c67284dbf352b85a7724453364ade098c565c56fe1d25"
+    },
+    "artwork-provenance.json": {
+      "bytes": 1010,
+      "sha256": "e3a39a9bacfeef02bd00b35a8445be7c8e98601d513bf009c7ad762246762e33"
+    },
+    "bottom.png": {
+      "bytes": 1226980,
+      "sha256": "fcd2dbeec3903ca6b796fc4f4a332120699a1edbd443e034c48752356eb778e8"
+    },
+    "hero.png": {
+      "bytes": 1267712,
+      "sha256": "4af5bcef279c1da0ff5f5eb8f7c36803efe581fdabae395003dcf6807a4b6532"
+    },
+    "playstation-1-crash-bandicoot.blend": {
+      "bytes": 4113016,
+      "sha256": "e4040237abafcbfa553596d570744b14a682f47a2cd25ce863499d15bf40c827"
+    },
+    "playstation-1-crash-bandicoot.glb": {
+      "bytes": 3413312,
+      "sha256": "afe6252cc190753371e2ce071803150a51bb448f137c719c5d117b45d08cf21b"
+    },
+    "rear.png": {
+      "bytes": 950411,
+      "sha256": "8977b560c95ccb5a6312a269c64d7e7f809bed4430ff25a8842055ce1db009c8"
+    },
+    "restoration-prompt.txt": {
+      "bytes": 1495,
+      "sha256": "1a314409700a745395af6a40ae02cabb07b1f4a076b8bad32233607f675c26a5"
+    },
+    "top.png": {
+      "bytes": 1175806,
+      "sha256": "7cc3e57513dda06cd2bf49b48c16a18a49ec876dd252b9ec1bafe0e4828eecc1"
+    }
+  }
+}
