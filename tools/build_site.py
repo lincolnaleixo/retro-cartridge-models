@@ -7,7 +7,7 @@ import subprocess
 import sys
 import zipfile
 from pathlib import Path
-from verify import ROOT, safe, verify_manifest, verify_package
+from verify import ROOT, manifest_path, preview_path, safe, verify_manifest, verify_package, version_manifests
 
 def main():
     output=ROOT/'_site'
@@ -17,9 +17,10 @@ def main():
     catalog=json.loads((ROOT/'catalog.json').read_text())
     gallery={'assets':[]};cards=[]
     for asset in catalog['assets']:
-        item={**asset,'versions':[]}
-        manifests=sorted((ROOT/'assets'/asset['id']/'versions').glob('*.json'),
-                         key=lambda p:tuple(map(int,p.stem.split('.'))),reverse=True)
+        directory=manifest_path(asset).parent.parent.relative_to(ROOT)
+        history_url=f'https://github.com/lincolnaleixo/retro-cartridge-models/blob/main/{directory.as_posix()}/CHANGELOG.md'
+        item={**asset,'historyUrl':history_url,'versions':[]}
+        manifests=version_manifests(asset)
         for path in manifests:
             m=verify_manifest(path)
             archive=ROOT/'.downloads'/m['id']/m['version']/safe(m['release']['archive']['name'])
@@ -33,7 +34,7 @@ def main():
                 (dest/'model.glb').write_bytes(z.read(models[0]))
             previews=[]
             for preview in m['previews']:
-                source=ROOT/safe(preview['path']);name=preview['view']+source.suffix
+                source=preview_path(m,preview);name=preview['view']+source.suffix
                 shutil.copy2(source,dest/name)
                 previews.append({'view':preview['view'],'url':(folder/name).as_posix()})
             item['versions'].append({'version':m['version'],'modelUrl':(folder/'model.glb').as_posix(),

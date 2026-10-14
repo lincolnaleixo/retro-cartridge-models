@@ -10,7 +10,9 @@ Version `0.x` identifies a developing reconstruction whose fidelity is still bei
 
 ## What belongs to a version
 
-Each `assets/<id>/versions/<version>.json` records the title, creator, license, axes, dimensions, mesh/material/texture counts, changes, preview hashes, package file hashes, and the release ZIP hash. The catalog points to exactly one latest version for each asset. Old manifests and preview folders are retained.
+Each `<asset-directory>/versions/<version>.json` records the title, creator, license, axes, dimensions, mesh/material/texture counts, changes, preview hashes, package file hashes, and the release ZIP hash. Neutral asset directories are `assets/templates/<console>/`; reproductions are `assets/reproductions/<console>/<game>/`. The catalog's `manifest` path locates the asset directory and points to exactly one latest version. Asset IDs identify releases independently of these directories. Old manifests and preview folders are retained.
+
+Published manifests and preview images moved into this hierarchy without changing their bytes. Historical manifests still record their original `assets/<id>/previews/...` paths. Repository tooling resolves those paths within the asset's current directory, derived from the catalog. The paths at published Git tags and the release downloads remain available unchanged. Consumers must use the catalog to locate current records instead of constructing directories from IDs.
 
 GitHub release packages hold the editable `.blend`, portable `.glb`, renders and notices. They are the binary snapshots for that version. Keeping binary snapshots out of ordinary Git prevents every model iteration from making all future clones substantially larger. GitHub supports release assets for distributing large files: https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github
 

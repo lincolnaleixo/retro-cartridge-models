@@ -1,12 +1,14 @@
 # Collection changelog
 
-Model release histories also live in `assets/<asset-id>/CHANGELOG.md`.
+Model release histories also live in each asset directory's `CHANGELOG.md`, under `assets/templates/<console>/` or `assets/reproductions/<console>/<game>/`.
 
 ## Unreleased
 
+- Moved the six actual asset directories into `assets/templates/<console>/` and `assets/reproductions/<console>/<game>/`, replacing the flat asset tree and removing the separate navigation-only folders. Updated catalog locations, documentation and tooling to resolve records through the catalog. Historical manifests and preview snapshots remain byte-identical; stable IDs, release tags, download URLs, package hashes and model import contracts are unchanged. Preview-path compatibility keeps the gallery, historical versions and offline library working with the relocated records; gallery history links now use the catalog location. Validation passed all 15 tooling tests, all seven release packages, all 33 unchanged published manifest/preview hashes, the full gallery and the 91-entry offline library inventory.
+
 - Added English library navigation under `reproductions/<console>/<game>/` and `templates/<console>/`, preserving canonical `assets/` paths and immutable releases. Added a dependency-free offline library builder that verifies current release packages, collects exact Blender/GLB sources, previews, notices and ZIPs, and writes an English visual index with a checksum inventory. The builder accepts a flat local ZIP cache and requires a new output directory to preserve existing user files. Validated all six current packages, 91 generated inventory entries and local HTML links; confirmed existing-folder protection, corrupt-cache refusal and safe relative paths. Catalog validation still passes six assets and seven versions.
 
-- Added the first public [Sonic the Hedgehog Mega Drive example 0.1.0](assets/mega-drive-sonic-the-hedgehog/CHANGELOG.md) and [Crash Bandicoot PlayStation disc example 0.1.0](assets/playstation-1-crash-bandicoot/CHANGELOG.md), dated 2026-10-13. Added independent catalog entries, manifests, previews and versioned release packages while preserving every neutral release. Documented photographic sources, approximate AI color restoration and third-party license exclusions; the artwork tool remains local by default. The complete catalog validates six assets and seven versions, both versioned ZIPs pass package verification, and the published GLB geometry/material/texture bytes match the inspected local examples. Removed host paths from the editable sources.
+- Added the first public [Sonic the Hedgehog Mega Drive example 0.1.0](assets/reproductions/mega-drive/sonic-the-hedgehog/CHANGELOG.md) and [Crash Bandicoot PlayStation disc example 0.1.0](assets/reproductions/playstation-1/crash-bandicoot/CHANGELOG.md), dated 2026-10-13. Added independent catalog entries, manifests, previews and versioned release packages while preserving every neutral release. Documented photographic sources, approximate AI color restoration and third-party license exclusions; the artwork tool remains local by default. The complete catalog validates six assets and seven versions, both versioned ZIPs pass package verification, and the published GLB geometry/material/texture bytes match the inspected local examples. Removed host paths from the editable sources.
 
 - Improved local printed artwork color fidelity with explicit sRGB inputs and lower dielectric specular reflection. Record the print-material settings in provenance; preserve source pixels and immutable neutral release packages. Regenerated examples pass GLB/UV inspection (12,152 Mega Drive and 8,704 PlayStation triangles), packed-source reopening in Blender and Godot 4.7.2 import. Catalog validation still passes four assets and five versions.
 
@@ -19,7 +21,7 @@ Model release histories also live in `assets/<asset-id>/CHANGELOG.md`.
 - Added `tools/refine_snes.py` to refine a verified SNES 0.1.0 source: small molded-edge bevels and packed ABS roughness grain reduce sharp highlights, while matte labels retain the original folded geometry and UVs. The tool renders matched before/after hero, top and bottom views without changing the released snapshot.
 - Added a dependency-free GLB inspection tool and malformed-asset checks for portable exports, finite bounds and usable front/rear label UVs.
 
-- Published the [Super Mario World example 0.1.1](assets/snes-super-mario-world/CHANGELOG.md) with standalone front and rear label exports derived from the published GLB, so a consumer can map the artwork onto the shared neutral `snes-ntsc-u` shell.
+- Published the [Super Mario World example 0.1.1](assets/reproductions/snes/super-mario-world/CHANGELOG.md) with standalone front and rear label exports derived from the published GLB, so a consumer can map the artwork onto the shared neutral `snes-ntsc-u` shell.
 - Translated all authored gallery text into English, including metadata, model descriptions, controls, accessibility labels, status/error messages and generated cards. Dimensions now use decimal points.
 - Translated the Super Mario World manifest's descriptive change notes at the owner's request; existing release tags, packages, binaries and checksums remain unchanged.
 - Added an English-only rule for future repository content, gallery copy and release notes.
@@ -35,6 +37,6 @@ Model release histories also live in `assets/<asset-id>/CHANGELOG.md`.
 
 ## 2026-09-09 — Initial public collection
 
-- Published the [SNES NTSC-U 0.1.0 baseline](assets/snes-ntsc-u/CHANGELOG.md), with neutral labels, editable Blender source, GLB and previews.
+- Published the [SNES NTSC-U 0.1.0 baseline](assets/templates/snes/CHANGELOG.md), with neutral labels, editable Blender source, GLB and previews.
 - Added independent model versions, release manifests, checksums, packaging tools and catalog validation in CI.
 - Established CC BY-NC-ND 4.0 licensing for original contributions with explicit attribution and third-party rights notices.

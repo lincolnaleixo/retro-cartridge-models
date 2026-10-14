@@ -10,7 +10,7 @@ This file is the single source of repository rules. Read it before changing any 
 
 Every change must update the root `CHANGELOG.md` in the same commit. This includes model geometry, materials, textures, UVs, renders, exports, metadata, scripts, automation, documentation, rules, configuration, fixes and deletions. Documentation-only changes and small corrections are not exempt.
 
-If a change affects a model or its files, also update `assets/<asset-id>/CHANGELOG.md` for each affected model. Describe what changed, why, and the visible or practical effect; record relevant validation and known limitations without claiming checks that were not run. Use concrete before/after details for visual changes.
+If a change affects a model or its files, also update `CHANGELOG.md` in that model's asset directory for each affected model. Neutral models live under `assets/templates/<console>/`; game reproductions live under `assets/reproductions/<console>/<game>/`. Resolve an asset's directory from its catalog manifest path, not its stable identifier. Describe what changed, why, and the visible or practical effect; record relevant validation and known limitations without claiming checks that were not run. Use concrete before/after details for visual changes.
 
 Put pending changes under `Unreleased`. When publishing a model release, move its pending asset notes into a dated version section and reference that version from the root changelog. Preserve previous entries. Documentation or tooling changes alone do not require inventing a new model version.
 

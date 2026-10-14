@@ -11,7 +11,7 @@ import urllib.request
 import zipfile
 from pathlib import Path, PurePosixPath
 
-from verify import ROOT, check_entry, safe, sha, verify_manifest, verify_package
+from verify import ROOT, check_entry, manifest_path, safe, sha, verify_manifest, verify_package
 
 REPOSITORY = "https://github.com/lincolnaleixo/retro-cartridge-models"
 # Only navigation lives here; versions and checksums come from the catalog.
@@ -123,8 +123,8 @@ def build(output, cache):
     packages = []
     for asset_id, folder in LAYOUT.items():
         asset = assets[asset_id]
-        manifest_path = ROOT / relative_path(asset["manifest"])
-        manifest = verify_manifest(manifest_path)
+        source_manifest = manifest_path(asset)
+        manifest = verify_manifest(source_manifest)
         if (manifest["id"], manifest["version"]) != (asset_id, asset["latest"]):
             raise ValueError("Catalog version mismatch")
         reserved = {"release-manifest.json", manifest["release"]["archive"]["name"]}
@@ -132,14 +132,14 @@ def build(output, cache):
             raise ValueError("Package conflicts with library metadata")
         for name in manifest["files"]:
             relative_path(name)
-        archive = release_archive(manifest_path, manifest, cache)
-        packages.append((asset, folder, manifest_path, manifest, archive))
+        archive = release_archive(source_manifest, manifest, cache)
+        packages.append((asset, folder, source_manifest, manifest, archive))
 
     # This exclusive creation happens only after every package has been verified.
     # Never delete or replace an existing user directory, including empty ones.
     output.mkdir(parents=True)
     records = []
-    for asset, folder, manifest_path, manifest, archive in packages:
+    for asset, folder, source_manifest, manifest, archive in packages:
         destination = output / relative_path(folder)
         destination.mkdir(parents=True)
         with zipfile.ZipFile(archive) as package:
@@ -152,7 +152,7 @@ def build(output, cache):
                 if name != "FILES.json":
                     check_entry(target, manifest["files"][name])
         shutil.copyfile(archive, destination / archive.name)
-        shutil.copyfile(manifest_path, destination / "release-manifest.json")
+        shutil.copyfile(source_manifest, destination / "release-manifest.json")
         files = manifest["files"]
         hero = next(p for p in manifest["previews"] if p["view"] == "hero")
         records.append({

@@ -24,6 +24,53 @@ def safe(name):
         raise ValueError(f'unsafe relative path: {name}')
     return name
 
+def catalog_asset(asset_id):
+    catalog=json.loads((ROOT/'catalog.json').read_text())
+    matches=[asset for asset in catalog['assets'] if asset['id']==asset_id]
+    if len(matches)!=1:raise ValueError(f'unknown or duplicate asset id: {asset_id}')
+    return matches[0]
+
+def manifest_path(asset,version=None):
+    """Locate releases by the catalog rather than by their stable asset ID."""
+    relative=PurePosixPath(safe(asset['manifest']))
+    if (relative.parts[0]!='assets' or relative.parent.name!='versions'
+            or len(relative.parts)<4 or relative.suffix!='.json'):
+        raise ValueError(f'invalid catalog manifest path: {relative}')
+    path=ROOT/relative
+    if version is not None:
+        if not SEMVER.fullmatch(version):raise ValueError('invalid version')
+        path=path.with_name(version+'.json')
+    if not path.resolve().is_relative_to((ROOT/'assets').resolve()):
+        raise ValueError(f'manifest escapes assets: {relative}')
+    return path
+
+def version_manifests(asset):
+    latest=manifest_path(asset)
+    paths=list(latest.parent.glob('*.json'))
+    if latest not in paths:raise ValueError(f'missing catalog manifest: {latest}')
+    if any(not SEMVER.fullmatch(path.stem) for path in paths):
+        raise ValueError(f'invalid version filename in {latest.parent}')
+    return sorted(paths,key=lambda path:tuple(map(int,path.stem.split('.'))),reverse=True)
+
+def preview_path(manifest,preview):
+    """Resolve immutable release paths after a catalog directory relocation.
+
+    Historical manifests retain assets/<id>/previews/... exactly as published.
+    New manifests may use the current catalog directory. Neither form may read
+    another asset, leave the preview directory or follow an escaping symlink.
+    """
+    directory=manifest_path(catalog_asset(manifest['id'])).parent.parent
+    relative=PurePosixPath(safe(preview['path']))
+    prefixes=(PurePosixPath(directory.relative_to(ROOT).as_posix()),
+              PurePosixPath('assets')/manifest['id'])
+    for prefix in prefixes:
+        if relative.is_relative_to(prefix/'previews'):
+            path=directory/'previews'/relative.relative_to(prefix/'previews')
+            if path.resolve().is_relative_to(directory.resolve()/'previews'):
+                return path
+            raise ValueError(f'preview escapes asset directory: {relative}')
+    raise ValueError(f'preview belongs to a different asset: {relative}')
+
 def check_entry(path,entry):
     if path.stat().st_size!=entry['bytes'] or sha(path)!=entry['sha256']:
         raise ValueError(f'checksum/size mismatch: {path}')
@@ -34,7 +81,7 @@ def verify_manifest(path):
     if m['license']!='CC-BY-NC-ND-4.0':raise ValueError('unexpected license')
     if not m['creator'] or not m['changes']:raise ValueError('missing attribution or changes')
     if m['release']['tag']!=f"{m['id']}-v{m['version']}":raise ValueError('tag mismatch')
-    for entry in m['previews']:check_entry(ROOT/safe(entry['path']),entry)
+    for entry in m['previews']:check_entry(preview_path(m,entry),entry)
     for name,entry in m['files'].items():
         safe(name)
         if not re.fullmatch('[a-f0-9]{64}',entry['sha256']) or entry['bytes']<=0:raise ValueError(name)
@@ -68,7 +115,8 @@ def main():
     if a.download:
         asset,version=a.download
         if not re.fullmatch('[a-z0-9-]+',asset) or not SEMVER.fullmatch(version):raise ValueError('invalid asset/version')
-        path=ROOT/'assets'/asset/'versions'/(version+'.json');m=verify_manifest(path)
+        path=manifest_path(catalog_asset(asset),version);m=verify_manifest(path)
+        if (m['id'],m['version'])!=(asset,version):raise ValueError('requested release mismatch')
         archive=m['release']['archive'];url=archive['url']
         expected=f"https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/{m['release']['tag']}/"
         if not url.startswith(expected):raise ValueError('unexpected release host/path')
@@ -81,9 +129,9 @@ def main():
     catalog=json.loads((ROOT/'catalog.json').read_text());seen=set();count=0
     for asset in catalog['assets']:
         if asset['id'] in seen:raise ValueError('duplicate asset id')
-        seen.add(asset['id']);latest=verify_manifest(ROOT/safe(asset['manifest']))
+        seen.add(asset['id']);latest=verify_manifest(manifest_path(asset))
         if (latest['id'],latest['version'])!=(asset['id'],asset['latest']):raise ValueError('catalog version mismatch')
-        for path in (ROOT/'assets'/asset['id']/'versions').glob('*.json'):
+        for path in version_manifests(asset):
             m=verify_manifest(path)
             if path.stem!=m['version'] or m['id']!=asset['id']:raise ValueError(path)
             count+=1
