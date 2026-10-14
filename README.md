@@ -6,24 +6,25 @@ Versioned 3D cartridge reconstructions by **Lincoln Aleixo**. Each model has edi
 
 Rotate each model on a black background, inspect six camera angles, browse renders and select published versions on desktop or mobile.
 
-![SNES cartridge — neutral labels](assets/snes-ntsc-u/previews/0.1.0/hero.png)
+![SNES cartridge — neutral labels](assets/templates/snes/previews/0.1.0/hero.png)
 
 ## Organized library
 
-Browse [reproductions](reproductions/README.md) by console and game, or [templates](templates/README.md) by console:
+Browse [reproductions](assets/reproductions/README.md) by console and game, or [templates](assets/templates/README.md) by console:
 
 ```text
-reproductions/
-├── snes/super-mario-world/
-├── mega-drive/sonic-the-hedgehog/
-└── playstation-1/crash-bandicoot/
-templates/
-├── snes/
-├── mega-drive/
-└── playstation-1/
+assets/
+├── reproductions/
+│   ├── snes/super-mario-world/
+│   ├── mega-drive/sonic-the-hedgehog/
+│   └── playstation-1/crash-bandicoot/
+└── templates/
+    ├── snes/
+    ├── mega-drive/
+    └── playstation-1/
 ```
 
-The repository folders provide English navigation to the canonical asset records. To create a complete offline folder with the actual files, run:
+These are the actual asset directories. Each contains the model's documentation, credits, changelog, version manifests and preview images. The catalog points directly to this hierarchy. Editable Blender sources and GLB exports remain in their verified release packages. To collect those files in the same console/game layout for offline use, run:
 
 ```sh
 python3 tools/build_library.py
@@ -37,24 +38,24 @@ Use a different destination or a local ZIP cache when needed:
 python3 tools/build_library.py --output dist/library-review --cache-dir path/to/release-zips
 ```
 
-The cache accepts the original ZIP filenames directly, such as `mega-drive-0.1.0.zip`. Missing packages are downloaded from their immutable GitHub release URLs. Existing cache files must pass verification. The output must be a new directory: the builder never overwrites an existing folder, even if empty. Generated binaries stay in ignored `dist/` by default; commit the navigation and tooling, not local library exports. Templates retain their published licensing terms, and reproductions retain explicit third-party artwork exclusions.
+The cache accepts the original ZIP filenames directly, such as `mega-drive-0.1.0.zip`. Missing packages are downloaded from their immutable GitHub release URLs. Existing cache files must pass verification. The output must be a new directory: the builder never overwrites an existing folder, even if empty. Generated binaries stay in ignored `dist/` by default. Git tracks the asset records, previews and tooling; release packages hold the model binaries. Templates retain their published licensing terms, and reproductions retain explicit third-party artwork exclusions.
 
 ## Models
 
 | Model | Current version | Files | Changes |
 | --- | --- | --- | --- |
-| [SNES — early North American shell](assets/snes-ntsc-u/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/snes-ntsc-u-v0.1.0) | [Changelog](assets/snes-ntsc-u/CHANGELOG.md) |
-| [SNES — Super Mario World example](assets/snes-super-mario-world/README.md) | 0.1.1 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/snes-super-mario-world-v0.1.1) | [Changelog](assets/snes-super-mario-world/CHANGELOG.md) |
-| [Mega Drive — western cartridge](assets/mega-drive/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/mega-drive-v0.1.0) | [Changelog](assets/mega-drive/CHANGELOG.md) |
-| [PlayStation 1 — standalone CD](assets/playstation-1/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/playstation-1-v0.1.0) | [Changelog](assets/playstation-1/CHANGELOG.md) |
-| [Mega Drive — Sonic the Hedgehog example](assets/mega-drive-sonic-the-hedgehog/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/mega-drive-sonic-the-hedgehog-v0.1.0) | [Changelog](assets/mega-drive-sonic-the-hedgehog/CHANGELOG.md) |
-| [PlayStation 1 — Crash Bandicoot disc example](assets/playstation-1-crash-bandicoot/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/playstation-1-crash-bandicoot-v0.1.0) | [Changelog](assets/playstation-1-crash-bandicoot/CHANGELOG.md) |
+| [SNES — early North American shell](assets/templates/snes/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/snes-ntsc-u-v0.1.0) | [Changelog](assets/templates/snes/CHANGELOG.md) |
+| [SNES — Super Mario World example](assets/reproductions/snes/super-mario-world/README.md) | 0.1.1 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/snes-super-mario-world-v0.1.1) | [Changelog](assets/reproductions/snes/super-mario-world/CHANGELOG.md) |
+| [Mega Drive — western cartridge](assets/templates/mega-drive/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/mega-drive-v0.1.0) | [Changelog](assets/templates/mega-drive/CHANGELOG.md) |
+| [PlayStation 1 — standalone CD](assets/templates/playstation-1/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/playstation-1-v0.1.0) | [Changelog](assets/templates/playstation-1/CHANGELOG.md) |
+| [Mega Drive — Sonic the Hedgehog example](assets/reproductions/mega-drive/sonic-the-hedgehog/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/mega-drive-sonic-the-hedgehog-v0.1.0) | [Changelog](assets/reproductions/mega-drive/sonic-the-hedgehog/CHANGELOG.md) |
+| [PlayStation 1 — Crash Bandicoot disc example](assets/reproductions/playstation-1/crash-bandicoot/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/playstation-1-crash-bandicoot-v0.1.0) | [Changelog](assets/reproductions/playstation-1/crash-bandicoot/CHANGELOG.md) |
 
 ### Super Mario World example
 
-[![Super Mario World example](assets/snes-super-mario-world/previews/0.1.0/hero.png)](https://lincolnaleixo.github.io/retro-cartridge-models/#snes-super-mario-world)
+[![Super Mario World example](assets/reproductions/snes/super-mario-world/previews/0.1.0/hero.png)](https://lincolnaleixo.github.io/retro-cartridge-models/#snes-super-mario-world)
 
-The existing textured demonstration is also available in the gallery and as its own versioned package. Nintendo artwork and marks are excluded from the original-contributions license; [source credits and rights scope](assets/snes-super-mario-world/CREDITS.md) remain explicit.
+The existing textured demonstration is also available in the gallery and as its own versioned package. Nintendo artwork and marks are excluded from the original-contributions license; [source credits and rights scope](assets/reproductions/snes/super-mario-world/CREDITS.md) remain explicit.
 
 The initial public model uses neutral, unprinted labels. It includes the curved top, the label folded around that curve, rounded side details, and blind lower latch recesses with solid backing. Dimensions are estimates from physical references, not official manufacturing drawings.
 
@@ -62,7 +63,7 @@ The initial public model uses neutral, unprinted labels. It includes the curved 
 
 ### Mega Drive and PlayStation
 
-The [Mega Drive cartridge](assets/mega-drive/README.md) and [standalone PlayStation CD](assets/playstation-1/README.md) have neutral 0.1.0 packages in the catalog. PlayStation uses only the CD; the earlier case study remains historical source. Separate 0.1.0 textured examples provide [Sonic the Hedgehog](assets/mega-drive-sonic-the-hedgehog/README.md) and [Crash Bandicoot](assets/playstation-1-crash-bandicoot/README.md), with editable Blender sources and self-contained GLBs. Sonic uses the original-resolution photographic label; Crash uses an approximately restored orange and blue-violet print. Their credits identify sources and third-party rights exclusions. The neutral models stay unchanged, and the [artwork mapping tool](docs/owner-artwork.md) still supports local studies.
+The [Mega Drive cartridge](assets/templates/mega-drive/README.md) and [standalone PlayStation CD](assets/templates/playstation-1/README.md) have neutral 0.1.0 packages in the catalog. PlayStation uses only the CD; the earlier case study remains historical source. Separate 0.1.0 textured examples provide [Sonic the Hedgehog](assets/reproductions/mega-drive/sonic-the-hedgehog/README.md) and [Crash Bandicoot](assets/reproductions/playstation-1/crash-bandicoot/README.md), with editable Blender sources and self-contained GLBs. Sonic uses the original-resolution photographic label; Crash uses an approximately restored orange and blue-violet print. Their credits identify sources and third-party rights exclusions. The neutral models stay unchanged, and the [artwork mapping tool](docs/owner-artwork.md) still supports local studies.
 
 The geometry follows [documented dimensional evidence](docs/measurement-evidence-2026-10-02.json). These are visualization reconstructions, not certified replacement parts. The SNES surface refinement remains development work; its published baseline is unchanged.
 

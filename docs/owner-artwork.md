@@ -2,7 +2,7 @@
 
 Publish the model repository first; consumers pin its released GLBs and do not recreate geometry. The reusable `tools/apply_media_artwork.py` tool applies a supplied label locally and exports a self-contained GLB and packed Blender source. It does not download artwork or publish its output. Local generation remains the default; future publication is a separate maintainer decision subject to the repository's rights and attribution rules.
 
-The [Sonic the Hedgehog Mega Drive example](../assets/mega-drive-sonic-the-hedgehog/README.md) and [Crash Bandicoot PlayStation disc example](../assets/playstation-1-crash-bandicoot/README.md) each have a separate 0.1.0 release, manifest and source credits. They preserve the neutral `mega-drive` and `playstation-1` releases. The collection license applies to original modeling contributions; included third-party artwork remains outside its scope.
+The [Sonic the Hedgehog Mega Drive example](../assets/reproductions/mega-drive/sonic-the-hedgehog/README.md) and [Crash Bandicoot PlayStation disc example](../assets/reproductions/playstation-1/crash-bandicoot/README.md) each have a separate 0.1.0 release, manifest and source credits. They preserve the neutral `mega-drive` and `playstation-1` releases. The collection license applies to original modeling contributions; included third-party artwork remains outside its scope.
 
 ```sh
 blender --factory-startup -b --python tools/apply_media_artwork.py -- --model mega-drive --front /path/to/unfolded-label.png --title "Sonic the Hedgehog (1991)" --output dist/owner-examples/mega-drive

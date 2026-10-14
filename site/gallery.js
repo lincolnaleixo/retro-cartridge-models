@@ -21,7 +21,7 @@ function loadVersion(version) {
   $('description').textContent = selected.description;
   $('dimensions').textContent = entry.dimensions.map((n) => n.toFixed(1)).join(' × ') + ' mm · approx.';
   $('download').href = entry.releaseUrl;
-  $('history').href = `${repo}/blob/main/assets/${selected.id}/CHANGELOG.md`;
+  $('history').href = selected.historyUrl;
   $('credits').href = `${repo}/blob/main/${selected.credits}`;
   $('rights').textContent = selected.rights;
   $('changes').replaceChildren(...entry.changes.map((text) => { const li=document.createElement('li');li.textContent=text;return li; }));
