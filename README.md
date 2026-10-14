@@ -8,6 +8,37 @@ Rotate each model on a black background, inspect six camera angles, browse rende
 
 ![SNES cartridge — neutral labels](assets/snes-ntsc-u/previews/0.1.0/hero.png)
 
+## Organized library
+
+Browse [reproductions](reproductions/README.md) by console and game, or [templates](templates/README.md) by console:
+
+```text
+reproductions/
+├── snes/super-mario-world/
+├── mega-drive/sonic-the-hedgehog/
+└── playstation-1/crash-bandicoot/
+templates/
+├── snes/
+├── mega-drive/
+└── playstation-1/
+```
+
+The repository folders provide English navigation to the canonical asset records. To create a complete offline folder with the actual files, run:
+
+```sh
+python3 tools/build_library.py
+```
+
+Open `dist/library/index.html` for the visual index. Each game or console folder contains the current released Blender source, GLB, previews, credits, original ZIP and `release-manifest.json`. The builder verifies archive and payload checksums before copying files; `inventory.json` records every generated file except itself. The current versions come from `catalog.json`, and existing release packages remain unchanged.
+
+Use a different destination or a local ZIP cache when needed:
+
+```sh
+python3 tools/build_library.py --output dist/library-review --cache-dir path/to/release-zips
+```
+
+The cache accepts the original ZIP filenames directly, such as `mega-drive-0.1.0.zip`. Missing packages are downloaded from their immutable GitHub release URLs. Existing cache files must pass verification. The output must be a new directory: the builder never overwrites an existing folder, even if empty. Generated binaries stay in ignored `dist/` by default; commit the navigation and tooling, not local library exports. Templates retain their published licensing terms, and reproductions retain explicit third-party artwork exclusions.
+
 ## Models
 
 | Model | Current version | Files | Changes |

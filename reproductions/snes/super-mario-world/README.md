@@ -1,0 +1,12 @@
+# Super Mario World — SNES reproduction
+
+This folder is the library entry for [`snes-super-mario-world`](../../../assets/snes-super-mario-world/README.md). The versioned asset record remains in `assets/snes-super-mario-world/` so existing downloads and RetroLife integrations stay compatible.
+
+- [Model documentation](../../../assets/snes-super-mario-world/README.md)
+- [Release history](../../../assets/snes-super-mario-world/CHANGELOG.md)
+- [Public 3D gallery](https://lincolnaleixo.github.io/retro-cartridge-models/#snes-super-mario-world)
+- [Published packages](https://github.com/lincolnaleixo/retro-cartridge-models/releases?q=snes-super-mario-world-v)
+
+Run `python3 tools/build_library.py` from the repository root to download and verify the current release. The offline library places its editable Blender source, GLB export, previews, credits, exact release ZIP and manifest together in `dist/library/reproductions/snes/super-mario-world/`.
+
+See the [library instructions](../../../README.md#organized-library) for custom output and cache paths. Read the packaged license and credits before reuse; this folder classification does not change any rights grant.
