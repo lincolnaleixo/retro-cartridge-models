@@ -19,9 +19,13 @@ LAYOUT = {
     "snes-super-mario-world": "reproductions/snes/super-mario-world",
     "mega-drive-sonic-the-hedgehog": "reproductions/mega-drive/sonic-the-hedgehog",
     "playstation-1-crash-bandicoot": "reproductions/playstation-1/crash-bandicoot",
+    "nintendo-64-super-mario-64": "reproductions/nintendo-64/super-mario-64",
+    "nes-super-mario-bros": "reproductions/nes/super-mario-bros",
     "snes-ntsc-u": "templates/snes",
     "mega-drive": "templates/mega-drive",
     "playstation-1": "templates/playstation-1",
+    "nintendo-64": "templates/nintendo-64",
+    "nes": "templates/nes",
 }
 
 

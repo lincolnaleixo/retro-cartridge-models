@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create original, neutral-label Mega Drive and PlayStation game media.
+"""Create original, neutral-label retro cartridge and disc models.
 
 Run with Blender, not system Python:
   blender -b --python tools/create_media_models.py -- --output dist/development
@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import bpy
 from mathutils import Matrix, Vector
+from source_paths import sanitize_source_paths
 
 MM = 0.001
 ROOT = None
@@ -160,7 +161,7 @@ def reset(root_name):
     ROOT['units'] = 'meters'
     ROOT['axes'] = 'X right, Y up, +Z front'
     ROOT['pivot'] = 'bottom center of nominal closed envelope'
-    ROOT['status'] = 'unreleased reference-based reconstruction; see dimensional sources'
+    ROOT['status'] = 'reference-based visualization; see dimensional sources'
     bpy.context.scene.unit_settings.system = 'METRIC'
     return ROOT
 
@@ -173,6 +174,20 @@ def mega_drive():
 def playstation():
     from media_playstation_disc import build
     return build(sys.modules[__name__])
+
+
+def nintendo_64():
+    from media_nintendo_64 import build
+    return build(sys.modules[__name__])
+
+
+def nes():
+    from media_nes import build
+    return build(sys.modules[__name__])
+
+
+BUILDERS = {'mega-drive': mega_drive, 'playstation-1': playstation,
+            'nintendo-64': nintendo_64, 'nes': nes}
 
 
 def bounds(root):
@@ -274,7 +289,7 @@ def export_disc(root, path):
         bpy.data.objects.remove(disc_root, do_unlink=True)
 
 
-def studio(root, view='hero', opened=False):
+def studio(root, view='hero', opened=False, neutral_print=False):
     scene = bpy.context.scene
     scene.render.engine = 'CYCLES'
     scene.cycles.samples = 64
@@ -287,19 +302,26 @@ def studio(root, view='hero', opened=False):
     scene.world.node_tree.nodes.get('Background').inputs[0].default_value = (0.17, 0.2, 0.24, 1)
     scene.world.node_tree.nodes.get('Background').inputs[1].default_value = 0.35
     scene.view_settings.view_transform = 'AgX'
+    if neutral_print:
+        scene.world.node_tree.nodes.get('Background').inputs[0].default_value = (.18, .18, .18, 1)
+        scene.view_settings.view_transform = 'Standard'
+        scene.view_settings.look = 'None'
+        scene.view_settings.exposure = -1.0
+        scene.view_settings.gamma = 1.0
     b = bounds(root)
     center = Vector([(a + z) / 2 for a, z in zip(b['min'], b['max'])])
     diagonal = max(b['dimensions'][0], b['dimensions'][1])
-    floor_mat = material('Studio floor', (0.085, 0.1, 0.115), 0.68)
+    floor_mat = material('Studio floor', (.085, .085, .085) if neutral_print else (.085, .1, .115), .68)
     floor = box('StudioFloor', (0, -1, 0), (1200, 1.5, 1200), floor_mat, 0)
     floor.parent = None
     positions = {'hero': (0.65, 0.34, 1.2), 'rear': (-0.65, 0.34, -1.2),
                  'top': (0.52, 1.2, 0.68), 'bottom': (0.35, -0.38, 1.15),
                  'front': (0, 0, 1), 'back': (0, 0, -1),
                  'left': (-1, 0, 0), 'right': (1, 0, 0),
-                 'top-ortho': (0, 1, 0), 'bottom-ortho': (0, -1, 0)}
+                 'top-ortho': (0, 1, 0), 'bottom-ortho': (0, -1, 0),
+                 'connector': (0.08, -0.86, 0.55)}
     direction = Vector(positions[view]).normalized()
-    if direction.y < 0:
+    if direction.y < 0 or (neutral_print and view in ('front', 'back', 'left', 'right')):
         floor.hide_render = True
     bpy.ops.object.camera_add(location=center + direction * diagonal * 2.8)
     camera = bpy.context.object
@@ -313,10 +335,13 @@ def studio(root, view='hero', opened=False):
     camera.data.ortho_scale = diagonal * (1.40 if opened else 1.33)
     camera.data.lens = 52
     scene.camera = camera
-    for name, relative, energy, size in (
+    lights = (
         ('KeySoftbox', (-1.2, 1.7, 1.7), 3.2, 0.36),
         ('FillSoftbox', (1.5, 0.6, 0.75), 1.8, 0.3),
-        ('RimSoftbox', (-0.5, 1.4, -1.5), 2.8, 0.22)):
+        ('RimSoftbox', (-0.5, 1.4, -1.5), 2.8, 0.22))
+    if view == 'connector':
+        lights += (('ConnectorSoftbox', (0, -1.0, 0.7), 2.5, 0.18),)
+    for name, relative, energy, size in lights:
         data = bpy.data.lights.new(name, 'AREA')
         data.energy = energy
         data.shape = 'DISK'
@@ -327,7 +352,7 @@ def studio(root, view='hero', opened=False):
         obj.rotation_euler = (center - obj.location).to_track_quat('-Z', 'Y').to_euler()
 
 
-def imported_render(path, output, view='hero'):
+def imported_render(path, output, view='hero', neutral_print=False, samples=64, resolution=1200):
     """Render the actual GLB, never a different in-memory source model."""
     global ROOT
     bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -341,7 +366,10 @@ def imported_render(path, output, view='hero'):
     root.rotation_euler.x = -math.pi / 2
     ROOT = root
     bpy.context.view_layer.update()
-    studio(root, view, 'open' in path.stem)
+    studio(root, view, 'open' in path.stem, neutral_print=neutral_print)
+    bpy.context.scene.cycles.samples = samples
+    bpy.context.scene.render.resolution_x = resolution
+    bpy.context.scene.render.resolution_y = round(resolution * 5 / 6)
     bpy.context.scene.render.filepath = str(output)
     bpy.ops.render.render(write_still=True)
     return bounds(root)
@@ -350,10 +378,10 @@ def imported_render(path, output, view='hero'):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', default='dist/development', type=Path)
-    parser.add_argument('--only', choices=('mega-drive', 'playstation-1'))
+    parser.add_argument('--only', choices=tuple(BUILDERS))
     parser.add_argument('--no-render', action='store_true')
     args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else [])
-    for asset_id, builder in (('mega-drive', mega_drive), ('playstation-1', playstation)):
+    for asset_id, builder in BUILDERS.items():
         if args.only and args.only != asset_id:
             continue
         destination = args.output.resolve() / asset_id
@@ -366,16 +394,18 @@ def main():
         contract['referenceBasis'] = root.get('referenceBasis', '')
         contract['nominalDimensionsMm'] = list(root.get('nominalDimensionsMm', []))
         export(root, destination / f'{asset_id}.glb')
-        studio(root)
+        neutral_print = asset_id in ('nintendo-64', 'nes')
+        studio(root, neutral_print=neutral_print)
+        sanitize_source_paths()
         bpy.ops.wm.save_as_mainfile(filepath=str(destination / f'{asset_id}.blend'))
         if not args.no_render:
-            contract['roundTripBounds'] = imported_render(destination / f'{asset_id}.glb', destination / 'hero.png')
+            contract['roundTripBounds'] = imported_render(destination / f'{asset_id}.glb', destination / 'hero.png', neutral_print=neutral_print)
             for edge in ('min', 'max'):
                 if any(abs(a - b) > 1e-6 for a, b in zip(
                         contract['bounds'][edge], contract['roundTripBounds'][edge])):
                     raise ValueError(f'{asset_id}: GLB round-trip changed world bounds')
             for view in ('rear', 'top', 'front', 'back', 'left', 'right', 'top-ortho', 'bottom-ortho'):
-                imported_render(destination / f'{asset_id}.glb', destination / f'{view}.png', view)
+                imported_render(destination / f'{asset_id}.glb', destination / f'{view}.png', view, neutral_print=neutral_print)
         (destination / 'development.json').write_text(json.dumps(contract, indent=2) + '\n')
         print('DEVELOPMENT_OUTPUT ' + str(destination))
 

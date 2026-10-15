@@ -10,11 +10,15 @@ assets/
 ├── templates/
 │   ├── snes/
 │   ├── mega-drive/
-│   └── playstation-1/
+│   ├── playstation-1/
+│   ├── nintendo-64/
+│   └── nes/
 └── reproductions/
     ├── snes/super-mario-world/
     ├── mega-drive/sonic-the-hedgehog/
-    └── playstation-1/crash-bandicoot/
+    ├── playstation-1/crash-bandicoot/
+    ├── nintendo-64/super-mario-64/
+    └── nes/super-mario-bros/
 ```
 
 Each model folder contains its documentation, credits, changelog, published version manifests and preview images. The [catalog](../catalog.json) locates current records. Stable asset IDs, version tags and verified release downloads remain unchanged.

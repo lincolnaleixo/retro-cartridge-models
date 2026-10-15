@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "assetId": "nes",
+  "variant": "Western early five-screw gray Game Pak",
+  "researchedOn": "2026-10-15",
+  "method": "Original parametric geometry from published dimensions and direct comparison with photographed physical hardware. No third-party meshes imported.",
+  "sources": [
+    {
+      "id": "nocash-shell",
+      "url": "https://problemkaputt.de/everynes.htm",
+      "section": "Cartridge Shell Dimensions",
+      "type": "Primary technical reverse-engineering notes",
+      "facts": {
+        "envelopeMm": [
+          119.7,
+          134.0,
+          16.75
+        ],
+        "frontHalfDepthMm": 13.0,
+        "rearHalfDepthMm": 3.75,
+        "connectorOpeningWidthMm": 100.5,
+        "lowerFootWidthMm": 106.0,
+        "pcbInsetMm": 7.0,
+        "pcbThicknessMm": 1.2
+      },
+      "confidence": "Medium. The author explicitly cautions that the shell values are approximate; these are not official Nintendo manufacturing specifications."
+    },
+    {
+      "id": "nesdev-dimensions",
+      "url": "https://www.nesdev.org/wiki/NES_cartridge_dimensions",
+      "type": "Primary community caliper measurements and label template notes",
+      "facts": {
+        "pcbCardEdgeWidthMm": 93.5,
+        "pcbThicknessMm": 1.2,
+        "padWidthMm": 2.0,
+        "padPitchMm": 2.5,
+        "labelApproximateUnfoldedMm": [
+          55.0,
+          97.0
+        ],
+        "labelApproximateTopFoldMm": 7.0
+      },
+      "confidence": "High for the reported 0.05mm-resolution PCB measurements, medium for the approximate label template. PCB measurements are from an EWROM board; the model uses the shared edge interface, not that board layout."
+    },
+    {
+      "id": "nesdev-label-measurement",
+      "url": "https://www.nesdev.org/wiki/User:Persune",
+      "type": "First-person cartridge label measurements",
+      "facts": {
+        "rearLabelMm": [
+          78.5,
+          31.0
+        ]
+      },
+      "confidence": "Medium. Measured on another licensed NES cartridge; rear label dimensions are corroborated by the five-screw reference photographs."
+    },
+    {
+      "id": "nesdev-connector",
+      "url": "https://www.nesdev.org/wiki/Cartridge_connector",
+      "type": "Hardware reverse-engineering reference",
+      "facts": {
+        "contactsPerFace": 36,
+        "contactCount": 72,
+        "pitchMm": 2.5
+      },
+      "confidence": "High. NES pitch differs from the 2.54mm Famicom interface."
+    },
+    {
+      "id": "fenyx-five-screw",
+      "url": "https://www.fenyxgames.com/product-page/super-mario-bros-nes-5-screw-1985-nintendo",
+      "type": "Seller photographs of the physical cartridge offered by the seller",
+      "imageUrls": {
+        "front": "https://static.wixstatic.com/media/872c00_4c2d64d6a1ff4aad8481eb1800fa77a1~mv2.png",
+        "rear": "https://static.wixstatic.com/media/872c00_0f82c9c322df4da69ac0629fa7285d1f~mv2.png"
+      },
+      "observations": [
+        "Off-center left vertical rib channel on front; deeper upper finger recess on both faces.",
+        "Tall label on right front folds onto top, with a round early quality seal.",
+        "Five rear screw seats: two upper corners, center, two lower corners.",
+        "Early flat top without later REV-A clips; broad sloping rear edge returns.",
+        "Lower side shoulders, engraved insertion triangle, rear warning label and molded mark land."
+      ],
+      "confidence": "High for visible feature presence and variant. Medium or low for locations, depth and radii estimated from perspective photographs.",
+      "publicationScope": "Photos consulted as geometry evidence. This file does not grant reuse rights to photography, game artwork or Nintendo marks."
+    }
+  ],
+  "modelParameters": {
+    "nominalDimensionsMm": [
+      119.7,
+      134.0,
+      16.75
+    ],
+    "frontLabelUnfoldedMm": [
+      55.0,
+      97.0
+    ],
+    "frontLabelVisibleFaceMm": [
+      55.0,
+      90.0
+    ],
+    "frontLabelCenterXMm": 16.5,
+    "frontLabelBottomYMm": 43.2,
+    "frontLabelFoldV": 0.9278350515463918,
+    "rearLabelMm": [
+      78.5,
+      31.0
+    ],
+    "rearLabelCenterYMm": 48.8,
+    "frontRibColumnCenterXMm": -27.2,
+    "frontLowerRibCount": 40,
+    "frontUpperRibCount": 6,
+    "rearUpperRibCount": 5,
+    "screwCentersXYMm": [
+      [
+        -52,
+        121.4
+      ],
+      [
+        52,
+        121.4
+      ],
+      [
+        0,
+        70.5
+      ],
+      [
+        -52,
+        30.7
+      ],
+      [
+        52,
+        30.7
+      ]
+    ],
+    "screwSeatDiameterMm": 5.3,
+    "connectorContactCount": 72,
+    "connectorPitchMm": 2.5
+  },
+  "inferredFeatures": [
+    "Rib count, pitch and placement estimated from the photographed shell.",
+    "Front recess 0.32mm; rear warning recess 0.24mm; upper grip recess depths 1.25–1.35mm.",
+    "Edge radii, mold separation gap, screw recess depth and internal support geometry approximate.",
+    "Neutral ABS color and original procedural micrograin approximate clean material under neutral light; no physical color sample measured."
+  ],
+  "limitations": [
+    "Visualization asset, not a tested replacement shell or manufacturing drawing.",
+    "No ROM data or functional electrical design; visible connector interface only.",
+    "Hidden electronics omitted. Molded Nintendo trademark lettering omitted from neutral geometry while its recessed land is retained.",
+    "Label and shell variants existed; this reconstruction specifically targets the photographed early five-screw form."
+  ],
+  "validation": {
+    "blenderVersion": "5.2.2 LTS",
+    "sourceWorldBoundsMm": {
+      "min": [
+        -59.85,
+        0,
+        -8.375
+      ],
+      "max": [
+        59.85,
+        134,
+        8.375
+      ]
+    },
+    "exportContract": "passed tools/inspect_glb.py",
+    "exportMeshes": 9,
+    "exportTriangles": 22480,
+    "exportMaterials": 7,
+    "embeddedImages": 2,
+    "renderedFromActualGlb": [
+      "hero",
+      "front",
+      "rear",
+      "bottom",
+      "top",
+      "bottom-ortho",
+      "connector-detail"
+    ],
+    "visualCorrections": [
+      "Interior cavity follows the narrowed lower shoulders; no spurious side windows.",
+      "Rib and foot relief remain inside the nominal shell envelope."
+    ],
+    "scope": "Development validation. The consumer-engine import and final textured release package require their own checks."
+  }
+}
