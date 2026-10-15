@@ -2,7 +2,7 @@
   "asset": "nintendo-64",
   "variant": "NTSC-U/C gray NUS-006 Game Pak",
   "authoredOn": "2026-10-15",
-  "scope": "Original parametric visualization; no imported third-party mesh, factory CAD or manufacturing-fit claim.",
+  "scope": "Parametrically authored visualization with official Nintendo 2D trademark contours used for the molded mark; no imported third-party mesh, factory CAD or manufacturing-fit claim.",
   "sources": [
     {
       "id": "consolemods-envelope",
@@ -36,9 +36,16 @@
       "facts": [
         "Two rear security screws opened with a 3.8 mm Gamebit driver.",
         "Case separates from the top while bottom tabs retain the halves.",
-        "Metal shielding and a black plastic board support are visible inside."
+        "Metal shielding and a black plastic board support are visible inside.",
+        "The visible connector tongue is bare tan/brown substrate with green solder mask farther inside.",
+        "The black guide has continuous long walls; the external security head is rounded and six-lobed."
       ],
-      "limits": "The 3.8 mm value describes the driver, not a measured screw-head diameter. Photographs provide morphology, not calibrated dimensions."
+      "limits": "The 3.8 mm value describes the driver, not a measured screw-head diameter. Photographs provide morphology, not calibrated dimensions.",
+      "imageUrls": [
+        "https://guide-images.cdn.ifixit.com/igi/b3g34HKl6xlkcdgy.huge",
+        "https://guide-images.cdn.ifixit.com/igi/beyVUcKaZLAiLaen.huge",
+        "https://guide-images.cdn.ifixit.com/igi/qGWPkWsBoPyetEB4.huge"
+      ]
     },
     {
       "id": "evan-amos-shell",
@@ -100,6 +107,44 @@
         "Corroborates the outer-corner USA rear keys and small separate lower notches."
       ],
       "limits": "Perspective photo; does not independently validate millimeter estimates."
+    },
+    {
+      "id": "usa-nfr-macro-photos",
+      "url": "https://www.ebay.com/itm/277049491347",
+      "imageUrls": [
+        "https://i.ebayimg.com/images/g/Nd4AAeSwFYVoBAYa/s-l1600.webp",
+        "https://i.ebayimg.com/images/g/oV0AAeSwh0FoBAYa/s-l1600.webp",
+        "https://i.ebayimg.com/images/g/4tEAAeSwE0loBAYa/s-l1200.jpg"
+      ],
+      "authority": "Seller original macro and underside photographs of a physical NTSC-U/C Super Mario 64 cartridge",
+      "facts": [
+        "Continuous softly rounded crown without polygonal highlight bands.",
+        "Broad recessed Nintendo letters, square i dot and registered mark on a shallow island surrounded by a rounded moat.",
+        "Warm metallic domed security heads below the counterbore rim, with six external notches.",
+        "Irregular fine molded grain is visible on the rear shell.",
+        "Black continuous connector guide walls and small catches surround the bare tan/brown contact tongue."
+      ],
+      "limits": "Later NFR label edition used only for shell morphology. Uncalibrated photographs do not validate millimeter dimensions, recess depths, material reflectance or the reproduced 1996 label edition. Reference photographs are not redistributed."
+    },
+    {
+      "id": "usa-frontal-underside-photo",
+      "url": "https://www.videogamegemvault.com/products/super-mario-64-nintendo-64-n64-1999-authentic-game-cartridge",
+      "imageUrl": "https://www.videogamegemvault.com/cdn/shop/files/N64-NINTENDO-64-VIDEO-GAME-CARTRIDGE-AUTHENTIC-SUPER-MARIO-64-FRONT-GAME-LABEL-PINS-TEETH.jpg?v=1742306460",
+      "authority": "Dealer original photograph of a physical USA K-A cartridge",
+      "facts": [
+        "Dark continuous guide and brown exposed contact substrate corroborate the teardown."
+      ],
+      "limits": "Product page returned 404 during the independent audit, while the direct image remained available. Perspective image is not a calibrated measurement; reference pixels are not redistributed."
+    },
+    {
+      "id": "official-nintendo-mark",
+      "url": "https://www.nintendo.com/us/",
+      "authority": "Nintendo official website inline NintendoRacetrackLogoIcon SVG, accessed 2026-10-15",
+      "facts": [
+        "Closed vector contours for Nintendo lettering, square i dot, registered mark and surrounding racetrack."
+      ],
+      "use": "Contours are sampled and converted into a recessed Boolean cutter, fitted visually to the photographed cartridge molding. No third-party 3D mesh is imported.",
+      "limits": "The current website vector establishes the brand contours, not 1996 mold tooling dimensions or physical relief. Physical scale, land shape, depth and edge radius remain estimates. Nintendo trademark artwork remains excluded from the original model geometry license."
     }
   ],
   "modeledParameters": {
@@ -145,17 +190,33 @@
     "contactWidthMm": 1.7,
     "contactLengthMm": 6.0,
     "contactLowerEdgeYmm": 3.0,
-    "parameterLimits": "Only the nominal envelope, front template dimensions/curves and connector contact count/pitch are source values. All placements, other radii, depths, rear label size, PCB thickness, contact width/length, support dimensions and molding clearances are visual estimates. No tolerance study or physical fit test was performed."
+    "parameterLimits": "Only the nominal envelope, front template dimensions/curves and connector contact count/pitch are source values. All placements, other radii, depths, rear label size, PCB thickness, contact width/length, support dimensions and molding clearances are visual estimates. No tolerance study or physical fit test was performed.",
+    "crownArcSegments": 96,
+    "frontCheekQuadrantSegments": 64,
+    "frontCrownEdgeRadiusMm": 0.85,
+    "fineCutEdgeRadiusMm": 0.055,
+    "rearWordmarkOuterLandMm": [
+      31.2,
+      8.2
+    ],
+    "rearWordmarkVectorWidthMm": 30.5,
+    "rearWordmarkLandDepthMm": 0.15,
+    "rearWordmarkLetterDepthFromLandMm": 0.3,
+    "screwHeadTipBelowRearFaceMm": 1.22,
+    "screwHeadNotchReliefAtWidestRingMm": 0.3564,
+    "pcbMaskLowerEdgeYmm": 10.25,
+    "connectorGuideWallLowerEdgeYmm": 1.6
   },
   "materials": {
     "basis": "Original deterministic normal/roughness textures approximate fine molded plastic. Colors and grain are artistic visual estimates, not measured reflectance.",
     "tileSizeMm": 8.0,
-    "normalStrengthFront": 0.22,
-    "normalStrengthRear": 0.29,
-    "texturePacking": "Packed in Blender and embedded in GLB. FrontLabel/RearLabel retain separate ArtworkUV 0-1 and untextured neutral materials."
+    "normalStrengthFront": 0.38,
+    "normalStrengthRear": 0.68,
+    "texturePacking": "Packed in Blender and embedded in GLB. FrontLabel/RearLabel retain separate ArtworkUV 0-1 and untextured neutral materials.",
+    "screwMetalRoughness": 0.34
   },
   "specificLimits": [
-    "Rear Nintendo wordmark uses converted editable font geometry with approximate proportions, not an exact traced OEM logotype.",
+    "Rear trademark contours come from the official Nintendo website and are checked against original cartridge photographs; fitting, relief depths and edge radii remain approximate. This is not an exact scan of the 1996 molded mark.",
     "Only the PCB tongue and visible guide are modeled; hidden chips and complete internal shielding are omitted.",
     "The model has no moving shell mechanism or manufacturing/printing specification."
   ],
@@ -174,22 +235,25 @@
     "artworkUv": "ArtworkUV, UV0, upright and viewer-left-to-right"
   },
   "verification": {
-    "scope": "Neutral module export inspected on 2026-10-15; not a release-package or consumer-engine validation.",
-    "status": "Passed local source-solid audit, GLB structural inspection, render inspection and repository verification.",
-    "sourceSha256": "062ba3d4c57462e02204c203567220e27c3a0cbf423ea3e227081d22de7b2d38",
+    "scope": "Final neutral module export inspected on 2026-10-15; release-package and consumer-engine validation are performed separately.",
+    "status": "Passed final local source-solid/component audit, GLB structural and material inspection, source/imported label UV checks, world-bound round-trip comparison, eight actual-export render inspections and repository verification.",
+    "sourceSha256": "1823b705b6a424b474efcd37bc4f1e8ea08623e0d51379ea0a74317c3f2f039f",
     "sourceSolidAudit": {
       "nonManifoldEdges": 0,
       "nonPositiveSolidVolumes": 0,
       "degenerateFaces": 0,
-      "exclusions": "The intentional single-sided FrontLabel and RearLabel surfaces."
+      "exclusions": "The intentional single-sided FrontLabel and RearLabel surfaces.",
+      "auditedMeshCount": 73,
+      "connectedComponents": 73,
+      "nonPositiveConnectedComponentVolumes": 0
     },
     "export": {
-      "triangles": 18861,
+      "triangles": 48341,
       "meshes": 10,
       "primitives": 10,
       "materials": 9,
       "embeddedImages": 2,
-      "bytes": 1298548,
+      "bytes": 2168696,
       "selfContained": true,
       "unassignedMaterialPrimitives": 0
     },
@@ -198,36 +262,79 @@
       "RearLabel": "0-1 on both axes, ratio 2.0796915167"
     },
     "sourceWorldDimensionsMm": [
-      115.9999966621,
-      76.6000002623,
-      18.5000002384
+      115.99999666213989,
+      76.60000026226044,
+      18.50000023841858
     ],
     "glbRoundTripWorldDimensionsMm": [
-      115.9999966621,
-      76.6000006666,
-      18.5000039637
+      115.99999666213989,
+      76.60000066659079,
+      18.500003963708878
     ],
-    "maximumRoundTripBoundDeltaMeters": 3.7252902985e-09,
+    "maximumRoundTripBoundDeltaMeters": 3.725290298461914e-09,
     "inspectedExportViews": [
       "hero",
       "front",
       "rear",
-      "back",
+      "top",
       "bottom",
-      "bottom-ortho",
-      "steep underside connector detail"
+      "left",
+      "connector",
+      "rear-detail"
     ],
     "visualChecks": [
-      "Arched crown and rounded front cheeks.",
-      "Front and rear physical label lands and flanking grooves.",
-      "NTSC-U/C corner keys with the front lower returns visible behind.",
-      "Two security screws and separate molded capsule.",
-      "Recessed 25-contact row visibly retained by the mouth and guide; second row exists on the opposite PCB face."
+      "Crown highlight bands and corner pinching removed in matched GLB renders.",
+      "Lower cheek relief follows the curved shell with a continuous fine channel.",
+      "Debossed official letterforms, square i dot, registered mark and rounded capsule moat inspected in a native rear macro.",
+      "Six external security-head notches taper into rounded centers; tips are recessed below the bore rims.",
+      "Stronger fine rear grain visible in the native macro without adding wear.",
+      "Black continuous guide and bare brown substrate surround the recessed 25-contact row; the opposite PCB face has the second 25 contacts."
     ],
     "commands": [
       "python3 tools/inspect_glb.py <neutral-export.glb>",
       "python3 tools/verify.py"
     ],
-    "repositoryVerification": "Catalog verified: 6 assets, 7 versions"
+    "repositoryVerification": "Catalog verified: 10 assets, 11 versions",
+    "version": "0.2.0",
+    "glbSha256": "22068e827151d88faaff194b6658ec4d4d185677acc3c5584bdfdc8bac411b1b",
+    "materialExport": {
+      "solidMaterialsBackfaceCulled": true,
+      "paperMaterialsDoubleSided": true,
+      "normalAndRoughnessTextureCoordinate": 1,
+      "normalStrengthFront": 0.38,
+      "normalStrengthRear": 0.68,
+      "embeddedTextures": [
+        "Original tangent normal PNG",
+        "Original roughness PNG"
+      ]
+    },
+    "renderSettings": {
+      "wholeCartridge": "Seven matched 1200 x 1000 studio views, 32 Cycles samples; Standard view transform, exposure -1, neutral print lighting unchanged from the 0.1.0 comparison.",
+      "rearDetail": "Additional native camera view, 1600 x 1000, 96 Cycles samples; no raster cropping or image editing."
+    }
+  },
+  "refinementVersion": "0.2.0",
+  "refinementReview": {
+    "baseline": "Published 0.1.0 editable Blender assembly and actual GLB previews inspected before refinement.",
+    "changes": [
+      "Denser crown/cheek sampling, fresh sharp-edge-aware normals and fine cut-rim bevels remove triangulated highlight bands.",
+      "Continuous curved lower-cheek relief replaces coarse angular channels.",
+      "Official brand contours form a recessed mark and capsule moat instead of the approximate raised font.",
+      "Domed six-notched heads sit deeper below the rim with a less polished warm metal finish.",
+      "Continuous black connector guide walls and a bare brown tongue replace the exposed gray cavity and green-to-edge PCB.",
+      "Stronger fine rear micrograin remains restrained on the front."
+    ],
+    "unchanged": [
+      "116 x 76.6 x 18.5 mm nominal envelope, bottom-center pivot, meters and +Y-up/+Z-front axes.",
+      "FrontLabel and RearLabel names, physical dimensions, aspect ratios and upright UV0 orientation.",
+      "50 contacts at 2.50 mm pitch and NTSC-U/C lower keys.",
+      "No changes to the reproduction photograph pixels or their artwork mapping."
+    ],
+    "limits": "Photographs support visible morphology; the revision does not add calibrated measurements or physical-fit validation.",
+    "exportCost": {
+      "previousVersionTriangles": 18861,
+      "refinedVersionTriangles": 48341,
+      "reason": "Denser curved profiles, physical cut-rim bevels and recessed vector mark add geometry. Export remains ten material-grouped primitives with two embedded texture images."
+    }
   }
 }
