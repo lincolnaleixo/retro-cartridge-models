@@ -1,10 +1,14 @@
 # Nintendo 64 — NTSC-U/C cartridge template
 
-**Version:** 0.1.0 · **Date:** 2026-10-15 · **Reconstruction:** Lincoln Aleixo
+**Version:** 0.2.0 · **Date:** 2026-10-15 · **Reconstruction:** Lincoln Aleixo
+
+[Previous 0.1.0 release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nintendo-64-v0.1.0) · [Changelog](CHANGELOG.md)
 
 An original parametric reconstruction of the gray NTSC-U/C NUS-006 Game Pak. The nominal envelope is 116 × 76.6 × 18.5 mm, based on community measurements. The bowed crown, curved front cheeks, recessed arched label land, rear screw wells and recessed connector follow photographs of physical cartridges. Regional keys follow the North American shell; PAL/AUS key positions are not interchangeable. Read the [source credits](CREDITS.md) and [measurement evidence](../../../docs/nintendo-64-reference-evidence.json).
 
-The front and rear labels are unprinted replacement surfaces. Original procedural normal and roughness maps approximate fine molded ABS; no reference photograph or game artwork is included in this template. The rear includes an approximate molded Nintendo wordmark, which remains outside the collection license. Only the visible PCB tongue, contacts and guide are modeled; hidden chips and complete internal shielding are omitted.
+Version 0.2.0 refines the crown and cheek shading, recessed rear branding, security screw heads and connector interior. The crown reads as a continuous molding rather than the broad highlight facets visible in 0.1.0. The rear wordmark uses Nintendo's official website SVG contours as its 2D basis, with recessed lettering and an approximate molded island and surrounding channel. The gold-toned Gamebit heads are domed; a continuous black guide surrounds the tan exposed PCB tongue, with green solder mask farther inside. Fine rear micrograin is more visible while the front remains satin.
+
+The front and rear labels are unprinted replacement surfaces. Original procedural normal and roughness maps approximate fine molded ABS; no reference photograph or game label artwork is included in this template. The official 2D Nintendo mark and its reconstructed relief remain outside the collection license. Only the visible PCB tongue, contacts and guide are modeled; hidden chips and complete internal shielding are omitted.
 
 Generate editable Blender source, a self-contained GLB and development views from the repository root:
 
@@ -27,6 +31,8 @@ Outputs go to `dist/development/nintendo-64/`. The separately editable source pa
 | Artwork UVs | UV0, full 0–1 domain; upright and unmirrored when viewing each face |
 | Connector | 50 contacts, 25 per face, at 2.5 mm pitch |
 
-Development export checks recorded 18,861 triangles in ten meshes, nine materials and two embedded images. The GLB integrity/UV inspector passed, and source solid meshes were checked for manifold edges and positive volume. Final validation also passed Godot 4.7.2 import, named-label/UV surface checks, world-bound checks and actual-export render review. The release manifest records exact package checksums.
+The nominal envelope, axes, origin, label dimensions and UV contract remain unchanged from 0.1.0. The North American regional keys and 50 contacts at 2.5 mm pitch are retained.
 
-The envelope and front label template are community values, not Nintendo manufacturing specifications. Rear label size, radii, screw positions, recess depths, PCB thickness and internal clearances are visual estimates. This is a visualization asset, not a tested replacement shell. See the [changelog](CHANGELOG.md) for release history and the [Super Mario 64 reproduction](../../reproductions/nintendo-64/super-mario-64/README.md) for separately documented game artwork.
+Version 0.2.0 contains 48,341 triangles in ten meshes, nine materials and two embedded images. All 73 source solids have manifold edges, no degenerate faces and positive volume. GLB integrity/UV inspection, eight actual-export renders, packed-source reopening and Godot 4.7.2 import, named-label/UV, world-bound and five-format application checks pass. The source and GLB round-trip bounds differ by at most 0.0000038 mm; the manifest records package checksums. The published 0.1.0 baseline had 18,861 triangles in ten meshes, nine materials and two embedded images; it passed GLB integrity/UV inspection, manifold/positive-volume checks, Godot 4.7.2 import, named-label/UV checks and world-bound checks. Those historical results do not validate the revised geometry.
+
+The envelope and front label template are community values, not Nintendo manufacturing specifications. Rear label size, radii, screw positions, recess depths, PCB thickness and internal clearances are visual estimates. Official 2D letter contours do not establish the original molded mark's size, depth, edge radii or relief; these are adjusted against uncalibrated specimen photographs. Plastic color, grain and metal finish are visual approximations. This is a visualization asset, not a tested replacement shell. See the [changelog](CHANGELOG.md) for release history and the [Super Mario 64 reproduction](../../reproductions/nintendo-64/super-mario-64/README.md) for separately documented game artwork.

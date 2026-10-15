@@ -72,13 +72,13 @@
     {
       "id": "nintendo-64",
       "title": "Nintendo 64 — NTSC-U/C cartridge",
-      "latest": "0.1.0",
-      "manifest": "assets/templates/nintendo-64/versions/0.1.0.json",
+      "latest": "0.2.0",
+      "manifest": "assets/templates/nintendo-64/versions/0.2.0.json",
       "displayTitle": "Nintendo 64 · Unprinted template",
       "kind": "BASE MODEL",
-      "description": "The original North American gray Game Pak with an arched label recess, curved cheeks, two rear screw wells and a recessed connector. Front and rear labels are unprinted.",
+      "description": "The original North American gray Game Pak with a smooth bowed crown, recessed rear wordmark, domed security screws and continuous connector guide. Front and rear labels are unprinted.",
       "credits": "assets/templates/nintendo-64/CREDITS.md",
-      "rights": "Original contributions: CC BY-NC-ND 4.0. Nintendo product design and marks, including the approximate molded rear wordmark, are excluded. No game artwork or source photography is included."
+      "rights": "Original contributions: CC BY-NC-ND 4.0. Nintendo product design and marks, including official 2D letter contours in the approximate molded rear wordmark, are excluded. No game artwork or source photography is included."
     },
     {
       "id": "nes",
@@ -94,11 +94,11 @@
     {
       "id": "nintendo-64-super-mario-64",
       "title": "Nintendo 64 — Super Mario 64 reproduction",
-      "latest": "0.1.0",
-      "manifest": "assets/reproductions/nintendo-64/super-mario-64/versions/0.1.0.json",
+      "latest": "0.2.0",
+      "manifest": "assets/reproductions/nintendo-64/super-mario-64/versions/0.2.0.json",
       "displayTitle": "Super Mario 64",
       "kind": "TEXTURED EXAMPLE · NINTENDO 64",
-      "description": "Super Mario 64 on the original North American cartridge, with the K-A front label and 1996 rear warning label mapped from unmodified photographs. Source resolution and photographic color remain approximate.",
+      "description": "Super Mario 64 on the refined North American cartridge, with a smoother crown, recessed rear wordmark and detailed connector. The K-A front label and 1996 rear label retain unmodified photographic pixels; source resolution and color remain approximate.",
       "credits": "assets/reproductions/nintendo-64/super-mario-64/CREDITS.md",
       "rights": "Original modeling contributions only. Nintendo artwork, marks, product design and source photography are excluded; attribution and the maintainer's request do not grant rights to those elements. See CREDITS.md and NOTICE.md."
     },

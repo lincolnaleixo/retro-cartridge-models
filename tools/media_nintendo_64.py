@@ -6,6 +6,7 @@ approximations from photographs, not factory CAD. No external mesh is used.
 See docs/nintendo-64-reference-evidence.json for the evidence and its limits.
 """
 import math
+import re
 
 import bpy
 import bmesh
@@ -43,7 +44,7 @@ def _arched_outline(width, height, bottom, top_radius, top_corner, bottom_corner
     _arc(points, half-bottom_corner, bottom+bottom_corner, bottom_corner, -math.pi/2, 0, 8)
     points.append((half, corner_y))
     _arc(points, corner_x, corner_y, top_corner, 0, angle, 8)
-    _arc(points, 0, circle_y, top_radius, angle, math.pi-angle, 48)
+    _arc(points, 0, circle_y, top_radius, angle, math.pi-angle, 96)
     _arc(points, -corner_x, corner_y, top_corner, math.pi-angle, math.pi, 8)
     points.append((-half, bottom+bottom_corner))
     _arc(points, -half+bottom_corner, bottom+bottom_corner, bottom_corner, math.pi, 3*math.pi/2, 8)
@@ -55,6 +56,32 @@ def _outward(obj):
     bm = bmesh.new()
     bm.from_mesh(obj.data)
     bmesh.ops.remove_doubles(bm, verts=list(bm.verts), dist=1e-8)
+    # Coplanar SVG letter floors can leave a long boundary opposite several
+    # shorter edges. Split that T-junction before welding the shared floor.
+    for _ in range(32):
+        boundary = [edge for edge in bm.edges if edge.is_boundary]
+        candidates = {vertex for edge in boundary for vertex in edge.verts}
+        split = None
+        for edge in boundary:
+            a, b = edge.verts
+            direction = b.co-a.co
+            if direction.length_squared < 1e-18:
+                continue
+            for vertex in candidates:
+                if vertex in edge.verts:
+                    continue
+                t = (vertex.co-a.co).dot(direction)/direction.length_squared
+                if 1e-5 < t < 1-1e-5 and (a.co+t*direction-vertex.co).length < 1e-9:
+                    split = (edge, a, t, vertex.co.copy())
+                    break
+            if split:
+                break
+        if not split:
+            break
+        edge, endpoint, t, coordinate = split
+        _, vertex = bmesh.utils.edge_split(edge, endpoint, t)
+        vertex.co = coordinate
+        bmesh.ops.remove_doubles(bm, verts=list(bm.verts), dist=1e-8)
     bmesh.ops.recalc_face_normals(bm, faces=list(bm.faces))
     if bm.calc_volume(signed=True) < 0:
         bmesh.ops.reverse_faces(bm, faces=list(bm.faces))
@@ -76,12 +103,12 @@ def _intersect(obj, tool):
 
 def _front_cross_section(flat_half_width, side_radius, depth, back):
     points = []
-    for i in range(33):
-        angle = math.pi/2 - math.pi/2*i/32
+    for i in range(65):
+        angle = math.pi/2 - math.pi/2*i/64
         points.append((-flat_half_width-side_radius*math.sin(angle), .10+depth*math.cos(angle)))
     points.append((flat_half_width, .10+depth))
-    for i in range(1, 33):
-        angle = math.pi/2*i/32
+    for i in range(1, 65):
+        angle = math.pi/2*i/64
         points.append((flat_half_width+side_radius*math.sin(angle), .10+depth*math.cos(angle)))
     if back != .10:
         points += [(flat_half_width+side_radius, back), (-flat_half_width-side_radius, back)]
@@ -90,7 +117,7 @@ def _front_cross_section(flat_half_width, side_radius, depth, back):
 
 def _cheek_surface_cutter(api, points):
     """A shallow relief tool follows the rounded cheek instead of flattening it."""
-    tool = api.profile('Lower front relief channel', points, 1.0, -.33, None, .05)
+    tool = api.profile('Lower front relief channel', points, 1.0, -.26, None, .04)
     _apply(tool)
     bm = bmesh.new()
     bm.from_mesh(tool.data)
@@ -121,41 +148,183 @@ def _artwork(api, name, points, z, material, width, height, bottom, rear=False):
     return obj
 
 
-def _rear_brand(api, material):
-    """Subtle molded wordmark, with a geometric capsule and editable text.
+# Official Nintendo website vector, inspected against the physical molded mark.
+# Nintendo trademark artwork is excluded from the model geometry license.
+# Source: https://www.nintendo.com/us/ (NintendoRacetrackLogoIcon, 2026-10-15).
+NINTENDO_RACETRACK_PATH = 'M17.945 14.157l-4.85-7.838H9.609V17.59h3.486V9.752l4.85 7.838h3.456V6.32h-3.486l.03 7.837zm27.554-4.04V8.993H43.68v-1.52h-3.395v1.52h-1.849v1.124h1.85v7.473h3.394v-7.473h1.82zM23.341 17.56h3.364v-7.474h-3.364v7.474zm0-8.932h3.395V6.319H23.34v2.309zm59.17.942c-2.728 0-4.941 1.883-4.941 4.192s2.213 4.193 4.94 4.193c2.729 0 4.942-1.884 4.942-4.193 0-2.309-2.213-4.192-4.941-4.192zm1.364 5.772c0 1.185-.698 1.67-1.364 1.67-.667 0-1.395-.485-1.395-1.67v-3.16c0-1.184.697-1.67 1.395-1.67.666 0 1.364.486 1.364 1.67v3.16zm-10.73-4.891c-.547-.304-1.123-.608-1.91-.669-2.426-.212-4.305 1.945-4.305 3.92 0 2.612 2 3.554 2.304 3.706 1.152.516 2.607.547 3.88-.274v.426h3.334V6.32h-3.334c.03 0 .03 2.4.03 4.13zm.03 3.342v1.336c0 1.155-.789 1.458-1.334 1.458-.546 0-1.334-.303-1.334-1.458v-2.673c0-1.155.788-1.458 1.334-1.458.515 0 1.333.303 1.333 1.458v1.337zM34.616 9.752c-1.122.03-2.031.516-2.698 1.124v-.79h-3.365v7.474h3.365v-4.922c0-.638.697-1.367 1.607-1.367.909 0 1.546.73 1.546 1.367v4.922h3.364v-4.071c0-2.947-2.546-3.798-3.82-3.737zm27.433 0a4.075 4.075 0 0 0-2.698 1.124v-.79h-3.365v7.474h3.365v-4.922c0-.638.697-1.367 1.606-1.367.91 0 1.546.73 1.546 1.367v4.922h3.365v-4.071c0-2.947-2.546-3.798-3.82-3.737zm-7.063 4.101c0-2.309-2.243-4.253-4.971-4.253-2.759 0-4.972 1.884-4.972 4.193 0 2.308 2.213 4.192 4.972 4.192 2.273 0 4.213-1.306 4.789-3.068H51.44v.455c0 1.367-.91 1.671-1.394 1.671-.515 0-1.425-.304-1.425-1.67v-1.55l6.366.03zm-6.123-2.643a1.391 1.391 0 0 1 1.182-.668c.455 0 .91.213 1.182.668.212.365.212.82.212 1.458H48.62c0-.637.03-1.063.243-1.458zm39.921-3.493c0-.365-.272-.547-.818-.547h-.758v1.914h.455v-.79h.242l.364.79h.515l-.424-.851c.273-.091.424-.273.424-.516zm-.879.273h-.242v-.547h.212c.273 0 .424.091.424.274 0 .212-.12.273-.394.273zm.03-1.58c-.94 0-1.727.79-1.727 1.732s.788 1.732 1.728 1.732 1.727-.79 1.727-1.732a1.73 1.73 0 0 0-1.727-1.732zm0 3.13a1.413 1.413 0 0 1-1.394-1.398c0-.76.637-1.398 1.395-1.398.757 0 1.394.638 1.394 1.398 0 .76-.637 1.397-1.394 1.397zM84.148 0H12.64C5.062-.03 0 5.438 0 11.97c0 6.53 5.062 11.939 12.67 11.939h71.508c7.608 0 12.67-5.408 12.67-11.94C96.818 5.44 91.726 0 84.148 0zm-.03 20.993H12.671c-6.033.03-9.7-4.041-9.7-9.023 0-4.983 3.698-8.993 9.7-9.023h71.446c6.002 0 9.7 4.04 9.7 9.023 0 4.982-3.668 9.023-9.7 9.023z'
 
-    The lettering is a font approximation; it is not traced OEM logo artwork.
-    Text is converted before export to keep the GLB self-contained.
+
+def _svg_contours(path):
+    """Sample the official closed SVG outlines; retain their nested holes."""
+    tokens = re.findall(r'[a-zA-Z]|[-+]?(?:\d*\.\d+|\d+\.?\d*)(?:[eE][-+]?\d+)?', path)
+    contours, points = [], []
+    index, command = 0, None
+    current = start = complex(0, 0)
+    previous_control = None
+    previous_command = None
+
+    def append(value):
+        if not points or abs(value-points[-1]) > 1e-8:
+            points.append(value)
+
+    def arc(a, rx, ry, degrees, large, sweep, b):
+        rx, ry = abs(rx), abs(ry)
+        if not rx or not ry or abs(a-b) < 1e-8:
+            append(b)
+            return
+        phi = math.radians(degrees)
+        rotation = complex(math.cos(phi), math.sin(phi))
+        q = (a-b)/2/rotation
+        ratio = q.real*q.real/(rx*rx) + q.imag*q.imag/(ry*ry)
+        if ratio > 1:
+            rx *= math.sqrt(ratio)
+            ry *= math.sqrt(ratio)
+        numerator = max(0, rx*rx*ry*ry-rx*rx*q.imag*q.imag-ry*ry*q.real*q.real)
+        denominator = rx*rx*q.imag*q.imag+ry*ry*q.real*q.real
+        factor = math.sqrt(numerator/denominator) * (-1 if bool(large)==bool(sweep) else 1)
+        c = complex(factor*rx*q.imag/ry, -factor*ry*q.real/rx)
+        center = c*rotation+(a+b)/2
+        u = complex((q.real-c.real)/rx, (q.imag-c.imag)/ry)
+        v = complex((-q.real-c.real)/rx, (-q.imag-c.imag)/ry)
+        angle = math.atan2(u.imag, u.real)
+        delta = math.atan2((v/u).imag, (v/u).real)
+        if sweep and delta < 0:
+            delta += 2*math.pi
+        if not sweep and delta > 0:
+            delta -= 2*math.pi
+        steps = max(3, math.ceil(abs(delta)/(math.pi/18)))
+        for i in range(1, steps+1):
+            t = angle+delta*i/steps
+            append(center+complex(rx*math.cos(t), ry*math.sin(t))*rotation)
+
+    sizes = {'M':2, 'L':2, 'H':1, 'V':1, 'C':6, 'S':4, 'A':7}
+    while index < len(tokens):
+        if tokens[index].isalpha():
+            command = tokens[index]
+            index += 1
+        upper = command.upper()
+        if upper == 'Z':
+            if points and abs(points[-1]-points[0]) < 1e-8:
+                points.pop()
+            contours.append(points)
+            points = []
+            current = start
+            previous_control = None
+            previous_command = upper
+            command = None
+            continue
+        values = [float(value) for value in tokens[index:index+sizes[upper]]]
+        index += sizes[upper]
+        offset = current if command.islower() else 0
+        if upper in ('M', 'L'):
+            current = complex(*values)+offset
+            append(current)
+            if upper == 'M':
+                start = current
+                command = 'l' if command.islower() else 'L'
+        elif upper == 'H':
+            current = complex(values[0] + (current.real if command.islower() else 0), current.imag)
+            append(current)
+        elif upper == 'V':
+            current = complex(current.real, values[0] + (current.imag if command.islower() else 0))
+            append(current)
+        elif upper in ('C', 'S'):
+            a = current
+            if upper == 'C':
+                b, c, d = [complex(*values[j:j+2])+offset for j in (0, 2, 4)]
+            else:
+                b = 2*a-previous_control if previous_command in ('C', 'S') else a
+                c, d = [complex(*values[j:j+2])+offset for j in (0, 2)]
+            for i in range(1, 13):
+                t = i/12
+                append((1-t)**3*a+3*(1-t)**2*t*b+3*(1-t)*t*t*c+t**3*d)
+            current, previous_control = d, c
+        elif upper == 'A':
+            destination = complex(values[5], values[6])+offset
+            arc(current, *values[:5], destination)
+            current = destination
+        previous_command = upper
+    return contours
+
+
+def _rear_brand(api, rear):
+    """Cut the actual broad wordmark and surrounding moat into the rear shell.
+
+    Macro photographs show recessed letters on a shallow central land. The
+    0.1.0 generic raised font and thin extra outline had the opposite relief.
+    Official vector letterforms are used; depth and fit remain photo estimates.
     """
-    outline = _capsule(29.5, 6.6, 64.8)
-    badge = api.profile('MoldedBrandCapsule', outline, -8.96, -9.11, material, 0)
-    inner = api.profile('Brand border core', _capsule(28.7, 5.8, 64.8),
-                        -8.8, -9.3, None, 0)
-    _subtract(badge, inner)
-    curve = bpy.data.curves.new('Molded wordmark lettering', 'FONT')
-    curve.body = 'Nintendo'
-    curve.align_x = 'CENTER'
-    curve.align_y = 'CENTER'
-    curve.size = .0053
-    curve.extrude = .000075
-    curve.bevel_depth = .000015
-    curve.bevel_resolution = 1
-    curve.resolution_u = 5
-    obj = bpy.data.objects.new('MoldedNintendoWordmark', curve)
-    bpy.context.collection.objects.link(obj)
-    obj.parent = api.ROOT
-    obj.location = api.mm((0, 64.65, -9.03))
-    obj.rotation_euler.y = math.pi
-    curve.materials.append(material)
-    bpy.context.view_layer.update()
-    # Match the photographed wordmark's broad, low proportion rather than
-    # assuming the font's metrics match Nintendo's original logotype.
-    obj.scale.x = .0242 / max(obj.dimensions.x, 1e-6)
-    bpy.context.view_layer.objects.active = obj
-    obj.select_set(True)
+    land = _capsule(31.2, 8.2, 64.8)
+    _subtract(rear, api.profile('Wordmark shallow outer land', land, -9.10, -10, None, .10))
+    curve = bpy.data.curves.new('Official Nintendo recessed outlines', 'CURVE')
+    curve.dimensions = '2D'
+    curve.fill_mode = 'BOTH'
+    curve.extrude = .00055
+    curve.resolution_u = 1
+    factor = 30.5/96.848
+    for contour in _svg_contours(NINTENDO_RACETRACK_PATH):
+        spline = curve.splines.new('POLY')
+        spline.points.add(len(contour)-1)
+        for point, value in zip(spline.points, contour):
+            point.co = (-(value.real-48.424)*factor*api.MM,
+                        (64.8+(11.9545-value.imag)*factor)*api.MM, 0, 1)
+        spline.use_cyclic_u = True
+    tool = bpy.data.objects.new('Nintendo deboss cutter', curve)
+    bpy.context.collection.objects.link(tool)
+    tool.location.z = -.00935
+    bpy.ops.object.select_all(action='DESELECT')
+    tool.select_set(True)
+    bpy.context.view_layer.objects.active = tool
     bpy.ops.object.convert(target='MESH')
-    obj.select_set(False)
-    obj['detailBasis'] = 'Approximate molded wordmark; not an exact OEM logotype'
+    _outward(tool)
+    _subtract(rear, tool)
+
+
+def _molded_shading(obj, edge_radius=.055):
+    """Round cut rims and split only real sharp corners, not curved patches."""
+    if edge_radius:
+        bevel = obj.modifiers.new('Fine molded recess lip radius', 'BEVEL')
+        bevel.width = edge_radius*.001
+        bevel.segments = 3
+        bevel.limit_method = 'ANGLE'
+        bevel.angle_limit = math.radians(35)
+        bevel.harden_normals = True
+        _apply(obj)
+        _outward(obj)
+    for face in obj.data.polygons:
+        face.use_smooth = True
+    obj.data.set_sharp_from_angle(angle=math.radians(45))
+    normal = obj.modifiers.new('Continuous molded surface normals', 'WEIGHTED_NORMAL')
+    normal.keep_sharp = True
+    normal.weight = 50
+    _apply(obj)
+
+
+def _gamebit_head(api, x, material):
+    """Rounded six-lobed external Gamebit head, recessed below its bore rim."""
+    levels = [(-7.01, 1.72, .18), (-7.33, 1.98, .18), (-7.59, 1.94, .18),
+              (-7.80, 1.72, .09), (-7.95, 1.25, .015), (-8.01, .65, 0)]
+    around = 96
+    vertices = []
+    for z, radius, notch in levels:
+        for i in range(around):
+            angle = 2*math.pi*i/around
+            lobe = 1-notch*(.5+.5*math.cos(6*angle))**2
+            r = radius*lobe
+            vertices.append((x+r*math.cos(angle), 66+r*math.sin(angle), z))
+    faces = [tuple(reversed(range(around)))]
+    for row in range(len(levels)-1):
+        for i in range(around):
+            j = (i+1)%around
+            faces.append((row*around+i,row*around+j,(row+1)*around+j,(row+1)*around+i))
+    pole = len(vertices)
+    vertices.append((x, 66, -8.03))
+    for i in range(around):
+        faces.append(((len(levels)-1)*around+i,
+                      (len(levels)-1)*around+(i+1)%around, pole))
+    obj = api.mesh('DomedGamebitHead', vertices, faces, material)
+    _outward(obj)
+    return obj
 
 
 def build(api):
@@ -166,13 +335,14 @@ def build(api):
     paper = api.material('N64 neutral unprinted front label', (.69, .68, .64), .59)
     rear_paper = api.material('N64 neutral rear warning label', (.045, .045, .043), .58)
     pcb = api.material('N64 green epoxy connector substrate', (.018, .105, .042), .46)
+    substrate = api.material('N64 unmasked tan FR4 connector tongue', (.24, .105, .022), .48)
     gold = api.material('N64 gold plated connector contacts', (.52, .30, .075), .28, .78)
-    screw_metal = api.material('N64 zinc security screw heads', (.30, .28, .22), .30, .78)
-    for mat in (gray, rear_gray, dark, pcb, gold, screw_metal):
+    screw_metal = api.material('N64 warm zinc plated security screw heads', (.43, .32, .14), .34, .83)
+    for mat in (gray, rear_gray, dark, pcb, substrate, gold, screw_metal):
         mat.use_backface_culling = True
     normal, roughness = _packed_surface_maps()
-    _exportable_abs(gray, normal, roughness['molded'], .22)
-    _exportable_abs(rear_gray, normal, roughness['molded'], .29)
+    _exportable_abs(gray, normal, roughness['molded'], .38)
+    _exportable_abs(rear_gray, normal, roughness['molded'], .68)
 
     # The same broad circular crown appears on both shell halves. The front
     # has rounded front edges; a narrow air gap expresses the assembly seam.
@@ -219,10 +389,20 @@ def build(api):
 
     # Curved lower outer relief is a pair of shallow molded channels. Their
     # shape is inferred from real front/underside photos, not a factory die.
-    path = [(49.7, -1), (50.3, -1), (50.3, 17.8), (50.45, 18.7),
-            (50.9, 19.3), (51.7, 19.8), (54.1, 20.7), (56.6, 22.0),
-            (59, 23.1), (59, 23.7), (56.4, 22.6), (53.8, 21.3),
-            (51.4, 20.4), (50.5, 19.9), (49.9, 19.0), (49.7, 17.8)]
+    centerline = [(50.0, -1.0), (50.0, 17.6)]
+    a, b, c, d = complex(50,17.6), complex(50,20.3), complex(53.3,20.0), complex(59,23.6)
+    for i in range(1, 25):
+        t = i/24
+        value = (1-t)**3*a+3*(1-t)**2*t*b+3*(1-t)*t*t*c+t**3*d
+        centerline.append((value.real,value.imag))
+    borders = [[], []]
+    for i, (x, y) in enumerate(centerline):
+        lo, hi = centerline[max(0,i-1)], centerline[min(len(centerline)-1,i+1)]
+        dx, dy = hi[0]-lo[0], hi[1]-lo[1]
+        length = math.hypot(dx,dy)
+        for j, sign in enumerate((-1,1)):
+            borders[j].append((x+sign*.21*dy/length,y-sign*.21*dx/length))
+    path = borders[0]+list(reversed(borders[1]))
     for sign in (-1, 1):
         pts = [(sign*x, y) for x, y in path]
         if sign < 0:
@@ -233,23 +413,15 @@ def build(api):
     rear_land = api.rounded_points(82.0, 40.0, 2.8, y=34.2, steps=12)
     _subtract(rear, api.profile('Rear warning land', rear_land, -8.91, -10, None, .05))
     api.label('RearLabel', 80.9, 38.9, 0, 34.2, -8.955, rear_paper, 2.3, rear=True)
-    brand_land = _capsule(30.5, 7.6, 64.8)
-    _subtract(rear, api.profile('Rear wordmark land', brand_land, -8.98, -10, None, .04))
-    _rear_brand(api, rear_gray)
+    _rear_brand(api, rear)
 
-    # Two real recessed 3.8 mm gamebit-style heads. A six-lobed external
-    # drive is cut into each head; using a Phillips slot would be inaccurate.
+    # Two recessed Gamebit-style heads, with rounded centers and six external
+    # drive notches. The teardown's 3.8 mm is a driver size, not head metrology.
     for x in (-35.4, 35.4):
         _subtract(rear, api.cylinder('Security screw counterbore', (x, 66.0, -8.65), 3.05, 3.5, None, 48, .22))
-        api.cylinder('InternalScrewBoss', (x, 66, -4.1), 3.50, 7.1, rear_gray, 32, .08)
-        api.cylinder('SecurityScrewShank', (x, 66, -7.0), 1.0, 2.4, screw_metal, 24, .05)
-        head = api.cylinder('SecurityScrewHead', (x, 66, -8.20), 1.95, .82, screw_metal, 48, .25)
-        _apply(head)
-        for i in range(6):
-            a = i * math.pi / 3
-            _subtract(head, api.cylinder('Gamebit external lobe core',
-                                        (x+1.95*math.cos(a), 66+1.95*math.sin(a), -8.2),
-                                        .36, 1.3, None, 12, 0))
+        api.cylinder('InternalScrewBoss', (x, 66, -3.8), 3.50, 6.4, rear_gray, 32, .08)
+        api.cylinder('SecurityScrewShank', (x, 66, -6.6), 1.0, 1.8, screw_metal, 24, .05)
+        _gamebit_head(api, x, screw_metal)
 
     # NTSC-U/C rear molding has the large keys at the OUTER corners. PAL/JPN
     # photos with inboard stepped keys are deliberately not used for this
@@ -265,17 +437,22 @@ def build(api):
     # Black PBT-like board guide, recessed from the mouth. The visible
     # motherboard is limited to its connector tongue; unseen electronics
     # are deliberately absent from this closed visualization asset.
-    api.box('ConnectorPCB', (0, 13.2, .65), (65.0, 21.0, 1.6), pcb, .12)
+    api.box('ConnectorPCB', (0, 13.2, .65), (65.0, 21.0, 1.6), substrate, .22)
+    # Solder mask stops at the inner end of the fingers; the exposed tongue
+    # is tan/brown FR4 in the original Nintendo boards photographed here.
+    for side in (-1, 1):
+        api.box('PCBGreenSolderMask', (0,16.8,.65+side*.803), (64.55,13.1,.012), pcb, 0)
     for side in (-1, 1):
         # 2.50 mm pitch is corroborated by original adapter PCB documentation.
         for i in range(25):
             api.box(f'Contact_{side}_{i+1:02d}', (-30+i*2.5, 6.0, .65+side*.814),
                     (1.70, 6.0, .028), gold, 0)
-    api.box('ConnectorGuideBackRail', (0, 9.5, -3.25), (70.0, 2.6, 2.2), dark, .22)
+    api.box('ConnectorGuideRearWall', (0, 6.6, -5.85), (70.0, 10.0, .95), dark, .12)
+    api.box('ConnectorGuideFrontWall', (0, 6.6, 4.45), (70.0, 10.0, .95), dark, .12)
     for sign in (-1, 1):
-        api.box('ConnectorGuideSide', (sign*34.0, 6.7, -.10), (2.6, 9.0, 6.7), dark, .25)
+        api.box('ConnectorGuideSide', (sign*34.0, 6.6, -.70), (2.6, 10.0, 10.3), dark, .18)
     for x in (-27.5, -17.5, 17.5, 27.5):
-        api.box('ConnectorGuideRetainer', (x, 5.3, -4.3), (4.1, 3.0, 1.0), dark, .16)
+        api.box('ConnectorGuideRetainer', (x, 2.4, -5.05), (4.1, 1.6, 1.5), dark, .12)
 
     # Keep labels' UV0 isolated from the physically scaled plastic maps.
     # Opaque solid winding is validated before enabling export culling.
@@ -292,7 +469,12 @@ def build(api):
             for polygon in obj.data.polygons:
                 polygon.material_index = 0
         _outward(obj)
-        _smooth(obj)
+        if obj.name in ('FrontShell', 'RearShell'):
+            _molded_shading(obj)
+        elif obj.name.startswith('DomedGamebitHead'):
+            _molded_shading(obj, 0)
+        else:
+            _smooth(obj)
         if any(mat in (gray, rear_gray) for mat in obj.data.materials):
             _surface_uv(obj)
 
@@ -310,5 +492,6 @@ def build(api):
         'https://commons.wikimedia.org/wiki/File:N64-Game-Cartridge.jpg',
         'https://consolemods.org/wiki/N64:Connector_Pinouts',
         'https://github.com/bigbass1997/n64-ext-adapter',
+        'https://www.nintendo.com/us/',
     ]
     return root

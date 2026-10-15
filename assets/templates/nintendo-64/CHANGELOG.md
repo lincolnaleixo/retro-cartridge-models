@@ -4,6 +4,16 @@
 
 No pending changes.
 
+## 0.2.0 — 2026-10-15
+
+- Removed broad faceted crown highlights and pinched cheek/channel transitions by refining curved geometry, recess rims and split/weighted normals. The same camera and studio setup make the difference comparable with 0.1.0.
+- Replaced thin raised generic lettering with recessed official-source Nintendo letter contours, a shallow molded island and rounded surrounding channel. The mark remains excluded from the original-model license; relief and scale are photographic estimates.
+- Rebuilt the security heads with a round dome, six external shoulder lobes and a deeper recessed seat. Their warm metal finish is less glossy at close range.
+- Extended the black connector guide into continuous walls around the tongue. The insertion edge now shows tan bare substrate below green solder mask, retaining 25 gold contacts per face at 2.50 mm pitch.
+- Increased fine plastic detail, with stronger rear grain and a softer satin front. The 116 × 76.6 × 18.5 mm nominal envelope, axes, pivot and named label surfaces remain compatible.
+- Final source-solid checks pass for all 73 solids: manifold edges, no degenerate faces and positive volume. Actual-export review confirms clean crown shading, recessed lettering and connector structure; Blender 5.2.2 LTS packed-source reopening, GLB/UV inspection and Godot 4.7.2 import, named surfaces, world bounds and five-format application checks pass. Eight actual-export previews and manifest checksums accompany the release.
+- Preserved the published 0.1.0 source package, manifest and preview bytes unchanged.
+
 ## 0.1.0 — 2026-10-15
 
 - Added an original gray NTSC-U/C NUS-006 cartridge reconstruction with a nominal 116 × 76.6 × 18.5 mm envelope, bowed crown, curved cheeks, recessed label lands, two rear screw wells and a recessed 50-contact connector.

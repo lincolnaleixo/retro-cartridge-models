@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "id": "nintendo-64",
+  "version": "0.2.0",
+  "title": "Nintendo 64 \u2014 NTSC-U/C cartridge",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions: CC BY-NC-ND 4.0. Nintendo product design and marks, including official 2D letter contours in the approximate molded rear wordmark, are excluded. No game artwork or source photography is included.",
+  "date": "2026-10-15",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center"
+  },
+  "nominalDimensionsMm": [
+    116,
+    76.6,
+    18.5
+  ],
+  "measurementBasis": "Community measurements and photographic reconstruction; see measurement-evidence.json and asset credits. Not manufacturing CAD.",
+  "changes": [
+    "Rebuilt crown and shoulder transitions to remove broad faceted highlights while retaining the 116 x 76.6 x 18.5 mm envelope.",
+    "Replaced thin generic rear lettering with recessed Nintendo outline contours inside a rounded molded island and surrounding moat.",
+    "Refined the continuous black connector guide, tan exposed board substrate, domed gold Gamebit heads and rear ABS surface detail.",
+    "Kept meter scale, +Y up, +Z front, bottom-center origin and separate upright FrontLabel/RearLabel UV targets. Photographic molding dimensions remain approximate."
+  ],
+  "validation": {
+    "meshes": 10,
+    "primitives": 10,
+    "triangles": 48341,
+    "materials": 9,
+    "images": 2,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "embeddedImages": 2,
+    "externalImages": 0,
+    "godot": {
+      "version": "4.7.2",
+      "headlessImport": "passed",
+      "surfaceInspection": "Named front/rear label surfaces, UV0, physical bounds and embedded texture imports verified."
+    },
+    "previewLighting": "Actual GLB reimport; same neutral white studio as 0.1.0, Standard view transform, exposure -1.0, 32 Cycles samples, 1200 x 1000 pixels. Connector detail adds the same underside fill light. Additional native rear-detail camera: 96 samples, 1600 x 1000 pixels, same studio.",
+    "editableSource": "Reopened in Blender 5.2.2 LTS; packed image data retained and private paths removed."
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/templates/nintendo-64/previews/0.2.0/hero.png",
+      "bytes": 1057091,
+      "sha256": "86f1b82e9d5df3991a5af1f897f8c8bbf90991a0a5885a6426e8c8694f175ccc"
+    },
+    {
+      "view": "front",
+      "path": "assets/templates/nintendo-64/previews/0.2.0/front.png",
+      "bytes": 1015390,
+      "sha256": "3a61426b0f8d1d9774646fa8ad45b1b294535d25518f3c88551ddeb785a4aa43"
+    },
+    {
+      "view": "rear",
+      "path": "assets/templates/nintendo-64/previews/0.2.0/rear.png",
+      "bytes": 1079887,
+      "sha256": "86916751df710ce56bf160457765d86e9402d09ee1f8f7633702387af1198dae"
+    },
+    {
+      "view": "top",
+      "path": "assets/templates/nintendo-64/previews/0.2.0/top.png",
+      "bytes": 1185558,
+      "sha256": "10c25bdee2b6b468cbda697d573dcc3e9238c1f9004e1274fb9f9d91dafec34f"
+    },
+    {
+      "view": "bottom",
+      "path": "assets/templates/nintendo-64/previews/0.2.0/bottom.png",
+      "bytes": 1043291,
+      "sha256": "dd682a02cab03b25225402bf6784c5a34164c9a6a582eefabea9e7fb8753d1c3"
+    },
+    {
+      "view": "left",
+      "path": "assets/templates/nintendo-64/previews/0.2.0/left.png",
+      "bytes": 918293,
+      "sha256": "65340fb23b5ca45effbaa65e92b4eeffe3371ef515096779f6409971ecb8b8ca"
+    },
+    {
+      "view": "connector",
+      "path": "assets/templates/nintendo-64/previews/0.2.0/connector.png",
+      "bytes": 957557,
+      "sha256": "5aaa79f855731a774bc7525f56e36215a68ea72ec74881dba38bbb7b9d0ceaf3"
+    },
+    {
+      "view": "rear-detail",
+      "path": "assets/templates/nintendo-64/previews/0.2.0/rear-detail.png",
+      "bytes": 1557712,
+      "sha256": "2b3e78983643a2284cec12b032435afd8cd34856bda2cbe64039b1f3e407a61c"
+    }
+  ],
+  "release": {
+    "tag": "nintendo-64-v0.2.0",
+    "archive": {
+      "name": "nintendo-64-0.2.0.zip",
+      "bytes": 11778599,
+      "sha256": "c145daadfede9dfe45a9ea02d2ba9eb0d362d299f9746ce13150f56879a468d5",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/nintendo-64-v0.2.0/nintendo-64-0.2.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 2986,
+      "sha256": "4fb4c6a4c447f6c7d7e0402cfe0843ef94ede3c4e68f1d1b6af2455a2fcade4f"
+    },
+    "CREDITS.md": {
+      "bytes": 5577,
+      "sha256": "517f217359c3ddb6529d3ae20b1e42cc2878e4cd54770d5c786b24ba516c4730"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 4351,
+      "sha256": "04602588f5708dd1ca0b26f7194ce5ea5fcb2a12fb1ece283fbd9321ab814033"
+    },
+    "README.md": {
+      "bytes": 4967,
+      "sha256": "61f96d6c70d65e3fc1785a2cd89a405596c468a1e5a0266343639f67b8d0f8b2"
+    },
+    "bottom.png": {
+      "bytes": 1043291,
+      "sha256": "dd682a02cab03b25225402bf6784c5a34164c9a6a582eefabea9e7fb8753d1c3"
+    },
+    "connector.png": {
+      "bytes": 957557,
+      "sha256": "5aaa79f855731a774bc7525f56e36215a68ea72ec74881dba38bbb7b9d0ceaf3"
+    },
+    "front.png": {
+      "bytes": 1015390,
+      "sha256": "3a61426b0f8d1d9774646fa8ad45b1b294535d25518f3c88551ddeb785a4aa43"
+    },
+    "hero.png": {
+      "bytes": 1057091,
+      "sha256": "86f1b82e9d5df3991a5af1f897f8c8bbf90991a0a5885a6426e8c8694f175ccc"
+    },
+    "left.png": {
+      "bytes": 918293,
+      "sha256": "65340fb23b5ca45effbaa65e92b4eeffe3371ef515096779f6409971ecb8b8ca"
+    },
+    "measurement-evidence.json": {
+      "bytes": 16213,
+      "sha256": "24f6317a9f07b9d14026d9294366393c25973861cae2916f82be8c0c754f7e68"
+    },
+    "nintendo-64.blend": {
+      "bytes": 1737609,
+      "sha256": "e4660d3846ecb00471c0503037c61497e8505a5fa016aaefc5ab5f0561fa9977"
+    },
+    "nintendo-64.glb": {
+      "bytes": 2168696,
+      "sha256": "22068e827151d88faaff194b6658ec4d4d185677acc3c5584bdfdc8bac411b1b"
+    },
+    "rear-detail.png": {
+      "bytes": 1557712,
+      "sha256": "2b3e78983643a2284cec12b032435afd8cd34856bda2cbe64039b1f3e407a61c"
+    },
+    "rear.png": {
+      "bytes": 1079887,
+      "sha256": "86916751df710ce56bf160457765d86e9402d09ee1f8f7633702387af1198dae"
+    },
+    "top.png": {
+      "bytes": 1185558,
+      "sha256": "10c25bdee2b6b468cbda697d573dcc3e9238c1f9004e1274fb9f9d91dafec34f"
+    }
+  }
+}
