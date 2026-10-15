@@ -68,6 +68,50 @@
       "description": "The standalone Crash Bandicoot SCUS-94900 CD with an approximately restored orange and blue-violet label, clear hub and dark reading face.",
       "credits": "assets/reproductions/playstation-1/crash-bandicoot/CREDITS.md",
       "rights": "Original contributions only. Crash Bandicoot artwork, PlayStation and other third-party marks, scan and reference photography are excluded; see CREDITS.md and NOTICE.md."
+    },
+    {
+      "id": "nintendo-64",
+      "title": "Nintendo 64 — NTSC-U/C cartridge",
+      "latest": "0.1.0",
+      "manifest": "assets/templates/nintendo-64/versions/0.1.0.json",
+      "displayTitle": "Nintendo 64 · Unprinted template",
+      "kind": "BASE MODEL",
+      "description": "The original North American gray Game Pak with an arched label recess, curved cheeks, two rear screw wells and a recessed connector. Front and rear labels are unprinted.",
+      "credits": "assets/templates/nintendo-64/CREDITS.md",
+      "rights": "Original contributions: CC BY-NC-ND 4.0. Nintendo product design and marks, including the approximate molded rear wordmark, are excluded. No game artwork or source photography is included."
+    },
+    {
+      "id": "nes",
+      "title": "NES — early five-screw cartridge",
+      "latest": "0.1.0",
+      "manifest": "assets/templates/nes/versions/0.1.0.json",
+      "displayTitle": "NES · Five-screw template",
+      "kind": "BASE MODEL",
+      "description": "The early western gray Game Pak with five rear screw seats, a ribbed front channel, a folded top label and a recessed 72-contact connector. Both labels are unprinted.",
+      "credits": "assets/templates/nes/CREDITS.md",
+      "rights": "Original contributions: CC BY-NC-ND 4.0. Nintendo product design and marks are excluded; no game artwork or source photography is included."
+    },
+    {
+      "id": "nintendo-64-super-mario-64",
+      "title": "Nintendo 64 — Super Mario 64 reproduction",
+      "latest": "0.1.0",
+      "manifest": "assets/reproductions/nintendo-64/super-mario-64/versions/0.1.0.json",
+      "displayTitle": "Super Mario 64",
+      "kind": "TEXTURED EXAMPLE · NINTENDO 64",
+      "description": "Super Mario 64 on the original North American cartridge, with the K-A front label and 1996 rear warning label mapped from unmodified photographs. Source resolution and photographic color remain approximate.",
+      "credits": "assets/reproductions/nintendo-64/super-mario-64/CREDITS.md",
+      "rights": "Original modeling contributions only. Nintendo artwork, marks, product design and source photography are excluded; attribution and the maintainer's request do not grant rights to those elements. See CREDITS.md and NOTICE.md."
+    },
+    {
+      "id": "nes-super-mario-bros",
+      "title": "NES — Super Mario Bros. reproduction",
+      "latest": "0.1.0",
+      "manifest": "assets/reproductions/nes/super-mario-bros/versions/0.1.0.json",
+      "displayTitle": "Super Mario Bros.",
+      "kind": "TEXTURED EXAMPLE · NES",
+      "description": "Super Mario Bros. on the early five-screw cartridge, with the round gold seal, folded top title and rear warning label without REV-A. Unmodified source photography preserves visible wear; the top fold has limited detail.",
+      "credits": "assets/reproductions/nes/super-mario-bros/CREDITS.md",
+      "rights": "Original modeling contributions only. Nintendo artwork, marks, product design and source photography are excluded; attribution and the maintainer's request do not grant rights to those elements. See CREDITS.md and NOTICE.md."
     }
   ]
 }

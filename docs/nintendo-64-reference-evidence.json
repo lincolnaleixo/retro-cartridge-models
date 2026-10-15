@@ -1,0 +1,233 @@
+{
+  "asset": "nintendo-64",
+  "variant": "NTSC-U/C gray NUS-006 Game Pak",
+  "authoredOn": "2026-10-15",
+  "scope": "Original parametric visualization; no imported third-party mesh, factory CAD or manufacturing-fit claim.",
+  "sources": [
+    {
+      "id": "consolemods-envelope",
+      "url": "https://consolemods.org/wiki/Dimensions_for_Game_Cartridges",
+      "authority": "Community measurement table, credited to Reddit user gsx115",
+      "facts": {
+        "widthMm": 116.0,
+        "heightMm": 76.6,
+        "thicknessMm": 18.5
+      },
+      "limits": "Community reported values; the author did not measure a specimen and this is not a Nintendo drawing."
+    },
+    {
+      "id": "consolemods-label",
+      "url": "https://consolemods.org/wiki/Cart_Labels",
+      "authority": "Community label template table",
+      "facts": {
+        "frontLabelWidthMm": 54.5,
+        "frontLabelHeightMm": 62.5,
+        "topCornerRadiusMm": 4.0,
+        "bottomCornerRadiusMm": 3.0,
+        "topCurveDiameterMm": 325.0,
+        "fold": false
+      },
+      "limits": "N64 row has no confirmation mark. Its size and curves constrain a visualization, not a validated manufacturing dieline."
+    },
+    {
+      "id": "ifixit-teardown",
+      "url": "https://www.ifixit.com/Guide/Disassembling+Nintendo+64+Cartridge/3583",
+      "authority": "BWest firsthand teardown with original photographs",
+      "facts": [
+        "Two rear security screws opened with a 3.8 mm Gamebit driver.",
+        "Case separates from the top while bottom tabs retain the halves.",
+        "Metal shielding and a black plastic board support are visible inside."
+      ],
+      "limits": "The 3.8 mm value describes the driver, not a measured screw-head diameter. Photographs provide morphology, not calibrated dimensions."
+    },
+    {
+      "id": "evan-amos-shell",
+      "url": "https://commons.wikimedia.org/wiki/File:N64-Game-Cartridge.jpg",
+      "authority": "Evan-Amos original photograph of an open cartridge and an unlabeled shell",
+      "facts": [
+        "Wide curved front cheeks, bowed crown, central arched label recess and flanking grooves.",
+        "Recessed card-edge connector and black plastic guide."
+      ],
+      "limits": "Perspective photograph; no dimensional scale. Public-domain photo is a visual reference only; pixels are not included in the authored model."
+    },
+    {
+      "id": "consolemods-pinout",
+      "url": "https://consolemods.org/wiki/N64:Connector_Pinouts",
+      "authority": "Community hardware pinout",
+      "facts": {
+        "contactsTotal": 50,
+        "contactsEachFace": 25
+      },
+      "limits": "Pinout establishes count and two rows, not geometry dimensions."
+    },
+    {
+      "id": "bigbass-adapter",
+      "url": "https://github.com/bigbass1997/n64-ext-adapter",
+      "authority": "Original hardware adapter author documenting the optional standard N64 cartridge connector",
+      "facts": {
+        "cartridgeContactPitchMm": 2.5
+      },
+      "limits": "The same page discusses a different 2.6 mm thick EXT adapter. That thickness is not used as cartridge PCB thickness. Author states the adapter project has not been fully tested."
+    },
+    {
+      "id": "pal-underside",
+      "url": "https://natsukashiiretro.com/products/super-mario-64-untested",
+      "imageUrl": "https://natsukashiiretro.com/cdn/shop/files/Underside-Super-Mario.jpg?v=1759097550&width=1946",
+      "authority": "Dealer photograph of a physical PAL/AUS cartridge",
+      "facts": [
+        "Mouth recessed below the intact front lip; black guide surrounds gold contacts."
+      ],
+      "limits": "PAL/AUS rear regional key positions are deliberately not used for the NTSC-U/C rear shell."
+    },
+    {
+      "id": "usa-rear-photo",
+      "url": "https://www.ebay.com/itm/335375735854",
+      "imageUrl": "https://i.ebayimg.com/images/g/YRgAAOSwQTVmLDDN/s-l1200.jpg",
+      "authority": "Seller photograph of a physical 1996 Super Mario 64 NTSC-U/C cartridge",
+      "facts": [
+        "NUS-USA/CAN rear warning label.",
+        "Large rear key cutouts at the extreme bottom corners, separate smaller lower notches farther inward.",
+        "Arched outer crown, wide rear label land and two top screw recesses."
+      ],
+      "limits": "Perspective specimen photo, no scale. Used only for modeling morphology; photo is not redistributed in the repository or model."
+    },
+    {
+      "id": "usa-rear-photo-crosscheck",
+      "url": "https://www.ebay.com/itm/396287632714",
+      "imageUrl": "https://i.ebayimg.com/images/g/0ZMAAOSwS-BnnLCy/s-l1200.png",
+      "authority": "Independent seller photograph of an NTSC-U/C Super Mario 64 cartridge",
+      "facts": [
+        "Corroborates the outer-corner USA rear keys and small separate lower notches."
+      ],
+      "limits": "Perspective photo; does not independently validate millimeter estimates."
+    }
+  ],
+  "modeledParameters": {
+    "outerEnvelopeMm": [
+      116.0,
+      76.6,
+      18.5
+    ],
+    "outerEnvelopeStatus": "Community measured nominal target; edge radii can change exact mesh extrema slightly.",
+    "frontLabelMm": [
+      54.5,
+      62.5
+    ],
+    "frontLabelBottomYmm": 6.1,
+    "rearLabelMm": [
+      80.9,
+      38.9
+    ],
+    "rearLabelCenterYmm": 34.2,
+    "crownRadiusMm": 165.0,
+    "frontCheekHorizontalRadiusMm": 9.0,
+    "frontCheekVerticalRadiusMm": 9.15,
+    "frontLabelLandDepthMm": 0.37,
+    "rearLabelLandDepthMm": 0.34,
+    "paperOffsetAboveLandMm": 0.045,
+    "nominalAssemblyGapMm": 0.2,
+    "rearScrewCentersMm": [
+      [
+        -35.4,
+        66.0
+      ],
+      [
+        35.4,
+        66.0
+      ]
+    ],
+    "rearCounterboreDiameterMm": 6.1,
+    "connectorMouthWidthMm": 73.0,
+    "pcbThicknessMm": 1.6,
+    "pcbLowerEdgeYmm": 2.7,
+    "contactPitchMm": 2.5,
+    "contactCount": 50,
+    "contactWidthMm": 1.7,
+    "contactLengthMm": 6.0,
+    "contactLowerEdgeYmm": 3.0,
+    "parameterLimits": "Only the nominal envelope, front template dimensions/curves and connector contact count/pitch are source values. All placements, other radii, depths, rear label size, PCB thickness, contact width/length, support dimensions and molding clearances are visual estimates. No tolerance study or physical fit test was performed."
+  },
+  "materials": {
+    "basis": "Original deterministic normal/roughness textures approximate fine molded plastic. Colors and grain are artistic visual estimates, not measured reflectance.",
+    "tileSizeMm": 8.0,
+    "normalStrengthFront": 0.22,
+    "normalStrengthRear": 0.29,
+    "texturePacking": "Packed in Blender and embedded in GLB. FrontLabel/RearLabel retain separate ArtworkUV 0-1 and untextured neutral materials."
+  },
+  "specificLimits": [
+    "Rear Nintendo wordmark uses converted editable font geometry with approximate proportions, not an exact traced OEM logotype.",
+    "Only the PCB tongue and visible guide are modeled; hidden chips and complete internal shielding are omitted.",
+    "The model has no moving shell mechanism or manufacturing/printing specification."
+  ],
+  "consumerContract": {
+    "units": "meters",
+    "axes": {
+      "right": "+X",
+      "up": "+Y",
+      "front": "+Z"
+    },
+    "pivot": "bottom center",
+    "replaceableLabels": [
+      "FrontLabel",
+      "RearLabel"
+    ],
+    "artworkUv": "ArtworkUV, UV0, upright and viewer-left-to-right"
+  },
+  "verification": {
+    "scope": "Neutral module export inspected on 2026-10-15; not a release-package or consumer-engine validation.",
+    "status": "Passed local source-solid audit, GLB structural inspection, render inspection and repository verification.",
+    "sourceSha256": "062ba3d4c57462e02204c203567220e27c3a0cbf423ea3e227081d22de7b2d38",
+    "sourceSolidAudit": {
+      "nonManifoldEdges": 0,
+      "nonPositiveSolidVolumes": 0,
+      "degenerateFaces": 0,
+      "exclusions": "The intentional single-sided FrontLabel and RearLabel surfaces."
+    },
+    "export": {
+      "triangles": 18861,
+      "meshes": 10,
+      "primitives": 10,
+      "materials": 9,
+      "embeddedImages": 2,
+      "bytes": 1298548,
+      "selfContained": true,
+      "unassignedMaterialPrimitives": 0
+    },
+    "labelUv0": {
+      "FrontLabel": "0-1 on both axes, ratio 0.872",
+      "RearLabel": "0-1 on both axes, ratio 2.0796915167"
+    },
+    "sourceWorldDimensionsMm": [
+      115.9999966621,
+      76.6000002623,
+      18.5000002384
+    ],
+    "glbRoundTripWorldDimensionsMm": [
+      115.9999966621,
+      76.6000006666,
+      18.5000039637
+    ],
+    "maximumRoundTripBoundDeltaMeters": 3.7252902985e-09,
+    "inspectedExportViews": [
+      "hero",
+      "front",
+      "rear",
+      "back",
+      "bottom",
+      "bottom-ortho",
+      "steep underside connector detail"
+    ],
+    "visualChecks": [
+      "Arched crown and rounded front cheeks.",
+      "Front and rear physical label lands and flanking grooves.",
+      "NTSC-U/C corner keys with the front lower returns visible behind.",
+      "Two security screws and separate molded capsule.",
+      "Recessed 25-contact row visibly retained by the mouth and guide; second row exists on the opposite PCB face."
+    ],
+    "commands": [
+      "python3 tools/inspect_glb.py <neutral-export.glb>",
+      "python3 tools/verify.py"
+    ],
+    "repositoryVerification": "Catalog verified: 6 assets, 7 versions"
+  }
+}

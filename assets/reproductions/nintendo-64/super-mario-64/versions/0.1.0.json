@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "id": "nintendo-64-super-mario-64",
+  "version": "0.1.0",
+  "title": "Nintendo 64 \u2014 Super Mario 64 reproduction",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original modeling contributions only. Nintendo artwork, marks, product design and source photography are excluded; attribution and the maintainer's request do not grant rights to those elements. See CREDITS.md and NOTICE.md.",
+  "date": "2026-10-15",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center"
+  },
+  "nominalDimensionsMm": [
+    116,
+    76.6,
+    18.5
+  ],
+  "measurementBasis": "Community measurements and photographic reconstruction; see measurement-evidence.json and asset credits. Not manufacturing CAD.",
+  "changes": [
+    "First 0.1.0 release of Nintendo 64 \u2014 Super Mario 64 reproduction.",
+    "Preserved meter scale, +Y up, +Z front, bottom-center origin and separate FrontLabel/RearLabel targets.",
+    "Mapped original photographic pixels with sRGB color, roughness 0.68 and specular IOR level 0.18; source hashes and UV coordinates included.",
+    "Third-party artwork and photography remain excluded from the original-model license."
+  ],
+  "validation": {
+    "meshes": 10,
+    "primitives": 10,
+    "triangles": 18861,
+    "materials": 9,
+    "images": 4,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "embeddedImages": 4,
+    "externalImages": 0,
+    "godot": {
+      "version": "4.7.2",
+      "headlessImport": "passed",
+      "surfaceInspection": "Named front/rear label surfaces, UV0, physical bounds and embedded texture imports verified."
+    },
+    "previewLighting": "Actual GLB reimport; neutral white studio, Standard view transform, exposure -1.0, 32 Cycles samples, 1200 x 1000 pixels. Connector detail adds an underside fill light.",
+    "editableSource": "Reopened in Blender 5.2.2 LTS; packed image data retained and private paths removed."
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/reproductions/nintendo-64/super-mario-64/previews/0.1.0/hero.png",
+      "bytes": 1330151,
+      "sha256": "167c04da9dfea2992e9c62bbccbd560163df4ec25ee96458ebf59f1085792ae7"
+    },
+    {
+      "view": "front",
+      "path": "assets/reproductions/nintendo-64/super-mario-64/previews/0.1.0/front.png",
+      "bytes": 1285627,
+      "sha256": "cc091b6e138d882b5bdc4eb78f515a253335e77421e8cf0d93b35baceb6c9fa6"
+    },
+    {
+      "view": "rear",
+      "path": "assets/reproductions/nintendo-64/super-mario-64/previews/0.1.0/rear.png",
+      "bytes": 1319117,
+      "sha256": "11cdc21b0c5697bfe0932e47909fa5d304d75eeda28b7b6cbac3e50bb05c8ba1"
+    },
+    {
+      "view": "top",
+      "path": "assets/reproductions/nintendo-64/super-mario-64/previews/0.1.0/top.png",
+      "bytes": 1334673,
+      "sha256": "d7a6467fb6b11ade31b87ee231e0369d704de12a20aef7f423d99f868d95660f"
+    },
+    {
+      "view": "bottom",
+      "path": "assets/reproductions/nintendo-64/super-mario-64/previews/0.1.0/bottom.png",
+      "bytes": 1287630,
+      "sha256": "28e16d3d848b8a76f30d0e5c91c80d20a2515d0cbd131c3921214cc3338b2b28"
+    },
+    {
+      "view": "left",
+      "path": "assets/reproductions/nintendo-64/super-mario-64/previews/0.1.0/left.png",
+      "bytes": 914747,
+      "sha256": "c6261825ac3f55af300552eb5781e4a0a50dc3562493d5aadb78776a58858fcd"
+    },
+    {
+      "view": "connector",
+      "path": "assets/reproductions/nintendo-64/super-mario-64/previews/0.1.0/connector.png",
+      "bytes": 1195936,
+      "sha256": "9b38437d8adfcf5962e2287066ea4ad623ee80fb724e989692b3023561b82112"
+    }
+  ],
+  "release": {
+    "tag": "nintendo-64-super-mario-64-v0.1.0",
+    "archive": {
+      "name": "nintendo-64-super-mario-64-0.1.0.zip",
+      "bytes": 11105755,
+      "sha256": "5f8c9db59def31f0a1b389ace9614268e344bb613518b5a3be25e54e7602058c",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/nintendo-64-super-mario-64-v0.1.0/nintendo-64-super-mario-64-0.1.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 1158,
+      "sha256": "8c1b8ac2d1c929d7fb442f7f886032de9ccb75373217bb085ed4cb6e601e006e"
+    },
+    "CREDITS.md": {
+      "bytes": 2899,
+      "sha256": "24442544e07ef77780e6a0813cc6fb185495da499975cc60812da520a1e492e5"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 3257,
+      "sha256": "eb244c2f26524e433bed6806fa3ac6576adffc808e8b496e8669cfd4927ab5f6"
+    },
+    "README.md": {
+      "bytes": 2847,
+      "sha256": "ec73036cbb85f325146bb4c5b3059091c321f5ece26b03e70167405362e0920e"
+    },
+    "artwork-provenance.json": {
+      "bytes": 1440,
+      "sha256": "831e567c94053a434480bd6177598a35e0022449da566de5893b32e105edc71d"
+    },
+    "bottom.png": {
+      "bytes": 1287630,
+      "sha256": "28e16d3d848b8a76f30d0e5c91c80d20a2515d0cbd131c3921214cc3338b2b28"
+    },
+    "connector.png": {
+      "bytes": 1195936,
+      "sha256": "9b38437d8adfcf5962e2287066ea4ad623ee80fb724e989692b3023561b82112"
+    },
+    "front.png": {
+      "bytes": 1285627,
+      "sha256": "cc091b6e138d882b5bdc4eb78f515a253335e77421e8cf0d93b35baceb6c9fa6"
+    },
+    "hero.png": {
+      "bytes": 1330151,
+      "sha256": "167c04da9dfea2992e9c62bbccbd560163df4ec25ee96458ebf59f1085792ae7"
+    },
+    "left.png": {
+      "bytes": 914747,
+      "sha256": "c6261825ac3f55af300552eb5781e4a0a50dc3562493d5aadb78776a58858fcd"
+    },
+    "measurement-evidence.json": {
+      "bytes": 9301,
+      "sha256": "fb5af64a1fd91d83f98f569c388308ca9bfeba228911e28f99a6e294ac464db0"
+    },
+    "nintendo-64-super-mario-64.blend": {
+      "bytes": 1304987,
+      "sha256": "765bca1eececb9e1764667c3d1b592d9ab51c77735ee22b5f7732d0dbe50bbfb"
+    },
+    "nintendo-64-super-mario-64.glb": {
+      "bytes": 1673100,
+      "sha256": "66e4624bfa58b7966101512cc60cd905a0c7e369491fccea8e09a47aa28b8dd3"
+    },
+    "rear.png": {
+      "bytes": 1319117,
+      "sha256": "11cdc21b0c5697bfe0932e47909fa5d304d75eeda28b7b6cbac3e50bb05c8ba1"
+    },
+    "top.png": {
+      "bytes": 1334673,
+      "sha256": "d7a6467fb6b11ade31b87ee231e0369d704de12a20aef7f423d99f868d95660f"
+    }
+  }
+}

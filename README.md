@@ -17,11 +17,15 @@ assets/
 ├── reproductions/
 │   ├── snes/super-mario-world/
 │   ├── mega-drive/sonic-the-hedgehog/
-│   └── playstation-1/crash-bandicoot/
+│   ├── playstation-1/crash-bandicoot/
+│   ├── nintendo-64/super-mario-64/
+│   └── nes/super-mario-bros/
 └── templates/
     ├── snes/
     ├── mega-drive/
-    └── playstation-1/
+    ├── playstation-1/
+    ├── nintendo-64/
+    └── nes/
 ```
 
 These are the actual asset directories. Each contains the model's documentation, credits, changelog, version manifests and preview images. The catalog points directly to this hierarchy. Editable Blender sources and GLB exports remain in their verified release packages. To collect those files in the same console/game layout for offline use, run:
@@ -50,6 +54,10 @@ The cache accepts the original ZIP filenames directly, such as `mega-drive-0.1.0
 | [PlayStation 1 — standalone CD](assets/templates/playstation-1/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/playstation-1-v0.1.0) | [Changelog](assets/templates/playstation-1/CHANGELOG.md) |
 | [Mega Drive — Sonic the Hedgehog example](assets/reproductions/mega-drive/sonic-the-hedgehog/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/mega-drive-sonic-the-hedgehog-v0.1.0) | [Changelog](assets/reproductions/mega-drive/sonic-the-hedgehog/CHANGELOG.md) |
 | [PlayStation 1 — Crash Bandicoot disc example](assets/reproductions/playstation-1/crash-bandicoot/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/playstation-1-crash-bandicoot-v0.1.0) | [Changelog](assets/reproductions/playstation-1/crash-bandicoot/CHANGELOG.md) |
+| [Nintendo 64 — NTSC-U/C cartridge](assets/templates/nintendo-64/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nintendo-64-v0.1.0) | [Changelog](assets/templates/nintendo-64/CHANGELOG.md) |
+| [NES — early five-screw cartridge](assets/templates/nes/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nes-v0.1.0) | [Changelog](assets/templates/nes/CHANGELOG.md) |
+| [Nintendo 64 — Super Mario 64 reproduction](assets/reproductions/nintendo-64/super-mario-64/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nintendo-64-super-mario-64-v0.1.0) | [Changelog](assets/reproductions/nintendo-64/super-mario-64/CHANGELOG.md) |
+| [NES — Super Mario Bros. reproduction](assets/reproductions/nes/super-mario-bros/README.md) | 0.1.0 | [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nes-super-mario-bros-v0.1.0) | [Changelog](assets/reproductions/nes/super-mario-bros/CHANGELOG.md) |
 
 ### Super Mario World example
 
@@ -67,11 +75,23 @@ The [Mega Drive cartridge](assets/templates/mega-drive/README.md) and [standalon
 
 The geometry follows [documented dimensional evidence](docs/measurement-evidence-2026-10-02.json). These are visualization reconstructions, not certified replacement parts. The SNES surface refinement remains development work; its published baseline is unchanged.
 
-Generate the two new models with Blender 5.2.2:
+### Nintendo 64 and NES
+
+The [Nintendo 64 template](assets/templates/nintendo-64/README.md) targets the original North American NUS-006 Game Pak, with a nominal 116 × 76.6 × 18.5 mm envelope. The [NES template](assets/templates/nes/README.md) targets the early western five-screw shell at approximately 119.7 × 134 × 16.75 mm. Both have unprinted front and rear artwork surfaces, editable Blender sources and original procedural ABS maps. The Nintendo 64 template retains an approximate molded Nintendo wordmark, excluded from the model license; the NES template omits that lettering.
+
+Separate reproductions provide [Super Mario 64](assets/reproductions/nintendo-64/super-mario-64/README.md) with its original US K-A front and 1996 rear label, and [Super Mario Bros.](assets/reproductions/nes/super-mario-bros/README.md) with the early round gold seal, folded top title and rear warning label without REV-A. Both map unmodified photographic artwork. The Nintendo 64 front source has limited fine-print resolution, and the NES top fold comes from a small, oblique photographed region. Their credits identify source photography and reserved third-party rights; attribution is not a permission grant.
+
+The [Nintendo 64 evidence](docs/nintendo-64-reference-evidence.json) and [NES evidence](docs/nes-reference-evidence.json) distinguish published measurements from details inferred from photographs. These are visualization assets rather than tested replacement shells.
+
+### Generate models locally
+
+Generate all four parametric models—Mega Drive, PlayStation 1, Nintendo 64 and NES—with Blender 5.2.2:
 
 ```sh
 blender --factory-startup -b --python tools/create_media_models.py -- --output dist/development
 ```
+
+Use `--only nintendo-64`, `--only nes`, `--only mega-drive` or `--only playstation-1` to build one model. The [artwork workflow](docs/owner-artwork.md) supports front and rear photos, separate cartridge top folds, and rectangular or quadrilateral UV regions.
 
 For the SNES refinement, download and verify the 0.1.0 package above, extract it locally, then run:
 

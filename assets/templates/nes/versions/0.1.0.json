@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "id": "nes",
+  "version": "0.1.0",
+  "title": "NES \u2014 early five-screw cartridge",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions: CC BY-NC-ND 4.0. Nintendo product design and marks are excluded; no game artwork or source photography is included.",
+  "date": "2026-10-15",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center"
+  },
+  "nominalDimensionsMm": [
+    119.7,
+    134,
+    16.75
+  ],
+  "measurementBasis": "Community measurements and photographic reconstruction; see measurement-evidence.json and asset credits. Not manufacturing CAD.",
+  "changes": [
+    "First 0.1.0 release of NES \u2014 early five-screw cartridge.",
+    "Preserved meter scale, +Y up, +Z front, bottom-center origin and separate FrontLabel/RearLabel targets.",
+    "Reference-based shell details, recessed contacts and original embedded ABS normal/roughness maps; dimensions and hidden details remain approximate."
+  ],
+  "validation": {
+    "meshes": 9,
+    "primitives": 9,
+    "triangles": 22480,
+    "materials": 7,
+    "images": 2,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "embeddedImages": 2,
+    "externalImages": 0,
+    "godot": {
+      "version": "4.7.2",
+      "headlessImport": "passed",
+      "surfaceInspection": "Named front/rear label surfaces, UV0, physical bounds and embedded texture imports verified."
+    },
+    "previewLighting": "Actual GLB reimport; neutral white studio, Standard view transform, exposure -1.0, 32 Cycles samples, 1200 x 1000 pixels. Connector detail adds an underside fill light.",
+    "editableSource": "Reopened in Blender 5.2.2 LTS; packed image data retained and private paths removed."
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/templates/nes/previews/0.1.0/hero.png",
+      "bytes": 1189060,
+      "sha256": "1b4cb0cbbe5be1e1f8fa957d8e3ae7dd32ffaeb910bdacf60dc0cd7e835dd60a"
+    },
+    {
+      "view": "front",
+      "path": "assets/templates/nes/previews/0.1.0/front.png",
+      "bytes": 1127068,
+      "sha256": "72912557e1b0c2013d2f06cef7716df010973197d2fc0b9586673b68b546b918"
+    },
+    {
+      "view": "rear",
+      "path": "assets/templates/nes/previews/0.1.0/rear.png",
+      "bytes": 1108944,
+      "sha256": "378e4d561625b76bc4f3feeb20f49045e2c0863f5eced89a6f35c041f18bd063"
+    },
+    {
+      "view": "top",
+      "path": "assets/templates/nes/previews/0.1.0/top.png",
+      "bytes": 1210535,
+      "sha256": "9859165ca36e042cca6f02b028f5ef2a7698f4bb8b32c752b6fff4945bd3c20b"
+    },
+    {
+      "view": "bottom",
+      "path": "assets/templates/nes/previews/0.1.0/bottom.png",
+      "bytes": 1172964,
+      "sha256": "ec33223767af78d95db11c3a2e90ade67d772ea70ea8a588b19af39521692331"
+    },
+    {
+      "view": "left",
+      "path": "assets/templates/nes/previews/0.1.0/left.png",
+      "bytes": 915301,
+      "sha256": "24798cb724c7a9bc2137c04ccc08dea2c2dd53b223e709a4b829f4d6d52b75cf"
+    },
+    {
+      "view": "connector",
+      "path": "assets/templates/nes/previews/0.1.0/connector.png",
+      "bytes": 1026467,
+      "sha256": "384d54606f3a7aee926412fb989234c64a93732c91e172b4139b7fb83ea2fa14"
+    }
+  ],
+  "release": {
+    "tag": "nes-v0.1.0",
+    "archive": {
+      "name": "nes-0.1.0.zip",
+      "bytes": 9320899,
+      "sha256": "3a0b7940e0169c9d35a91a068d1131cb8448312b59d937451e684cab6f2cd5ab",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/nes-v0.1.0/nes-0.1.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 1288,
+      "sha256": "7caa182ec62dd3d93ccc2d397f7960220ca5fe570959f177ed1d07ad7ba9f4cc"
+    },
+    "CREDITS.md": {
+      "bytes": 2626,
+      "sha256": "a993f202c568b570fb291130c057ac6e2429c6a182967fd4636fe7d3b86b955c"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 3257,
+      "sha256": "eb244c2f26524e433bed6806fa3ac6576adffc808e8b496e8669cfd4927ab5f6"
+    },
+    "README.md": {
+      "bytes": 3111,
+      "sha256": "df515a636d7f715457899a3a61970bfbbca75e3604797044793cd6de41b1ce49"
+    },
+    "bottom.png": {
+      "bytes": 1172964,
+      "sha256": "ec33223767af78d95db11c3a2e90ade67d772ea70ea8a588b19af39521692331"
+    },
+    "connector.png": {
+      "bytes": 1026467,
+      "sha256": "384d54606f3a7aee926412fb989234c64a93732c91e172b4139b7fb83ea2fa14"
+    },
+    "front.png": {
+      "bytes": 1127068,
+      "sha256": "72912557e1b0c2013d2f06cef7716df010973197d2fc0b9586673b68b546b918"
+    },
+    "hero.png": {
+      "bytes": 1189060,
+      "sha256": "1b4cb0cbbe5be1e1f8fa957d8e3ae7dd32ffaeb910bdacf60dc0cd7e835dd60a"
+    },
+    "left.png": {
+      "bytes": 915301,
+      "sha256": "24798cb724c7a9bc2137c04ccc08dea2c2dd53b223e709a4b829f4d6d52b75cf"
+    },
+    "measurement-evidence.json": {
+      "bytes": 6350,
+      "sha256": "30ffd25aeb7190f6218a08a7a1726746608220af4d10b21bc3475a0184e21f05"
+    },
+    "nes.blend": {
+      "bytes": 782697,
+      "sha256": "6fc61062a81795cb9bfd808aaab516245af454f55f6dba22e9222bc77f80be5d"
+    },
+    "nes.glb": {
+      "bytes": 2337856,
+      "sha256": "bd88b2fc3e310888b98e97468f59dcf6bab2734429e90175986e34c54cccf135"
+    },
+    "rear.png": {
+      "bytes": 1108944,
+      "sha256": "378e4d561625b76bc4f3feeb20f49045e2c0863f5eced89a6f35c041f18bd063"
+    },
+    "top.png": {
+      "bytes": 1210535,
+      "sha256": "9859165ca36e042cca6f02b028f5ef2a7698f4bb8b32c752b6fff4945bd3c20b"
+    }
+  }
+}
