@@ -8,6 +8,7 @@ Build with the create_media_models API. Closed is the default; two nested
 living-hinge pivots unfold the spine and lid to a flat, open case. No third-party
 artwork or reference photograph is included in this neutral template.
 """
+import json
 import math
 
 import bpy
@@ -156,6 +157,58 @@ def refine_spine_uvs():
     obj['artworkOrientation'] = 'upright from outside (-X); U increases rear edge to front edge'
     return {'node': obj.name, 'changed': mirrored and not correct,
             'operation': 'U = 1 - U; V, geometry and articulation unchanged'}
+
+
+def refine_media_fit(root):
+    """Clear the published 1:1 cartridge without changing its insertion anchor.
+
+    Four inferred corner stops originally penetrated the cartridge by 0.30 mm.
+    Two inferred spring lips crossed its curved cheeks instead of sitting just
+    above them. Keep each spring foot fixed; move only its upper profile. This
+    is an unloaded, rigid visualization of retention, not an elastic simulation.
+    Existing UV arrays, topology, materials, hinges and artwork stay untouched.
+    """
+    supports = [obj for obj in root.children_recursive
+                if obj.type == 'MESH' and obj.name.startswith('CartridgeCornerSupport')]
+    clips = [bpy.data.objects.get(name) for name in
+             ('UpperCartridgeSpringClip', 'LowerCartridgeSpringClip')]
+    if len(supports) != 4 or any(obj is None or obj not in root.children_recursive for obj in clips):
+        raise ValueError('Expected four cartridge corner supports and two spring clips')
+    bpy.context.view_layer.update()
+    tolerance = .000002
+    previous = all(abs(abs(obj.matrix_world.translation.x) - .0362) < tolerance for obj in supports)
+    corrected = all(abs(abs(obj.matrix_world.translation.x) - .0366) < tolerance for obj in supports)
+    upper_z = [max((obj.matrix_world @ v.co).z for v in obj.data.vertices) for obj in clips]
+    lower_z = [min((obj.matrix_world @ v.co).z for v in obj.data.vertices) for obj in clips]
+    if not all(abs(z + .01145) < tolerance for z in lower_z):
+        raise ValueError('Unexpected cartridge spring foot height')
+    previous = previous and all(abs(z + .00035) < tolerance for z in upper_z)
+    corrected = corrected and all(abs(z - .00145) < tolerance for z in upper_z)
+    if not previous and not corrected:
+        raise ValueError('Unexpected cartridge support geometry; refusing an unscoped fit change')
+    if previous:
+        for obj in supports:
+            matrix = obj.matrix_world.copy()
+            matrix.translation.x += math.copysign(.0004, matrix.translation.x)
+            obj.matrix_world = matrix
+        for obj in clips:
+            inverse = obj.matrix_world.inverted()
+            for vertex in obj.data.vertices:
+                world = obj.matrix_world @ vertex.co
+                if world.z > -.01145 + tolerance:
+                    world.z += .0018
+                    vertex.co = inverse @ world
+            obj.data.update()
+        bpy.context.view_layer.update()
+    report = {'revision': 1, 'changed': previous,
+              'affectedObjects': sorted(obj.name for obj in supports + clips),
+              'supportCenterAbsXmm': 36.6, 'supportOutwardShiftMm': .4,
+              'springFootZmm': -11.45, 'springUpperProfileLiftMm': 1.8,
+              'method': 'Four support translations and ten upper vertices per spring clip; '
+                        'fixed feet, unchanged topology, UV arrays, materials and articulation.'}
+    root['cartridgeFitRevision'] = 1
+    root['cartridgeFitRefinement'] = json.dumps(report)
+    return report
 
 
 def _spring_clip(api, name, x, y, z0, mat, parent, horizontal=False):
@@ -367,4 +420,5 @@ def build(api):
             bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
         bm.to_mesh(obj.data)
         bm.free()
+    refine_media_fit(root)
     return root

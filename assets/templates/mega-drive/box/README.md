@@ -1,17 +1,17 @@
 # Mega Drive — western clamshell box template
 
-**Version:** 0.2.0 · **Date:** 2026-10-16 · **Creator:** Lincoln Aleixo
+**Version:** 0.3.0 · **Date:** 2026-10-16 · **Creator:** Lincoln Aleixo
 
 A fresh black clamshell with two spine folds, transparent cover sleeve, sideways cartridge guides, booklet retainers and an intact retail hanger.
 
-The spine UV contract is corrected in this release: viewed from outside the left edge (-X) with +Y up, U increases from the rear edge (-Z) to the front edge (+Z). The previous release mirrored spine print. Only `SpinePrint` U coordinates changed; the mesh, V coordinates, other print targets and opening animation are preserved.
+Four cartridge corner supports move outward by 0.4 mm; the upper profiles of the two spring clips rise by 1.8 mm while their feet remain fixed. This clears the separately published full-size cartridge without scaling it or changing the insertion anchor. The template remains empty. These inferred rigid supports are a visualization of retention, not a factory tolerance specification or flexible plastic simulation. Exterior dimensions, printed-face UVs and articulation are retained.
 
-Export also rounded 29 unprinted UV scalars by at most two representable float32 steps. The exact migration and rounding are recorded in `glb-inspection.json`.
+The exporter reindexes the two affected static material groups and compensates a 0.4 mm group-origin shift. The scoped migration report distinguishes this representation change from the six physical part edits, and records float32 rounding on unprinted UVs. Original native polygon topology and UV arrays remain unchanged.
 
 
-![Closed box](previews/0.2.0/hero.png)
+![Closed box](previews/0.3.0/hero.png)
 
-![Open box](previews/0.2.0/open.png)
+![Open box](previews/0.3.0/open.png)
 
 - Hollow black molded front and rear shells with two separate spine pivots and a 180-degree open spread.
 - Independent clear cover sleeve above the unprinted front, spine and rear paper surfaces.

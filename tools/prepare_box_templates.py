@@ -136,6 +136,14 @@ def release_changes(console, config, version):
             'Added a printed-face handedness regression check, actual-export spine proofs and hash-bound Blender/Godot validation.',
             'Preserved the 0.1.0 release and every separate cartridge, disc and other box release unchanged.',
         ]
+    if console == 'mega-drive' and version == '0.3.0':
+        return [
+            'Cleared the published full-size Mega Drive cartridge by moving four internal corner supports outward by 0.4 mm and lifting the upper profiles of the two spring clips by 1.8 mm while retaining their anchored feet.',
+            'Reopened the 0.2.0 editable source and confined the geometry change to those six internal parts; preserved exterior dimensions, artwork UVs, materials, insertion anchor, hinges and opening animation.',
+            'Recorded exporter reindexing in the two affected static material groups, compensated group-origin movement and tiny rounding on unprinted UVs; the native polygon topology and UV arrays remain unchanged.',
+            'Retained an empty neutral template. Matching published game media is composed separately into game reproductions at its original scale.',
+            'Verified the final exported scene and both opening endpoints in Godot, reopened the editable source, and recorded scoped migration and approximate fit evidence. Published earlier versions remain unchanged.',
+        ]
     raise ValueError('Explicit template release notes are required for ' + console + ' ' + version)
 
 
@@ -173,6 +181,17 @@ def texts(console, config, construction, structural, engine, source, version, da
             material_note += (f"\nExport also rounded {sum(item['changedScalars'] for item in rounding)} "
                               'unprinted UV scalars by at most two representable float32 steps. '
                               'The exact migration and rounding are recorded in `glb-inspection.json`.\n')
+    if console == 'mega-drive' and version == '0.3.0':
+        material_note = ('\nFour cartridge corner supports move outward by 0.4 mm; the upper profiles of '
+                         'the two spring clips rise by 1.8 mm while their feet remain fixed. This clears '
+                         'the separately published full-size cartridge without scaling it or changing the '
+                         'insertion anchor. The template remains empty. These inferred rigid supports are '
+                         'a visualization of retention, not a factory tolerance specification or flexible '
+                         'plastic simulation. Exterior dimensions, printed-face UVs and articulation are retained.\n')
+        material_note += ('\nThe exporter reindexes the two affected static material groups and compensates '
+                          'a 0.4 mm group-origin shift. The scoped migration report distinguishes this '
+                          'representation change from the six physical part edits, and records float32 '
+                          'rounding on unprinted UVs. Original native polygon topology and UV arrays remain unchanged.\n')
     body = f'''# {config['title']}
 
 **Version:** {version} · **Date:** {date} · **Creator:** Lincoln Aleixo
@@ -266,6 +285,14 @@ def audit_inputs(console, base, validation, source_report):
         raise ValueError('Incomplete validation for ' + asset_id)
     for view in VIEWS:
         png_dimensions(folder / (view + '.png'))
+    proof_path = folder / 'render-proof.json'
+    if proof_path.is_file():
+        proof = json.loads(proof_path.read_text())
+        if proof.get('sha256') != sha(folder / (asset_id + '.glb')):
+            raise ValueError('Template previews belong to a different export: ' + asset_id)
+        views = {item['view']: item for item in proof.get('renders', [])}
+        if any(view not in views or views[view]['sha256'] != sha(folder / (view + '.png')) for view in VIEWS):
+            raise ValueError('Template preview proof is incomplete or stale: ' + asset_id)
     construction = json.loads((folder / 'construction.json').read_text())
     if construction['artworkSlots'] != structural['artworkSlots']:
         raise ValueError('Construction artwork contract differs from audited GLB: ' + asset_id)
@@ -306,6 +333,12 @@ def stage(console, config, args, audit, source_report, inputs):
         write_json(payload / 'glb-inspection.json', structural)
         write_json(payload / 'godot-import-report.json', engine)
         write_json(payload / 'source-reopen-report.json', source)
+        if (folder / 'render-proof.json').is_file():
+            shutil.copy2(folder / 'render-proof.json', payload)
+        if structural.get('geometryMigration'):
+            write_json(payload / 'geometry-migration.json', structural['geometryMigration'])
+        if structural.get('fitEvidence'):
+            write_json(payload / 'fit-evidence.json', structural['fitEvidence'])
         views = list(VIEWS)
         if (folder / 'insert-inspection.png').is_file():
             views.append('insert-inspection')
@@ -327,6 +360,8 @@ def stage(console, config, args, audit, source_report, inputs):
                         'editableSource': 'Reopened in Blender ' + source_report['blender'] + '; packed resources, named parts and both poses checked.'})
         if structural.get('geometryParity'):
             summary['geometryPreservation'] = structural['geometryParity']
+        if structural.get('geometryMigration'):
+            summary['geometryMigration'] = structural['geometryMigration']
         manifest = {'schemaVersion': 1, 'id': asset_id, 'version': args.version,
                     'title': config['title'], 'creator': 'Lincoln Aleixo', 'license': 'CC-BY-NC-ND-4.0',
                     'licenseScope': RIGHTS, 'date': args.date,

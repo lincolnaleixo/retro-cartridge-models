@@ -96,14 +96,14 @@ def hierarchy(document):
     return roots
 
 
-def world_bounds(document, reader, roots, overrides=None):
+def world_bounds(document, reader, roots, overrides=None, include_nodes=None):
     low, high = [math.inf] * 3, [-math.inf] * 3
     overrides = overrides or {}
 
     def visit(index, parent):
         node = document['nodes'][index]
         matrix = multiply(parent, transform(node, overrides.get(index)))
-        if 'mesh' in node:
+        if 'mesh' in node and (include_nodes is None or index in include_nodes):
             for primitive in document['meshes'][node['mesh']]['primitives']:
                 positions = reader.read(primitive['attributes']['POSITION'])
                 indices = [row[0] for row in reader.read(primitive['indices'])] if 'indices' in primitive else range(len(positions))
@@ -119,6 +119,50 @@ def world_bounds(document, reader, roots, overrides=None):
     for root in roots:
         visit(root, IDENTITY)
     return {'min': low, 'max': high, 'dimensions': [hi - lo for lo, hi in zip(low, high)]}
+
+
+def packaging_subset(path, document, binary):
+    """Validate a declared composition before excluding its removable contents.
+
+    Full-scene geometry and bounds are still inspected. Only neutral-template
+    parity and packaging-specific metadata use the unchanged box subset. Exact
+    media-source equivalence is checked separately with the source GLBs.
+    """
+    marked = [index for index, node in enumerate(document.get('nodes', []))
+              if node.get('extras', {}).get('boxContents')]
+    receipt_path = Path(path).with_name('content-composition.json')
+    if not marked and not receipt_path.exists():
+        return document, binary, None
+    require(len(marked) == 1 and receipt_path.is_file(),
+            'composition requires one Contents root and an adjacent receipt')
+    receipt = json.loads(receipt_path.read_text())
+    require(receipt.get('schemaVersion') == 1 and receipt.get('status') == 'passed',
+            'composition receipt has an invalid schema or status')
+    index = marked[0]
+    node = document['nodes'][index]
+    require(node.get('extras', {}).get('boxContents') is True
+            and receipt.get('contents', {}).get('nodeIndex') == index,
+            'composition receipt does not identify the Contents root')
+    require(node.get('name') == receipt['contents'].get('nodeName')
+            and 'mesh' not in node and node.get('children'),
+            'composition Contents must be a named parent of media geometry')
+    from box_contents import box_only
+    box_document, box_binary = box_only(document, binary, receipt)
+    excluded = set()
+
+    def visit(current):
+        require(current not in excluded, 'composition contents hierarchy is not a tree')
+        excluded.add(current)
+        for child in document['nodes'][current].get('children', []):
+            visit(child)
+
+    visit(index)
+    return box_document, box_binary, {
+        'nodeName': node['name'], 'nodeIndex': index, 'nodeIndices': sorted(excluded),
+        'mediaAssetId': receipt.get('mediaSource', {}).get('assetId'),
+        'mediaVersion': receipt.get('mediaSource', {}).get('version'),
+        'receiptSha256': hashlib.sha256(receipt_path.read_bytes()).hexdigest(),
+    }
 
 
 def validate_images(document, binary, reader):
@@ -166,12 +210,16 @@ def inspect(path):
     reader = Accessors(document, binary)
     roots = hierarchy(document)
     validate_images(document, binary, reader)
+    _, _, contents = packaging_subset(path, document, binary)
+    content_nodes = set(contents['nodeIndices']) if contents else set()
     nodes = document['nodes']
     slots, hinges, parts = {}, {}, []
     names = [node.get('name', '') for node in nodes]
     for index, node in enumerate(nodes):
         if 'rotation' in node:
             quaternion(node['rotation'], f'node {index}.rotation')
+        if index in content_nodes:
+            continue
         extra = node.get('extras', {})
         slot = extra.get('artworkSlot')
         part = extra.get('boxPart') or extra.get('packagingPart')
@@ -258,6 +306,16 @@ def inspect(path):
                 worldVertexBounds={'closed': world_bounds(document, reader, roots),
                                    'open': world_bounds(document, reader, roots,
                                                         {i: h['open'] for i, h in hinges.items()})})
+    if contents:
+        require(any('mesh' in nodes[index] for index in content_nodes),
+                'composition contents contain no media meshes')
+        contents['worldVertexBounds'] = {
+            'closed': world_bounds(document, reader, roots, include_nodes=content_nodes),
+            'open': world_bounds(document, reader, roots,
+                                 {i: h['open'] for i, h in hinges.items()}, content_nodes),
+        }
+        contents['meshNodes'] = sum('mesh' in nodes[index] for index in content_nodes)
+        base['contents'] = contents
     return base
 
 
@@ -271,6 +329,8 @@ def compare_geometry(template, reproduction, allowed_uv_mirrors=()):
     """
     before, old_binary, _ = read_glb(template)
     after, new_binary, _ = read_glb(reproduction)
+    before, old_binary, old_contents = packaging_subset(template, before, old_binary)
+    after, new_binary, new_contents = packaging_subset(reproduction, after, new_binary)
     old_reader, new_reader = Accessors(before, old_binary), Accessors(after, new_binary)
     old_nodes = {node.get('name'): node for node in before.get('nodes', [])}
     new_nodes = {node.get('name'): node for node in after.get('nodes', [])}
@@ -392,7 +452,9 @@ def compare_geometry(template, reproduction, allowed_uv_mirrors=()):
             'namedSemanticPartsIdentical': True, 'staticMeshNameAliases': aliases,
             'nonArtworkUvFloat32Rounding': uv_rounding,
             'nonArtworkUvTolerance': 'two representable float32 steps',
-            'declaredArtworkUvMirrors': uv_mirrors}
+            'declaredArtworkUvMirrors': uv_mirrors,
+            'scope': 'packaging-only' if old_contents or new_contents else 'complete-scene',
+            'excludedContents': {'template': old_contents, 'reproduction': new_contents}}
 
 
 GODOT_AUDIT = r'''extends SceneTree
@@ -410,8 +472,9 @@ func all_nodes(node: Node, result: Array) -> void:
     for child in node.get_children():
         all_nodes(child, result)
 
-func bounds_and_surfaces(node: Node, named_slots: Dictionary, state: Dictionary, parent := Transform3D.IDENTITY) -> void:
+func bounds_and_surfaces(node: Node, named_slots: Dictionary, state: Dictionary, parent := Transform3D.IDENTITY, inside_contents := false) -> void:
     var world := parent
+    var is_contents: bool = inside_contents or str(node.name) == state.get("contents_name", "")
     if node is Node3D:
         world = parent * node.transform
     if node is MeshInstance3D and node.mesh != null:
@@ -427,6 +490,9 @@ func bounds_and_surfaces(node: Node, named_slots: Dictionary, state: Dictionary,
                 for axis in 3:
                     state.low[axis] = min(state.low[axis], p[axis])
                     state.high[axis] = max(state.high[axis], p[axis])
+                    if is_contents:
+                        state.contents_low[axis] = min(state.contents_low[axis], p[axis])
+                        state.contents_high[axis] = max(state.contents_high[axis], p[axis])
             if named_slots.has(str(node.name)):
                 var uv: PackedVector2Array = arrays[Mesh.ARRAY_TEX_UV]
                 check(uv.size() == points.size(), str(node.name) + ": imported artwork UVs missing")
@@ -448,8 +514,10 @@ func bounds_and_surfaces(node: Node, named_slots: Dictionary, state: Dictionary,
                     var path: String = texture.resource_path
                     check(path.is_empty() or path.begins_with("res://models/") or path.begins_with("res://.godot/"), str(node.name) + ": external texture resource " + path)
             state.surfaces += 1
+            if is_contents:
+                state.contents_surfaces += 1
     for child in node.get_children():
-        bounds_and_surfaces(child, named_slots, state, world)
+        bounds_and_surfaces(child, named_slots, state, world, is_contents)
 
 func _initialize() -> void:
     call_deferred("run_audit")
@@ -491,7 +559,9 @@ func run_audit() -> void:
         for pose in ["closed", "open"]:
             player.seek(0.0 if pose == "closed" else 2.0, true)
             player.advance(0.0)
-            var state := {"low": [INF, INF, INF], "high": [-INF, -INF, -INF], "surfaces": 0, "uv_error": 0.0}
+            var state := {"low": [INF, INF, INF], "high": [-INF, -INF, -INF], "surfaces": 0, "uv_error": 0.0,
+                "contents_name": item.get("contentsNode", ""), "contents_low": [INF, INF, INF],
+                "contents_high": [-INF, -INF, -INF], "contents_surfaces": 0}
             bounds_and_surfaces(scene, item.artworkSlots, state)
             var expected: Dictionary = item[pose + "Bounds"]
             var maximum_error: float = 0.0
@@ -499,6 +569,15 @@ func run_audit() -> void:
                 maximum_error = max(maximum_error, abs(state.low[axis] - expected.min[axis]), abs(state.high[axis] - expected.max[axis]))
             check(maximum_error <= manifest.toleranceMeters, str(item.id) + ": " + pose + " bounds differ by " + str(maximum_error) + " meters")
             snapshots[pose] = {"min": state.low, "max": state.high, "surfaces": state.surfaces, "maximumBoundsErrorMeters": maximum_error, "maximumUvQuantizationRangeError": state.uv_error}
+            if item.has("contentsBounds"):
+                var expected_contents: Dictionary = item.contentsBounds[pose]
+                var contents_error: float = 0.0
+                check(state.contents_surfaces > 0, str(item.id) + ": game media has no imported surfaces")
+                for axis in 3:
+                    contents_error = max(contents_error, abs(state.contents_low[axis] - expected_contents.min[axis]), abs(state.contents_high[axis] - expected_contents.max[axis]))
+                check(contents_error <= manifest.toleranceMeters, str(item.id) + ": " + pose + " game-media bounds differ by " + str(contents_error) + " meters")
+                snapshots[pose]["contents"] = {"min": state.contents_low, "max": state.contents_high,
+                    "surfaces": state.contents_surfaces, "maximumBoundsErrorMeters": contents_error}
         report.assets.append({"id": item.id, "sha256": item.sha256, "clip": str(clip_name), "durationSeconds": clip.length, "artworkSlots": item.artworkSlots, "namedPartsPresent": true, "poses": snapshots})
         scene.free()
     if not failures.is_empty():
@@ -531,11 +610,16 @@ def audit_godot(paths, reports, executable, output, tolerance=.0002):
         construction = json.loads(construction_path.read_text())
         require(construction['artworkSlots'] == report['artworkSlots'], path.name + ': construction slot names differ')
         shutil.copy2(path, output / 'models' / path.name)
-        manifest['assets'].append({'id': path.stem, 'path': 'res://models/' + path.name,
+        item = {'id': path.stem, 'path': 'res://models/' + path.name,
                                    'sha256': report['sha256'],
                                    'artworkSlots': report['artworkSlots'],
                                    'namedNodes': list(report['artworkSlots']) + report['hinges'] + report['namedParts'],
-                                   'closedBounds': construction['closedBounds'], 'openBounds': construction['openBounds']})
+                                   'closedBounds': construction['closedBounds'], 'openBounds': construction['openBounds']}
+        if report.get('contents'):
+            item['contentsNode'] = report['contents']['nodeName']
+            item['namedNodes'].append(item['contentsNode'])
+            item['contentsBounds'] = report['contents']['worldVertexBounds']
+        manifest['assets'].append(item)
     (output / 'audit-input.json').write_text(json.dumps(manifest, indent=2) + '\n')
     (output / 'audit.gd').write_text(GODOT_AUDIT)
     (output / 'project.godot').write_text('config_version=5\n\n[application]\nconfig/name="Game box import audit"\n\n[rendering]\nrenderer/rendering_method="gl_compatibility"\n')

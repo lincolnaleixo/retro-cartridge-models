@@ -1,5 +1,13 @@
 # Changelog — Mega Drive — western clamshell box template
 
+## 0.3.0 — 2026-10-16
+
+- Cleared the published full-size Mega Drive cartridge by moving four internal corner supports outward by 0.4 mm and lifting the upper profiles of the two spring clips by 1.8 mm while retaining their anchored feet.
+- Reopened the 0.2.0 editable source and confined the geometry change to those six internal parts; preserved exterior dimensions, artwork UVs, materials, insertion anchor, hinges and opening animation.
+- Recorded exporter reindexing in the two affected static material groups, compensated group-origin movement and tiny rounding on unprinted UVs; the native polygon topology and UV arrays remain unchanged.
+- Retained an empty neutral template. Matching published game media is composed separately into game reproductions at its original scale.
+- Verified the final exported scene and both opening endpoints in Godot, reopened the editable source, and recorded scoped migration and approximate fit evidence. Published earlier versions remain unchanged.
+
 ## 0.2.0 — 2026-10-16
 
 - Corrected the spine artwork U direction so lettering reads normally from outside the left edge rather than appearing mirrored.
