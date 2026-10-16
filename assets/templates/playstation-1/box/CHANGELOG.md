@@ -1,5 +1,12 @@
 # Changelog — PlayStation 1 — clear-tray jewel case template
 
+## 0.2.0 — 2026-10-16
+
+- Restored visibility of the clear disc tray, circular recess, retaining hub, ribs and lid rims by increasing transparent-material coverage and refining surface roughness.
+- Retained transmission shading plus an alpha fallback for engines that do not import KHR_materials_transmission; reviewed the actual clear-plastic appearance in Blender and Godot.
+- Updated the previous released editable source while preserving positions, normals, triangle indices, artwork UVs, hinge transforms and opening animation.
+- Included new actual-export previews, exact-input engine and source validation reports; preserved the 0.1.0 release and separate CD models unchanged.
+
 ## 0.1.0 — 2026-10-16
 
 - Added the first independent neutral box release with pristine materials, real packaging parts and separately addressable artwork targets.

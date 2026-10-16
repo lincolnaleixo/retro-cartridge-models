@@ -149,8 +149,8 @@
     {
       "id": "playstation-1-box",
       "title": "PlayStation 1 — clear-tray jewel case template",
-      "latest": "0.1.0",
-      "manifest": "assets/templates/playstation-1/box/versions/0.1.0.json",
+      "latest": "0.2.0",
+      "manifest": "assets/templates/playstation-1/box/versions/0.2.0.json",
       "displayTitle": "PlayStation 1 · Empty jewel case",
       "kind": "BOX TEMPLATE",
       "description": "A clean standard jewel case with a clear removable tray, hinged lid, disc-retaining hub, blank booklet and a two-sided folded tray card.",
