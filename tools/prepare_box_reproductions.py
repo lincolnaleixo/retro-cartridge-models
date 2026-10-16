@@ -21,7 +21,7 @@ from inspect_glb import read_glb
 from prepare_box_templates import CONFIG as TEMPLATES, VIEWS, png_dimensions, write_json
 from verify import ROOT, SEMVER, safe, sha, verify_package
 
-VERSION = '0.1.0'
+VERSION = '0.2.0'
 DATE = '2026-10-16'
 RIGHTS = ('Original modeling contributions only: CC BY-NC-ND 4.0. Game artwork, '
           'marks, product designs, scans and source photography are excluded. '
@@ -54,9 +54,77 @@ GAMES = {
     },
 }
 
+REFINEMENTS = {
+    'nes': [
+        'Rebuilt top and side black fields with clean title and Nintendo glyphs from the matching original rear scan, removing blurred coral ink and white abrasion.',
+        'Transcribed the legible original address and warranty wording with a documented approximate narrow sans-serif; retained original front illustration, gold seal and identifiable printed stars.',
+        'Reduced scan-screen noise on the original rear and repaired explicitly reviewed empty-field blemishes without thresholding across illustrations or text.',
+    ],
+    'snes': [
+        'Replaced the clipped photographic rear with a complete matching US 1992 scan, preserving all four original screenshots, barcode and retail copy.',
+        'Reconstructed four clean edge panels from original period artwork; restored distinct flying and diving Mario poses on the opposite sides, crisp title marks and uninterrupted black fields.',
+        'Transcribed damaged legal lines with exact source wording and an approximate typeface; documented source-resolution and reconstruction limits per panel.',
+    ],
+    'nintendo-64': [
+        'Replaced the soft front with clean original US K-A artwork and returned to the full-resolution original rear scan for a 3072-pixel descreened print.',
+        'Restored clean original title and console marks on the narrow panels; repaired worn trim and estimated photographic exposure while preserving their original duotone character art.',
+        'Documented approximate reconstructed empty fields and the remaining photographic character-detail limits.',
+    ],
+    'mega-drive': [
+        'Removed broad fold glare and dust from the Sonic spine by restoring its measured dark grid while retaining the original title and Mega Drive logo pixels.',
+        'Reduced color speckle across the wrap and booklet covers with gentle luminance/chroma descreening; retained the original screenshots and multilingual rear text.',
+    ],
+    'playstation-1': [
+        'Reduced coarse scanned halftone and color noise across the four paper inserts, using a gentler filter for fine rear legal type.',
+        'Restored the plain black spine fields and narrow booklet trim, retaining the original SCUS-94900 lettering and complete rear layout.',
+        'Adopted the neutral template clear-plastic revision: shell, rim and tray alpha of 0.16, 0.35 and 0.25 make molded details visible while retaining the Godot Compatibility transparency fallback.',
+    ],
+}
+
 
 def identifier(console):
     return console + '-' + GAMES[console]['game'] + '-box'
+
+
+def resolve_template(console, root=ROOT):
+    """Resolve the exact independently released template selected by catalog."""
+    asset_id = console + '-box'
+    catalog = json.loads((root/'catalog.json').read_text())
+    matches = [entry for entry in catalog['assets'] if entry['id'] == asset_id]
+    if len(matches) != 1:
+        raise ValueError('Expected one neutral template catalog entry: ' + asset_id)
+    entry = matches[0]
+    path = root / safe(entry['manifest'])
+    manifest = json.loads(path.read_text())
+    if manifest.get('id') != asset_id or manifest.get('version') != entry['latest']:
+        raise ValueError('Neutral template catalog and manifest disagree: ' + asset_id)
+    if not SEMVER.fullmatch(manifest['version']):
+        raise ValueError('Invalid neutral template version: ' + asset_id)
+    return path, manifest
+
+
+def release_changes(console, version, template_version):
+    game = GAMES[console]
+    if version == '0.1.0':
+        return ['Added ' + game['edition'] + ' artwork to the independently released neutral box.',
+                'Preserved complete template geometry and Open animation.',
+                'Included prepared face PNGs, exact source/edit provenance and documented restoration limits.']
+    return [*REFINEMENTS[console],
+            f'Used the independently released {console} box template v{template_version}; retained its decoded geometry, artwork UVs and Open animation.',
+            'Included the revised prepared PNGs, transformation provenance and hash-bound Blender/Godot validation.']
+
+
+def changelog_with_history(title, version, date, notes, existing=''):
+    """Keep every historical release section when installing a new revision."""
+    heading = f'## {version} — {date}'
+    if any(line.startswith('## ' + version + ' ') for line in existing.splitlines()):
+        raise ValueError('Changelog already contains version ' + version)
+    history = existing.partition('\n## ')[2]
+    text = f'# Changelog — {title}\n\n{heading}\n\n'
+    text += '\n'.join('- ' + note for note in notes) + '\n'
+    if history:
+        text += '\n## ' + history.lstrip('\n')
+    return text
 
 
 def assert_public(value):
@@ -195,9 +263,9 @@ def audit_inputs(console, args, validation, source_report, source_catalog):
         raise ValueError('Incomplete reproduction validation: ' + asset_id)
     parity = structural.get('geometryParity', {})
     template = args.base / 'templates' / (console + '-box') / (console + '-box.glb')
-    template_manifest = json.loads((ROOT / 'assets' / 'templates' / console / 'box' / 'versions' / '0.1.0.json').read_text())
+    template_path, template_manifest = resolve_template(console)
     if template_manifest['files'][template.name]['sha256'] != sha(template):
-        raise ValueError('Geometry comparison template differs from its independent v0.1.0 release: ' + console)
+        raise ValueError('Geometry comparison template differs from its independent v' + template_manifest['version'] + ' release: ' + console)
     if (parity.get('status') != 'passed' or parity.get('templateSha256') != sha(template)
             or parity.get('reproductionSha256') != sha(glb)):
         raise ValueError('Missing or stale neutral-template geometry comparison: ' + asset_id)
@@ -215,11 +283,14 @@ def audit_inputs(console, args, validation, source_report, source_catalog):
         assert_public(value)
     return {'folder': folder, 'structural': structural, 'engine': engine_asset,
             'source': source_asset, 'construction': construction, 'artwork': artwork,
-            'references': references, 'evidence': evidence}
+            'references': references, 'evidence': evidence,
+            'template': {'id': template_manifest['id'], 'version': template_manifest['version'],
+                         'manifest': template_path.relative_to(ROOT).as_posix(), 'sha256': sha(template)}}
 
 
 def documents(console, version, date, data, engine_version, blender_version):
     game, asset_id = GAMES[console], identifier(console)
+    template_version = data['template']['version']
     title = game['consoleName'] + ' — ' + game['name'] + ' box reproduction'
     images, provenance, _, _ = data['artwork']
     dimensions = ' × '.join(f'{v:g}' for v in data['construction']['nominalDimensionsMm'])
@@ -269,7 +340,7 @@ def documents(console, version, date, data, engine_version, blender_version):
 
 ## Edition and contents
 
-Selected edition: **{game['edition']}**. This reproduction uses the independently released [{console} neutral box template](https://github.com/lincolnaleixo/retro-cartridge-models/tree/main/assets/templates/{console}/box), with the same packaging geometry, hinge hierarchy, normalized print UVs and opening animation. Cartridge and CD models remain separate assets; no game media is enclosed. Printed booklet covers, where present, surround approximate blank interior leaves rather than a complete reproduced manual.
+Selected edition: **{game['edition']}**. This reproduction uses the independently released [{console} neutral box template v{template_version}](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/{console}-box-v{template_version}), with the same packaging geometry, hinge hierarchy, normalized print UVs and opening animation. Cartridge and CD models remain separate assets; no game media is enclosed. Printed booklet covers, where present, surround approximate blank interior leaves rather than a complete reproduced manual.
 
 The shell and print aim for a pristine, newly unboxed appearance. {method} {limitations} Restoration is a visual approximation rather than proof of original ink values, manufacturing tolerances or missing lettering. Upsampling does not add authentic detail. Paper texture, scan blur and small source imperfections may remain visible at close range.
 
@@ -295,7 +366,7 @@ The self-contained GLB passed structural, image, UV, hierarchy and animation che
 
 {TEMPLATES[console]['limitations']} Transparent materials and printed-paper highlights can vary between renderers. Godot does not honor the exported specular extension; apply a printed-material specular level of 0.18 when matching the Blender preview lighting.
 
-The release includes editable `.blend`, portable `.glb`, six previews, construction and reference evidence, prepared PNGs, provenance and validation reports. Run the repository's `tools/create_game_boxes.py` from the unpacked release directory, passing `--console {console} --asset-id {asset_id} --artwork artwork-mapping.json --output regenerated`, to rebuild with the included artwork mapping.
+The release includes editable `.blend`, portable `.glb`, six previews, construction and reference evidence, prepared PNGs, provenance and validation reports. Run the repository's `tools/create_game_boxes.py` from the unpacked release directory, passing `--console {console} --asset-id {asset_id} --source {asset_id}.blend --artwork artwork-mapping.json --output regenerated`, to rebuild with the included artwork mapping while preserving the published source geometry.
 
 See [credits](CREDITS.md) and [changelog](CHANGELOG.md). {RIGHTS}
 '''
@@ -319,17 +390,12 @@ The independent neutral {console} box release supplies the construction. Its rel
 
 {RIGHTS} The maintainer requested these game-specific reproductions and their publication, but that request is not a license from the respective artwork or photograph owners. No redistribution license in third-party print, trademarks or source photography is asserted. Source attribution documents provenance and does not establish permission. The included prepared images and editable source do not expand the collection license. Read `LICENSE` and `NOTICE.md`.
 '''
-    changelog = f'''# Changelog — {title}
-
-## {version} — {date}
-
-- Added the first independently versioned {game['name']} box reproduction using the neutral {console} box template.
-- Applied edition-specific prepared print to each artwork slot, retaining unprinted interior stock and pristine packaging materials.
-- Included the actual prepared PNG faces and per-slot source, edit and image-hash provenance; recorded restoration and resolution limits.
-- Preserved template positions, normals, artwork UVs, indices, hinge transforms and the two-second Open clip, verified through a complete decoded-data comparison.{parity_note}
-- Validated the self-contained export, exact embedded artwork, Godot import and both animation endpoints, then reopened the editable Blender source.
-- Kept existing neutral templates, cartridge and disc releases unchanged.
-'''
+    history = ROOT/'assets'/'reproductions'/console/game['game']/'box'/'CHANGELOG.md'
+    notes = release_changes(console, version, template_version)
+    notes += ['Preserved template positions, normals, artwork UVs, indices, hinge transforms and the two-second Open clip, verified through a complete decoded-data comparison.' + parity_note,
+              'Validated the self-contained export, exact embedded artwork, Godot import and both animation endpoints, then reopened the editable Blender source.',
+              'Kept all previously published template, box, cartridge and disc releases unchanged.']
+    changelog = changelog_with_history(title, version, date, notes, history.read_text() if history.exists() else '')
     return title, {'README.md': body, 'CREDITS.md': credits, 'CHANGELOG.md': changelog}
 
 
@@ -388,9 +454,8 @@ def stage(console, args, data, audit, source_report):
                                                            'pivot': 'bottom center of nominal closed envelope'},
                     'nominalDimensionsMm': data['construction']['nominalDimensionsMm'],
                     'measurementBasis': data['construction']['referenceBasis'] + '. ' + TEMPLATES[console]['limitations'],
-                    'changes': ['Added ' + game['edition'] + ' artwork to the independently released neutral box.',
-                                'Preserved complete template geometry and Open animation.',
-                                'Included prepared face PNGs, exact source/edit provenance and documented restoration limits.'],
+                    'changes': release_changes(console, args.version, data['template']['version']),
+                    'template': data['template'],
                     'validation': validation, 'previews': previews, 'release': {'tag': tag, 'archive': {}}, 'files': {}}
         draft = temporary / 'manifest.json'
         write_json(draft, manifest)
@@ -441,10 +506,12 @@ def stage(console, args, data, audit, source_report):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--base', type=Path, default=ROOT / 'dist' / 'game-boxes-20261016')
+    parser.add_argument('--base', type=Path, default=ROOT / 'dist' / 'box-refinement-20261016')
     parser.add_argument('--version', default=VERSION)
     parser.add_argument('--date', default=DATE)
     parser.add_argument('--console', action='append', choices=tuple(GAMES))
+    parser.add_argument('--sources', type=Path, default=ROOT/'docs'/'game-box-artwork-sources.json',
+                        help='edition-specific artwork source catalog used for this revision')
     parser.add_argument('--install', action='store_true', help='install metadata/previews and update catalog after the neutral-template commit')
     args = parser.parse_args()
     args.base = args.base.resolve()
@@ -453,11 +520,15 @@ def main():
     selected = args.console or list(GAMES)
     if args.install:
         for console in selected:
-            path = f'assets/templates/{console}/box/versions/0.1.0.json'
-            subprocess.run(['git', 'cat-file', '-e', 'HEAD:' + path], cwd=ROOT, check=True)
+            path, _ = resolve_template(console)
+            relative = path.relative_to(ROOT).as_posix()
+            committed = subprocess.run(['git', 'show', 'HEAD:' + relative], cwd=ROOT,
+                                       check=True, capture_output=True).stdout
+            if committed != path.read_bytes():
+                raise ValueError('Selected template manifest must be committed before installing reproductions: ' + relative)
     audit = json.loads((args.base / 'reproduction-validation.json').read_text())
     source = json.loads((args.base / 'reproduction-godot-audit' / 'source-reopen-report.json').read_text())
-    sources = json.loads((ROOT / 'docs' / 'game-box-artwork-sources.json').read_text())
+    sources = json.loads(args.sources.read_text())
     if audit.get('status') != 'passed' or audit.get('godot', {}).get('status') != 'passed' or source.get('status') != 'passed':
         raise ValueError('Successful structural, engine and source-reopen reports are required')
     inputs = {console: audit_inputs(console, args, audit, source, sources) for console in selected}

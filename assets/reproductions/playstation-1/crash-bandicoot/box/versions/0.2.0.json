@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "id": "playstation-1-crash-bandicoot-box",
+  "version": "0.2.0",
+  "title": "PlayStation 1 \u2014 Crash Bandicoot box reproduction",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original modeling contributions only: CC BY-NC-ND 4.0. Game artwork, marks, product designs, scans and source photography are excluded. Attribution and the maintainer's request do not grant rights to those elements.",
+  "date": "2026-10-16",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center of nominal closed envelope"
+  },
+  "nominalDimensionsMm": [
+    142.35,
+    124.75,
+    10.4
+  ],
+  "measurementBasis": "CMC original jewel-case inspection dimensions and standard-tray drawings; NTSC-U/C specimen photographs. The envelope uses midpoint values from CMC assembly inspection ranges, not proof of the original Sony supplier. Fine molded features, booklet leaves and paper-fit dimensions are approximate. Clear plastic rendering depends on the importing engine.",
+  "changes": [
+    "Reduced coarse scanned halftone and color noise across the four paper inserts, using a gentler filter for fine rear legal type.",
+    "Restored the plain black spine fields and narrow booklet trim, retaining the original SCUS-94900 lettering and complete rear layout.",
+    "Adopted the neutral template clear-plastic revision: shell, rim and tray alpha of 0.16, 0.35 and 0.25 make molded details visible while retaining the Godot Compatibility transparency fallback.",
+    "Used the independently released playstation-1 box template v0.2.0; retained its decoded geometry, artwork UVs and Open animation.",
+    "Included the revised prepared PNGs, transformation provenance and hash-bound Blender/Godot validation."
+  ],
+  "template": {
+    "id": "playstation-1-box",
+    "version": "0.2.0",
+    "manifest": "assets/templates/playstation-1/box/versions/0.2.0.json",
+    "sha256": "9eeb909ffa35b8cc37ebee125111d6024b829db609948f0b1f3afaba0395a1ba"
+  },
+  "validation": {
+    "meshes": 11,
+    "primitives": 11,
+    "triangles": 26280,
+    "materials": 8,
+    "images": 4,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "embeddedImages": 4,
+    "externalImages": 0,
+    "artworkSlots": {
+      "FrontLabel": "Front",
+      "InsertInnerPaper": "BookletBack",
+      "RearLabel": "WrapBack",
+      "TrayCardInside": "WrapInside"
+    },
+    "animation": {
+      "name": "Open",
+      "durationSeconds": 2.0,
+      "channels": 1
+    },
+    "geometryPreservation": {
+      "status": "passed",
+      "templateFile": "playstation-1-box.glb",
+      "templateSha256": "9eeb909ffa35b8cc37ebee125111d6024b829db609948f0b1f3afaba0395a1ba",
+      "reproductionFile": "playstation-1-crash-bandicoot-box.glb",
+      "reproductionSha256": "87b1ed61a7a8bc2a4109a6400fea65179f0fa91233d3e452e570bc7a8483fa56",
+      "meshNodes": 11,
+      "primitives": 11,
+      "comparedAttributeValues": 489256,
+      "comparedIndices": 78840,
+      "hierarchyTransformsHingesIdentical": true,
+      "positionsNormalsIndicesIdentical": true,
+      "artworkUvsIdentical": true,
+      "positionsNormalsUvsIndicesIdentical": false,
+      "animationKeysIdentical": true,
+      "namedSemanticPartsIdentical": true,
+      "staticMeshNameAliases": {},
+      "nonArtworkUvFloat32Rounding": [
+        {
+          "node": "BookletPages",
+          "attribute": "TEXCOORD_0",
+          "changedScalars": 4,
+          "maximumDelta": 5.960464477539063e-08,
+          "maximumFloat32Steps": 2
+        },
+        {
+          "node": "FrontLid \u00b7 Polystyrene rims and catches",
+          "attribute": "TEXCOORD_0",
+          "changedScalars": 4,
+          "maximumDelta": 5.960464477539063e-08,
+          "maximumFloat32Steps": 2
+        },
+        {
+          "node": "PLAYSTATION_1_BOX \u00b7 Clear molded polystyrene",
+          "attribute": "TEXCOORD_0",
+          "changedScalars": 4,
+          "maximumDelta": 2.9802322387695312e-08,
+          "maximumFloat32Steps": 1
+        },
+        {
+          "node": "PLAYSTATION_1_BOX \u00b7 Polystyrene rims and catches",
+          "attribute": "TEXCOORD_0",
+          "changedScalars": 16,
+          "maximumDelta": 5.960464477539063e-08,
+          "maximumFloat32Steps": 2
+        },
+        {
+          "node": "RemovableTray \u00b7 Clear injection molded tray",
+          "attribute": "TEXCOORD_1",
+          "changedScalars": 4,
+          "maximumDelta": 2.9802322387695312e-08,
+          "maximumFloat32Steps": 1
+        }
+      ],
+      "nonArtworkUvTolerance": "two representable float32 steps"
+    },
+    "artworkPreservation": "Every prepared face PNG is embedded byte-for-byte in its named artwork slot.",
+    "godot": {
+      "version": "4.7.2-stable (official)",
+      "headlessImport": "passed",
+      "endpointInspection": "Closed/Open world bounds, named parts, decoded images and artwork UVs verified."
+    },
+    "editableSource": "Reopened in Blender 5.2.2 LTS; packed resources and both poses checked.",
+    "previewLighting": "Actual GLB reimport in a neutral white studio, Standard view transform, exposure -1.0; dimensions recorded per preview."
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/reproductions/playstation-1/crash-bandicoot/box/previews/0.2.0/hero.png",
+      "bytes": 2146253,
+      "sha256": "00993df2cb2eec135e1c0130e8141e545b65c9badd51ce487bd2eb324e66a0a5",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "front",
+      "path": "assets/reproductions/playstation-1/crash-bandicoot/box/previews/0.2.0/front.png",
+      "bytes": 2172234,
+      "sha256": "1c816b03d30a70b525f0a21d4713f3cad05b1ac40355e339d6fb913d7507155a",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "rear",
+      "path": "assets/reproductions/playstation-1/crash-bandicoot/box/previews/0.2.0/rear.png",
+      "bytes": 2325840,
+      "sha256": "ac89b0af3eb3b9ea2442e7046fef06d1ce1e0e33b48a3405b50642a85ccbe153",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "top",
+      "path": "assets/reproductions/playstation-1/crash-bandicoot/box/previews/0.2.0/top.png",
+      "bytes": 2049080,
+      "sha256": "e26ba81daa2e48532d490c11d1df1984199dade78a9c320798caf0573fd0bc8b",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "bottom",
+      "path": "assets/reproductions/playstation-1/crash-bandicoot/box/previews/0.2.0/bottom.png",
+      "bytes": 2097306,
+      "sha256": "21e7077139052e68a221e2f191c46860dcea42096600213efa5682e1e6cb49d5",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "open",
+      "path": "assets/reproductions/playstation-1/crash-bandicoot/box/previews/0.2.0/open.png",
+      "bytes": 2213684,
+      "sha256": "9d14f88cbca50f7b028b222249ed10a1cf378ce8ab4f76320da7087f8e7ece66",
+      "width": 1400,
+      "height": 1167
+    }
+  ],
+  "release": {
+    "tag": "playstation-1-crash-bandicoot-box-v0.2.0",
+    "archive": {
+      "name": "playstation-1-crash-bandicoot-box-0.2.0.zip",
+      "bytes": 54456386,
+      "sha256": "6f93954e1201d75e6c184bcc48e6b1c1d907c9c346c6df0a987389bcb7c6af7d",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/playstation-1-crash-bandicoot-box-v0.2.0/playstation-1-crash-bandicoot-box-0.2.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 2290,
+      "sha256": "8433afdf5695d25d4a036d8a2b980425537e0ce5383cebefed8dc1349e0a1d27"
+    },
+    "CREDITS.md": {
+      "bytes": 4255,
+      "sha256": "50c42fd7ae4b52581a6102cb2f60b992780e3a921356616bbfdbcde1599b1fe0"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 4351,
+      "sha256": "04602588f5708dd1ca0b26f7194ce5ea5fcb2a12fb1ece283fbd9321ab814033"
+    },
+    "README.md": {
+      "bytes": 5127,
+      "sha256": "6c0c4d2b2231d532965ad0ed82e59d2c6769d0f81f69487380c069d4a1262b4b"
+    },
+    "artwork/BookletBack.png": {
+      "bytes": 2849868,
+      "sha256": "9a4b53ce012338315761efafaca5aef7e4deffdb96e051a746829f49390f31a4"
+    },
+    "artwork/Front.png": {
+      "bytes": 3203546,
+      "sha256": "d97e90c0d36a42fa0e4c4edd55dde736d0edd72a4b26e8198f452c4645ad700a"
+    },
+    "artwork/WrapBack.png": {
+      "bytes": 3904778,
+      "sha256": "02637c61334ae5816e0ae126c2cf853a315b2cf70a0e958f6b2f007d550e2cf6"
+    },
+    "artwork/WrapInside.png": {
+      "bytes": 3490658,
+      "sha256": "32ffb68d64006d85cdab011a129509fdc7a821836833e4968ed65bd1a98e791d"
+    },
+    "artwork-embedding-report.json": {
+      "bytes": 890,
+      "sha256": "09e6215f2eeb377e2c4ec17d4ab6bedcfb1b4d6f7f9ead9debf51a0b994ac6e5"
+    },
+    "artwork-mapping.json": {
+      "bytes": 159,
+      "sha256": "140160965a1b5b2dc4360db6381b5fe9a2515d46a4019ce73aeb12ac062fd2aa"
+    },
+    "artwork-provenance.json": {
+      "bytes": 2584,
+      "sha256": "bda7726cb0561a24e4443fefd71b987588a54d8ce59b3c91b219817f062f94da"
+    },
+    "artwork-sources.json": {
+      "bytes": 5083,
+      "sha256": "e1b574c5ea3f52cf7b5d2618b35e1922dfdb0bcb2b5ce5976df2604a96611375"
+    },
+    "bottom.png": {
+      "bytes": 2097306,
+      "sha256": "21e7077139052e68a221e2f191c46860dcea42096600213efa5682e1e6cb49d5"
+    },
+    "construction.json": {
+      "bytes": 2041,
+      "sha256": "75cf5ed1c2f5595b4dd27221cd8d158d26d2173ff144fe4ee5e3b714d66e2aea"
+    },
+    "front.png": {
+      "bytes": 2172234,
+      "sha256": "1c816b03d30a70b525f0a21d4713f3cad05b1ac40355e339d6fb913d7507155a"
+    },
+    "geometry-reference-evidence.json": {
+      "bytes": 3074,
+      "sha256": "7a47117aabad435041f94ed5a8a57aa6c2b6e43d54c3fd8714b90941a3bc88b0"
+    },
+    "glb-inspection.json": {
+      "bytes": 3626,
+      "sha256": "631b74f04e4965740cf377456538a2109fe5073bac33a6d1e5e84f9637357f6b"
+    },
+    "godot-import-report.json": {
+      "bytes": 1352,
+      "sha256": "d9a15f029f2465fcf6e20c61b7df291f6c15f0f49dad35eb2413467dcf643d6d"
+    },
+    "hero.png": {
+      "bytes": 2146253,
+      "sha256": "00993df2cb2eec135e1c0130e8141e545b65c9badd51ce487bd2eb324e66a0a5"
+    },
+    "open.png": {
+      "bytes": 2213684,
+      "sha256": "9d14f88cbca50f7b028b222249ed10a1cf378ce8ab4f76320da7087f8e7ece66"
+    },
+    "playstation-1-crash-bandicoot-box.blend": {
+      "bytes": 14188518,
+      "sha256": "68a6391e7f7502832f5f8afa4e12b6728f5bf1e42d1607410066e58d96d16729"
+    },
+    "playstation-1-crash-bandicoot-box.glb": {
+      "bytes": 15580172,
+      "sha256": "87b1ed61a7a8bc2a4109a6400fea65179f0fa91233d3e452e570bc7a8483fa56"
+    },
+    "rear.png": {
+      "bytes": 2325840,
+      "sha256": "ac89b0af3eb3b9ea2442e7046fef06d1ce1e0e33b48a3405b50642a85ccbe153"
+    },
+    "source-reopen-report.json": {
+      "bytes": 1643,
+      "sha256": "c058ece0b30eab25891926c096d480fa7aaa2afbbcc824bc266765ff771dfb32"
+    },
+    "top.png": {
+      "bytes": 2049080,
+      "sha256": "e26ba81daa2e48532d490c11d1df1984199dade78a9c320798caf0573fd0bc8b"
+    }
+  }
+}
