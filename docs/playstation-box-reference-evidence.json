@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "assetId": "playstation-1-box",
+  "reviewedOn": "2026-10-16",
+  "scope": "Original neutral reconstruction of a standard clear-tray PlayStation jewel case, suitable for the original US black-label Crash Bandicoot SCUS-94900 presentation.",
+  "sources": [
+    {
+      "url": "https://cmcdisc.com/media-packaging/original-jewel-case/",
+      "type": "Jewel-case manufacturer inspection criteria and component drawings",
+      "observations": [
+        "CMC lists the assembled A dimension as 142.20–142.50 mm, B as 124.60–124.90 mm, and C as 10.40 ± 0.2 mm.",
+        "The page includes lid, bottom, standard tray and clear tray diagrams and inspection ranges."
+      ],
+      "usedFor": "142.35 × 124.75 × 10.4 mm nominal envelope chosen at the midpoints of the assembly ranges.",
+      "limitations": "These are CMC product specifications, not evidence of the exact Sony supplier or mold used for a particular Crash Bandicoot printing. Fine features in the reconstruction remain approximate."
+    },
+    {
+      "url": "https://www.ebay.com/itm/306104343253",
+      "type": "Original physical US black-label Crash Bandicoot specimen photographs",
+      "observations": [
+        "The inspected photographs show a standard clear tray and US SCUS-94900 markings.",
+        "The listing metadata labels the region PAL, which conflicts with the visible specimen markings; the photographs rather than the listing category establish the selected presentation."
+      ],
+      "usedFor": "Clear-tray construction and edition-family cross-check, not dimensional measurements.",
+      "limitations": "The seller photograph is reference evidence only; it is not embedded or redistributed in the neutral template."
+    }
+  ],
+  "modeledNominalDimensionsMm": [
+    142.35,
+    124.75,
+    10.4
+  ],
+  "artworkContract": {
+    "Front": [
+      120,
+      120
+    ],
+    "BookletBack": [
+      120,
+      120
+    ],
+    "WrapBack": [
+      151,
+      118
+    ],
+    "WrapInside": [
+      151,
+      118
+    ],
+    "wrapLayout": "138 mm center panel and two 6.5 mm spine folds; dimensions are approximate paper-fit targets, not a print-ready specification."
+  },
+  "articulation": {
+    "FrontLid": {
+      "axis": "Y",
+      "closedDegrees": 0,
+      "openDegrees": -110
+    },
+    "defaultPose": "Closed",
+    "clip": "Open"
+  },
+  "knownApproximations": [
+    "Fine molded ribbing, clip positions, hub spring geometry and booklet leaves are reconstructed visual approximations.",
+    "Blank booklet pages are dimensional placeholders, not a reproduction of a specific manual pagination.",
+    "Transparent molded plastic is rendered through portable material approximations and may differ across engines.",
+    "No disc is included; the existing standalone media model remains a separate asset."
+  ],
+  "rights": "Only original parametric geometry and authored metadata are distributed in this neutral template. Product design and third-party marks remain outside the collection license; no source photograph, game artwork or copied logo is embedded."
+}

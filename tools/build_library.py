@@ -26,6 +26,11 @@ LAYOUT = {
     "playstation-1": "templates/playstation-1",
     "nintendo-64": "templates/nintendo-64",
     "nes": "templates/nes",
+    "nes-box": "templates/nes/box",
+    "snes-box": "templates/snes/box",
+    "nintendo-64-box": "templates/nintendo-64/box",
+    "mega-drive-box": "templates/mega-drive/box",
+    "playstation-1-box": "templates/playstation-1/box",
 }
 
 

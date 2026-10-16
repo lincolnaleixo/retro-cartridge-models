@@ -1,6 +1,6 @@
 # Retro Cartridge Models
 
-Versioned 3D cartridge reconstructions by **Lincoln Aleixo**. Each model has editable Blender sources, a portable GLB, preview images, a changelog and checksums tied to a release.
+Versioned 3D cartridges, discs and game boxes by **Lincoln Aleixo**. Each model has editable Blender sources, a portable GLB, preview images, a changelog and checksums tied to a release.
 
 **[Explore the public 3D gallery →](https://lincolnaleixo.github.io/retro-cartridge-models/)**
 
@@ -49,6 +49,28 @@ The cache accepts the original ZIP filenames directly, such as `mega-drive-0.1.0
 The latest Super Mario 64, Super Mario Bros., Super Mario World and Sonic reproductions remove source-photo wear or restore blurred top lettering. Original game editions, geometry and mesh UVs remain unchanged. Crash already has clean restored print and stays at 0.1.0. See the [restoration method and validation](docs/pristine-label-restoration.md). Earlier release packages remain available for comparison.
 
 ## Models
+
+### Articulated box templates
+
+Neutral packaging lives in `assets/templates/<console>/box/`, alongside each existing cartridge or disc. Each box has a closed default pose and a two-second `Open` animation, separate hinges, removable inserts and named UV artwork surfaces. In the gallery, use **Closed** and **Open** to inspect either state. The existing media are separate assets.
+
+| Template | Construction | Release |
+| --- | --- | --- |
+| [NES](assets/templates/nes/box/README.md) | Early portrait carton, integrated rear hang tab, top tuck flap, dust flaps, black sleeve and foam spacer | [0.1.0](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nes-box-v0.1.0) |
+| [SNES](assets/templates/snes/box/README.md) | Landscape carton, two tuck ends and folded card insert | [0.1.0](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/snes-box-v0.1.0) |
+| [Nintendo 64](assets/templates/nintendo-64/box/README.md) | Landscape carton, articulated end flaps and removable card cradle | [0.1.0](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nintendo-64-box-v0.1.0) |
+| [Mega Drive](assets/templates/mega-drive/box/README.md) | Black clamshell, folding spine, cartridge supports, booklet clips and clear cover sleeve | [0.1.0](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/mega-drive-box-v0.1.0) |
+| [PlayStation 1](assets/templates/playstation-1/box/README.md) | Standard clear jewel case, hinged lid, removable tray, retaining hub and booklet | [0.1.0](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/playstation-1-box-v0.1.0) |
+
+These are pristine visualization reconstructions. Fine folded and molded details are inferred from specimen photographs; they are not manufacturing drawings. Generate an editable template and actual-export renders with:
+
+```sh
+blender --factory-startup --background --python tools/create_game_boxes.py -- --console nintendo-64
+```
+
+Use `--artwork mapping.json` to assign local print files by the slot names recorded in `construction.json`. Embedded images use sRGB. Each GLB retains the same articulated structure and opens at two seconds; Blender sources use frames 1–61 at 30 fps.
+
+### Cartridges and discs
 
 | Model | Current version | Files | Changes |
 | --- | --- | --- | --- |

@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "id": "nintendo-64-box",
+  "version": "0.1.0",
+  "title": "Nintendo 64 \u2014 western retail box template",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions: CC BY-NC-ND 4.0. Product designs and third-party marks are excluded. No game artwork, source photograph or copied logo is included.",
+  "date": "2026-10-16",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center of nominal closed envelope"
+  },
+  "nominalDimensionsMm": [
+    179.0,
+    128.0,
+    31.0
+  ],
+  "measurementBasis": "Protector manufacturer fit dimensions and inspected retail specimen photographs; see docs/nintendo-box-reference-evidence.json. Protector-fit dimensions establish an approximate envelope. The tray construction is informed by original and replacement examples; its die line and board thickness are not asserted to match a specific Nintendo factory revision.",
+  "changes": [
+    "Real-thickness coated paperboard tube with unprinted inner stock, exposed cut edges, scored folds and a glue lap.",
+    "Both end panels, their tuck tongues and four dust ears retain independent pivots.",
+    "The removable folded white cradle has an approximate 119.4 \u00d7 80.8 mm cartridge opening, curved finger access and separate inner returns.",
+    "The normal Open clip leaves the tray seated; its extraction axis and optional translation are recorded separately.",
+    "Added self-contained editable source, a named Open clip, reviewed previews and exact-input validation reports."
+  ],
+  "validation": {
+    "meshes": 20,
+    "primitives": 42,
+    "triangles": 7068,
+    "materials": 11,
+    "images": 0,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "embeddedImages": 0,
+    "externalImages": 0,
+    "artworkSlots": {
+      "ArtworkBack": "Back",
+      "ArtworkBottom": "Bottom",
+      "ArtworkFront": "Front",
+      "ArtworkTop": "Top",
+      "ArtworkSpineLeft": "SpineLeft",
+      "ArtworkSpineRight": "SpineRight"
+    },
+    "animation": {
+      "name": "Open",
+      "durationSeconds": 2.0,
+      "channels": 8
+    },
+    "godot": {
+      "version": "4.7.2-stable (official)",
+      "headlessImport": "passed",
+      "endpointInspection": "Closed/Open world vertex bounds, named packaging parts and artwork UVs verified."
+    },
+    "previewLighting": "Actual GLB reimport in a neutral white studio, Standard view transform, exposure -1.0. Pixel dimensions are recorded per preview. Detached-insert views are separate inspection arrangements.",
+    "editableSource": "Reopened in Blender 5.2.2 LTS; packed resources, named parts and both poses checked."
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/templates/nintendo-64/box/previews/0.1.0/hero.png",
+      "bytes": 736199,
+      "sha256": "d1842cc3e24fd18e238a72245a06d0019ca775fd12e44b7fc771474a2b333900",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "front",
+      "path": "assets/templates/nintendo-64/box/previews/0.1.0/front.png",
+      "bytes": 714812,
+      "sha256": "fb3d891f2166cd32fc7c12ee3cf39d441919701b45a72d6abc22de3bbcc62d45",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "rear",
+      "path": "assets/templates/nintendo-64/box/previews/0.1.0/rear.png",
+      "bytes": 781728,
+      "sha256": "6a85b2a9f6364df2dfc075ed3ed9a37b06ca6abe2265002a63bd502795abde13",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "top",
+      "path": "assets/templates/nintendo-64/box/previews/0.1.0/top.png",
+      "bytes": 814688,
+      "sha256": "b9784e932cea5723eb090b98c723b7e41d2fe2f5842801d31d624db1ccc2fbb3",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "bottom",
+      "path": "assets/templates/nintendo-64/box/previews/0.1.0/bottom.png",
+      "bytes": 739003,
+      "sha256": "31ea33b49189ffb578aa82d71077cb05f1c1bb087577673c816e300b1d5c87ad",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "open",
+      "path": "assets/templates/nintendo-64/box/previews/0.1.0/open.png",
+      "bytes": 720231,
+      "sha256": "94efdbd1141925d4d322c7022abf1b27a94c00c56325c0a74a72aeeb99f86d75",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "insert-inspection",
+      "path": "assets/templates/nintendo-64/box/previews/0.1.0/insert-inspection.png",
+      "bytes": 1170371,
+      "sha256": "9b6d632bf31aa7c309be424ea44920ca265f406687517027b1524fe43de4e18f",
+      "width": 1400,
+      "height": 1000
+    }
+  ],
+  "release": {
+    "tag": "nintendo-64-box-v0.1.0",
+    "archive": {
+      "name": "nintendo-64-box-0.1.0.zip",
+      "bytes": 5920587,
+      "sha256": "17156fa515f0566e3b9822cd26edc13b3688dfed36373b4b881a0148a04bdca9",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/nintendo-64-box-v0.1.0/nintendo-64-box-0.1.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 1112,
+      "sha256": "ad990b14d69ec6a1cbcb4043c33ad31d0e54e351bfcfd5c0980e77a96f416e22"
+    },
+    "CREDITS.md": {
+      "bytes": 1960,
+      "sha256": "ae33b499a8fab4bef138535007c0581918efb6c0c7e85773fe5981cd4bcbacb7"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 4351,
+      "sha256": "04602588f5708dd1ca0b26f7194ce5ea5fcb2a12fb1ece283fbd9321ab814033"
+    },
+    "README.md": {
+      "bytes": 4058,
+      "sha256": "3c196d30e4da8f1a0796052393891d0e5db9c05ccd4575fa9042c9b9d1ec26b2"
+    },
+    "bottom.png": {
+      "bytes": 739003,
+      "sha256": "31ea33b49189ffb578aa82d71077cb05f1c1bb087577673c816e300b1d5c87ad"
+    },
+    "construction.json": {
+      "bytes": 4042,
+      "sha256": "45a380ed75ebefb1df4fef6645e849c865b03a8a954a5f76d3daf7938ed17d96"
+    },
+    "front.png": {
+      "bytes": 714812,
+      "sha256": "fb3d891f2166cd32fc7c12ee3cf39d441919701b45a72d6abc22de3bbcc62d45"
+    },
+    "glb-inspection.json": {
+      "bytes": 1923,
+      "sha256": "5aec84d25488a01f72a31c6f68b7e2f66c9e89d16abca4676b25c7417057dcbd"
+    },
+    "godot-import-report.json": {
+      "bytes": 1354,
+      "sha256": "5abc0af606686b7bcfcb4f334fffd7d4a293531208db36ab66fe43b700a320d3"
+    },
+    "hero.png": {
+      "bytes": 736199,
+      "sha256": "d1842cc3e24fd18e238a72245a06d0019ca775fd12e44b7fc771474a2b333900"
+    },
+    "insert-inspection.png": {
+      "bytes": 1170371,
+      "sha256": "9b6d632bf31aa7c309be424ea44920ca265f406687517027b1524fe43de4e18f"
+    },
+    "nintendo-64-box.blend": {
+      "bytes": 131189,
+      "sha256": "b775e7f323d327dc90b4a127bdbe4ace303b7043cfb7d802a2239f0e41cd1100"
+    },
+    "nintendo-64-box.glb": {
+      "bytes": 428452,
+      "sha256": "23c27276153e9b29b17f9900658a8889458bbf80265bdbe4e9ab02d836f44af6"
+    },
+    "open.png": {
+      "bytes": 720231,
+      "sha256": "94efdbd1141925d4d322c7022abf1b27a94c00c56325c0a74a72aeeb99f86d75"
+    },
+    "rear.png": {
+      "bytes": 781728,
+      "sha256": "6a85b2a9f6364df2dfc075ed3ed9a37b06ca6abe2265002a63bd502795abde13"
+    },
+    "reference-evidence.json": {
+      "bytes": 9707,
+      "sha256": "6bf404c84585785e99bfccf1f089926d6cac3d54d9433b595780e7929b12c050"
+    },
+    "source-reopen-report.json": {
+      "bytes": 1674,
+      "sha256": "36d7f3a90d7a177ff28227d118a74794a956099c8946b7f15c3d0d6141d938b9"
+    },
+    "top.png": {
+      "bytes": 814688,
+      "sha256": "b9784e932cea5723eb090b98c723b7e41d2fe2f5842801d31d624db1ccc2fbb3"
+    }
+  }
+}

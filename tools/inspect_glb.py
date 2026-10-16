@@ -176,7 +176,14 @@ class Accessors:
         return values
 
 
-def inspect(path):
+def inspect(path, required_labels=None):
+    """Validate geometry; callers may supply a separate named-surface contract.
+
+    The default retains the published cartridge/disc label requirements. An
+    explicit empty mapping is only suitable when a caller performs its own
+    artwork contract, such as inspect_game_box's metadata-based slot checks.
+    """
+    label_names = LABEL_NAMES if required_labels is None else required_labels
     document, binary, file_size = read_glb(path)
     nodes = document.get("nodes", [])
     meshes = document.get("meshes", [])
@@ -206,13 +213,13 @@ def inspect(path):
                 finite(node[key], f"node {index}.{key}")
         for child in node.get("children", []):
             reference(nodes, child, f"node {index}.children")
-    labels = {side: [] for side in LABEL_NAMES}
+    labels = {side: [] for side in label_names}
     low, high = [math.inf] * 3, [-math.inf] * 3
     primitives = triangles = vertices = 0
     for mesh_index, mesh in enumerate(meshes):
-        label_sides = [side for side, names in LABEL_NAMES.items() if mesh_names[mesh_index] & names]
+        label_sides = [side for side, names in label_names.items() if mesh_names[mesh_index] & names]
         for side in label_sides:
-            labels[side].extend(sorted(mesh_names[mesh_index] & LABEL_NAMES[side]))
+            labels[side].extend(sorted(mesh_names[mesh_index] & label_names[side]))
         require(mesh.get("primitives"), f"mesh {mesh_index}: no primitives")
         for primitive_index, primitive in enumerate(mesh["primitives"]):
             context = f"mesh {mesh_index} primitive {primitive_index}"
@@ -260,7 +267,7 @@ def inspect(path):
         if side == 'rear' and any(n.get('extras', {}).get('mediaType') == 'optical-disc' for n in nodes):
             require(not names, 'optical disc must not expose its reading side as rear artwork')
             continue
-        require(names, f"missing {side} label; expected one of {sorted(LABEL_NAMES[side])}")
+        require(names, f"missing {side} label; expected one of {sorted(label_names[side])}")
     return {
         "file": Path(path).name,
         "status": "passed",

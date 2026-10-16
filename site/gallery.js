@@ -2,14 +2,42 @@ const $ = (id) => document.getElementById(id);
 const viewer = $('viewer');
 const repo = 'https://github.com/lincolnaleixo/retro-cartridge-models';
 const viewOrbits = {hero:'30deg 68deg auto',front:'0deg 90deg auto',back:'180deg 90deg auto',top:'0deg 0deg auto',bottom:'0deg 180deg auto',side:'90deg 90deg auto'};
-const viewNames = {hero:'Three-quarter view',photo:'Black background',top:'Top',bottom:'Bottom and connector',back:'Back',side:'Side'};
-let catalog, selected, loadingTimer;
+const viewNames = {hero:'Three-quarter view',photo:'Black background',front:'Front',top:'Top',bottom:'Bottom',rear:'Back',back:'Back',side:'Side',open:'Open',insert:'Removable insert'};
+let catalog, selected, currentEntry, loadingTimer, activePose = 'closed', activeView = 'hero';
 function chooseView(name) {
-  viewer.cameraOrbit = viewOrbits[name];
+  activeView = name;
+  const bounds = currentEntry?.[`${activePose}Bounds`];
+  if (bounds) {
+    // Frame the actual articulated envelope, including lids outside the closed box.
+    const center = bounds.min.map((n, axis) => (n + bounds.max[axis]) / 2);
+    const radius = Math.hypot(...bounds.dimensions) / (2 * Math.sin(Math.PI / 12)) * 1.1;
+    viewer.cameraTarget = center.map((n) => `${n}m`).join(' ');
+    viewer.cameraOrbit = viewOrbits[name].replace('auto', `${radius}m`);
+  } else {
+    viewer.cameraTarget = 'auto auto auto';
+    viewer.cameraOrbit = viewOrbits[name];
+  }
   for (const button of $('views').querySelectorAll('button')) button.setAttribute('aria-pressed', String(button.dataset.view === name));
+}
+function choosePose(name) {
+  if (!currentEntry?.animation || !viewer.loaded) return;
+  activePose = name;
+  // A one-shot action clamps at the open endpoint instead of wrapping to frame zero.
+  viewer.play({repetitions: 1});
+  viewer.pause();
+  viewer.currentTime = name === 'open' ? currentEntry.animation.durationSeconds : 0;
+  for (const button of $('poses').querySelectorAll('button')) button.setAttribute('aria-pressed', String(button.dataset.pose === name));
+  chooseView(activeView);
+  $('load-state').textContent = name === 'open' ? 'Open · Ready to explore' : 'Closed · Ready to explore';
 }
 function loadVersion(version) {
   const entry = selected.versions.find((v) => v.version === version) || selected.versions[0];
+  currentEntry = entry;
+  activePose = 'closed';
+  $('poses').hidden = !entry.animation;
+  for (const button of $('poses').querySelectorAll('button')) button.disabled = true;
+  viewer.animationName = entry.animation?.name;
+  viewer.animationCrossfadeDuration = 0;
   $('version').value = entry.version;
   $('load-state').textContent = 'Loading model…';
   clearTimeout(loadingTimer);
@@ -43,9 +71,15 @@ function selectAsset(id, version) {
   document.querySelectorAll('.card').forEach((card) => card.classList.toggle('selected',card.dataset.asset === selected.id));
   loadVersion(version || selected.latest);
 }
-viewer.addEventListener('load', () => {clearTimeout(loadingTimer);$('load-state').textContent='Ready to explore';});
+viewer.addEventListener('load', () => {
+  clearTimeout(loadingTimer);
+  $('load-state').textContent='Ready to explore';
+  for (const button of $('poses').querySelectorAll('button')) button.disabled = false;
+  choosePose('closed');
+});
 viewer.addEventListener('error', () => {clearTimeout(loadingTimer);$('load-state').textContent='3D loading failed. View the renders or reload the page.';});
 $('views').addEventListener('click', (event) => {const button=event.target.closest('[data-view]');if(button)chooseView(button.dataset.view);});
+$('poses').addEventListener('click', (event) => {const button=event.target.closest('[data-pose]');if(button)choosePose(button.dataset.pose);});
 $('version').addEventListener('change', () => loadVersion($('version').value));
 $('cards').addEventListener('click', (event) => {
   const link=event.target.closest('[data-explore]');if(!link || !catalog)return;

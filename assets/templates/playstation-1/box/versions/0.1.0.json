@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "id": "playstation-1-box",
+  "version": "0.1.0",
+  "title": "PlayStation 1 \u2014 clear-tray jewel case template",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions: CC BY-NC-ND 4.0. Product designs and third-party marks are excluded. No game artwork, source photograph or copied logo is included.",
+  "date": "2026-10-16",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center of nominal closed envelope"
+  },
+  "nominalDimensionsMm": [
+    142.35,
+    124.75,
+    10.4
+  ],
+  "measurementBasis": "CMC original jewel-case inspection dimensions and standard-tray drawings; NTSC-U/C specimen photographs. The envelope uses midpoint values from CMC assembly inspection ranges, not proof of the original Sony supplier. Fine molded features, booklet leaves and paper-fit dimensions are approximate. Clear plastic rendering depends on the importing engine.",
+  "changes": [
+    "A standard-compatible 142.35 \u00d7 124.75 \u00d7 10.4 mm envelope with a separate front-lid pivot.",
+    "Clear molded lid and removable tray with a central retaining hub and approximate rib, clip and hinge detail.",
+    "Independent front booklet, booklet reverse, rear wrap and inner wrap artwork targets; spine folds share the tray-card UV field.",
+    "The Open clip rotates the lid to 110 degrees. The standalone CD remains a separate media asset.",
+    "Added self-contained editable source, a named Open clip, reviewed previews and exact-input validation reports."
+  ],
+  "validation": {
+    "meshes": 11,
+    "primitives": 11,
+    "triangles": 26280,
+    "materials": 8,
+    "images": 1,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "embeddedImages": 1,
+    "externalImages": 0,
+    "artworkSlots": {
+      "FrontLabel": "Front",
+      "InsertInnerPaper": "BookletBack",
+      "RearLabel": "WrapBack",
+      "TrayCardInside": "WrapInside"
+    },
+    "animation": {
+      "name": "Open",
+      "durationSeconds": 2.0,
+      "channels": 1
+    },
+    "godot": {
+      "version": "4.7.2-stable (official)",
+      "headlessImport": "passed",
+      "endpointInspection": "Closed/Open world vertex bounds, named packaging parts and artwork UVs verified."
+    },
+    "previewLighting": "Actual GLB reimport in a neutral white studio, Standard view transform, exposure -1.0. Pixel dimensions are recorded per preview. Detached-insert views are separate inspection arrangements.",
+    "editableSource": "Reopened in Blender 5.2.2 LTS; packed resources, named parts and both poses checked."
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/templates/playstation-1/box/previews/0.1.0/hero.png",
+      "bytes": 1133785,
+      "sha256": "416b8d1b85b2ddbdd662af5b567968d935a4768ef49b72a984db3308f6213986",
+      "width": 1200,
+      "height": 1000
+    },
+    {
+      "view": "front",
+      "path": "assets/templates/playstation-1/box/previews/0.1.0/front.png",
+      "bytes": 1087672,
+      "sha256": "53984625ad7d1a719f3be502cfa518c777e6137107fe25d670ab165e044b2d9b",
+      "width": 1200,
+      "height": 1000
+    },
+    {
+      "view": "rear",
+      "path": "assets/templates/playstation-1/box/previews/0.1.0/rear.png",
+      "bytes": 1132163,
+      "sha256": "e9d640c077e6b575cc66b0ccdd4ff56d40acb644521cd3634d4c1cdad4c4f623",
+      "width": 1200,
+      "height": 1000
+    },
+    {
+      "view": "top",
+      "path": "assets/templates/playstation-1/box/previews/0.1.0/top.png",
+      "bytes": 1216438,
+      "sha256": "9143d151e1b5d08e1d298ac82412ed43169bad0c8cae1d1c1456835c65901757",
+      "width": 1200,
+      "height": 1000
+    },
+    {
+      "view": "bottom",
+      "path": "assets/templates/playstation-1/box/previews/0.1.0/bottom.png",
+      "bytes": 1133552,
+      "sha256": "17eda64811a42a99715b772796e483f830cfbf8cb6212d7173d718c6fc1d6b7d",
+      "width": 1200,
+      "height": 1000
+    },
+    {
+      "view": "open",
+      "path": "assets/templates/playstation-1/box/previews/0.1.0/open.png",
+      "bytes": 1135076,
+      "sha256": "d2b066397f6cc9b5ad9ece53fd029709b2f3cc1a5e7680ef9053802e83babccc",
+      "width": 1200,
+      "height": 1000
+    }
+  ],
+  "release": {
+    "tag": "playstation-1-box-v0.1.0",
+    "archive": {
+      "name": "playstation-1-box-0.1.0.zip",
+      "bytes": 8079387,
+      "sha256": "c572dbc51244341aca4b87c61a96d75f4d9e53eded5fa704f9ec71cca8406d2d",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/playstation-1-box-v0.1.0/playstation-1-box-0.1.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 1093,
+      "sha256": "3889d826ee9885d0e9e91919f190a8fa420a13ee708b9bb47150894dec2ae45a"
+    },
+    "CREDITS.md": {
+      "bytes": 1689,
+      "sha256": "51429be11bebf0d5f01b908868267cf993e4db9094a0cd0bf68a99a5a54f6a30"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 4351,
+      "sha256": "04602588f5708dd1ca0b26f7194ce5ea5fcb2a12fb1ece283fbd9321ab814033"
+    },
+    "README.md": {
+      "bytes": 3756,
+      "sha256": "4ac6d579cda2c5ee588f064438465d8c175a0bdbc1f7ba4faa4484a7e5de7dfe"
+    },
+    "bottom.png": {
+      "bytes": 1133552,
+      "sha256": "17eda64811a42a99715b772796e483f830cfbf8cb6212d7173d718c6fc1d6b7d"
+    },
+    "construction.json": {
+      "bytes": 1750,
+      "sha256": "c596c7eddbab3c90c490d64585164f7a4edf35c3773667f9bea27fb9a6d653cb"
+    },
+    "front.png": {
+      "bytes": 1087672,
+      "sha256": "53984625ad7d1a719f3be502cfa518c777e6137107fe25d670ab165e044b2d9b"
+    },
+    "glb-inspection.json": {
+      "bytes": 1661,
+      "sha256": "267cd33a3458d2b7b5a1107d3b7e2f1a2d4ed9d95cfd21d9c6bd9d81a2c119c0"
+    },
+    "godot-import-report.json": {
+      "bytes": 1336,
+      "sha256": "1f8f1578bdf415e64af8e72921fa63f2b98238df4f7b400e7ec5e58a13e4c026"
+    },
+    "hero.png": {
+      "bytes": 1133785,
+      "sha256": "416b8d1b85b2ddbdd662af5b567968d935a4768ef49b72a984db3308f6213986"
+    },
+    "open.png": {
+      "bytes": 1135076,
+      "sha256": "d2b066397f6cc9b5ad9ece53fd029709b2f3cc1a5e7680ef9053802e83babccc"
+    },
+    "playstation-1-box.blend": {
+      "bytes": 813683,
+      "sha256": "0998d298f6546c1f5a506833c169f3fca373ab51d7bc5d7d92f1cc4fe5c2c6bd"
+    },
+    "playstation-1-box.glb": {
+      "bytes": 2199032,
+      "sha256": "6d27eb2d92bdd8a10b1d769b7440f1c628a3ba458d8abd6addf22281a716b888"
+    },
+    "rear.png": {
+      "bytes": 1132163,
+      "sha256": "e9d640c077e6b575cc66b0ccdd4ff56d40acb644521cd3634d4c1cdad4c4f623"
+    },
+    "reference-evidence.json": {
+      "bytes": 3074,
+      "sha256": "7a47117aabad435041f94ed5a8a57aa6c2b6e43d54c3fd8714b90941a3bc88b0"
+    },
+    "source-reopen-report.json": {
+      "bytes": 1611,
+      "sha256": "07e5adbdb7bf4eccc20b237238c5e918252bca27ec30fa495e2be46af6eccaea"
+    },
+    "top.png": {
+      "bytes": 1216438,
+      "sha256": "9143d151e1b5d08e1d298ac82412ed43169bad0c8cae1d1c1456835c65901757"
+    }
+  }
+}

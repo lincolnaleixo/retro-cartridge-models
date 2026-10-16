@@ -13,3 +13,7 @@ Each directory holds the model's records, version history and previews. Download
 The templates have unprinted artwork surfaces. The Nintendo 64 shell retains an approximate molded Nintendo wordmark; it and the underlying hardware designs remain outside the original-contributions license. See each template's credits for reference measurements and limits.
 
 [All assets](../README.md) · [Offline library](../../README.md#organized-library)
+
+## Box templates
+
+Each console also has an independently versioned articulated packaging template in its `box/` subfolder: [NES](nes/box/README.md), [SNES](snes/box/README.md), [Nintendo 64](nintendo-64/box/README.md), [Mega Drive](mega-drive/box/README.md) and [PlayStation 1](playstation-1/box/README.md).

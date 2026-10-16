@@ -39,6 +39,7 @@ def main():
                 previews.append({'view':preview['view'],'url':(folder/name).as_posix()})
             item['versions'].append({'version':m['version'],'modelUrl':(folder/'model.glb').as_posix(),
                 'dimensions':m.get('measuredBoundsMm',m['nominalDimensionsMm']),
+                **({key:m[key] for key in ('animation','closedBounds','openBounds')} if 'animation' in m else {}),
                 'changes':m['changes'],'previews':previews,
                 'releaseUrl':f"https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/{m['release']['tag']}"})
         gallery['assets'].append(item)
