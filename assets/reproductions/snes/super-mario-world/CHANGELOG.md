@@ -8,6 +8,8 @@
 
 ## 0.2.0 — 2026-10-16
 
+- Synchronized the canonical `labels/front.png` with the packaged restored image for consumers using immutable tagged raw URLs; verified both canonical label hashes against the release payload.
+
 - Repaired blue-field scan blemishes with localized original-print cloning and a thin scratch repair; retained the deliberate halftone, speed streaks, illustration, code and fold layout.
 - Applied a restrained 4% saturation/contrast recovery only to the color panel; kept the subtle SNES emblem, rear label and other textures unchanged.
 - Updated the standalone front PNG to exactly match the embedded GLB image; the standalone rear PNG remains byte-identical to 0.1.1. Geometry, UVs and materials remain unchanged.

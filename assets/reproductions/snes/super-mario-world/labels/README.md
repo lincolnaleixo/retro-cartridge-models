@@ -5,6 +5,8 @@ Standalone label images derived from the published `snes-super-mario-world` mode
 - `front.png` (2048 x 1083): the continuous front label used by `Cartridge v5 continuous front label mesh`, including the folded top region.
 - `rear.png` (2048 x 797): the rear printed information panel.
 
-These files were extracted unchanged from the release package's self-contained GLB. They contain Nintendo artwork and trademarks, which the collection's license explicitly excludes; the same scope as the textured model already published in this asset's releases applies, and `CREDITS.md` and `NOTICE.md` remain authoritative. Do not treat these exports as an additional license grant.
+These files match the images embedded in the 0.2.0 release package's self-contained GLB. The front contains the documented pristine-print local restoration; the rear remains byte-identical to 0.1.1. They contain Nintendo artwork and trademarks, which the collection's license explicitly excludes; the same scope as the textured model already published in this asset's releases applies, and `CREDITS.md` and `NOTICE.md` remain authoritative. Do not treat these exports as an additional license grant.
 
 Consumers should verify the SHA-256 values recorded in the version manifest before use.
+
+Pin the `snes-super-mario-world-v0.2.0` tag with the repository paths `assets/reproductions/snes/super-mario-world/labels/front.png` and `assets/reproductions/snes/super-mario-world/labels/rear.png` for immutable raw downloads.

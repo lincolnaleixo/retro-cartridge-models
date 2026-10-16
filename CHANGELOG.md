@@ -4,6 +4,8 @@ Model release histories also live in each asset directory's `CHANGELOG.md`, unde
 
 ## Unreleased
 
+- Updated the canonical Super Mario World front PNG to match the pristine 0.2.0 package byte for byte, so consumers using the version tag receive the restored print through the organized reproduction path. The rear PNG remains unchanged.
+
 - Prepared pristine print releases dated 2026-10-16: Super Mario 64 0.3.0, Super Mario Bros. 0.2.0, Super Mario World 0.2.0 and Sonic the Hedgehog 0.2.0. Removed selected photographic wear, restored rear warnings/top titles, preserved original editions and all geometry/UV bytes, and retained the clean Crash release. Added five actual-export previews per release and matched previous/current review renders. Validation: 26 tooling tests, four packed-source reopen checks, four GLB inspections and Godot 4.7.2 geometry/UV/normal/transform comparisons. All 83 previously published manifest/preview files remain byte-identical.
 
 - Added a texture-only artwork updater that opens published Blender sources and patches embedded GLB images without rebuilding meshes. It matches images by packed-byte hash, preserves unrelated buffers/maps, rejects input/output aliases and unsafe geometry references, and permits only explicit material-scoped UV remaps. Eight focused tests and real Blender checks cover image-format changes, UV isolation and immutable inputs.
