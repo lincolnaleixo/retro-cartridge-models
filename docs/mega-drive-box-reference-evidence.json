@@ -1,0 +1,90 @@
+{
+  "assetId": "mega-drive-box",
+  "reviewedOn": "2026-10-16",
+  "scope": "Original neutral reconstruction of an early western black clamshell, suitable for the existing Sonic the Hedgehog PAL cartridge reproduction.",
+  "sources": [
+    {
+      "url": "https://info.sonicretro.org/images/1/15/Sonic1_MD_EU_manual.pdf",
+      "type": "Scanned original Sonic the Hedgehog PAL instruction manual, rehosted by Sonic Retro",
+      "observations": [
+        "The original front cover is a single landscape layout; extracted raster aspect is approximately 1939:1102.",
+        "Stored sideways at an estimated 164 mm long edge, this implies a 93.2 mm short edge and avoids stretching the manual cover."
+      ],
+      "limitations": "The aspect ratio is observed from the scan. Physical size, thickness and lateral placement remain estimates; no page artwork is included in the neutral template."
+    },
+    {
+      "url": "https://www.tradera.com/item/340720/717550997/sonic-the-hedgehog-sega-mega-drive",
+      "imageUrl": "https://img.tradera.net/images/748/634489748_123f7dd7-e2d7-41a7-b8c5-88590ba9b690.jpg",
+      "type": "Original specimen photograph",
+      "observations": [
+        "Black molded clamshell with a broad flat spine and two thin flexible folds.",
+        "Cartridge stored sideways relative to the upright portrait cover.",
+        "Two opposing cartridge guide brackets with central spring tongues.",
+        "Four raised booklet retaining tongues and two small hinge-side stops.",
+        "Intact retail hanger on the top body edge and shallow circular tooling witness marks."
+      ],
+      "limitations": "Oblique photograph, no ruler; used for construction and relative layout only. Wear and manufacturing logos are not copied."
+    },
+    {
+      "url": "https://darwenauctioneers.co.uk/auction/no-auction_number/lot-233-sonic-the/",
+      "type": "Firsthand auction catalogue description of an original specimen",
+      "observations": [
+        "Identifies the original black plastic case, paper cover inlay, instruction manual and cartridge.",
+        "Identifies PAL European packaging with multilingual back text, product code 670-1470-50S, and a case hanging tab."
+      ],
+      "limitations": "Corroborates packaging construction and edition family, not the exact mold variant or dimensions."
+    },
+    {
+      "url": "https://shop.retroshell.com/product/sega-megadrive-game-protector/",
+      "type": "Protector manufacturer's published fit specification",
+      "publishedFitMm": {"width": 129, "height": 177, "depth": 26},
+      "observations": ["Published fit envelope supplies a plausible scale for the standard closed body."],
+      "limitations": "Search-indexed manufacturer text was accessible; direct product URL returned 404 during review. This is a protector fit envelope, not an original Sega manufacturing drawing."
+    },
+    {
+      "url": "https://www.ebay.com/p/1974610380",
+      "imageUrl": "https://i.ebayimg.com/images/g/7TQAAOSw4z1oXjHb/s-l1600.jpg",
+      "type": "Original Japanese case specimen photograph, construction comparison only",
+      "observations": [
+        "Clear view of open U-shaped cartridge guides, spring tongues and through-slots.",
+        "Clear view of hollow shell perimeter, booklet tongues and dual spine flexures."
+      ],
+      "limitations": "Japanese specimen is not asserted to be the same PAL mold. Used only to understand structural features independently visible in the Sonic PAL photo."
+    }
+  ],
+  "modeledNominalDimensionsMm": {
+    "fullEnvelope": {"width": 129, "height": 188, "depth": 26},
+    "body": {"width": 129, "height": 177, "depth": 26},
+    "heightIncludingIntactHanger": 188,
+    "frontPaper": {"width": 122, "height": 172},
+    "backPaper": {"width": 122, "height": 172},
+    "spinePaper": {"width": 25, "height": 172},
+    "combinedPaperWrap": {"width": 269, "height": 172},
+    "shellFloorThickness": 1.25,
+    "bookletPlaceholder": {"width": 93.2, "height": 164, "depth": 2.1},
+    "bookletCenterOffsetX": 10
+  },
+  "dimensionConfidence": "All modeled dimensions are nominal visualization estimates. No claim of caliper measurement, factory accuracy, universal case compatibility or print-ready die-cut accuracy is made.",
+  "articulation": {
+    "closedDefault": true,
+    "rearSpineHinge": {"axis": "Y", "closedDegrees": 0, "openDegrees": -90},
+    "frontLidHinge": {"axis": "Y", "closedDegrees": 0, "openDegrees": -90},
+    "mechanism": "Two rigid pivot approximations of flexible polypropylene folds. The open endpoint is a flat 180-degree spread; material bending is not simulated."
+  },
+  "artworkContract": {
+    "slots": ["Front", "Back", "Spine", "BookletFront", "BookletBack"],
+    "uv": "Each named surface has upright normalized UV coordinates and its own material.",
+    "wrap": "The original continuous paper wrap is split at the two flexures to retain clean articulated surfaces.",
+    "clearSleeve": "Independent transparent faces above the paper; alpha blending is a portable approximation of a thin transparent flexible sleeve.",
+    "condition": "Fresh, unprinted stock. No yellowing, scratches, abrasion, stains or simulated age."
+  },
+  "knownApproximations": [
+    "Early western molds vary; this reconstruction captures the inspected construction without claiming an exact manufacturing revision.",
+    "The projecting retail hanger follows the inspected Sonic specimen. Other molds have different, foldable or removed hangers.",
+    "Cartridge clip offsets, snap catches, witness marks, page count, sleeve thickness and retail hanger size are inferred from photographs.",
+    "The separate booklet matches the observed Sonic PAL manual cover aspect ratio, with estimated physical dimensions and thickness; it does not reproduce the manual pagination.",
+    "Embossed manufacturer names, logos and mold identifiers are intentionally absent from the neutral template.",
+    "No cartridge mesh is included; CartridgePlacement exposes the sideways insertion anchor for the existing media asset."
+  ],
+  "rights": "References were inspected to author new parametric geometry. No reference photograph, game artwork, scanned mesh or third-party logo is embedded or redistributed in this template."
+}

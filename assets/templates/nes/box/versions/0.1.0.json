@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "id": "nes-box",
+  "version": "0.1.0",
+  "title": "NES \u2014 early US retail box template",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions: CC BY-NC-ND 4.0. Product designs and third-party marks are excluded. No game artwork, source photograph or copied logo is included.",
+  "date": "2026-10-16",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center of nominal closed envelope"
+  },
+  "nominalDimensionsMm": [
+    128.0,
+    179.0,
+    24.0
+  ],
+  "measurementBasis": "Protector manufacturer fit dimensions and inspected retail specimen photographs; see docs/nintendo-box-reference-evidence.json. Dimensions, die cuts, foam size and paper gauge are inferred. The early hanger is a selected US variant, not a claim about every NES printing. Foam pore shading is procedural in the source; the portable export retains its clean base material.",
+  "changes": [
+    "Real-thickness coated paperboard, unprinted inner stock, scored folds and an internal glue lap.",
+    "An early integrated rear hanger stays flush and unpunched; its artwork continues across the die-cut boundary.",
+    "The top lid and tuck tongue counter-fold together before the two dust ears open.",
+    "Four interlocking bottom panels remain folded during normal opening. Their inspection hinges and the rear hanger retain separate disassembly-angle metadata.",
+    "A removable empty black sleeve with a thumb notch sits above the white foam bottom spacer.",
+    "Added self-contained editable source, a named Open clip, reviewed previews and exact-input validation reports."
+  ],
+  "validation": {
+    "meshes": 23,
+    "primitives": 45,
+    "triangles": 5616,
+    "materials": 12,
+    "images": 0,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "embeddedImages": 0,
+    "externalImages": 0,
+    "artworkSlots": {
+      "ArtworkBack": "Back",
+      "ArtworkFront": "Front",
+      "ArtworkSpineLeft": "SpineLeft",
+      "ArtworkSpineRight": "SpineRight",
+      "ArtworkBottom": "Bottom",
+      "ArtworkBottomRear": "Bottom",
+      "ArtworkBackHangtab": "Back",
+      "ArtworkTop": "Top"
+    },
+    "animation": {
+      "name": "Open",
+      "durationSeconds": 2.0,
+      "channels": 9
+    },
+    "godot": {
+      "version": "4.7.2-stable (official)",
+      "headlessImport": "passed",
+      "endpointInspection": "Closed/Open world vertex bounds, named packaging parts and artwork UVs verified."
+    },
+    "previewLighting": "Actual GLB reimport in a neutral white studio, Standard view transform, exposure -1.0. Pixel dimensions are recorded per preview. Detached-insert views are separate inspection arrangements.",
+    "editableSource": "Reopened in Blender 5.2.2 LTS; packed resources, named parts and both poses checked."
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/templates/nes/box/previews/0.1.0/hero.png",
+      "bytes": 733329,
+      "sha256": "a135942da935753292990099e58e2bf1f8c13300281061c1cdae50425fecfc48",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "front",
+      "path": "assets/templates/nes/box/previews/0.1.0/front.png",
+      "bytes": 724555,
+      "sha256": "06a29ae031d62a7f579f733ce2054053017d05b597f89ee737770473bf0c3b36",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "rear",
+      "path": "assets/templates/nes/box/previews/0.1.0/rear.png",
+      "bytes": 784952,
+      "sha256": "126dcbd2bc337d523f2042bd7f37ad122d4c247d0337763e9ca8d64d028e14d1",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "top",
+      "path": "assets/templates/nes/box/previews/0.1.0/top.png",
+      "bytes": 803329,
+      "sha256": "964ffd13159bfe1aacd13b70a8f7dd415fd2e393d82f83d5c3f6b1ba8d24aea3",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "bottom",
+      "path": "assets/templates/nes/box/previews/0.1.0/bottom.png",
+      "bytes": 739519,
+      "sha256": "3947eefe433e160cfea5bf5a78ed8de85e85ac9629f4fcb52c190f07eb518785",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "open",
+      "path": "assets/templates/nes/box/previews/0.1.0/open.png",
+      "bytes": 739854,
+      "sha256": "db72bac5e9940f5ad85f7b6d92a4266ffa90c45b5b0510ff9eee36a3d2f56422",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "insert-inspection",
+      "path": "assets/templates/nes/box/previews/0.1.0/insert-inspection.png",
+      "bytes": 1222874,
+      "sha256": "25a70a16094e42c5a2ced9f72a92548e21bfb45708d543c945f04767d4b8d3c6",
+      "width": 1400,
+      "height": 1000
+    }
+  ],
+  "release": {
+    "tag": "nes-box-v0.1.0",
+    "archive": {
+      "name": "nes-box-0.1.0.zip",
+      "bytes": 5978279,
+      "sha256": "8974ff57484fe9b4618548b176ddfb12e1a71271309672647512456269a5a92f",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/nes-box-v0.1.0/nes-box-0.1.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 1193,
+      "sha256": "9a7ed09ec52c13b3d1b4fd49a30c3146ca46faaff65826ac0cb6a29ca9143cb2"
+    },
+    "CREDITS.md": {
+      "bytes": 2295,
+      "sha256": "2a7ab223b682dee0eb5ed356b4c91a27c76132279c2442d82cf482a4f59f06be"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 4351,
+      "sha256": "04602588f5708dd1ca0b26f7194ce5ea5fcb2a12fb1ece283fbd9321ab814033"
+    },
+    "README.md": {
+      "bytes": 4217,
+      "sha256": "27b0ddbccfb30f590211e8858c84619103145aec189ead37587699bf8cbe92f3"
+    },
+    "bottom.png": {
+      "bytes": 739519,
+      "sha256": "3947eefe433e160cfea5bf5a78ed8de85e85ac9629f4fcb52c190f07eb518785"
+    },
+    "construction.json": {
+      "bytes": 4235,
+      "sha256": "af137df3d74fde03f9af7a1d53226a61a6afb8e4bbb5c99fa9630e459ab4bf22"
+    },
+    "front.png": {
+      "bytes": 724555,
+      "sha256": "06a29ae031d62a7f579f733ce2054053017d05b597f89ee737770473bf0c3b36"
+    },
+    "glb-inspection.json": {
+      "bytes": 2032,
+      "sha256": "42f7f66e3928de9211dd30cef81ee085a2cb6a8beab62fb5b645aa22af05fc1c"
+    },
+    "godot-import-report.json": {
+      "bytes": 1442,
+      "sha256": "7e8bec2bb429c96ff1997fa8c6cf6645dc110fe83c07b0c8cfa028e649c89acb"
+    },
+    "hero.png": {
+      "bytes": 733329,
+      "sha256": "a135942da935753292990099e58e2bf1f8c13300281061c1cdae50425fecfc48"
+    },
+    "insert-inspection.png": {
+      "bytes": 1222874,
+      "sha256": "25a70a16094e42c5a2ced9f72a92548e21bfb45708d543c945f04767d4b8d3c6"
+    },
+    "nes-box.blend": {
+      "bytes": 139391,
+      "sha256": "506edd99eba846b689171bf7a107dd544c4b0cb06ccbbd39b7bd786514256dc6"
+    },
+    "nes-box.glb": {
+      "bytes": 342328,
+      "sha256": "1a3308cffad7e261417d693332d321b748a0133cee19a47f5d13112f4b3adafb"
+    },
+    "open.png": {
+      "bytes": 739854,
+      "sha256": "db72bac5e9940f5ad85f7b6d92a4266ffa90c45b5b0510ff9eee36a3d2f56422"
+    },
+    "rear.png": {
+      "bytes": 784952,
+      "sha256": "126dcbd2bc337d523f2042bd7f37ad122d4c247d0337763e9ca8d64d028e14d1"
+    },
+    "reference-evidence.json": {
+      "bytes": 9707,
+      "sha256": "6bf404c84585785e99bfccf1f089926d6cac3d54d9433b595780e7929b12c050"
+    },
+    "source-reopen-report.json": {
+      "bytes": 1737,
+      "sha256": "b2119d4c4ec66bfb7c1ed25a26507975da58ce68b2a476cf846ede83a6d0f763"
+    },
+    "top.png": {
+      "bytes": 803329,
+      "sha256": "964ffd13159bfe1aacd13b70a8f7dd415fd2e393d82f83d5c3f6b1ba8d24aea3"
+    }
+  }
+}

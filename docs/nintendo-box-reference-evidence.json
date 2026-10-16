@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "title": "Western Nintendo game carton reference evidence",
+  "checkedOn": "2026-10-16",
+  "scope": "Neutral pristine NES, Super Nintendo and Nintendo 64 retail box templates; packaging only, no copyrighted artwork or downloaded reference photographs are embedded.",
+  "coordinateContract": {
+    "units": "meters",
+    "axes": "X right, Y up, +Z front",
+    "pivot": "bottom center of the closed nominal envelope",
+    "artwork": "NES portrait, SNES and Nintendo 64 landscape; every printed exterior has independent upright UV mapping"
+  },
+  "sources": [
+    {
+      "id": "retroshell-nes",
+      "url": "https://shop.retroshell.com/product/nintendo-nes-game-protector-case/",
+      "kind": "protector manufacturer fit dimensions",
+      "observed": "Maximum supported game envelope is listed as 128 mm wide, 179 mm high and 24 mm deep.",
+      "usedFor": "Approximate NES closed envelope; these are protector-fit dimensions, not Nintendo manufacturing specifications."
+    },
+    {
+      "id": "retroshell-snes",
+      "url": "https://shop.retroshell.com/product/nintendo-snes-game-protector/",
+      "kind": "protector manufacturer fit dimensions",
+      "observed": "Maximum supported game envelope is listed as 128 by 179 by 31 mm.",
+      "usedFor": "Approximate landscape SNES closed envelope; width and height are oriented to the landscape artwork."
+    },
+    {
+      "id": "retroshell-n64",
+      "url": "https://shop.retroshell.com/product/nintendo-n64-game-protector/",
+      "kind": "protector manufacturer fit dimensions",
+      "observed": "Maximum supported game envelope is listed as 128 by 179 by 31 mm.",
+      "usedFor": "Approximate landscape Nintendo 64 closed envelope; width and height are oriented to the landscape artwork."
+    },
+    {
+      "id": "retroprotection-snes",
+      "url": "https://retroprotection.com/product/snes-box-protector/",
+      "kind": "protector manufacturer product dimensions",
+      "observed": "Protector dimensions 5.0625 by 1.3125 by 7.1875 inches (128.5875 by 33.3375 by 182.5625 mm).",
+      "usedFor": "Independent approximate outer-fit cross-check only; protector dimensions include clearance and do not establish exact game-box sizes."
+    },
+    {
+      "id": "nes-collector-specimens",
+      "url": "https://www.thelegendofnes.com/cib",
+      "kind": "collector-authored specimen documentation with original photographs",
+      "observed": "Documents portrait cartons, top ear flaps, four interlocking bottom flaps, black protective sleeves, white bottom foam spacers, and early integrated-hangtab versus later flat-back box variants.",
+      "usedFor": "NES construction, including the selected early integrated-hangtab variant. Foam and sleeve dimensions are inferred to fit the existing cartridge envelope."
+    },
+    {
+      "id": "nes-smb-specimen",
+      "url": "https://www.alternateworldscomics.com/products/super-mario-bros-5-screw-nes-rare-first-edition-tabbed-box",
+      "kind": "seller photographs of a physical early five-screw Super Mario Bros. specimen",
+      "observed": "Physical box/cartridge/manual photographs show early black-box portrait proportions and the integrated hangtab edition.",
+      "usedFor": "Early integrated-hangtab edition distinction and overall proportions, cross-checked with the selected specimen photographs."
+    },
+    {
+      "id": "snes-smw-specimen",
+      "url": "https://www.cgcgrading.com/news/articles/the-story-behind-a-sealed-super-mario-world-certified-by-cgc-video-games-4NhgeKqaMuFtMK4vDTFZfu/",
+      "kind": "grading company photographs and inspection of a physical sealed Super Mario World specimen",
+      "observed": "Photographs and commentary distinguish USA production codes, including codes on inside flaps.",
+      "usedFor": "US edition and landscape external packaging reference; not a measured die line."
+    },
+    {
+      "id": "n64-sm64-specimens",
+      "url": "https://www.cgcvideogames.com/en-US/resources/complete-in-box-guide/nintendo-64",
+      "kind": "grading company inspected physical specimens and original reference photographs",
+      "observed": "Super Mario 64 entries distinguish early K-A versus E and Players Choice box variants; code and fiber-label differences exist.",
+      "usedFor": "Avoid conflating later reprints with the existing early Super Mario 64 cartridge. Not dimensional evidence."
+    },
+    {
+      "id": "n64-tray-manufacturer",
+      "url": "https://xyab.com/products/cardboard-box-insert-n64",
+      "kind": "replacement insert manufacturer photographs",
+      "observed": "Photographed flat and assembled white paperboard insert with scored folds and shaped cartridge supports. Product P90881 explicitly describes a replacement insert and upgraded build.",
+      "usedFor": "Qualitative folded-stock cradle construction only. A modern replacement is not evidence of an exact Nintendo factory die line."
+    },
+    {
+      "id": "snes-tray-specimen",
+      "url": "https://discountgamesonline.com/products/super-mario-world-fdo-for-display-only-box-snes-super-nintendo",
+      "kind": "seller photographs of a physical Super Mario World display carton and insert",
+      "observed": "Photograph shows a separate white folded tray with central opening and raised folded sides. The item is a display-only box.",
+      "usedFor": "Folded insert construction only, not a claim that this specimen establishes retail insert measurements."
+    },
+    {
+      "id": "snes-tray-supplier",
+      "url": "https://respawnandreplay.com/products/cartridge-cardboard-tray-for-super-nintendo-snes-super-famicom-inner-inlay-insert",
+      "kind": "replacement insert supplier photographs",
+      "observed": "Flat scored white board and assembled central cartridge-opening tray.",
+      "usedFor": "Qualitative triangulated folds and finger-access opening; original tooling and fit are not measured."
+    },
+    {
+      "id": "nes-smb-selected-specimen",
+      "url": "https://www.ebay.com/itm/385662571091",
+      "kind": "seller original photographs of an early no-REV-A physical Super Mario Bros. box",
+      "observed": "Seven inspected photographs show a portrait box with a flush integrated hanger and unpunched hook-slot die cut on the upper rear. The top carries title/address/Made in Japan; the folded bottom is plain black.",
+      "usedFor": "Selected NES early US exterior construction and print placement. Exact board gauge and die dimensions remain inferred."
+    }
+  ],
+  "models": {
+    "nes": {
+      "nominalDimensionsMm": [
+        128,
+        179,
+        24
+      ],
+      "boardThicknessMm": 0.45,
+      "construction": [
+        "Four separate coated paperboard walls with unprinted inner faces",
+        "Flush rear integrated hanger with die-cut gaps, unpunched hook-slot score and continuous rear UV field",
+        "Top tuck lid, separately hinged tongue and two dust ears",
+        "Four separately hinged interlocking bottom panels",
+        "Interior glue lap",
+        "Removable open black sleeve with rounded thumb notch",
+        "Clean white bottom foam spacer"
+      ],
+      "selection": "Early US integrated-hangtab format, matching the selected no-REV-A specimen; hanger is flush and unpunched. Bottom stays folded during normal opening, with independent disassembly hinges retained.",
+      "sourceIds": [
+        "retroshell-nes",
+        "nes-collector-specimens",
+        "nes-smb-specimen",
+        "nes-smb-selected-specimen"
+      ]
+    },
+    "snes": {
+      "nominalDimensionsMm": [
+        179,
+        128,
+        31
+      ],
+      "boardThicknessMm": 0.45,
+      "construction": [
+        "Landscape coated carton tube",
+        "Left/right printed end flaps, independent tuck tongues and upper/lower dust flaps",
+        "Visible inner glue lap",
+        "Removable hollow folded white tray, cartridge aperture, curved finger notches and tucked corner ears"
+      ],
+      "sourceIds": [
+        "retroshell-snes",
+        "retroprotection-snes",
+        "snes-smw-specimen",
+        "snes-tray-specimen",
+        "snes-tray-supplier"
+      ]
+    },
+    "nintendo-64": {
+      "nominalDimensionsMm": [
+        179,
+        128,
+        31
+      ],
+      "boardThicknessMm": 0.45,
+      "construction": [
+        "Landscape coated carton tube",
+        "Left/right printed end flaps, independent tuck tongues and upper/lower dust flaps",
+        "Visible inner glue lap",
+        "Removable hollow folded white tray with smaller Nintendo 64 cartridge aperture, curved finger notches and tucked corner ears"
+      ],
+      "sourceIds": [
+        "retroshell-n64",
+        "n64-sm64-specimens",
+        "n64-tray-manufacturer"
+      ]
+    }
+  },
+  "approximations": [
+    "No physical box was measured and no Nintendo factory die drawing was available.",
+    "Board gauges, score radii, glue-lap widths, tongue lengths, flap clearances and tray folds are artist-authored approximations informed by photographs.",
+    "Tray apertures are fitted to the existing visualization cartridge envelopes, not a certified manufacturing tolerance.",
+    "Hinges model paper as rigid articulated panels. Their Open endpoints are display poses rather than a deformation simulation.",
+    "The NES foam material uses subtle procedural source shading; exported material retains clean base color.",
+    "No manuals, posters, shrinkwrap or cartridge/disc models are included. The early NES integrated hangtab remains flush in the ordinary Open pose and can be raised separately."
+  ],
+  "rights": "Only original geometry and authored metadata are distributed here. Reference URLs are attribution/evidence links; reference photographs and logos are not redistributed by this module."
+}

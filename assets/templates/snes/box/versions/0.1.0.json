@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "id": "snes-box",
+  "version": "0.1.0",
+  "title": "Super Nintendo \u2014 western retail box template",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions: CC BY-NC-ND 4.0. Product designs and third-party marks are excluded. No game artwork, source photograph or copied logo is included.",
+  "date": "2026-10-16",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center of nominal closed envelope"
+  },
+  "nominalDimensionsMm": [
+    179.0,
+    128.0,
+    31.0
+  ],
+  "measurementBasis": "Protector manufacturer fit dimensions and inspected retail specimen photographs; see docs/nintendo-box-reference-evidence.json. Protector-fit dimensions establish an approximate envelope. Paper gauge, tray aperture, flap lengths and folds are inferred from photographs, not measured factory die lines.",
+  "changes": [
+    "Real-thickness coated paperboard tube with unprinted inner stock, exposed cut edges, scored folds and a glue lap.",
+    "Left and right printed end panels have independent tuck tongues and upper/lower dust ears.",
+    "The removable white tray uses hollow folded rails, a 138 \u00d7 89.5 mm approximate cartridge opening, finger notches and tucked corner ears.",
+    "The normal Open clip leaves the tray seated; its extraction axis and optional translation are recorded separately.",
+    "Added self-contained editable source, a named Open clip, reviewed previews and exact-input validation reports."
+  ],
+  "validation": {
+    "meshes": 20,
+    "primitives": 42,
+    "triangles": 7068,
+    "materials": 11,
+    "images": 0,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "embeddedImages": 0,
+    "externalImages": 0,
+    "artworkSlots": {
+      "ArtworkBack": "Back",
+      "ArtworkBottom": "Bottom",
+      "ArtworkFront": "Front",
+      "ArtworkTop": "Top",
+      "ArtworkSpineLeft": "SpineLeft",
+      "ArtworkSpineRight": "SpineRight"
+    },
+    "animation": {
+      "name": "Open",
+      "durationSeconds": 2.0,
+      "channels": 8
+    },
+    "godot": {
+      "version": "4.7.2-stable (official)",
+      "headlessImport": "passed",
+      "endpointInspection": "Closed/Open world vertex bounds, named packaging parts and artwork UVs verified."
+    },
+    "previewLighting": "Actual GLB reimport in a neutral white studio, Standard view transform, exposure -1.0. Pixel dimensions are recorded per preview. Detached-insert views are separate inspection arrangements.",
+    "editableSource": "Reopened in Blender 5.2.2 LTS; packed resources, named parts and both poses checked."
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/templates/snes/box/previews/0.1.0/hero.png",
+      "bytes": 736199,
+      "sha256": "515bdcf2aeadde29ddbcda034736489d016c9bc1518ea65cfe42f91f1df80daf",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "front",
+      "path": "assets/templates/snes/box/previews/0.1.0/front.png",
+      "bytes": 714812,
+      "sha256": "8954e8df43225183539905541ca6119279ca10644e92cfa648041150c14aef02",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "rear",
+      "path": "assets/templates/snes/box/previews/0.1.0/rear.png",
+      "bytes": 781728,
+      "sha256": "ef911fe3905f980947d0e20553146a7e6f7ea370448a8c6d74ae25104f1ad09f",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "top",
+      "path": "assets/templates/snes/box/previews/0.1.0/top.png",
+      "bytes": 814688,
+      "sha256": "d3dcf457e15f6f1fecfd865e144b7a37abcb4bb2c277c395c3570c8f37af08fd",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "bottom",
+      "path": "assets/templates/snes/box/previews/0.1.0/bottom.png",
+      "bytes": 739003,
+      "sha256": "28927a6876607df2b61b09f75148071ec346f83e99971565e48210d98d7ff63f",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "open",
+      "path": "assets/templates/snes/box/previews/0.1.0/open.png",
+      "bytes": 720486,
+      "sha256": "866571c525c6a2a26b16a4dac8c20b2d7213237781398d65d6fb8d81f39dc710",
+      "width": 1000,
+      "height": 833
+    },
+    {
+      "view": "insert-inspection",
+      "path": "assets/templates/snes/box/previews/0.1.0/insert-inspection.png",
+      "bytes": 1173757,
+      "sha256": "938cd4305d7e066e781bb6f560d0d9510e0d08a809a41033a5f9d66aa49e716a",
+      "width": 1400,
+      "height": 1000
+    }
+  ],
+  "release": {
+    "tag": "snes-box-v0.1.0",
+    "archive": {
+      "name": "snes-box-0.1.0.zip",
+      "bytes": 5926055,
+      "sha256": "98a6c6e8ae083dafc06969efcfd593ce5b73cbaab4d3888a411f7bb43033801a",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/snes-box-v0.1.0/snes-box-0.1.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 1124,
+      "sha256": "9d83dffa3fef6355dcd1366b5647ca44b775ca30333c67e289f96c0f8abf8b12"
+    },
+    "CREDITS.md": {
+      "bytes": 2511,
+      "sha256": "bcf66e4702cf001d93407a383fffac2b787e5365322470b6198f00f50e41854e"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 4351,
+      "sha256": "04602588f5708dd1ca0b26f7194ce5ea5fcb2a12fb1ece283fbd9321ab814033"
+    },
+    "README.md": {
+      "bytes": 4026,
+      "sha256": "71e3a7545bfc69f85cbcc6db3cd64fc749dc9a3837ef276540274c3f99385fda"
+    },
+    "bottom.png": {
+      "bytes": 739003,
+      "sha256": "28927a6876607df2b61b09f75148071ec346f83e99971565e48210d98d7ff63f"
+    },
+    "construction.json": {
+      "bytes": 4028,
+      "sha256": "6ddff96a3f52cf216181832fdc8dc7f9c7eebefa5988a937c3cfafd917d1a9cd"
+    },
+    "front.png": {
+      "bytes": 714812,
+      "sha256": "8954e8df43225183539905541ca6119279ca10644e92cfa648041150c14aef02"
+    },
+    "glb-inspection.json": {
+      "bytes": 1916,
+      "sha256": "f89820b010e501fa98229908a5a118517090c077a64b83fcf556473b767b4b75"
+    },
+    "godot-import-report.json": {
+      "bytes": 1347,
+      "sha256": "91f41ace05817703a135410db73273f94eb986ecf94999bf2cd4b5be899766c1"
+    },
+    "hero.png": {
+      "bytes": 736199,
+      "sha256": "515bdcf2aeadde29ddbcda034736489d016c9bc1518ea65cfe42f91f1df80daf"
+    },
+    "insert-inspection.png": {
+      "bytes": 1173757,
+      "sha256": "938cd4305d7e066e781bb6f560d0d9510e0d08a809a41033a5f9d66aa49e716a"
+    },
+    "open.png": {
+      "bytes": 720486,
+      "sha256": "866571c525c6a2a26b16a4dac8c20b2d7213237781398d65d6fb8d81f39dc710"
+    },
+    "rear.png": {
+      "bytes": 781728,
+      "sha256": "ef911fe3905f980947d0e20553146a7e6f7ea370448a8c6d74ae25104f1ad09f"
+    },
+    "reference-evidence.json": {
+      "bytes": 9707,
+      "sha256": "6bf404c84585785e99bfccf1f089926d6cac3d54d9433b595780e7929b12c050"
+    },
+    "snes-box.blend": {
+      "bytes": 131995,
+      "sha256": "11e812dcb58c8db6a867a6b8b0aca456aeeecc948a88e2020d20f802cc5b4358"
+    },
+    "snes-box.glb": {
+      "bytes": 428432,
+      "sha256": "7f37d55f899d47ce8006c283884232a8ade6b5fd0c91467b0143e4234fa8eaa7"
+    },
+    "source-reopen-report.json": {
+      "bytes": 1660,
+      "sha256": "2fea44cbe5461f23f0af5de33ef6412af6907f0cac728f88ede90bb2d8f60403"
+    },
+    "top.png": {
+      "bytes": 814688,
+      "sha256": "d3dcf457e15f6f1fecfd865e144b7a37abcb4bb2c277c395c3570c8f37af08fd"
+    }
+  }
+}

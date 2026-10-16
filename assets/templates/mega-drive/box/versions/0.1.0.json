@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "id": "mega-drive-box",
+  "version": "0.1.0",
+  "title": "Mega Drive \u2014 western clamshell box template",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions: CC BY-NC-ND 4.0. Product designs and third-party marks are excluded. No game artwork, source photograph or copied logo is included.",
+  "date": "2026-10-16",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center of nominal closed envelope"
+  },
+  "nominalDimensionsMm": [
+    129.0,
+    188.0,
+    26.0
+  ],
+  "measurementBasis": "Original Sonic PAL case photograph; auction specimen description; manufacturer protector fit envelope. The 129 \u00d7 177 \u00d7 26 mm body and 188 mm height including hanger are nominal estimates from protector fit and specimen photographs. Mold revision, clip offsets, sleeve thickness and booklet pagination are approximate. Flexible spine folds use rigid pivots.",
+  "changes": [
+    "Hollow black molded front and rear shells with two separate spine pivots and a 180-degree open spread.",
+    "Independent clear cover sleeve above the unprinted front, spine and rear paper surfaces.",
+    "Opposing sideways cartridge guides with spring tongues, booklet retainers, snap details and tooling witness marks.",
+    "The intact retail hanger is a named separate part. A neutral booklet placeholder and cartridge placement anchor remain editable.",
+    "Added self-contained editable source, a named Open clip, reviewed previews and exact-input validation reports."
+  ],
+  "validation": {
+    "meshes": 18,
+    "primitives": 18,
+    "triangles": 13872,
+    "materials": 10,
+    "images": 3,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "embeddedImages": 3,
+    "externalImages": 0,
+    "artworkSlots": {
+      "BackPrint": "Back",
+      "BookletBackPrint": "BookletBack",
+      "BookletFrontPrint": "BookletFront",
+      "FrontPrint": "Front",
+      "SpinePrint": "Spine"
+    },
+    "animation": {
+      "name": "Open",
+      "durationSeconds": 2.0,
+      "channels": 2
+    },
+    "godot": {
+      "version": "4.7.2-stable (official)",
+      "headlessImport": "passed",
+      "endpointInspection": "Closed/Open world vertex bounds, named packaging parts and artwork UVs verified."
+    },
+    "previewLighting": "Actual GLB reimport in a neutral white studio, Standard view transform, exposure -1.0. Pixel dimensions are recorded per preview. Detached-insert views are separate inspection arrangements.",
+    "editableSource": "Reopened in Blender 5.2.2 LTS; packed resources, named parts and both poses checked."
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/templates/mega-drive/box/previews/0.1.0/hero.png",
+      "bytes": 1619320,
+      "sha256": "14598f7dd3be738a3066a89bff3139723e861d700658a6cd3397feb055ff4bce",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "front",
+      "path": "assets/templates/mega-drive/box/previews/0.1.0/front.png",
+      "bytes": 1323137,
+      "sha256": "16fe2834622d83a24e79c65395fb02cc2df67a9faf382f6354c8952cf4677675",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "rear",
+      "path": "assets/templates/mega-drive/box/previews/0.1.0/rear.png",
+      "bytes": 1684915,
+      "sha256": "558615e9d357afe96cc448d575824af569211d937b69d6498d5bfe5b213a8477",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "top",
+      "path": "assets/templates/mega-drive/box/previews/0.1.0/top.png",
+      "bytes": 1577689,
+      "sha256": "1b9df3590351bc25c12623997bdf676a770e56e048dd6f194f6ac208759df54c",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "bottom",
+      "path": "assets/templates/mega-drive/box/previews/0.1.0/bottom.png",
+      "bytes": 1353435,
+      "sha256": "823ae07a67fad2c5a554415335d49d8fdc6910328577eff082b17410bb4ec280",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "open",
+      "path": "assets/templates/mega-drive/box/previews/0.1.0/open.png",
+      "bytes": 1412393,
+      "sha256": "99f6d509ec1374a216f3f86f708a2ee880b9b8a1c8e1aadce34e810f4c4fefdc",
+      "width": 1400,
+      "height": 1167
+    }
+  ],
+  "release": {
+    "tag": "mega-drive-box-v0.1.0",
+    "archive": {
+      "name": "mega-drive-box-0.1.0.zip",
+      "bytes": 10602394,
+      "sha256": "d9d5ffb49fdb35264b4154466fd5f679a8b91c3004c78109429c18bfc4314194",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/mega-drive-box-v0.1.0/mega-drive-box-0.1.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 1101,
+      "sha256": "85e043edc0c0502b0c8265f4a5473c96aef580a6e97ea76a19a26382d9926c30"
+    },
+    "CREDITS.md": {
+      "bytes": 2633,
+      "sha256": "49f2b104e1bd3d57547365ca92f413ca45a867fa5010319774321169cb26e5b4"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 4351,
+      "sha256": "04602588f5708dd1ca0b26f7194ce5ea5fcb2a12fb1ece283fbd9321ab814033"
+    },
+    "README.md": {
+      "bytes": 3810,
+      "sha256": "c66e49215227e3065231868825b62a37e0b452f10627551fb77c6954a4b9b821"
+    },
+    "bottom.png": {
+      "bytes": 1353435,
+      "sha256": "823ae07a67fad2c5a554415335d49d8fdc6910328577eff082b17410bb4ec280"
+    },
+    "construction.json": {
+      "bytes": 2140,
+      "sha256": "23ecfe8b58562cb691190d8bd70c32efe098b8a64bab9209531a3f7a2bfe01d1"
+    },
+    "front.png": {
+      "bytes": 1323137,
+      "sha256": "16fe2834622d83a24e79c65395fb02cc2df67a9faf382f6354c8952cf4677675"
+    },
+    "glb-inspection.json": {
+      "bytes": 1751,
+      "sha256": "30fe9e5614636151fb0ca03ff925c0acefd03a6b7d7d4ccb9de99c14bfddf4c3"
+    },
+    "godot-import-report.json": {
+      "bytes": 1402,
+      "sha256": "248d306a72629ac7c1df26862f76d53ae80f14a8765ba1df5c3c59c5bf091f1d"
+    },
+    "hero.png": {
+      "bytes": 1619320,
+      "sha256": "14598f7dd3be738a3066a89bff3139723e861d700658a6cd3397feb055ff4bce"
+    },
+    "mega-drive-box.blend": {
+      "bytes": 803505,
+      "sha256": "188e01e4bfad5f3646a6d02520dd0e8c352ec10bd11f19675184f4c9e88eb9ed"
+    },
+    "mega-drive-box.glb": {
+      "bytes": 1790760,
+      "sha256": "8e0db2ca1973c4dc7b54c12ff7d67489b88df0de68f0b3f6b64c7fe3d64c44ad"
+    },
+    "open.png": {
+      "bytes": 1412393,
+      "sha256": "99f6d509ec1374a216f3f86f708a2ee880b9b8a1c8e1aadce34e810f4c4fefdc"
+    },
+    "rear.png": {
+      "bytes": 1684915,
+      "sha256": "558615e9d357afe96cc448d575824af569211d937b69d6498d5bfe5b213a8477"
+    },
+    "reference-evidence.json": {
+      "bytes": 6232,
+      "sha256": "19b5a314616aeddb41b1f738c2552b072ac8850cd78eb8f25618edb4de7a24e1"
+    },
+    "source-reopen-report.json": {
+      "bytes": 1662,
+      "sha256": "b7d83cdf5708f4ba19b8129af86795d14713d8cb837236f5faf53c4d5a7a77db"
+    },
+    "top.png": {
+      "bytes": 1577689,
+      "sha256": "1b9df3590351bc25c12623997bdf676a770e56e048dd6f194f6ac208759df54c"
+    }
+  }
+}
