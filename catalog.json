@@ -61,8 +61,8 @@
     {
       "id": "playstation-1-crash-bandicoot",
       "title": "PlayStation 1 — Crash Bandicoot disc example",
-      "latest": "0.1.0",
-      "manifest": "assets/reproductions/playstation-1/crash-bandicoot/versions/0.1.0.json",
+      "latest": "0.2.0",
+      "manifest": "assets/reproductions/playstation-1/crash-bandicoot/versions/0.2.0.json",
       "displayTitle": "Crash Bandicoot",
       "kind": "TEXTURED EXAMPLE · PLAYSTATION",
       "description": "The standalone Crash Bandicoot SCUS-94900 CD with an approximately restored orange and blue-violet label, clear hub and dark reading face.",
@@ -215,8 +215,8 @@
     {
       "id": "playstation-1-crash-bandicoot-box",
       "title": "PlayStation 1 — Crash Bandicoot box reproduction",
-      "latest": "0.3.0",
-      "manifest": "assets/reproductions/playstation-1/crash-bandicoot/box/versions/0.3.0.json",
+      "latest": "0.4.0",
+      "manifest": "assets/reproductions/playstation-1/crash-bandicoot/box/versions/0.4.0.json",
       "displayTitle": "Crash Bandicoot · Retail box",
       "kind": "BOX REPRODUCTION",
       "description": "A clean Crash Bandicoot clear-tray jewel case with original-edition paper inserts, articulated lid and the matching removable disc on the hub.",

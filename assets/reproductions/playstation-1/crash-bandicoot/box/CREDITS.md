@@ -20,7 +20,7 @@ The independent neutral playstation-1 box release supplies the construction. Its
 
 ## Enclosed game media
 
-The matching [playstation-1-crash-bandicoot v0.1.0](https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/playstation-1-crash-bandicoot-v0.1.0/playstation-1-crash-bandicoot-0.1.0.zip) is enclosed at its original scale beneath a removable `Contents` parent. Its published geometry, materials and embedded artwork are preserved exactly; its pinned manifest, original credits and provenance are included in `content-source/`. The standalone cartridge/disc release remains unchanged. Contact positions are approximate rigid visualizations; flexible paper and plastic deformation are not simulated.
+The matching [playstation-1-crash-bandicoot v0.2.0](https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/playstation-1-crash-bandicoot-v0.2.0/playstation-1-crash-bandicoot-0.2.0.zip) is enclosed at its original scale beneath a removable `Contents` parent. Its published geometry, materials and embedded artwork are preserved exactly; its pinned manifest, original credits and provenance are included in `content-source/`. The standalone cartridge/disc release remains unchanged. Contact positions are approximate rigid visualizations; flexible paper and plastic deformation are not simulated.
 
 ## Rights scope
 

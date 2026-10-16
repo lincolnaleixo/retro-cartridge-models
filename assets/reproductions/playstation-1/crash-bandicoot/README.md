@@ -1,19 +1,17 @@
 # PlayStation 1 — Crash Bandicoot disc example
 
-**Version:** 0.1.0 · **Reconstruction:** Lincoln Aleixo
+**Version:** 0.2.0 · **Date:** 2026-10-16 · **Creator:** Lincoln Aleixo
 
-![Crash Bandicoot disc](previews/0.1.0/hero.png)
+![Disc](previews/0.2.0/hero.png)
 
-[Explore in 3D](https://lincolnaleixo.github.io/retro-cartridge-models/#playstation-1-crash-bandicoot) · [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/playstation-1-crash-bandicoot-v0.1.0) · [Changelog](CHANGELOG.md)
+The disc has a distinct 15 mm opening inside a darker smoke-tinted clamping annulus. The bright gray inner band and the hidden surface that caused radial WebGL artifacts are corrected upstream in this standalone asset.
 
-The standalone Crash Bandicoot (1996), SCUS-94900 PlayStation CD. It has a true center hole, clear hub, narrow matrix and rim, and a dark reading face. No case is included.
+The nominal dimensions remain 120 × 120 × 1.2 mm, with a 15 mm center hole. Units are meters, Y is up, +Z faces the print, and the pivot remains at the bottom center. Positions, normals, UVs, artwork pixels, outer rim and reading-side shading are unchanged; the export omits 512 hidden body-top triangles and uses a dedicated inner-transition material. The five named media meshes and editable packed source remain available.
 
-The scan's pink cast was approximately restored with imagegen using a photograph of the physical disc as a color reference. The print now has an orange field, blue-violet ink and neutral gray silver areas. This is an AI-assisted visual restoration: fine lettering may differ from the original scan, and the colors are not a calibrated reproduction. Silver areas use gray albedo; this version has no per-pixel metallic mask.
+The package includes six actual-GLB previews, source/preservation receipts, import validation and reference attribution. Godot 4.7.2 compares all remaining imported triangles, normals, UVs, transforms and decoded textures to 0.1.0. The browser check confirms the radial print artifacts are gone. See `disc-material-refinement.json`, `glb-inspection.json`, `godot-import-report.json` and `render-proof.json`.
 
-The package includes packed editable Blender source, a self-contained GLB, previews and provenance. The unchanged neutral-disc geometry measures nominally 120 × 120 × 1.2 mm with a 15 mm hole. Units are meters, X is width, Y is up and +Z is front, with a bottom-center pivot. The annular front mesh clips the artwork around the rim and hub.
+The smoke tint, opacity and transmission are visual approximations from photographed specimens, not measured optical constants. The current 18 mm material boundary and 21 mm print-mask radius remain unchanged; references establish only an approximately 20 mm dark annulus. Fine concentric molded rings are not reproduced. Independent material submeshes are not manufacturing-solid CAD; the visible front is covered by the existing label, inner transition and outer rim.
 
-The printed surface uses sRGB artwork, roughness 0.68 and reduced dielectric specular reflection. Previews use neutral lighting. Godot 4.7.2 consumers should compensate the imported label's specular value as described in [owner artwork](../../../../docs/owner-artwork.md), while preserving the optical hub, matrix and rim materials.
+Rebuild from the original published source and GLB using Blender: `blender --background --python tools/refine_playstation_disc.py -- --source <original.blend> --model <original.glb> --output <new-folder>`. The tool supports the two specifically audited PS1 disc 0.2.0 upgrades and never rewrites published archives.
 
-This separately versioned example leaves `playstation-1` 0.1.0 unchanged. Publish and verify the model package before updating a consuming application.
-
-Original reconstruction contributions are CC BY-NC-ND 4.0. Crash Bandicoot artwork, PlayStation and other third-party marks, scans and photographs are excluded from that grant. This is an independent example; no affiliation or third-party license is implied. See [credits](CREDITS.md) and the root [NOTICE.md](../../../../NOTICE.md).
+Original model contributions are CC BY-NC-ND 4.0. Product designs, trademarks, third-party artwork, scans and photography remain excluded. See [credits](CREDITS.md), [changes](CHANGELOG.md), [NOTICE.md](NOTICE.md) and [LICENSE](LICENSE).
