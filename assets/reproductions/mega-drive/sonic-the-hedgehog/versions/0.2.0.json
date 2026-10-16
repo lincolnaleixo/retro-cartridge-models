@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center"
+  },
+  "nominalDimensionsMm": [
+    109,
+    70,
+    17
+  ],
+  "measurementBasis": "Visualization reconstruction; see asset credits and measurement evidence.",
+  "id": "mega-drive-sonic-the-hedgehog",
+  "version": "0.2.0",
+  "title": "Mega Drive \u2014 Sonic the Hedgehog example",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions only. Sonic the Hedgehog artwork, SEGA marks and source photography are excluded; see CREDITS.md and NOTICE.md.",
+  "date": "2026-10-16",
+  "changes": [
+    "Restored the folded SONIC THE HEDGEHOG title to clear blue/white ink on the black grid, removing the old photograph's glare and blur.",
+    "Registered the replacement title for the existing reversed-U mapping and checked glyph orientation on the exported model.",
+    "Preserved the complete original front artwork bytes, intentional cream/peach palette, rear land, shell geometry, material settings and all UV bytes."
+  ],
+  "validation": {
+    "meshes": 10,
+    "triangles": 12152,
+    "materials": 9,
+    "images": 5,
+    "embeddedImages": 5,
+    "externalImages": 0,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "godot": {
+      "version": "4.7.2",
+      "headlessImport": "passed",
+      "surfaceInspection": "Decoded albedo images; imported geometry, normals, UVs and transforms identical to previous release."
+    },
+    "geometryPreservation": "Direct GLB image buffer replacement; all non-image buffers and mesh UV bytes unchanged.",
+    "editableSource": "Published Blender source updated, saved and reopened; unrelated packed images byte-identical and private paths sanitized.",
+    "previewLighting": "Actual GLB reimport; matched previous/current neutral studio, Standard view, exposure -1.0, 32 samples, 1200 x 1000. Historical previews are immutable."
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/reproductions/mega-drive/sonic-the-hedgehog/previews/0.2.0/hero.png",
+      "bytes": 1294534,
+      "sha256": "c2f2cd10b66c0809ba425604725f1a2f1b3baf5bd92e9633aa52e31973769c5b"
+    },
+    {
+      "view": "front",
+      "path": "assets/reproductions/mega-drive/sonic-the-hedgehog/previews/0.2.0/front.png",
+      "bytes": 1220720,
+      "sha256": "66423de768ff2c72ab86b02924c3de1fceff096e1b7e18ee0fbfe4f42f1e0ee1"
+    },
+    {
+      "view": "rear",
+      "path": "assets/reproductions/mega-drive/sonic-the-hedgehog/previews/0.2.0/rear.png",
+      "bytes": 1112217,
+      "sha256": "dcdc39013509a941c33197ab3476eadd31c94503ba7040a5d43dbe7d09d56883"
+    },
+    {
+      "view": "top",
+      "path": "assets/reproductions/mega-drive/sonic-the-hedgehog/previews/0.2.0/top.png",
+      "bytes": 1303987,
+      "sha256": "e72167faacfa1d073e5bffece057e087e17e28260734bcef57ef6b500f2ee70c"
+    },
+    {
+      "view": "bottom",
+      "path": "assets/reproductions/mega-drive/sonic-the-hedgehog/previews/0.2.0/bottom.png",
+      "bytes": 1205091,
+      "sha256": "78bb17e38117bdebb8818c4ec82968478a2fc0147653bdf81e536c783090f337"
+    }
+  ],
+  "release": {
+    "tag": "mega-drive-sonic-the-hedgehog-v0.2.0",
+    "archive": {
+      "name": "mega-drive-sonic-the-hedgehog-0.2.0.zip",
+      "bytes": 9178790,
+      "sha256": "4603e2c0ff19b6323dcd8561a71cefffd9235972461a4ee649bdb7300e5bd3e7",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/mega-drive-sonic-the-hedgehog-v0.2.0/mega-drive-sonic-the-hedgehog-0.2.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 2184,
+      "sha256": "e1f501ee9768017c8a83680823251f9d430c6fee8804214150ef8df9dd315f2e"
+    },
+    "CREDITS.md": {
+      "bytes": 2611,
+      "sha256": "dfe67755288fe0c8c93ca6149222e41fdea74ae3b885f2fb058396cef5b8512c"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 1994,
+      "sha256": "d9995e57d2c33374dd18363a753d2b9a8c1be46603fb4d8acc7aa6cf2a82291e"
+    },
+    "README.md": {
+      "bytes": 2306,
+      "sha256": "5bc823b0fda8754f3471bc40c4f9372878524365019be81c05ba9901169dfb9f"
+    },
+    "artwork-provenance.json": {
+      "bytes": 4173,
+      "sha256": "5ac699f2cad3034d763f6381a5783bb8f5a4db13366e2939fa9d44b41986ee6d"
+    },
+    "artwork-update-report.json": {
+      "bytes": 1768,
+      "sha256": "8c018f664f36f733a73a2e018699c468eb5cf1a05dde3f5ff84aa668d888b696"
+    },
+    "bottom.png": {
+      "bytes": 1205091,
+      "sha256": "78bb17e38117bdebb8818c4ec82968478a2fc0147653bdf81e536c783090f337"
+    },
+    "front.png": {
+      "bytes": 1220720,
+      "sha256": "66423de768ff2c72ab86b02924c3de1fceff096e1b7e18ee0fbfe4f42f1e0ee1"
+    },
+    "glb-inspection.json": {
+      "bytes": 618,
+      "sha256": "88a53654de65dc095a3ccb6c3133dad8f6a610dc245e9bf3dc09cede4615c2e6"
+    },
+    "godot-import-report.json": {
+      "bytes": 273,
+      "sha256": "b2188329b7cc545ba54bcee309ef36cf23f455748468fbe0dbde47bd6130980d"
+    },
+    "hero.png": {
+      "bytes": 1294534,
+      "sha256": "c2f2cd10b66c0809ba425604725f1a2f1b3baf5bd92e9633aa52e31973769c5b"
+    },
+    "mega-drive-sonic-the-hedgehog.blend": {
+      "bytes": 3101452,
+      "sha256": "ccefef743c85aedf9041ecfb0f6ee2b7d00400a3f8dd445543e12ba83b163045"
+    },
+    "mega-drive-sonic-the-hedgehog.glb": {
+      "bytes": 2163148,
+      "sha256": "d36c136d8394ca6bbddf54c120e81e2add4a9da387bb24c2a8790fa7436e62cf"
+    },
+    "rear.png": {
+      "bytes": 1112217,
+      "sha256": "dcdc39013509a941c33197ab3476eadd31c94503ba7040a5d43dbe7d09d56883"
+    },
+    "restoration/README.md": {
+      "bytes": 523,
+      "sha256": "440412ccfc2017fea76626e156b9b11de35f124f6aae9cd321c4692b0376d1ad"
+    },
+    "restoration/register_restored_prints.py": {
+      "bytes": 3757,
+      "sha256": "9445281c959d74676597b52fba902164ef0844e8cc28214d43c0ba69aa752693"
+    },
+    "top.png": {
+      "bytes": 1303987,
+      "sha256": "e72167faacfa1d073e5bffece057e087e17e28260734bcef57ef6b500f2ee70c"
+    }
+  }
+}

@@ -10,3 +10,9 @@
 - Owner-supplied reference photographs informed the shape; the photographs are not distributed.
 
 Read the root NOTICE.md and LICENSE. Do not treat the entire textured example as freely reusable or relicense third-party material under the collection's license.
+
+## Pristine print restoration — 0.2.0
+
+Local processing uses masked cloning from a clean blue part of the original print to retain halftone texture, one thin scratch repair and a 4% panel color/contrast adjustment. No character art or typography is regenerated.
+
+Restoration was requested by the maintainer on October 16, 2026. It does not establish rights to the original artwork or source photography. The release includes exact input/output hashes, generation prompts where used, local-processing records and geometry-preservation evidence in `artwork-provenance.json` and `artwork-update-report.json`. Colors and reconstructed fine lettering remain visual approximations.

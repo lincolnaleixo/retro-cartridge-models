@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "snes-super-mario-world",
+  "version": "0.2.0",
+  "title": "SNES \u2014 Super Mario World example",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions only. Nintendo artwork and trademarks excluded; see CREDITS.md and NOTICE.md.",
+  "date": "2026-10-16",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom connector center"
+  },
+  "nominalDimensionsMm": [
+    135.4,
+    88,
+    19.9
+  ],
+  "measurementBasis": "Approximate photo-derived reconstruction; not official manufacturing dimensions",
+  "changes": [
+    "Repaired blue-field scan blemishes with localized original-print cloning and a thin scratch repair; retained the deliberate halftone, speed streaks, illustration, code and fold layout.",
+    "Applied a restrained 4% saturation/contrast recovery only to the color panel; kept the subtle SNES emblem, rear label and other textures unchanged.",
+    "Updated the standalone front PNG to exactly match the embedded GLB image; the standalone rear PNG remains byte-identical to 0.1.1. Geometry, UVs and materials remain unchanged."
+  ],
+  "validation": {
+    "meshes": 23,
+    "materials": 10,
+    "embeddedImages": 6,
+    "externalImages": 0,
+    "cameras": 0,
+    "lights": 0,
+    "godot": {
+      "version": "4.7.2",
+      "headlessImport": "passed",
+      "surfaceInspection": "Decoded albedo images; imported geometry, normals, UVs and transforms identical to previous release."
+    },
+    "geometryPreservation": "Direct GLB image buffer replacement; all non-image buffers and mesh UV bytes unchanged.",
+    "editableSource": "Published Blender source updated, saved and reopened; unrelated packed images byte-identical and private paths sanitized.",
+    "previewLighting": "Actual GLB reimport; matched previous/current neutral studio, Standard view, exposure -1.0, 32 samples, 1200 x 1000. Historical previews are immutable."
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/reproductions/snes/super-mario-world/previews/0.2.0/hero.png",
+      "bytes": 1268370,
+      "sha256": "7cdc7234b73b48afd9194b5af46139137199124c68c4e3842c82f76ed5425518"
+    },
+    {
+      "view": "front",
+      "path": "assets/reproductions/snes/super-mario-world/previews/0.2.0/front.png",
+      "bytes": 1252621,
+      "sha256": "ebd6525f03ae3658232a9b76fe4035d20466968b76c661d63e11e1a8d0218399"
+    },
+    {
+      "view": "rear",
+      "path": "assets/reproductions/snes/super-mario-world/previews/0.2.0/rear.png",
+      "bytes": 1216667,
+      "sha256": "d47e018df3391eb59c7bce4c6aa20409743e1eada51b63df12becd29985e756c"
+    },
+    {
+      "view": "top",
+      "path": "assets/reproductions/snes/super-mario-world/previews/0.2.0/top.png",
+      "bytes": 1287585,
+      "sha256": "76646f1f53e152f2e0f5907afd1a1287cabe9085456582930823ed0b09e690a3"
+    },
+    {
+      "view": "bottom",
+      "path": "assets/reproductions/snes/super-mario-world/previews/0.2.0/bottom.png",
+      "bytes": 1285836,
+      "sha256": "3d612d077173b0441d5dc5f767d1f052f9f0bd6ecc2c781defb2200aadb0b889"
+    }
+  ],
+  "release": {
+    "tag": "snes-super-mario-world-v0.2.0",
+    "archive": {
+      "name": "snes-super-mario-world-0.2.0.zip",
+      "bytes": 64721181,
+      "sha256": "1f85931726dba15a187d2f40c76c8a77f6f4b757562bcce3531215a12ffaefd3",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/snes-super-mario-world-v0.2.0/snes-super-mario-world-0.2.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 3015,
+      "sha256": "77328502ff5532f19dbb2c988a24321d9fc8cc544c884620f45afb5835519ff4"
+    },
+    "CREDITS.md": {
+      "bytes": 2073,
+      "sha256": "3bf273635f9aeb7a8b52bb0bcd50fe554e45b86ac6bd3c65cf447bdf8fdb5b45"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 1746,
+      "sha256": "1248394dcec7068d64bebe596fc1ed4d7cf757202d0c276a35200968c170afa0"
+    },
+    "README.md": {
+      "bytes": 2474,
+      "sha256": "eaa3f9544fc1be5675d1e7b1c37738869fe5e90881b0eb1472907f367cebded1"
+    },
+    "artwork-provenance.json": {
+      "bytes": 1506,
+      "sha256": "f332625e1ca8760dc45b00291ee8e74781b47e40988b11d2e2d3871a73e68c60"
+    },
+    "artwork-update-report.json": {
+      "bytes": 1724,
+      "sha256": "eef9d29a069bdced9725ab970a233b11366a51ca30203c6e35b6ce6d927a583f"
+    },
+    "bottom.png": {
+      "bytes": 1285836,
+      "sha256": "3d612d077173b0441d5dc5f767d1f052f9f0bd6ecc2c781defb2200aadb0b889"
+    },
+    "front.png": {
+      "bytes": 1252621,
+      "sha256": "ebd6525f03ae3658232a9b76fe4035d20466968b76c661d63e11e1a8d0218399"
+    },
+    "glb-inspection.json": {
+      "bytes": 640,
+      "sha256": "a94fc25018a99a623526e9bd1873d2bf1d0882d2bdf5e917afcacc7635ccbd39"
+    },
+    "godot-import-report.json": {
+      "bytes": 281,
+      "sha256": "f8c514cce0a0a8351129458c40dd8deef1895e19e6a55c8c4ce1f435ca90ecbc"
+    },
+    "hero.png": {
+      "bytes": 1268370,
+      "sha256": "7cdc7234b73b48afd9194b5af46139137199124c68c4e3842c82f76ed5425518"
+    },
+    "labels/README.md": {
+      "bytes": 218,
+      "sha256": "e1584cd9955f764714693a5e23f946cc146da2113df7c814b31e50d26572b3e7"
+    },
+    "labels/front.png": {
+      "bytes": 2358283,
+      "sha256": "6b1af2a635a582a91afd7cc96e065f5b2ed6ecabec1124cc62373f4357f7aa47"
+    },
+    "labels/rear.png": {
+      "bytes": 1054447,
+      "sha256": "316ee3c12998d5ee182698ead900070b35adf61341f54ff44a54c46c18abe428"
+    },
+    "rear.png": {
+      "bytes": 1216667,
+      "sha256": "d47e018df3391eb59c7bce4c6aa20409743e1eada51b63df12becd29985e756c"
+    },
+    "restoration/README.md": {
+      "bytes": 523,
+      "sha256": "440412ccfc2017fea76626e156b9b11de35f124f6aae9cd321c4692b0376d1ad"
+    },
+    "restoration/restore_original_prints.py": {
+      "bytes": 5540,
+      "sha256": "f67aacee1b8349ee2308ae91b9677a8982d15165fa0f0bbc621d8c98aad042a3"
+    },
+    "snes-super-mario-world.blend": {
+      "bytes": 27794405,
+      "sha256": "9cbfd3e102e29268d2bc2ef36a94ab0c259f3bb629f52967407cdc586d32d900"
+    },
+    "snes-super-mario-world.glb": {
+      "bytes": 28932964,
+      "sha256": "d09b524248281932a8b875f6c245aca81270b390372be28ef686a6f998a4fd73"
+    },
+    "top.png": {
+      "bytes": 1287585,
+      "sha256": "76646f1f53e152f2e0f5907afd1a1287cabe9085456582930823ed0b09e690a3"
+    }
+  },
+  "labels": {
+    "front": {
+      "path": "assets/reproductions/snes/super-mario-world/labels/front.png",
+      "bytes": 2358283,
+      "sha256": "6b1af2a635a582a91afd7cc96e065f5b2ed6ecabec1124cc62373f4357f7aa47"
+    },
+    "rear": {
+      "path": "assets/reproductions/snes/super-mario-world/labels/rear.png",
+      "bytes": 1054447,
+      "sha256": "316ee3c12998d5ee182698ead900070b35adf61341f54ff44a54c46c18abe428"
+    }
+  }
+}

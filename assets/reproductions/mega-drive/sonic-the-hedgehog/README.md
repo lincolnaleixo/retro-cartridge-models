@@ -1,17 +1,17 @@
 # Mega Drive — Sonic the Hedgehog example
 
-**Version:** 0.1.0 · **Reconstruction:** Lincoln Aleixo
+**Version:** 0.2.0 · **Date:** 2026-10-16 · **Reconstruction:** Lincoln Aleixo
 
-![Sonic the Hedgehog cartridge](previews/0.1.0/hero.png)
+![Sonic the Hedgehog](previews/0.2.0/hero.png)
 
-[Explore in 3D](https://lincolnaleixo.github.io/retro-cartridge-models/#mega-drive-sonic-the-hedgehog) · [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/mega-drive-sonic-the-hedgehog-v0.1.0) · [Changelog](CHANGELOG.md)
+[Explore in 3D](https://lincolnaleixo.github.io/retro-cartridge-models/#mega-drive-sonic-the-hedgehog) · [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/mega-drive-sonic-the-hedgehog-v0.2.0) · [Previous release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/mega-drive-sonic-the-hedgehog-v0.1.0) · [Changelog](CHANGELOG.md)
 
-Sonic the Hedgehog (1991) on the western PAL Mega Drive cartridge shell. The front and folded top label use the original-resolution product photographs, with unchanged source pixels and separate UV regions. The front artwork region has approximately 954 × 748 source pixels, compared with roughly 327 × 256 in the earlier local study. The rear label area remains neutral.
+Sonic on the western Mega Drive shell with a crisp restored folded title. The original-resolution cream front artwork and molded rear remain unchanged.
 
-The package includes packed editable Blender source, a self-contained GLB, previews and provenance. Geometry, ABS surface detail, scale, axes and label UVs follow the neutral `mega-drive` 0.1.0 shell. The nominal envelope is 109 × 70 × 17 mm; units are meters, X is width, Y is up and +Z is front, with a bottom-center pivot. This is an approximate reconstruction for visualization, not Sega manufacturing CAD.
+Only the top title is restored with built-in image generation. Local image registration compensates the existing reversed-U source footprint. The generated full front photograph was rejected because it reduced effective artwork resolution; the published original front is retained.
 
-The printed label uses sRGB artwork, roughness 0.68 and reduced dielectric specular reflection. Previews use neutral lighting to limit unwanted color casts. Photographic color and perspective remain approximate. Godot 4.7.2 consumers should preserve each label surface's texture and apply the documented specular compensation in [owner artwork](../../../../docs/owner-artwork.md).
+Nominal dimensions: 109 × 70 × 17 mm. The published shell, vertex/index data, normals, transforms, material definitions and every mesh UV byte are preserved. Only the selected packed artwork images change. Units remain meters, Y is up and +Z is front; the existing pivot and label surfaces remain compatible. This is a visualization reconstruction, not manufacturing CAD.
 
-This separately versioned example leaves the released neutral shell unchanged. Publish and verify the model package before updating a consuming application.
+The package contains editable packed Blender source, a self-contained GLB, five actual-export views, attribution and restoration/validation records. Blender and Godot compare the previous and restored geometry directly. New and previous exports were rendered under the same neutral studio, Standard view transform, exposure -1.0, 32 Cycles samples and 1200 × 1000 output. Historical previews remain unchanged; the new matched renders isolate the artwork changes.
 
-Original reconstruction contributions are CC BY-NC-ND 4.0. Sonic the Hedgehog artwork, SEGA marks and source photography are excluded from that grant. This independent example is not an official Sega asset and does not grant a license to its third-party elements. See [credits](CREDITS.md) and the root [NOTICE.md](../../../../NOTICE.md).
+The target is clean, newly unboxed print. Original edition marks and illustration are preserved; colors and restored fine lettering are approximate, not color-calibrated factory masters. Third-party artwork, marks, product design and photography are excluded from CC BY-NC-ND 4.0, which applies only to original modeling contributions. The maintainer request does not grant those third-party rights. See [credits](CREDITS.md), [changes](CHANGELOG.md) and [NOTICE.md](../../../../NOTICE.md).
