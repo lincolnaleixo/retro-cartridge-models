@@ -336,6 +336,118 @@
       "sha256": "fdd31d3fbf33e435770e321b83c2fad96024da945d98a185fd94c25f46b70ef2",
       "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
       "notes": "Geometry reference only. Visible orange US SCUS-94900 disc and printed inner tray card establish clear tray. Listing PAL metadata conflicts with the photographed US disc; rely on visible edition markings."
+    },
+    {
+      "id": "smw-cibby-retail-back",
+      "localReference": "dist/snes-box-refinement-20261016/references/cibby-back.jpg",
+      "sourcePage": "https://cibby.app/games/super-mario-world-snes/",
+      "imageUrl": "https://media.cibby.app/games/72626b9d-ad8e-45da-b583-4c67683d2329/media/66bc1053-cf0b-40de-92a4-dde25585b932.jpg",
+      "credit": "Nintendo; archival reference contributor credited by the linked source page",
+      "pixelSize": [
+        1143,
+        800
+      ],
+      "sha256": "f512d8510877dfdf493c320f202c43d5489b132fffb2feade9c01f717f0fe31e",
+      "rights": "Third-party copyrighted artwork; no separate redistribution license established.",
+      "notes": "Complete original US 1992 retail rear scan, including the original four printed screenshots."
+    },
+    {
+      "id": "smw-period-shell-stomp",
+      "localReference": "dist/snes-box-refinement-20261016/references/SMW_Art_-_Mario_Shell_Stomp.png",
+      "sourcePage": "https://www.mariowiki.com/File:SMW_Art_-_Mario_Shell_Stomp.png",
+      "imageUrl": "https://www.mariowiki.com/images/c/c7/SMW_Art_-_Mario_Shell_Stomp.png?edca4",
+      "credit": "Nintendo; archival reference contributor credited by the linked source page",
+      "pixelSize": [
+        1193,
+        892
+      ],
+      "sha256": "5f4d0a7d4a54b7ab1e794f5890f49a8f650911b684e12b17015703640f7b7cfb",
+      "rights": "Third-party copyrighted artwork; no separate redistribution license established.",
+      "notes": "Archived period illustration, composited in the physical specimen layout."
+    },
+    {
+      "id": "smw-period-cape-flying",
+      "localReference": "dist/snes-box-refinement-20261016/references/SMW_Art_-_Cape_Mario_Flying.png",
+      "sourcePage": "https://www.mariowiki.com/File:SMW_Art_-_Cape_Mario_Flying.png",
+      "imageUrl": "https://www.mariowiki.com/images/7/72/SMW_Art_-_Cape_Mario_Flying.png?d0303",
+      "credit": "Nintendo; archival reference contributor credited by the linked source page",
+      "pixelSize": [
+        747,
+        864
+      ],
+      "sha256": "cee94b979b79990aa29746519f3f3d06e93e00839840ed378ee15395e51a3900",
+      "rights": "Third-party copyrighted artwork; no separate redistribution license established.",
+      "notes": "Archived period illustration, composited in the physical specimen layout."
+    },
+    {
+      "id": "smw-period-dry-bones-landing",
+      "localReference": "dist/snes-box-refinement-20261016/references/SMW_Cape_Mario_landing_on_a_Dry_Bones.jpg",
+      "sourcePage": "https://www.mariowiki.com/File:SMW_Cape_Mario_landing_on_a_Dry_Bones.jpg",
+      "imageUrl": "https://www.mariowiki.com/images/d/da/SMW_Cape_Mario_landing_on_a_Dry_Bones.jpg?14f71",
+      "credit": "Nintendo; archival reference contributor credited by the linked source page",
+      "pixelSize": [
+        429,
+        438
+      ],
+      "sha256": "60fbb1ea648bf0636e01b3fbb17a88ae72664894dc1dec49c3b41e08e1edda84",
+      "rights": "Third-party copyrighted artwork; no separate redistribution license established.",
+      "notes": "Archived period illustration, composited in the physical specimen layout."
+    },
+    {
+      "id": "smw-period-cape-diving",
+      "localReference": "dist/snes-box-refinement-20261016/references/SMW_Art_-_Cape_Mario_Diving.png",
+      "sourcePage": "https://www.mariowiki.com/File:SMW_Art_-_Cape_Mario_Diving.png",
+      "imageUrl": "https://www.mariowiki.com/images/c/c9/SMW_Art_-_Cape_Mario_Diving.png?b0b92",
+      "credit": "Nintendo; archival reference contributor credited by the linked source page",
+      "pixelSize": [
+        1004,
+        857
+      ],
+      "sha256": "624effa69df9bfd98d61f6d99b20d4a305dae4c74304562e3221b9e57e6f7972",
+      "rights": "Third-party copyrighted artwork; no separate redistribution license established.",
+      "notes": "Archived period illustration, composited in the physical specimen layout."
+    },
+    {
+      "id": "smw-clean-international-title",
+      "localReference": "dist/snes-box-refinement-20261016/references/Logo_EN_(alt)_-_Super_Mario_World.png",
+      "sourcePage": "https://www.mariowiki.com/File:Logo_EN_(alt)_-_Super_Mario_World.png",
+      "imageUrl": "https://www.mariowiki.com/images/c/cf/Logo_EN_%28alt%29_-_Super_Mario_World.png?d5191",
+      "credit": "Nintendo; archival reference contributor credited by the linked source page",
+      "pixelSize": [
+        1500,
+        439
+      ],
+      "sha256": "c6bc8692557a08f009e633b70689d4d027878e327bc90a294047898770eeaab2",
+      "rights": "Third-party copyrighted artwork; no separate redistribution license established.",
+      "notes": "Archived clean vector-derived international title mark; a reconstruction reference rather than original box-scan pixels."
+    },
+    {
+      "id": "sm64-clean-us-front",
+      "localReference": "dist/box-refinement-20261016/references/n64/front-nintendo-classics.png",
+      "sourcePage": "https://www.mariowiki.com/File:Super_Mario_64_Boxart.png",
+      "imageUrl": "https://www.mariowiki.com/images/3/3e/Super_Mario_64_Boxart.png",
+      "credit": "Nintendo; artwork archived by Super Mario Wiki",
+      "pixelSize": [
+        1548,
+        1080
+      ],
+      "sha256": "b7b2e576ff09b0ac6b2758dddf6c4b279ba8f23eb3786f9b1c31479c5dab5a0f",
+      "rights": "Third-party copyrighted artwork; no separate redistribution license established.",
+      "notes": "Clean original US K-A front attributed to Nintendo Classics by MarioWiki; also used for the console mark on the four narrow panels."
+    },
+    {
+      "id": "sm64-clean-title",
+      "localReference": "dist/box-refinement-20261016/references/n64/SuperMario64Logo4.png",
+      "sourcePage": "https://www.mariowiki.com/File:SuperMario64Logo4.png",
+      "imageUrl": "https://www.mariowiki.com/images/2/20/SuperMario64Logo4.png",
+      "credit": "Nintendo; artwork archived by Super Mario Wiki",
+      "pixelSize": [
+        1599,
+        584
+      ],
+      "sha256": "7a28bc1bcb7cc1aa40c3ca40bc5c29c7bbc72a632abaddbf642cbb5a925ba4cb",
+      "rights": "Third-party copyrighted artwork; no separate redistribution license established.",
+      "notes": "Original Super Mario 64 title artwork; source-layout proportions retained, registration mark replaced with the TM from the selected original front."
     }
   ],
   "assets": [
@@ -345,35 +457,45 @@
       "publicationRights": "not-established",
       "slots": {
         "Front": [
-          "sm64-front-cover"
+          "sm64-clean-us-front"
         ],
         "Back": [
           "sm64-launchbox-1927"
         ],
         "SpineLeft": [
-          "sm64-launchbox-1952581"
+          "sm64-launchbox-1952581",
+          "sm64-clean-title",
+          "sm64-clean-us-front"
         ],
         "SpineRight": [
-          "sm64-1904-full-4"
+          "sm64-1904-full-4",
+          "sm64-clean-us-front"
         ],
         "Top": [
-          "sm64-1904-full-2"
+          "sm64-1904-full-2",
+          "sm64-clean-title",
+          "sm64-clean-us-front"
         ],
         "Bottom": [
-          "sm64-1904-full-2"
+          "sm64-1904-full-2",
+          "sm64-clean-title",
+          "sm64-clean-us-front"
         ]
       },
       "usedSourceIds": [
         "sm64-1904-full-2",
         "sm64-1904-full-4",
-        "sm64-front-cover",
+        "sm64-clean-title",
+        "sm64-clean-us-front",
         "sm64-launchbox-1927",
         "sm64-launchbox-1952581"
       ],
       "limitations": [
-        "All six face layouts verified. Top, bottom and right derive from underexposed specimen photographs. No high-resolution flat scan of those faces found.",
-        "Front 1044\u00d7732 is softer than the 4170\u00d72916 rear. Rectification and enlargement do not add print detail."
-      ]
+        "Original US K-A front uses clean 1548 × 1080 Nintendo artwork; rear uses the 4170 × 2916 original scan prepared at 3072 × 2155.",
+        "Narrow panels preserve the photographed duotone character art, with exposure and scan-noise correction and clean original title/console marks. Empty fields behind logos are reconstructed approximations; small character details remain limited by the source photograph.",
+        "Color normalization is visual, not a calibrated match to physical factory inks."
+      ],
+      "restorationMethod": "Original artwork replacement for the front; original full-resolution rear descreen; bounded compositing of original title/console marks over repaired narrow-panel fields. No generated game illustration."
     },
     {
       "assetId": "nes-super-mario-bros-box",
@@ -387,13 +509,16 @@
           "smb-launchbox-1178"
         ],
         "SpineLeft": [
-          "smb-specimen-3"
+          "smb-specimen-3",
+          "smb-launchbox-1178"
         ],
         "SpineRight": [
-          "smb-specimen-5"
+          "smb-specimen-5",
+          "smb-launchbox-1178"
         ],
         "Top": [
-          "smb-specimen-6"
+          "smb-specimen-6",
+          "smb-launchbox-1178"
         ],
         "Bottom": [
           "smb-specimen-7"
@@ -408,9 +533,9 @@
         "smb-specimen-7"
       ],
       "limitations": [
-        "All six face layouts verified. Original front is approximately 590\u00d7840 effective pixels; thin edges are optically soft.",
-        "Source photographs have warm lighting and wear. Black-field repair is local; no new glyphs, stars or character art are drawn.",
-        "Clean Nintendo/MarioWiki REV-A front was rejected because it does not match the requested early box."
+        "The original early non-REV-A front illustration and small photographed console wordmark retain limited optical detail. Enlargement does not recover missing print detail.",
+        "Top and side title/Nintendo glyphs are recomposited from the matching original rear scan in the specimen layout; readable address and warranty wording is transcribed with an approximate narrow sans-serif.",
+        "Fresh black fields replace photographed scuffs. Identifiable printed stars remain; explicitly bounded irregular abrasion and tiny empty-field scan debris are locally repaired. Color is estimated from uncalibrated references."
       ]
     },
     {
@@ -422,37 +547,55 @@
           "smw-launchbox-19789364"
         ],
         "Back": [
-          "smw-specimen-9"
-        ],
-        "SpineLeft": [
-          "smw-specimen-12",
-          "smw-specimen-11"
-        ],
-        "SpineRight": [
-          "smw-specimen-12",
-          "smw-specimen-11"
+          "smw-cibby-retail-back"
         ],
         "Top": [
-          "smw-specimen-8"
+          "smw-specimen-8",
+          "smw-period-shell-stomp",
+          "smw-clean-international-title",
+          "smw-launchbox-19789364"
         ],
         "Bottom": [
           "smw-specimen-10",
-          "smw-specimen-8"
+          "smw-period-dry-bones-landing",
+          "smw-clean-international-title",
+          "smw-launchbox-19789364"
+        ],
+        "SpineLeft": [
+          "smw-specimen-12",
+          "smw-period-cape-flying",
+          "smw-clean-international-title",
+          "smw-launchbox-19789364"
+        ],
+        "SpineRight": [
+          "smw-specimen-11",
+          "smw-period-cape-diving",
+          "smw-clean-international-title",
+          "smw-launchbox-19789364"
         ]
       },
       "usedSourceIds": [
+        "smw-cibby-retail-back",
+        "smw-clean-international-title",
         "smw-launchbox-19789364",
+        "smw-period-cape-diving",
+        "smw-period-cape-flying",
+        "smw-period-dry-bones-landing",
+        "smw-period-shell-stomp",
         "smw-specimen-10",
         "smw-specimen-11",
         "smw-specimen-12",
-        "smw-specimen-8",
-        "smw-specimen-9"
+        "smw-specimen-8"
       ],
       "limitations": [
-        "All six face layouts verified. Front is a 2460\u00d71716 scan; remaining faces derive from original specimen photographs.",
-        "Complementary edge photographs retain the original typography and character poses. The top has shell-riding Mario; bottom has caped Mario.",
-        "Rear has creases near its upper screenshots; fine print and screenshot detail are limited by the photograph."
-      ]
+        "Edges are a documented reconstruction, not a claim of a new factory-flat scan.",
+        "Original rear source is 1143 × 800 pixels; enlargement does not add fine print information.",
+        "Original Dry Bones landing artwork is 429 × 438 pixels.",
+        "Colors are visually normalized; no physical ink calibration is available.",
+        "Gray striped motif and legal-line typeface are close reconstructions with approximately placed layout."
+      ],
+      "restorationMethod": "Original full rear scan restored with a continuous dark-ink curve; three creased lower-right trademark/copyright lines re-typeset with their exact original wording. Four edges reconstructed from archived matching period illustrations, title lettering and front-scan Nintendo capsule, with clean flat ink fields. Original side legal line re-typeset and gray striped motif traced from specimen. No generative imagery.",
+      "editionEvidence": "The retained front and original rear share the US black-label layout; rear retains copyright 1992, SNS P MW, UPC 045496830014, original four printed screenshots and North American legal copy. Original side specimen photographs establish the different flying/diving poses and the original Nintendo of America address."
     },
     {
       "assetId": "mega-drive-sonic-the-hedgehog-box",
@@ -480,8 +623,8 @@
         "sonic-eu-wrap"
       ],
       "limitations": [
-        "Complete outer wrap; no evidence of printed reverse-side wrap. Multilingual English-first rear is authentic to this edition.",
-        "Small dust and spine fold marks in scan require conservative local repair."
+        "Complete original European outer wrap and manual covers; no printed reverse-side outer wrap is asserted.",
+        "The spine empty black/grid field is reconstructed from measured spacing to remove fold glare and dust; original title and logo pixels remain. Luminance/chroma filtering reduces scanner noise without recovering unseen detail."
       ]
     },
     {
@@ -509,15 +652,16 @@
         "crash-I-2"
       ],
       "limitations": [
-        "Complete four-part paper print set, including both rear spines. Mild edge wear.",
-        "Clear tray verified by a physical US specimen with matching disc code. Case envelope uses midpoints of CMC assembly inspection ranges (142.35 \u00d7 124.75 \u00d7 10.4 mm); fine molding is approximate, and CMC is not established as the original Sony case supplier. See docs/playstation-box-reference-evidence.json."
+        "Complete four-part original SCUS-94900 print set, including both exterior rear spines. Separate luminance/chroma descreen reduces coarse scan grain; fine rear type uses a gentler kernel.",
+        "Known plain-black spine and trim fields are restored while original artwork remains; scans are not color-calibrated print proofs.",
+        "Clear tray is verified by the documented physical US specimen. Updated neutral-template clear-plastic alpha fallback preserves readability in Godot Compatibility while making molded edges visible; exact reflections vary by renderer."
       ]
     }
   ],
   "rejectedCandidates": [
     {
       "source": "Cibby Super Mario 64 rear / sm64-back-cover.jpg",
-      "reason": "Later copyright 1996,1998 Player\u2019s Choice-era rear; mismatches original 1996 K-A front."
+      "reason": "Later copyright 1996,1998 Player’s Choice-era rear; mismatches original 1996 K-A front."
     },
     {
       "source": "LaunchBox SM64 10986398 and 701804 edge images",
