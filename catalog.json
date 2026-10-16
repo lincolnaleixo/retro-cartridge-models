@@ -167,6 +167,61 @@
       "description": "A fresh black clamshell with two spine folds, transparent cover sleeve, sideways cartridge guides, booklet retainers and an intact retail hanger.",
       "credits": "assets/templates/mega-drive/box/CREDITS.md",
       "rights": "Original contributions: CC BY-NC-ND 4.0. Product designs and third-party marks are excluded. No game artwork, source photograph or copied logo is included."
+    },
+    {
+      "id": "nes-super-mario-bros-box",
+      "title": "NES — Super Mario Bros. box reproduction",
+      "latest": "0.1.0",
+      "manifest": "assets/reproductions/nes/super-mario-bros/box/versions/0.1.0.json",
+      "displayTitle": "Super Mario Bros. · Retail box",
+      "kind": "BOX REPRODUCTION",
+      "description": "A pristine early Super Mario Bros. carton with its printed outer panels, articulated tuck lid and dust ears, empty black sleeve and foam spacer.",
+      "credits": "assets/reproductions/nes/super-mario-bros/box/CREDITS.md",
+      "rights": "Original modeling contributions only: CC BY-NC-ND 4.0. Game artwork, marks, product designs, scans and source photography are excluded. Attribution and the maintainer's request do not grant rights to those elements."
+    },
+    {
+      "id": "snes-super-mario-world-box",
+      "title": "Super Nintendo — Super Mario World box reproduction",
+      "latest": "0.1.0",
+      "manifest": "assets/reproductions/snes/super-mario-world/box/versions/0.1.0.json",
+      "displayTitle": "Super Mario World · Retail box",
+      "kind": "BOX REPRODUCTION",
+      "description": "A pristine Super Mario World retail carton with printed panels, two articulated end closures and a removable folded cartridge tray.",
+      "credits": "assets/reproductions/snes/super-mario-world/box/CREDITS.md",
+      "rights": "Original modeling contributions only: CC BY-NC-ND 4.0. Game artwork, marks, product designs, scans and source photography are excluded. Attribution and the maintainer's request do not grant rights to those elements."
+    },
+    {
+      "id": "nintendo-64-super-mario-64-box",
+      "title": "Nintendo 64 — Super Mario 64 box reproduction",
+      "latest": "0.1.0",
+      "manifest": "assets/reproductions/nintendo-64/super-mario-64/box/versions/0.1.0.json",
+      "displayTitle": "Super Mario 64 · Retail box",
+      "kind": "BOX REPRODUCTION",
+      "description": "A pristine original-edition Super Mario 64 carton with printed panels, articulated end closures and a removable folded Game Pak cradle.",
+      "credits": "assets/reproductions/nintendo-64/super-mario-64/box/CREDITS.md",
+      "rights": "Original modeling contributions only: CC BY-NC-ND 4.0. Game artwork, marks, product designs, scans and source photography are excluded. Attribution and the maintainer's request do not grant rights to those elements."
+    },
+    {
+      "id": "mega-drive-sonic-the-hedgehog-box",
+      "title": "Mega Drive — Sonic the Hedgehog box reproduction",
+      "latest": "0.1.0",
+      "manifest": "assets/reproductions/mega-drive/sonic-the-hedgehog/box/versions/0.1.0.json",
+      "displayTitle": "Sonic the Hedgehog · Retail box",
+      "kind": "BOX REPRODUCTION",
+      "description": "A fresh Sonic the Hedgehog clamshell with the PAL wrap, restored booklet covers, intact retail hanger and articulated spine.",
+      "credits": "assets/reproductions/mega-drive/sonic-the-hedgehog/box/CREDITS.md",
+      "rights": "Original modeling contributions only: CC BY-NC-ND 4.0. Game artwork, marks, product designs, scans and source photography are excluded. Attribution and the maintainer's request do not grant rights to those elements."
+    },
+    {
+      "id": "playstation-1-crash-bandicoot-box",
+      "title": "PlayStation 1 — Crash Bandicoot box reproduction",
+      "latest": "0.1.0",
+      "manifest": "assets/reproductions/playstation-1/crash-bandicoot/box/versions/0.1.0.json",
+      "displayTitle": "Crash Bandicoot · Retail box",
+      "kind": "BOX REPRODUCTION",
+      "description": "A clean Crash Bandicoot clear-tray jewel case with original-edition booklet covers, both sides of the folded tray card and an articulated lid.",
+      "credits": "assets/reproductions/playstation-1/crash-bandicoot/box/CREDITS.md",
+      "rights": "Original modeling contributions only: CC BY-NC-ND 4.0. Game artwork, marks, product designs, scans and source photography are excluded. Attribution and the maintainer's request do not grant rights to those elements."
     }
   ]
 }
