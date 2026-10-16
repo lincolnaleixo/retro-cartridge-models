@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-16",
+  "title": "Crash Bandicoot US jewel-case assembly and disc-center evidence",
+  "edition": "Original US black-label K-A Crash Bandicoot, SCUS-94900",
+  "scope": "Focused reference audit prompted by the open-case view. This record separates authentic repeated manual artwork from disc-center material and construction errors. It is not a certification of factory tooling or calibrated original ink colors.",
+  "sources": [
+    {
+      "id": "crash-us-complete-manual",
+      "title": "Original SCUS-94900 English manual, 28-page scan archive",
+      "url": "https://psxdatacenter.com/manuals.html",
+      "downloadUrl": "https://psxdatacenter.com/manuals/Crash%20Bandicoot%20%5BSCUS-94900%5D%20%28E%29.cbr",
+      "credit": "Sony Computer Entertainment / Naughty Dog; scan supplied by SPECIALT1212 to PSX Data Center",
+      "archiveSha256": "65ef1fba9d00b8392843ca437cdff7c570987e5d522749d0727af9d714f1afad",
+      "archivePageCount": 28
+    },
+    {
+      "id": "crash-us-front-scan",
+      "title": "Torn-paper booklet front, SCUS-94900",
+      "url": "https://psxdatacenter.com/games/U/C/SCUS-94900.html",
+      "imageUrl": "https://psxdatacenter.com/images/hires/U/C/SCUS-94900/SCUS-94900-F-ALL.jpg",
+      "sha256": "b01634e69eb64c12f357e7b3104e3be772d221f750f05d8cba745ec47f1fe72a",
+      "pixelSize": [
+        1442,
+        1411
+      ]
+    },
+    {
+      "id": "crash-us-manual-back-scan",
+      "title": "Full-jungle booklet back, SCUS-94900",
+      "url": "https://psxdatacenter.com/images/hires/U/C/SCUS-94900/SCUS-94900-I-1.html",
+      "imageUrl": "https://psxdatacenter.com/images/hires/U/C/SCUS-94900/SCUS-94900-I-1.jpg",
+      "sha256": "0af31faaf2b7a2e1233aac8260e14c84b73eaa0024866d1dd2f847efbaf4d001",
+      "pixelSize": [
+        1427,
+        1411
+      ]
+    },
+    {
+      "id": "crash-us-inner-tray-scan",
+      "title": "Interior tray-card artwork, SCUS-94900",
+      "url": "https://psxdatacenter.com/games/U/C/SCUS-94900.html",
+      "imageUrl": "https://psxdatacenter.com/images/hires/U/C/SCUS-94900/SCUS-94900-I-2.jpg",
+      "sha256": "938eec8572d0613dd3e25f1d183b6962af355b590a1f986aab43a0b2c12048dd",
+      "pixelSize": [
+        1763,
+        1388
+      ]
+    },
+    {
+      "id": "crash-us-exterior-tray-scan",
+      "title": "Exterior tray card and both spine folds, SCUS-94900",
+      "url": "https://psxdatacenter.com/images/hires/U/C/SCUS-94900/SCUS-94900-B-ALL.html",
+      "imageUrl": "https://psxdatacenter.com/images/hires/U/C/SCUS-94900/SCUS-94900-B-ALL.jpg",
+      "sha256": "e6420d3bc763184a075cd715fb4a5ecc80d677275479a4f79b62b609d2254bc2",
+      "pixelSize": [
+        1776,
+        1372
+      ]
+    },
+    {
+      "id": "crash-us-open-case-specimen",
+      "title": "Physical SCUS-94900 clear-tray jewel case, opened",
+      "url": "https://www.ebay.com/itm/306104343253",
+      "imageUrl": "https://i.ebayimg.com/images/g/1NIAAOSwP5FnqjAB/s-l960.jpg",
+      "sha256": "fdd31d3fbf33e435770e321b83c2fad96024da945d98a185fd94c25f46b70ef2",
+      "pixelSize": [
+        720,
+        960
+      ],
+      "limitations": [
+        "Seller region metadata conflicts with visible US SCUS-94900 markings; use the photographed markings to identify the edition.",
+        "Used specimen; not factory-dimension evidence."
+      ]
+    },
+    {
+      "id": "crash-us-disc-scan",
+      "title": "Original SCUS-94900 disc scan",
+      "url": "https://psxdatacenter.com/images/hires/U/C/SCUS-94900/SCUS-94900-D-ALL.html",
+      "imageUrl": "https://psxdatacenter.com/images/hires/U/C/SCUS-94900/SCUS-94900-D-ALL.jpg",
+      "sha256": "8ab0f5d05287eb19695ce469e4ba01584364cabf091ef5eea1d5f662e4303f0c",
+      "pixelSize": [
+        1455,
+        1465
+      ],
+      "limitations": [
+        "Strong pink/yellow color cast; unsuitable for assigning original print or material colors.",
+        "Useful for radial boundaries and the arrangement of dark concentric rings."
+      ]
+    },
+    {
+      "id": "crash-us-disc-color-specimen",
+      "title": "Physical SCUS-94900 disc on a wooden surface",
+      "url": "https://www.ebay.com/itm/186116411851",
+      "imageUrl": "https://i.ebayimg.com/images/g/s24AAOSwjD5lJjuf/s-l1200.jpg",
+      "sha256": "d9ba856983f651e324c203888278cc040deb33da579b4b23175bcf7d809201fc",
+      "pixelSize": [
+        900,
+        1200
+      ],
+      "limitations": [
+        "Oblique, worn specimen under uncontrolled lighting; brown center color includes background and lighting effects.",
+        "The listing page was unavailable during this audit; its previously attributed direct image remained accessible."
+      ]
+    },
+    {
+      "id": "cmc-clear-tray-drawing",
+      "title": "Manufacturer standard clear-tray dimensions and drawing",
+      "url": "https://cmcdisc.com/media-packaging/original-jewel-case/",
+      "imageUrl": "https://www.cmcdisc.com/images/ojc4.gif",
+      "sha256": "f0e0bc0534fc4066e3877c070682a37601bd942be8466d292d6adab141ff5ac2",
+      "limitations": [
+        "CMC standard-compatible product drawing; not proof of the exact Sony supplier or original mold."
+      ]
+    },
+    {
+      "id": "ecma130-disc-dimensions",
+      "title": "ECMA-130 second edition, June 1996",
+      "url": "https://ecma-international.org/wp-content/uploads/ECMA-130_2nd_edition_june_1996.pdf",
+      "sections": [
+        "8.2 Centre hole",
+        "8.4 Clamping area",
+        "8.5 Second transition area",
+        "8.6 Information area",
+        "8.7 Rim area"
+      ]
+    }
+  ],
+  "booklet": {
+    "sourceIds": [
+      "crash-us-complete-manual",
+      "crash-us-front-scan",
+      "crash-us-manual-back-scan",
+      "crash-us-open-case-specimen"
+    ],
+    "finding": "The inward-facing full-jungle image is the authentic back cover of this manual. It is not an accidental repetition of the outward torn-paper front.",
+    "archiveSequence": [
+      {
+        "member": "SCUS-94900 pag01.jpg",
+        "role": "Front cover: Crash emerging through torn paper",
+        "sha256": "b01634e69eb64c12f357e7b3104e3be772d221f750f05d8cba745ec47f1fe72a",
+        "matchesSourceId": "crash-us-front-scan",
+        "byteIdentical": true
+      },
+      {
+        "member": "SCUS-94900 pag27.jpg",
+        "role": "Interior warranty page",
+        "sha256": "52e30d818167ca71de4c4e99ff0b7bb8acb3e62ef2bc7fe09d6c22b110f18791"
+      },
+      {
+        "member": "SCUS-94900 pag28.jpg",
+        "role": "Back cover: full jungle scene and repeated title/console branding",
+        "sha256": "0af31faaf2b7a2e1233aac8260e14c84b73eaa0024866d1dd2f847efbaf4d001",
+        "matchesSourceId": "crash-us-manual-back-scan",
+        "byteIdentical": true
+      }
+    ],
+    "assemblyRecommendation": "Keep the current Front and BookletBack source assignments. With the case open, the manual back faces the disc; with it closed, the torn-paper front faces outward.",
+    "paginationLimit": "The modeled blank leaves remain placeholders; the 28-page archive proves cover identity but does not imply all pages have been reproduced."
+  },
+  "case": {
+    "sourceIds": [
+      "crash-us-open-case-specimen",
+      "crash-us-inner-tray-scan",
+      "crash-us-exterior-tray-scan",
+      "cmc-clear-tray-drawing"
+    ],
+    "trayAndHub": "The specimen has a clear tray and clear retention fingers. Do not make the tray or central spring fingers black merely to hide the disc-center rendering error.",
+    "underDiscArtwork": "The inner tray-card scene with Crash at left and screenshots at right is appropriate for the selected edition and is visible around the installed disc through clear plastic.",
+    "exteriorSpines": "The B-ALL scan contains both printed spine folds. Their letters are printed on flat paper; evaluate their flat textures and an orthographic side view before attributing a wavy appearance to the source print.",
+    "ribbedStripLimit": "The I-2 source includes a shaded ribbed strip on the hinge side. This audit did not find a removed-paper specimen proving whether that strip is printed artwork or captured tray plastic. Preserve it pending stronger evidence rather than claiming its origin is established.",
+    "hubRetentionDiameterMm": {
+      "minimum": 15.2,
+      "maximum": 15.4,
+      "basis": "CMC drawing dimension I, standard clear-tray inspection range"
+    },
+    "hubLimit": "The retaining diameter refers to the small sprung fingers engaging the disc hole, not the wider supporting annulus or the disc optical transition zone. Exact finger count and all molded profiles remain photo-derived approximations."
+  },
+  "disc": {
+    "sourceIds": [
+      "crash-us-disc-scan",
+      "crash-us-disc-color-specimen",
+      "crash-us-open-case-specimen",
+      "ecma130-disc-dimensions"
+    ],
+    "standardGeometry": {
+      "nominalOuterDiameterMm": 120,
+      "centerHoleDiameterMm": {
+        "nominal": 15,
+        "lowerTolerance": 0,
+        "upperTolerance": 0.1
+      },
+      "nominalThicknessMm": 1.2,
+      "clampingAreaDiameterMm": {
+        "innerBoundary": 26,
+        "outerBoundaryMinimum": 33
+      },
+      "secondTransitionOuterDiameterMaximumMm": 44
+    },
+    "standardInterpretation": "Mechanical clamping and transition diameters do not prescribe a clear, unprinted or metallic appearance. ECMA-130 explicitly permits the label to extend beyond the information zone.",
+    "observedCenter": "The physical specimen and original scan show a broad dark or smoked central annulus with dark concentric boundaries. The true opening remains about 15 mm across. The broad annulus is material, not an oversized physical hole.",
+    "approximateRadialMeasurement": {
+      "method": "Horizontal centerline of the 1455 by 1465 pixel scan, cross-checked visually against the physical specimen; scale inferred from a nominal 120 mm outer diameter.",
+      "scanCenterlineYpx": 732,
+      "outerDiscSpanXpx": [
+        15,
+        1429
+      ],
+      "outerDiscSpanPixels": 1414,
+      "darkAnnulusOuterSpanXpx": [
+        484,
+        960
+      ],
+      "inferredDarkAnnulusDiameterMm": 40.4,
+      "recommendedVisualBoundaryRadiusMm": 20,
+      "precisionNote": "Approximately 20 mm radius; scan edge selection, slight distortion and photography do not justify a factory tolerance."
+    },
+    "materialAssessment": [
+      "The existing large, nearly clear window reveals tray artwork too strongly and does not reproduce the dark concentric structure of the reference.",
+      "The existing broad, flat gray matrix band is not supported by the photographed appearance. Reduce its prominence and use the referenced dark boundary/transition arrangement.",
+      "Do not infer orange label ink all the way to the center hole from the open-case photograph: the underlying tray art and lighting can color the visible central annulus.",
+      "Do not derive exact smoke tint, alpha, transmission or ink colors from the color-shifted scan. Tune those against both physical photographs and verify on light and dark backgrounds."
+    ],
+    "boundedCorrectionRecommendation": "Preserve the 120 mm disc, 15 mm true hole and 1.2 mm nominal thickness. Represent the approximately 40 mm wide central zone as a darker translucent substrate with dark concentric boundaries and a restrained transition to the printed field; retain genuinely clear empty space only at the hole. A visual material correction is justified; shrinking the entire annulus to the hole is not."
+  },
+  "rights": "Reference scans and photographs remain third-party material. This evidence document records source URLs and hashes; it does not redistribute the downloaded reference files or expand their publication rights."
+}

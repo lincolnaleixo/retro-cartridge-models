@@ -1,4 +1,11 @@
-# PlayStation 1 jewel case and CD changelog
+# Changelog — PlayStation 1 — standalone CD
+
+## 0.2.0 — 2026-10-16
+
+- Replaced the nearly invisible clamping center and broad silver matrix band with a darker smoke-tinted center and dedicated dark transition; preserved the outer reflective rim.
+- Removed only 512 hidden body-top triangles 5 micrometers beneath the printed face, eliminating radial depth-fighting artifacts in the actual WebGL viewer.
+- Preserved 120 mm outer diameter, 15 mm true center hole, 1.2 mm thickness, original positions/normals/UVs, all other triangle indices, node transforms and embedded image bytes; retained the bottom-center meter-scale import contract.
+- Reopened the original 0.1.0 editable source, updated its release identification, and included strict patch/source validation, matching actual-export previews and Godot import comparisons. Earlier releases are unchanged.
 
 ## Unreleased
 

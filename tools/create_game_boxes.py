@@ -74,8 +74,11 @@ def reopen_source(path, console):
     api.ROOT = root
     set_pose(root, False)
     if console == 'playstation-1':
-        from boxes_playstation import refine_clear_materials
+        from boxes_playstation import refine_clear_materials, refine_left_spine_clearance
+        from playstation_booklet import remove_hidden_booklet_caps
         refine_clear_materials()
+        refine_left_spine_clearance(root)
+        remove_hidden_booklet_caps(root)
     elif console == 'mega-drive':
         from boxes_mega_drive import refine_spine_uvs, refine_media_fit
         refine_spine_uvs()

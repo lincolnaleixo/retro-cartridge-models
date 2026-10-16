@@ -21,3 +21,7 @@ Reference photographs and commercial artwork are not included. All paper surface
 Molded details, hinge clearances and booklet thickness are inferred from the photographed specimen and standard-case drawings; no factory-fit certification is claimed. This asset does not represent PAL branded cases, longboxes or multidisc packaging.
 
 See [measurement evidence](../../../docs/measurement-evidence-2026-10-02.json) for methods and confidence limits.
+
+## Disc center and depth correction — 0.2.0
+
+The original SCUS-94900 disc scan and physical-disc photograph linked above (or in disc-reference-evidence.json) establish a dark/tinted center rather than a broad gray band. The correction is original material modeling; no reference photograph is redistributed. The existing artwork/roughness image bytes are unchanged. The body top hidden 5 micrometers under the label is removed to avoid WebGL depth fighting. The smoke tint, opacity and transmission are visual approximations from photographed specimens, not measured optical constants. The current 18 mm material boundary and 21 mm print-mask radius remain unchanged; references establish only an approximately 20 mm dark annulus. Fine concentric molded rings are not reproduced. Independent material submeshes are not manufacturing-solid CAD; the visible front is covered by the existing label, inner transition and outer rim.

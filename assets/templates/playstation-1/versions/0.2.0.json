@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "id": "playstation-1",
+  "version": "0.2.0",
+  "title": "PlayStation 1 \u2014 standalone CD",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions only; hardware designs and trademarks excluded. No game artwork included.",
+  "date": "2026-10-16",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center"
+  },
+  "nominalDimensionsMm": [
+    120,
+    120,
+    1.2
+  ],
+  "measurementBasis": "Visualization reconstruction; see asset credits and measurement evidence.",
+  "changes": [
+    "Replaced the nearly invisible clamping center and broad silver matrix band with a darker smoke-tinted center and dedicated dark transition; preserved the outer reflective rim.",
+    "Removed only 512 hidden body-top triangles 5 micrometers beneath the printed face, eliminating radial depth-fighting artifacts in the actual WebGL viewer.",
+    "Preserved 120 mm outer diameter, 15 mm true center hole, 1.2 mm thickness, original positions/normals/UVs, all other triangle indices, node transforms and embedded image bytes; retained the bottom-center meter-scale import contract.",
+    "Reopened the original 0.1.0 editable source, updated its release identification, and included strict patch/source validation, matching actual-export previews and Godot import comparisons. Earlier releases are unchanged."
+  ],
+  "validation": {
+    "meshes": 5,
+    "primitives": 5,
+    "vertices": 11776,
+    "triangles": 8192,
+    "materials": 5,
+    "images": 1,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "godot": {
+      "version": "4.7.2",
+      "headlessImport": "passed",
+      "surfaceInspection": "All remaining imported triangles, normals, UVs, transforms and decoded textures match 0.1.0; alpha-depth-prepass fallback active."
+    },
+    "constructionCorrection": "512 hidden body-top triangles removed; original positions/normals/UVs, all other triangle indices and embedded image bytes unchanged.",
+    "nativeSource": "Original 0.1.0 source reopened, narrowly corrected, saved and reopened with packed images and remaining mesh state preserved.",
+    "previewLighting": "Matched neutral white studio; Standard view, exposure -1.65, 32 Cycles samples."
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/templates/playstation-1/previews/0.2.0/hero.png",
+      "bytes": 1002058,
+      "sha256": "aff43e8ba46f72f4cb03b59fe0eb393ff55f7ad50ef9c1cc65f76fe1d07e3a47"
+    },
+    {
+      "view": "front",
+      "path": "assets/templates/playstation-1/previews/0.2.0/front.png",
+      "bytes": 993187,
+      "sha256": "b34ffe1a11a1de22441270d3fb5e8aabd54011676c01d450ca72171bb6d427f6"
+    },
+    {
+      "view": "rear",
+      "path": "assets/templates/playstation-1/previews/0.2.0/rear.png",
+      "bytes": 1027220,
+      "sha256": "f37fb324cbe15d48927af3418fb298c1bbe610caca5082cd2583acf0c9f60411"
+    },
+    {
+      "view": "top",
+      "path": "assets/templates/playstation-1/previews/0.2.0/top.png",
+      "bytes": 1085082,
+      "sha256": "be6bc9b92371ad41e4d1dbc6b7a280a0e41f4fc9612f6c80a2e6dd1410883ccb"
+    },
+    {
+      "view": "bottom",
+      "path": "assets/templates/playstation-1/previews/0.2.0/bottom.png",
+      "bytes": 1002514,
+      "sha256": "b9d060df25fcc968adc8568e8f60fef56edfbe27e6a3c7f9ed10cc7317394b9b"
+    },
+    {
+      "view": "left",
+      "path": "assets/templates/playstation-1/previews/0.2.0/left.png",
+      "bytes": 828718,
+      "sha256": "b6c4499ed55e740a3c4c69a75897dfd18eedeb4e4ceeb325e31cc152e79c4b7b"
+    }
+  ],
+  "release": {
+    "tag": "playstation-1-v0.2.0",
+    "archive": {
+      "name": "playstation-1-0.2.0.zip",
+      "bytes": 7204006,
+      "sha256": "83c72e3e564b5ae73e557a57a577a50a105c7be96d55d84d80392d580af35dd4",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/playstation-1-v0.2.0/playstation-1-0.2.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 6925,
+      "sha256": "87afdc3984e4bee8cc927b797409d76a36382c8dcb6eb54910cbddf12355f72f"
+    },
+    "CREDITS.md": {
+      "bytes": 3392,
+      "sha256": "54a62c2d56bdd1128de7a7afc47886629220e50db216ebd2985045654f326830"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 4351,
+      "sha256": "04602588f5708dd1ca0b26f7194ce5ea5fcb2a12fb1ece283fbd9321ab814033"
+    },
+    "README.md": {
+      "bytes": 2213,
+      "sha256": "4f6ca748443e949af9db4fff9450d016ebb8c4ca64086b5946a534b09b114097"
+    },
+    "bottom.png": {
+      "bytes": 1002514,
+      "sha256": "b9d060df25fcc968adc8568e8f60fef56edfbe27e6a3c7f9ed10cc7317394b9b"
+    },
+    "disc-material-refinement.json": {
+      "bytes": 3122,
+      "sha256": "93751f192d50645854bd01eb5de1138067c54f04cae69ef671f4c3487e60677c"
+    },
+    "disc-reference-evidence.json": {
+      "bytes": 5466,
+      "sha256": "da6722c8d9c6fbdb24efb66d1bd7344223f25cfa81f9ed6173e49bbf0d78b996"
+    },
+    "front.png": {
+      "bytes": 993187,
+      "sha256": "b34ffe1a11a1de22441270d3fb5e8aabd54011676c01d450ca72171bb6d427f6"
+    },
+    "glb-inspection.json": {
+      "bytes": 558,
+      "sha256": "a9f38e263c1813d8276efded4f4a2fd2ebea4521dca96fd93648c5f08a38303f"
+    },
+    "godot-import-report.json": {
+      "bytes": 1004,
+      "sha256": "fb3e263d7c3d9f960f4cc319a62ee4f1c0572bbe49025d3e2332daf44b9f47f7"
+    },
+    "hero.png": {
+      "bytes": 1002058,
+      "sha256": "aff43e8ba46f72f4cb03b59fe0eb393ff55f7ad50ef9c1cc65f76fe1d07e3a47"
+    },
+    "left.png": {
+      "bytes": 828718,
+      "sha256": "b6c4499ed55e740a3c4c69a75897dfd18eedeb4e4ceeb325e31cc152e79c4b7b"
+    },
+    "playstation-1.blend": {
+      "bytes": 694596,
+      "sha256": "cc2f146df6b08269c003a171c16f46ca4beadb122538498dbc7aa32a52d3e83b"
+    },
+    "playstation-1.glb": {
+      "bytes": 906184,
+      "sha256": "2086c46cf56546209c0294c2dc81e8fafd66ea26f8274f6dae9152bb0582b324"
+    },
+    "rear.png": {
+      "bytes": 1027220,
+      "sha256": "f37fb324cbe15d48927af3418fb298c1bbe610caca5082cd2583acf0c9f60411"
+    },
+    "render-proof.json": {
+      "bytes": 3272,
+      "sha256": "35fbf122510f8a29838ee46426b975e20ac85652cb2ed5c960ebb10c60a3d924"
+    },
+    "top.png": {
+      "bytes": 1085082,
+      "sha256": "be6bc9b92371ad41e4d1dbc6b7a280a0e41f4fc9612f6c80a2e6dd1410883ccb"
+    }
+  }
+}

@@ -1,19 +1,17 @@
 # PlayStation 1 — standalone CD
 
-Version 0.1.0 is a standalone optical disc, with no jewel case, booklet, tray or retention hub. The previous case reconstruction remains historical generator source in `tools/media_playstation.py`; the default builder uses `tools/media_playstation_disc.py`.
+**Version:** 0.2.0 · **Date:** 2026-10-16 · **Creator:** Lincoln Aleixo
 
-The model follows the nominal ECMA-130 envelope: 120 mm diameter, 15 mm center hole and 1.2 mm thickness. It uses meters, X width, Y up and +Z printed face, with the bottom at Y=0. Physical fine finishes are visual approximations, not manufacturing tooling.
+![Disc](previews/0.2.0/hero.png)
 
-Five independently addressable meshes form the disc: `Disc`, `DiscClearHub`, `DiscInnerMatrix`, `DiscOuterRim`, and `FrontLabel`. The clear center is a real annulus and the hole is empty. `FrontLabel` contains only the printable annulus (21–59.55 mm radius), with a 120 mm square UV0 layout. There is deliberately no `RearLabel`: the dark reading face must never receive cover artwork. The original optical-zone roughness texture is embedded in the GLB.
+The disc has a distinct 15 mm opening inside a darker smoke-tinted clamping annulus. The bright gray inner band and the hidden surface that caused radial WebGL artifacts are corrected upstream in this standalone asset.
 
-Generate with Blender 5.2.2:
+The nominal dimensions remain 120 × 120 × 1.2 mm, with a 15 mm center hole. Units are meters, Y is up, +Z faces the print, and the pivot remains at the bottom center. Positions, normals, UVs, artwork pixels, outer rim and reading-side shading are unchanged; the export omits 512 hidden body-top triangles and uses a dedicated inner-transition material. The five named media meshes and editable packed source remain available.
 
-```sh
-blender --factory-startup -b --python tools/create_media_models.py -- --only playstation-1
-```
+The package includes six actual-GLB previews, source/preservation receipts, import validation and reference attribution. Godot 4.7.2 compares all remaining imported triangles, normals, UVs, transforms and decoded textures to 0.1.0. The browser check confirms the radial print artifacts are gone. See `disc-material-refinement.json`, `glb-inspection.json`, `godot-import-report.json` and `render-proof.json`.
 
-Outputs are `dist/development/playstation-1/playstation-1.blend`, `.glb`, actual-export renders and `development.json`. Released packages include editable source, GLB, views, attribution and checksums. Git stores the version manifest and previews.
+The smoke tint, opacity and transmission are visual approximations from photographed specimens, not measured optical constants. The current 18 mm material boundary and 21 mm print-mask radius remain unchanged; references establish only an approximately 20 mm dark annulus. Fine concentric molded rings are not reproduced. Independent material submeshes are not manufacturing-solid CAD; the visible front is covered by the existing label, inner transition and outer rim.
 
-The neutral release contains no Sony or game artwork. For locally supplied Crash Bandicoot disc artwork, see [owner artwork workflow](../../../docs/owner-artwork.md). That example is not bundled in the neutral release.
+Rebuild from the original published source and GLB using Blender: `blender --background --python tools/refine_playstation_disc.py -- --source <original.blend> --model <original.glb> --output <new-folder>`. The tool supports the two specifically audited PS1 disc 0.2.0 upgrades and never rewrites published archives.
 
-Validation: 5 meshes, 8,704 triangles, 4 materials, one embedded original image; GLB integrity/UV inspection and Godot 4.7.2 import. Transmission differs by engine; Compatibility uses alpha for the clear hub. Read [credits](CREDITS.md) and [changelog](CHANGELOG.md).
+Original model contributions are CC BY-NC-ND 4.0. Product designs, trademarks, third-party artwork, scans and photography remain excluded. See [credits](CREDITS.md), [changes](CHANGELOG.md), [NOTICE.md](NOTICE.md) and [LICENSE](LICENSE).
