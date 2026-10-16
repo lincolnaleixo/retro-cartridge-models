@@ -727,21 +727,21 @@
       "assetId": "playstation-1-crash-bandicoot-box",
       "mediaSource": {
         "assetId": "playstation-1-crash-bandicoot",
-        "version": "0.1.0",
-        "manifestSha256": "176f9e253a7682b9a5b648f8f755d6588a8e03ed89c8430245dce08b4dde0538",
-        "archiveSha256": "380e01aa42a2d207d2d0c23aa75dc0bbf5a2bdef3a6330142ad4bf2b71b1c2dc",
-        "releaseUrl": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/playstation-1-crash-bandicoot-v0.1.0/playstation-1-crash-bandicoot-0.1.0.zip",
+        "version": "0.2.0",
+        "manifestSha256": "cc41fdff74e2b6fda66c1167e9a3592105e0be0f1d27f961dec316951e857233",
+        "archiveSha256": "18d87e9bcef19368d2f9fb2003c0da756c04edcc1e8ff158f763c62c59367fa6",
+        "releaseUrl": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/playstation-1-crash-bandicoot-v0.2.0/playstation-1-crash-bandicoot-0.2.0.zip",
         "glbFile": "playstation-1-crash-bandicoot.glb",
-        "glbSha256": "afe6252cc190753371e2ce071803150a51bb448f137c719c5d117b45d08cf21b",
+        "glbSha256": "432d1598ee806fc549f520c6ab42781eca5f0db0932ba3f173813c280bff1bf2",
         "blendFile": "playstation-1-crash-bandicoot.blend",
-        "blendSha256": "e4040237abafcbfa553596d570744b14a682f47a2cd25ce863499d15bf40c827"
+        "blendSha256": "5cf36bacd3103e4e061296a1ea477e1b55b4c162381ea57d1db9ac0e0768a5c3"
       },
-      "composedGlbSha256": "de8734e82e65369de24e3dd45a1a777db169d02c828bf6f4d3a538c5dfaaf590",
+      "composedGlbSha256": "83aded3175fee85b2dd782d0b2edbbc323107e546fcbdb3be3282570abff353e",
       "contentsLocalTransform": {
         "nodeName": "Contents",
-        "nodeIndex": 20,
+        "nodeIndex": 21,
         "parentName": "RemovableTray",
-        "parentIndex": 12,
+        "parentIndex": 13,
         "translationMeters": [
           0.0064,
           0.002375,
@@ -773,7 +773,6 @@
       },
       "surfaceFit": {
         "status": "passed",
-        "method": "Decoded GLB world triangles; Blender BVHTree overlap, epsilon=0.",
         "poses": {
           "closed": {
             "mediaBounds": {
@@ -789,7 +788,7 @@
               ]
             },
             "mediaMeshCount": 5,
-            "packagingMeshCount": 11,
+            "packagingMeshCount": 12,
             "intersectionPairs": []
           },
           "open": {
@@ -806,10 +805,11 @@
               ]
             },
             "mediaMeshCount": 5,
-            "packagingMeshCount": 11,
+            "packagingMeshCount": 12,
             "intersectionPairs": []
           }
-        }
+        },
+        "method": "Decoded GLB world triangles; Blender BVHTree overlap, epsilon=0."
       }
     },
     {

@@ -1,5 +1,18 @@
 # Changelog — PlayStation 1 — Crash Bandicoot box reproduction
 
+## 0.4.0 — 2026-10-16
+
+- Adopted the independently released PlayStation box template v0.3.0, with lighter non-refractive clear plastic and a separately visible retaining hub so both spines remain readable in Blender, Godot and the web viewer.
+- Kept the left tray ribbing behind the folded spine paper using the corrected template, removing the physical overlay across the lettering while preserving positive rail thickness.
+- Removed the template's hidden page-stack cap faces beneath the booklet print, eliminating striped depth interference in WebGL while preserving the visible page edges and both original printed faces.
+- Included the matching Crash Bandicoot disc v0.2.0 with its darker center annulus and hidden overlapping top faces removed, eliminating radial depth-fighting artifacts in the web viewer.
+- Preserved the original SCUS-94900 artwork and printed UVs, with geometry and Open articulation matching the corrected neutral template; verified that the inward booklet image matches page 28 of the original manual.
+- Included left and right side inspection views and a mounted-disc hub close-up, in addition to the six standard previews and exact-hash source, fit and engine validation.
+- Clear-plastic materials use a portable alpha approximation; photographic references do not establish factory tooling dimensions.
+- Preserved the box subset template positions, normals, artwork UVs, indices, hinge transforms and the two-second Open clip, verified through a complete decoded-data comparison. The exporter rounded 40 non-artwork UV scalars by at most 5.96e-08; this is recorded separately and does not change any printed-face UV coordinates.
+- Validated the self-contained export, exact embedded artwork, Godot import and both animation endpoints, then reopened the editable Blender source.
+- Kept all previously published template, box, cartridge and disc releases unchanged.
+
 ## 0.3.0 — 2026-10-16
 
 - Refined all four original SCUS-94900 inserts for cleaner close-up print, treating illustrations, small type and solid fields separately.
