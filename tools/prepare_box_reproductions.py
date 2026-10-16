@@ -114,6 +114,13 @@ def identifier(console):
     return console + '-' + GAMES[console]['game'] + '-box'
 
 
+def includes_media(version):
+    """Keep source, fit and render validation mandatory after contents debuted."""
+    if not SEMVER.fullmatch(version):
+        raise ValueError('Invalid version')
+    return tuple(map(int, version.split('.'))) >= (0, 3, 0)
+
+
 def resolve_template(console, root=ROOT):
     """Resolve the exact independently released template selected by catalog."""
     asset_id = console + '-box'
@@ -133,6 +140,16 @@ def resolve_template(console, root=ROOT):
 
 def release_changes(console, version, template_version):
     game = GAMES[console]
+    if console == 'playstation-1' and version == '0.4.0':
+        return [
+            f'Adopted the independently released PlayStation box template v{template_version}, with lighter non-refractive clear plastic and a separately visible retaining hub so both spines remain readable in Blender, Godot and the web viewer.',
+            'Kept the left tray ribbing behind the folded spine paper using the corrected template, removing the physical overlay across the lettering while preserving positive rail thickness.',
+            'Removed the template\'s hidden page-stack cap faces beneath the booklet print, eliminating striped depth interference in WebGL while preserving the visible page edges and both original printed faces.',
+            'Included the matching Crash Bandicoot disc v0.2.0 with its darker center annulus and hidden overlapping top faces removed, eliminating radial depth-fighting artifacts in the web viewer.',
+            'Preserved the original SCUS-94900 artwork and printed UVs, with geometry and Open articulation matching the corrected neutral template; verified that the inward booklet image matches page 28 of the original manual.',
+            'Included left and right side inspection views and a mounted-disc hub close-up, in addition to the six standard previews and exact-hash source, fit and engine validation.',
+            'Clear-plastic materials use a portable alpha approximation; photographic references do not establish factory tooling dimensions.',
+        ]
     if version == '0.1.0':
         return ['Added ' + game['edition'] + ' artwork to the independently released neutral box.',
                 'Preserved complete template geometry and Open animation.',
@@ -309,7 +326,7 @@ def audit_inputs(console, args, validation, source_report, source_catalog):
         png_dimensions(folder / (view + '.png'))
     render_proof = None
     inspection_views = {}
-    if args.version == '0.3.0':
+    if includes_media(args.version):
         render_proof = json.loads((folder / 'render-proof.json').read_text())
         if render_proof.get('sha256') != sha(glb):
             raise ValueError('Previews were rendered from a different export: ' + asset_id)
@@ -317,16 +334,21 @@ def audit_inputs(console, args, validation, source_report, source_catalog):
         selected_views = list(VIEWS)
         if console in ('nes', 'snes', 'nintendo-64'):
             selected_views.append('contents')
+        if console == 'playstation-1' and tuple(map(int, args.version.split('.'))) >= (0, 4, 0):
+            selected_views.extend(('left', 'right', 'hub-close'))
         for view in selected_views:
             record = render_records[view]
+            if view in VIEWS and record['file'] != view + '.png':
+                raise ValueError('Preview proof must identify its packaged view: ' + asset_id + ': ' + view)
             path = folder / safe(record['file'])
             if record['sha256'] != sha(path) or record['pixels'] != list(png_dimensions(path)):
                 raise ValueError('Stale preview render: ' + asset_id + ': ' + view)
             if view == 'contents':
                 if not record.get('inspectionPose'):
                     raise ValueError('Extracted contents view needs an explicit inspection pose')
-                inspection_views['contents.png'] = path
-                record['file'] = 'inspection-views/contents.png'
+            if view not in VIEWS:
+                inspection_views[view + '.png'] = path
+                record['file'] = 'inspection-views/' + view + '.png'
         render_proof['renders'] = [render_records[view] for view in selected_views]
     artwork = artwork_inputs(asset_id, args.base / 'artwork' / asset_id, glb, construction)
     references = selected_artwork_sources(source_catalog, asset_id)
@@ -336,7 +358,7 @@ def audit_inputs(console, args, validation, source_report, source_catalog):
     composition = None
     content_sources = {}
     content_fit = None
-    if args.version == '0.3.0':
+    if includes_media(args.version):
         composition = json.loads((folder / 'content-composition.json').read_text())
         if (composition.get('status') != 'passed' or composition.get('assetId') != asset_id
                 or composition.get('output') != {'glbSha256': sha(glb), 'blendSha256': sha(blend)}
@@ -446,7 +468,10 @@ def documents(console, version, date, data, engine_version, blender_version):
     inspection_note = ('\nThe normal `Open` pose keeps the sleeve/tray seated inside the carton. '
                        'The release also includes `inspection-views/contents.png`, showing the original insert and cartridge moved out together for inspection. '
                        'This documented inspection pose does not change the exported default pose or animation.\n'
-                       if data.get('inspectionViews') else '')
+                       if 'contents.png' in data.get('inspectionViews', {}) else '')
+    if {'left.png', 'right.png', 'hub-close.png'} <= set(data.get('inspectionViews', {})):
+        inspection_note += ('\nThe package includes both side profiles and an open disc-hub close-up in '
+                            '`inspection-views/`, rendered from this exact export.\n')
     rounding = parity.get('nonArtworkUvFloat32Rounding', [])
     parity_note = ''
     if rounding:

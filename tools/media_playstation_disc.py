@@ -50,4 +50,7 @@ def build(api):
             uv.data[index].uv = (x/120+.5, y/120)
     label['artworkAspectRatio'] = 1.0
     label['artworkOrientation'] = '120 mm square, upright; geometry masks outer edge and transparent center'
+    from playstation_disc_materials import refine_blender_materials, remove_hidden_blender_front
+    refine_blender_materials()
+    remove_hidden_blender_front()
     return root

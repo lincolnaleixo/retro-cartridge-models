@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 1,
+  "id": "playstation-1-box",
+  "version": "0.3.0",
+  "title": "PlayStation 1 \u2014 clear-tray jewel case template",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions: CC BY-NC-ND 4.0. Product designs and third-party marks are excluded. No game artwork, source photograph or copied logo is included.",
+  "date": "2026-10-16",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center of nominal closed envelope"
+  },
+  "nominalDimensionsMm": [
+    142.35,
+    124.75,
+    10.4
+  ],
+  "measurementBasis": "CMC original jewel-case inspection dimensions and standard-tray drawings; NTSC-U/C specimen photographs. The envelope uses midpoint values from CMC assembly inspection ranges, not proof of the original Sony supplier. Fine molded features, booklet leaves and paper-fit dimensions are approximate. Clear plastic rendering depends on the importing engine.",
+  "changes": [
+    "Replaced overlapping alpha-plus-transmission plastic with a reviewed glossy alpha approximation so the clear case and printed spines remain readable across Blender, Godot and WebGL.",
+    "Assigned the existing retaining hub and twelve spring fingers their own translucent material, making the mechanism visible without clouding the whole removable tray.",
+    "Corrected the left tray edge that previously crossed the folded paper and overlaid ribs on the printed spine: thirty-five ribs and their web now fit behind the inner paper, and the complete edge rail moves inward without losing its width.",
+    "Applied positive X transforms to exactly thirty-seven molded parts using evaluated bounds; retained their native polygon topology and UVs. A 0.10 mm modeled paper clearance is an assembly constraint, not a factory tolerance claim.",
+    "Removed sixteen hidden broad page-stack caps, equivalent to thirty-two exported triangles, that competed in depth with the separate printed covers. Kept the visible page edges, printed surfaces, artwork UVs, paper envelope and original double-sided material flags; matched WebGL trials verified that removing the hidden caps resolves the inward booklet bands.",
+    "Preserved all other native parts, referenced packed images and hinge endpoints; recorded the material, thirty-seven-part placement and hidden-page-cap exceptions in a hash-linked source audit.",
+    "Kept the booklet faces opaque and correctly opposed, with independent exterior-front and inward-booklet artwork targets; the neutral template remains empty.",
+    "Recorded actual-export previews and exact-input engine/source audits. Earlier box versions and separate disc assets remain unchanged by this template release."
+  ],
+  "validation": {
+    "meshes": 12,
+    "primitives": 12,
+    "triangles": 26248,
+    "materials": 9,
+    "images": 1,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "embeddedImages": 1,
+    "externalImages": 0,
+    "artworkSlots": {
+      "FrontLabel": "Front",
+      "InsertInnerPaper": "BookletBack",
+      "RearLabel": "WrapBack",
+      "TrayCardInside": "WrapInside"
+    },
+    "animation": {
+      "name": "Open",
+      "durationSeconds": 2.0,
+      "channels": 1
+    },
+    "godot": {
+      "version": "4.7.2-stable (official)",
+      "headlessImport": "passed",
+      "endpointInspection": "Closed/Open world vertex bounds, named packaging parts and artwork UVs verified."
+    },
+    "previewLighting": "Actual GLB reimport in a neutral white studio, Standard view transform, exposure -1.0. Pixel dimensions are recorded per preview. Detached-insert views are separate inspection arrangements.",
+    "editableSource": "Reopened in Blender 5.2.2 LTS; packed resources, named parts and both poses checked.",
+    "geometryMigration": {
+      "status": "passed",
+      "sourceChain": {
+        "schemaVersion": 1,
+        "status": "passed",
+        "sourceBlendSha256": "7999a03deebe5ceb7464312fa1024d95f091de643407d805a581ebda9cea7177",
+        "targetBlendSha256": "670fe2187b8b86e5b1f870b9cf9caa894ad358efb0da184797d67644e66cd16c",
+        "targetGlbSha256": "91e89566dedeb491728db3c8b374e99946e5729839f570e7f24122741a736d9e",
+        "auditChain": [
+          {
+            "path": "audits/left-spine-combined-preservation.json",
+            "sha256": "d91c7869207c70bc50f305d3920388dfe341a6a0b2622fbc6453568c3c8ae9f9"
+          },
+          {
+            "path": "audits/booklet-native-preservation.json",
+            "sha256": "89558e78bf95fa6c79b3410b316cd9d2ffd1a208148b776dfa96c3a68a277b1d"
+          },
+          {
+            "path": "audits/booklet-neutral-glb-preservation.json",
+            "sha256": "f23df6d90aef61357ba824994a103dd622851a53f385752941c37aca4daa1e18"
+          }
+        ],
+        "objectCount": 91,
+        "allowedChanges": {
+          "materialDefinitions": [
+            "Clear molded polystyrene",
+            "Polystyrene rims and catches",
+            "Clear injection molded tray"
+          ],
+          "newMaterial": "Clear polystyrene spring hub",
+          "materialAssignments": [
+            "DiscHub",
+            "HubSpringFinger_00",
+            "HubSpringFinger_01",
+            "HubSpringFinger_02",
+            "HubSpringFinger_03",
+            "HubSpringFinger_04",
+            "HubSpringFinger_05",
+            "HubSpringFinger_06",
+            "HubSpringFinger_07",
+            "HubSpringFinger_08",
+            "HubSpringFinger_09",
+            "HubSpringFinger_10",
+            "HubSpringFinger_11"
+          ],
+          "rootSpaceAffineTransforms": [
+            "TrayRibbedSpineWeb",
+            "TraySpineCorrugation_00",
+            "TraySpineCorrugation_01",
+            "TraySpineCorrugation_02",
+            "TraySpineCorrugation_03",
+            "TraySpineCorrugation_04",
+            "TraySpineCorrugation_05",
+            "TraySpineCorrugation_06",
+            "TraySpineCorrugation_07",
+            "TraySpineCorrugation_08",
+            "TraySpineCorrugation_09",
+            "TraySpineCorrugation_10",
+            "TraySpineCorrugation_11",
+            "TraySpineCorrugation_12",
+            "TraySpineCorrugation_13",
+            "TraySpineCorrugation_14",
+            "TraySpineCorrugation_15",
+            "TraySpineCorrugation_16",
+            "TraySpineCorrugation_17",
+            "TraySpineCorrugation_18",
+            "TraySpineCorrugation_19",
+            "TraySpineCorrugation_20",
+            "TraySpineCorrugation_21",
+            "TraySpineCorrugation_22",
+            "TraySpineCorrugation_23",
+            "TraySpineCorrugation_24",
+            "TraySpineCorrugation_25",
+            "TraySpineCorrugation_26",
+            "TraySpineCorrugation_27",
+            "TraySpineCorrugation_28",
+            "TraySpineCorrugation_29",
+            "TraySpineCorrugation_30",
+            "TraySpineCorrugation_31",
+            "TraySpineCorrugation_32",
+            "TraySpineCorrugation_33",
+            "TraySpineCorrugation_34",
+            "TraySpineEdge_-69.65"
+          ],
+          "hiddenBookletCaps": {
+            "mesh": "BookletPages",
+            "nativeQuadsRemoved": 16,
+            "exportedTrianglesRemoved": 32,
+            "nativeVerticesPreserved": 768,
+            "derivedNativeVertexNormalsChanged": 64,
+            "remainingCornerNormalsExact": true
+          },
+          "exportRounding": [
+            {
+              "node": "FrontLid \u00b7 Polystyrene rims and catches",
+              "material": "Polystyrene rims and catches",
+              "affectedTriangles": 6,
+              "affectedTriangleCorners": 6,
+              "maximumUnusedUvDelta": 5.960464477539063e-08
+            },
+            {
+              "node": "PLAYSTATION_1_BOX \u00b7 Clear molded polystyrene",
+              "material": "Clear molded polystyrene",
+              "affectedTriangles": 6,
+              "affectedTriangleCorners": 6,
+              "maximumUnusedUvDelta": 2.9802322387695312e-08
+            },
+            {
+              "node": "RemovableTray \u00b7 Clear injection molded tray",
+              "material": "Clear injection molded tray",
+              "affectedTriangles": 18,
+              "affectedTriangleCorners": 18,
+              "maximumUnusedUvDelta": 2.9802322387695312e-08
+            },
+            {
+              "node": "RemovableTray \u00b7 Polystyrene rims and catches",
+              "material": "Polystyrene rims and catches",
+              "affectedTriangles": 6,
+              "affectedTriangleCorners": 6,
+              "maximumUnusedUvDelta": 2.9802322387695312e-08
+            }
+          ]
+        },
+        "preserved": {
+          "nativeVertexPositions": true,
+          "allRemainingNativeFaceIndicesUvsCornerNormals": true,
+          "allOtherWorldTransforms": true,
+          "packedImages": true,
+          "hierarchyAndHingeEndpoints": true,
+          "printedExportUvsAndImages": true,
+          "allOtherExportPositionsNormalsAndTriangles": true
+        },
+        "limits": [
+          "The 37 tray transforms intentionally change their evaluated world geometry and normals.",
+          "The 16 hidden booklet caps are omitted; page edge bands are no longer individually closed solids. Derived native vertex normals change at 64 cap-border vertices, but all remaining corner normals and exported normals are exact.",
+          "Unused TEXCOORD_0 values on 36 triangles in 4 untextured plastic primitives vary by at most 5.960464477539063e-8 during export; printed UVs are exact.",
+          "The 0.10 mm paper clearance is an inferred model separation target, not a factory tolerance."
+        ],
+        "finalSpineRayAudit": {
+          "path": "audits/left-spine-neutral-final-rays.json",
+          "sha256": "96dd79d482bb758a0bac1b6b8b548482bd400e21456c7230f1d8260e7217844e",
+          "rays": 630,
+          "minimumClearanceBehindInnerPaperMm": 0.10000294685363542
+        }
+      },
+      "bookletExport": {
+        "schemaVersion": 1,
+        "status": "passed",
+        "beforeGlbSha256": "1ab78afe68fb45c7f84af6108f211582e2728b39b9b450268eb4752df92a5e1c",
+        "afterGlbSha256": "91e89566dedeb491728db3c8b374e99946e5729839f570e7f24122741a736d9e",
+        "removedHiddenBookletTriangles": 32,
+        "remainingTriangleCount": 26248,
+        "orientedRemainingTrianglePositionsNormalsExact": true,
+        "printedUvsAndEmbeddedImagesExact": true,
+        "bookletRemainingUvsExact": true,
+        "transformsMaterialsAndAnimationExact": true,
+        "unusedPlasticUvRounding": [
+          {
+            "node": "FrontLid \u00b7 Polystyrene rims and catches",
+            "material": "Polystyrene rims and catches",
+            "affectedTriangles": 6,
+            "affectedTriangleCorners": 6,
+            "maximumUnusedUvDelta": 5.960464477539063e-08
+          },
+          {
+            "node": "PLAYSTATION_1_BOX \u00b7 Clear molded polystyrene",
+            "material": "Clear molded polystyrene",
+            "affectedTriangles": 6,
+            "affectedTriangleCorners": 6,
+            "maximumUnusedUvDelta": 2.9802322387695312e-08
+          },
+          {
+            "node": "RemovableTray \u00b7 Clear injection molded tray",
+            "material": "Clear injection molded tray",
+            "affectedTriangles": 18,
+            "affectedTriangleCorners": 18,
+            "maximumUnusedUvDelta": 2.9802322387695312e-08
+          },
+          {
+            "node": "RemovableTray \u00b7 Polystyrene rims and catches",
+            "material": "Polystyrene rims and catches",
+            "affectedTriangles": 6,
+            "affectedTriangleCorners": 6,
+            "maximumUnusedUvDelta": 2.9802322387695312e-08
+          }
+        ],
+        "unusedUvTolerance": 1e-07,
+        "method": "Compare oriented triangle attributes after omitting only 32 large horizontal BookletPages cap triangles. Canonical cyclic order permits equivalent vertex/index renumbering, never reversed winding. Permit only TEXCOORD_0 rounding below 1e-7 on exactly 36 triangles of four named untextured plastic primitives; every other attribute is exact."
+      },
+      "spineOcclusion": {
+        "schemaVersion": 1,
+        "status": "passed",
+        "modelSha256": "91e89566dedeb491728db3c8b374e99946e5729839f570e7f24122741a736d9e",
+        "rayCount": 630,
+        "method": "Actual GLB world triangles; exterior+X rays at every rib centre/gap and nine print depths, respecting material backface culling.",
+        "firstNonShellSurfaceIsPrintedSpine": true,
+        "trayHitsBeforePaper": 0,
+        "trayMinimumXmm": -68.83999705314636,
+        "innerPaperXmm": -68.94,
+        "minimumTrayToInnerPaperClearanceMm": 0.10000294685363542,
+        "minimumRayTrayAfterExteriorPaperMm": 0.16000121831891145,
+        "limitations": "Checks left folded paper/tray ordering in closed assembly; material appearance and factory tolerances need separate review."
+      }
+    }
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/templates/playstation-1/box/previews/0.3.0/hero.png",
+      "bytes": 2732900,
+      "sha256": "c19ab867ecbd09c3af4bd383dc31fcb5af3abe4a3d037ce6515dc1f330b8144d",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "view": "front",
+      "path": "assets/templates/playstation-1/box/previews/0.3.0/front.png",
+      "bytes": 2338625,
+      "sha256": "8f860b8e019cf497c32c53cd4afc096d9b500fb3b5f45c254228f5b82a5d3c28",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "view": "rear",
+      "path": "assets/templates/playstation-1/box/previews/0.3.0/rear.png",
+      "bytes": 2678803,
+      "sha256": "b57b5dcf9e162061e7d915ea32c910165baf2433652ab5ecc166ba1ff9b6fc1d",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "view": "top",
+      "path": "assets/templates/playstation-1/box/previews/0.3.0/top.png",
+      "bytes": 2620710,
+      "sha256": "9e1434da083997306a79469341ee2df9af4971d0efff225ca2f59ebd36b77ff1",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "view": "bottom",
+      "path": "assets/templates/playstation-1/box/previews/0.3.0/bottom.png",
+      "bytes": 2420401,
+      "sha256": "f7f53d73509f1d6613d7019afd00db0eca96bb832ffcbf4459739c718c9e84cb",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "view": "open",
+      "path": "assets/templates/playstation-1/box/previews/0.3.0/open.png",
+      "bytes": 2519229,
+      "sha256": "e1044d1a1667177aa177f013f863bd6703f2f9eaa1048bbffc3d9569848f5fa5",
+      "width": 1800,
+      "height": 1500
+    }
+  ],
+  "release": {
+    "tag": "playstation-1-box-v0.3.0",
+    "archive": {
+      "name": "playstation-1-box-0.3.0.zip",
+      "bytes": 16001347,
+      "sha256": "b877881415fe5dccdd97b39da56ef664a00eb8f492160001983c784d41e67423",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/playstation-1-box-v0.3.0/playstation-1-box-0.3.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 3508,
+      "sha256": "21e5cb7daea4d2e460d27567ce47e40bd4d31640f29362dff75cbc519b92e552"
+    },
+    "CREDITS.md": {
+      "bytes": 1689,
+      "sha256": "51429be11bebf0d5f01b908868267cf993e4db9094a0cd0bf68a99a5a54f6a30"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 4351,
+      "sha256": "04602588f5708dd1ca0b26f7194ce5ea5fcb2a12fb1ece283fbd9321ab814033"
+    },
+    "README.md": {
+      "bytes": 5213,
+      "sha256": "d628d68c9a2e9617efc27692fb0698faabb1aba22915e45835daedadd130c32c"
+    },
+    "bottom.png": {
+      "bytes": 2420401,
+      "sha256": "f7f53d73509f1d6613d7019afd00db0eca96bb832ffcbf4459739c718c9e84cb"
+    },
+    "construction.json": {
+      "bytes": 2008,
+      "sha256": "5baa08e2ec57a02e750520a1a6b5582bcd3d29fc0b2b8a08e1050cac3c4ca820"
+    },
+    "front.png": {
+      "bytes": 2338625,
+      "sha256": "8f860b8e019cf497c32c53cd4afc096d9b500fb3b5f45c254228f5b82a5d3c28"
+    },
+    "geometry-migration.json": {
+      "bytes": 8234,
+      "sha256": "b9599effca53585fa8d89d0d7c2e334458a63f0a48167322ef83285be2385fc0"
+    },
+    "glb-inspection.json": {
+      "bytes": 10325,
+      "sha256": "222cd39b8d9b38bbed6178c4f10bd26198bf87ef0e149ed7bf7912aa8906cc6b"
+    },
+    "godot-import-report.json": {
+      "bytes": 1336,
+      "sha256": "8f0faa69efbd70b3b193ce463db2679a3684655a7bbcdbbc27a5689f0abc6393"
+    },
+    "hero.png": {
+      "bytes": 2732900,
+      "sha256": "c19ab867ecbd09c3af4bd383dc31fcb5af3abe4a3d037ce6515dc1f330b8144d"
+    },
+    "open.png": {
+      "bytes": 2519229,
+      "sha256": "e1044d1a1667177aa177f013f863bd6703f2f9eaa1048bbffc3d9569848f5fa5"
+    },
+    "playstation-1-box.blend": {
+      "bytes": 280374,
+      "sha256": "670fe2187b8b86e5b1f870b9cf9caa894ad358efb0da184797d67644e66cd16c"
+    },
+    "playstation-1-box.glb": {
+      "bytes": 2071276,
+      "sha256": "91e89566dedeb491728db3c8b374e99946e5729839f570e7f24122741a736d9e"
+    },
+    "rear.png": {
+      "bytes": 2678803,
+      "sha256": "b57b5dcf9e162061e7d915ea32c910165baf2433652ab5ecc166ba1ff9b6fc1d"
+    },
+    "reference-evidence.json": {
+      "bytes": 3074,
+      "sha256": "7a47117aabad435041f94ed5a8a57aa6c2b6e43d54c3fd8714b90941a3bc88b0"
+    },
+    "render-proof.json": {
+      "bytes": 1747,
+      "sha256": "ab50228bb314a538d64aad60e022c7f7d27ba7e5937e90b772c6add469019e74"
+    },
+    "source-reopen-report.json": {
+      "bytes": 32566,
+      "sha256": "0bdccce26289b4062fa7b9590515ce99cdc2c1d25466500d549c12e3dac76dc2"
+    },
+    "top.png": {
+      "bytes": 2620710,
+      "sha256": "9e1434da083997306a79469341ee2df9af4971d0efff225ca2f59ebd36b77ff1"
+    }
+  }
+}

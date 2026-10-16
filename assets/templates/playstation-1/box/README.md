@@ -1,15 +1,19 @@
 # PlayStation 1 — clear-tray jewel case template
 
-**Version:** 0.2.0 · **Date:** 2026-10-16 · **Creator:** Lincoln Aleixo
+**Version:** 0.3.0 · **Date:** 2026-10-16 · **Creator:** Lincoln Aleixo
 
 A clean standard jewel case with a clear removable tray, hinged lid, disc-retaining hub, blank booklet and a two-sided folded tray card.
 
-The clear shell, rims/catches and tray use alpha coverage 0.16, 0.35 and 0.25, respectively, alongside transmission 1.0 and IOR 1.59. This is a reviewed portable approximation: Godot 4.7.2 Compatibility does not import the transmission extension and uses the alpha fallback. The actual tray/hub remains visible and the art remains readable; reflections, tint and transmission differ between engines.
+Clear shell, rims/catches, tray and retaining hub use alpha coverage 0.035, 0.12, 0.06 and 0.20, respectively, with transmission disabled. Their roughness values are 0.035, 0.05, 0.045 and 0.12; IOR remains 1.59. This glossy alpha model is a portable visual approximation, not a simulation of solid-polystyrene refraction. Actual Blender, Godot Compatibility and WebGL reviews preserve readable paper and visible retaining fingers. Reflections and transparency still depend on lighting and renderer sorting. The export separates the hub into its own material group.
+
+A separate assembly correction places the thirty-five left tray ribs, their connecting web and the narrow edge rail behind the folded paper. The ribs/web use a positive X scale anchored at each evaluated inboard end; the complete 0.7 mm rail translates inward. Their outermost X is -68.84 mm, leaving approximately 0.10 mm behind the inner paper at -68.94 mm. The transformed tray parts retain their native mesh topology. This clearance is a model assembly constraint, not a manufacturing tolerance specification.
+
+The page stack also omits sixteen hidden broad caps (thirty-two exported triangles), previously only 0.0155–0.0175 mm behind the separate printed cover faces. This avoids depth interference on the inward booklet in WebGL. Visible page edges, printed faces, artwork UVs, paper dimensions, original double-sided material flags, other parts and opening hinges are retained.
 
 
-![Closed box](previews/0.2.0/hero.png)
+![Closed box](previews/0.3.0/hero.png)
 
-![Open box](previews/0.2.0/open.png)
+![Open box](previews/0.3.0/open.png)
 
 - A standard-compatible 142.35 × 124.75 × 10.4 mm envelope with a separate front-lid pivot.
 - Clear molded lid and removable tray with a central retaining hub and approximate rib, clip and hinge detail.

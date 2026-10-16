@@ -129,6 +129,17 @@ def release_changes(console, config, version):
             'Updated the previous released editable source while preserving positions, normals, triangle indices, artwork UVs, hinge transforms and opening animation.',
             'Included new actual-export previews, exact-input engine and source validation reports; preserved the 0.1.0 release and separate CD models unchanged.',
         ]
+    if console == 'playstation-1' and version == '0.3.0':
+        return [
+            'Replaced overlapping alpha-plus-transmission plastic with a reviewed glossy alpha approximation so the clear case and printed spines remain readable across Blender, Godot and WebGL.',
+            'Assigned the existing retaining hub and twelve spring fingers their own translucent material, making the mechanism visible without clouding the whole removable tray.',
+            'Corrected the left tray edge that previously crossed the folded paper and overlaid ribs on the printed spine: thirty-five ribs and their web now fit behind the inner paper, and the complete edge rail moves inward without losing its width.',
+            'Applied positive X transforms to exactly thirty-seven molded parts using evaluated bounds; retained their native polygon topology and UVs. A 0.10 mm modeled paper clearance is an assembly constraint, not a factory tolerance claim.',
+            'Removed sixteen hidden broad page-stack caps, equivalent to thirty-two exported triangles, that competed in depth with the separate printed covers. Kept the visible page edges, printed surfaces, artwork UVs, paper envelope and original double-sided material flags; matched WebGL trials verified that removing the hidden caps resolves the inward booklet bands.',
+            'Preserved all other native parts, referenced packed images and hinge endpoints; recorded the material, thirty-seven-part placement and hidden-page-cap exceptions in a hash-linked source audit.',
+            'Kept the booklet faces opaque and correctly opposed, with independent exterior-front and inward-booklet artwork targets; the neutral template remains empty.',
+            'Recorded actual-export previews and exact-input engine/source audits. Earlier box versions and separate disc assets remain unchanged by this template release.',
+        ]
     if console == 'mega-drive' and version == '0.2.0':
         return [
             'Corrected the spine artwork U direction so lettering reads normally from outside the left edge rather than appearing mirrored.',
@@ -171,6 +182,27 @@ def texts(console, config, construction, structural, engine, source, version, da
                          'transmission extension and uses the alpha fallback. The actual tray/hub '
                          'remains visible and the art remains readable; reflections, tint and '
                          'transmission differ between engines.\n')
+    if console == 'playstation-1' and version == '0.3.0':
+        material_note = ('\nClear shell, rims/catches, tray and retaining hub use alpha coverage '
+                         '0.035, 0.12, 0.06 and 0.20, respectively, with transmission disabled. '
+                         'Their roughness values are 0.035, 0.05, 0.045 and 0.12; IOR remains 1.59. '
+                         'This glossy alpha model is a portable visual approximation, not a simulation '
+                         'of solid-polystyrene refraction. Actual Blender, Godot Compatibility and '
+                         'WebGL reviews preserve readable paper and visible retaining fingers. '
+                         'Reflections and transparency still depend on lighting and renderer sorting. '
+                         'The export separates the hub into its own material group.\n'
+                         '\nA separate assembly correction places the thirty-five left tray ribs, '
+                         'their connecting web and the narrow edge rail behind the folded paper. '
+                         'The ribs/web use a positive X scale anchored at each evaluated inboard end; '
+                         'the complete 0.7 mm rail translates inward. Their outermost X is -68.84 mm, '
+                         'leaving approximately 0.10 mm behind the inner paper at -68.94 mm. '
+                         'The transformed tray parts retain their native mesh topology. This clearance '
+                         'is a model assembly constraint, not a manufacturing tolerance specification.\n'
+                         '\nThe page stack also omits sixteen hidden broad caps (thirty-two exported '
+                         'triangles), previously only 0.0155–0.0175 mm behind the separate printed '
+                         'cover faces. This avoids depth interference on the inward booklet in WebGL. '
+                         'Visible page edges, printed faces, artwork UVs, paper dimensions, original '
+                         'double-sided material flags, other parts and opening hinges are retained.\n')
     if console == 'mega-drive' and version == '0.2.0':
         material_note = ('\nThe spine UV contract is corrected in this release: viewed from outside the left '
                          'edge (-X) with +Y up, U increases from the rear edge (-Z) to the front edge (+Z). '
