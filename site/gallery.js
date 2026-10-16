@@ -11,9 +11,11 @@ function chooseView(name) {
     // Frame the actual articulated envelope, including lids outside the closed box.
     const center = bounds.min.map((n, axis) => (n + bounds.max[axis]) / 2);
     const radius = Math.hypot(...bounds.dimensions) / (2 * Math.sin(Math.PI / 12)) * 1.1;
+    viewer.maxCameraOrbit = `auto 180deg ${radius * 3}m`;
     viewer.cameraTarget = center.map((n) => `${n}m`).join(' ');
     viewer.cameraOrbit = viewOrbits[name].replace('auto', `${radius}m`);
   } else {
+    viewer.maxCameraOrbit = 'auto 180deg auto';
     viewer.cameraTarget = 'auto auto auto';
     viewer.cameraOrbit = viewOrbits[name];
   }
