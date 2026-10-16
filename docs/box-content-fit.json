@@ -1,0 +1,930 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-16",
+  "title": "Physical layout and media-fit evidence for game-box reproductions",
+  "scope": "Five reproductions contain their exact published media at original scale. Neutral templates remain empty. This record distinguishes verified digital fit from approximate historical construction.",
+  "units": "millimeters unless a field explicitly names meters",
+  "axes": {
+    "x": "right",
+    "y": "up",
+    "z": "toward the printed front / label face"
+  },
+  "validation": {
+    "tool": "tools/audit_box_content_fit.py",
+    "command": "blender --background --python tools/audit_box_content_fit.py -- --models-root <reproductions-directory> --output <report.json>",
+    "engine": "Blender 5.2.2 LTS",
+    "testedPoses": [
+      "closed",
+      "fully open hinge endpoints"
+    ],
+    "method": "Decoded GLB world triangles; Blender BVHTree overlap, epsilon=0.",
+    "broadPhaseAabbToleranceMeters": 1e-07,
+    "summary": "Zero media-to-packaging intersecting triangle pairs in all five final exports at both tested endpoints.",
+    "limits": [
+      "This checks surface crossings in the digital meshes and complements the listed cavity clearances; it is not a manufacturing, elastic deformation or insertion-path test.",
+      "The current Open animation rotates hinges. Nintendo insert removal and NES sleeve extraction remain editable operations rather than automatic actions in that animation.",
+      "Photo-derived dimensions and construction details remain approximate; these are not certified exact factory complete-in-box replicas."
+    ]
+  },
+  "sources": [
+    {
+      "id": "sonic-pal-tradera-interior",
+      "title": "Sonic the Hedgehog PAL physical clamshell specimen",
+      "url": "https://www.tradera.com/item/340720/717550997/sonic-the-hedgehog-sega-mega-drive",
+      "imageUrl": "https://img.tradera.net/images/748/634489748_123f7dd7-e2d7-41a7-b8c5-88590ba9b690.jpg",
+      "observations": [
+        "Black clamshell with broad spine, two hinge flexures, booklet retainers and two cartridge guide channels.",
+        "Cartridge label faces the open interior; its width follows case height, with cartridge top toward the hinge."
+      ],
+      "limitations": [
+        "Used specimen photographed obliquely without a ruler; not a factory dimension drawing or proof of packing orientation."
+      ]
+    },
+    {
+      "id": "sonic-pal-ricardo-manual",
+      "title": "Open PAL Sonic case with manual under lid tabs",
+      "url": "https://www.ricardo.ch/de/a/4-sega-mega-drive-games-sonic-und-mortal-kombat-1292663282/",
+      "imageUrl": "https://img.ricardostatic.ch/images/682c0dd8-521f-4365-abc7-e117f868e6a3/t_1800x1350/4-sega-mega-drive-games-sonic-und-mortal-kombat",
+      "observations": [
+        "The landscape manual is stored sideways inside the portrait lid, front cover facing the interior.",
+        "In an open case viewed with the lid on the left, the blue SONIC title is above the Sonic illustration; the top edge of the landscape cover points toward the outside edge of the lid.",
+        "The cartridge is rotated 180 degrees relative to the Tradera specimen, so used storage orientation is not universal."
+      ],
+      "limitations": [
+        "Used sale specimen; no ruler, page count or factory packing certification."
+      ]
+    },
+    {
+      "id": "sonic-pal-original-manual",
+      "title": "Original European Mega Drive Sonic the Hedgehog manual scan",
+      "url": "https://info.sonicretro.org/File:Sonic1_MD_EU_manual.pdf",
+      "documentUrl": "https://info.sonicretro.org/images/1/15/Sonic1_MD_EU_manual.pdf",
+      "observations": [
+        "The extracted original cover is a 1940 by 1102 pixel landscape raster.",
+        "The modeled booklet preserves that landscape aspect while storing the long edge along the case height."
+      ],
+      "limitations": [
+        "Scan supplies artwork and aspect ratio; modeled millimeter dimensions and booklet thickness remain estimates."
+      ]
+    },
+    {
+      "id": "sonic-pal-auction-kit",
+      "title": "Sonic the Hedgehog PAL complete case specimen",
+      "url": "https://darwenauctioneers.co.uk/auction/no-auction_number/lot-233-sonic-the/",
+      "observations": [
+        "Auction description identifies the cartridge, manual, paper inlay, black clamshell and hanging tab."
+      ],
+      "limitations": [
+        "Descriptive edition evidence, not dimensional evidence."
+      ]
+    },
+    {
+      "id": "nes-original-packaging-guide",
+      "title": "Collector guide to original NES complete-in-box components",
+      "url": "https://www.thelegendofnes.com/cib",
+      "observations": [
+        "Original NES packaging includes a cartridge sleeve, plastic bag and white bottom foam spacer.",
+        "First-party Nintendo sleeves carry red-orange Nintendo branding; third-party sleeves can be plain black."
+      ],
+      "limitations": [
+        "Collector documentation establishes packaging arrangement; exact die dimensions and edition-specific insert counts are not measured."
+      ]
+    },
+    {
+      "id": "smb-early-us-box-specimen",
+      "title": "Early US Super Mario Bros. retail-box specimen",
+      "url": "https://www.ebay.com/itm/385662571091",
+      "observations": [
+        "US early retail artwork family used by the reproduction."
+      ],
+      "limitations": [
+        "A specific used specimen does not establish every factory packaging revision."
+      ]
+    },
+    {
+      "id": "smw-us-tray-specimen",
+      "title": "US Super Mario World box and folded cartridge tray",
+      "url": "https://www.ebay.com/itm/126545179695",
+      "imageUrl": "https://i.ebayimg.com/images/g/28YAAOSwonVmebfE/s-l1600.webp",
+      "observations": [
+        "US SNES cartridge sits label-up in a white folded paperboard tray with a central opening.",
+        "Manual and other printed components appear in the complete-kit specimen."
+      ],
+      "limitations": [
+        "Photo-derived tray layout; folds, finger notches and paper thickness are not a measured factory die line."
+      ]
+    },
+    {
+      "id": "sm64-us-original-kit",
+      "title": "US Super Mario 64 original box, shaped insert and cartridge",
+      "url": "https://1904comics.com/products/n64-super-mario-64-us",
+      "imageUrl": "https://1904comics.com/cdn/shop/products/image_37adf165-59d7-4d51-afd0-36be7e3055ee.jpg?v=1644506953",
+      "observations": [
+        "US K-A cartridge and retail box with a white shaped folded-stock insert.",
+        "The specimen includes manual and precaution material; the insert shape is more specific than a generic rectangular cradle."
+      ],
+      "limitations": [
+        "The current model captures folded-stock retention but does not reproduce the specimen die line exactly."
+      ]
+    },
+    {
+      "id": "n64-edition-guide",
+      "title": "CGC Nintendo 64 complete-in-box guide",
+      "url": "https://www.cgcvideogames.com/en-US/resources/complete-in-box-guide/nintendo-64",
+      "observations": [
+        "Documents edition variation relevant to US Nintendo 64 complete-in-box sets."
+      ],
+      "limitations": [
+        "Edition context only; not manufacturing dimensions."
+      ]
+    },
+    {
+      "id": "crash-us-clear-tray-specimen",
+      "title": "Crash Bandicoot SCUS-94900 clear-tray case specimen",
+      "url": "https://www.ebay.com/itm/306104343253",
+      "observations": [
+        "Visible US SCUS-94900 markings and a clear disc tray support the modeled edition and label-facing-out placement."
+      ],
+      "limitations": [
+        "Listing region metadata conflicts with visible US markings; the photographs, rather than the seller region field, establish the selected edition."
+      ]
+    },
+    {
+      "id": "cmc-standard-jewel-case",
+      "title": "CMC original jewel-case manufacturer dimensions",
+      "url": "https://cmcdisc.com/media-packaging/original-jewel-case/",
+      "observations": [
+        "Manufacturer envelope: width 142.20 to 142.50 mm, height 124.60 to 124.90 mm, thickness 10.4 plus or minus 0.2 mm."
+      ],
+      "limitations": [
+        "Standard-compatible envelope; not an original Sony tray-tooling drawing."
+      ]
+    },
+    {
+      "id": "ecma130-cd-dimensions",
+      "title": "ECMA-130 second edition optical-disc standard",
+      "url": "https://ecma-international.org/wp-content/uploads/ECMA-130_2nd_edition_june_1996.pdf",
+      "observations": [
+        "Nominal CD diameter 120 mm, central hole diameter 15 mm and thickness 1.2 mm."
+      ],
+      "limitations": [
+        "Disc standard does not define the molded retention fingers of this game case."
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "sourceIds": [
+        "sonic-pal-tradera-interior",
+        "sonic-pal-ricardo-manual",
+        "sonic-pal-original-manual",
+        "sonic-pal-auction-kit"
+      ],
+      "worldTranslationMm": [
+        35,
+        88.5,
+        -2.9
+      ],
+      "worldRotationZDegrees": 90,
+      "orientation": "Label faces the open interior. Cartridge width follows case height; cartridge top points toward the hinge, matching the selected Tradera specimen.",
+      "clearances": [
+        {
+          "location": "Rear of cartridge to case floor",
+          "nominalMm": 0.025
+        },
+        {
+          "location": "Cartridge label-side maximum to closed booklet inner face",
+          "nominalMm": 2.675
+        },
+        {
+          "location": "Cartridge sides to guide inner faces",
+          "nominalMm": 0.5
+        },
+        {
+          "location": "Cartridge sides to corrected support inner faces",
+          "nominalMm": 0.1
+        }
+      ],
+      "limitations": [
+        "Case body dimensions of 129 by 177 by 26 mm and detailed molded features are visual approximations, not factory measurements.",
+        "Cartridge orientation can be reversed in other photographed specimens.",
+        "Spring tongues are a rigid unloaded representation; elastic snap fit, insertion path and real molding tolerances are not simulated."
+      ],
+      "assetId": "mega-drive-sonic-the-hedgehog-box",
+      "mediaSource": {
+        "assetId": "mega-drive-sonic-the-hedgehog",
+        "version": "0.2.0",
+        "manifestSha256": "4c7de6a5b21ba90c433a4b66a032d2bec0a254b9d69d7d03aa8caef3b224abda",
+        "archiveSha256": "4603e2c0ff19b6323dcd8561a71cefffd9235972461a4ee649bdb7300e5bd3e7",
+        "releaseUrl": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/mega-drive-sonic-the-hedgehog-v0.2.0/mega-drive-sonic-the-hedgehog-0.2.0.zip",
+        "glbFile": "mega-drive-sonic-the-hedgehog.glb",
+        "glbSha256": "d36c136d8394ca6bbddf54c120e81e2add4a9da387bb24c2a8790fa7436e62cf",
+        "blendFile": "mega-drive-sonic-the-hedgehog.blend",
+        "blendSha256": "ccefef743c85aedf9041ecfb0f6ee2b7d00400a3f8dd445543e12ba83b163045"
+      },
+      "composedGlbSha256": "7bf0951e013fd69f6b02a2b7569bf105b28a4a389eaa961e4b3a402c731674e4",
+      "contentsLocalTransform": {
+        "nodeName": "Contents",
+        "nodeIndex": 34,
+        "parentName": "CartridgePlacement",
+        "parentIndex": 3,
+        "translationMeters": [
+          0,
+          0,
+          0
+        ],
+        "rotationXyzw": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "mediaOriginalBounds": {
+        "minMm": [
+          -54.48585,
+          0.0,
+          -8.5
+        ],
+        "maxMm": [
+          54.48585,
+          70.0,
+          8.5
+        ]
+      },
+      "surfaceFit": {
+        "status": "passed",
+        "method": "Decoded GLB world triangles; Blender BVHTree overlap, epsilon=0.",
+        "poses": {
+          "closed": {
+            "mediaBounds": {
+              "minMm": [
+                -35.00001681526559,
+                34.01413010872174,
+                -11.400000425055623
+              ],
+              "maxMm": [
+                35.0000074101456,
+                142.98586155904172,
+                5.600000498816371
+              ]
+            },
+            "mediaMeshCount": 10,
+            "packagingMeshCount": 18,
+            "intersectionPairs": []
+          },
+          "open": {
+            "mediaBounds": {
+              "minMm": [
+                -35.00001681526559,
+                34.01413010872174,
+                -11.400000425055623
+              ],
+              "maxMm": [
+                35.0000074101456,
+                142.98586155904172,
+                5.600000498816371
+              ]
+            },
+            "mediaMeshCount": 10,
+            "packagingMeshCount": 18,
+            "intersectionPairs": []
+          }
+        }
+      },
+      "manual": {
+        "orientation": "Landscape cover stored sideways in the portrait lid. Seen with the opened lid on the left: title above character; landscape cover top points toward the outside lid edge.",
+        "referenceRasterPixels": [
+          1940,
+          1102
+        ],
+        "modeledStoredDimensionsMm": [
+          93.2,
+          164,
+          2.1
+        ],
+        "landscapeAspectDifferencePercent": -0.044245829830547034,
+        "dimensionStatus": "Estimated physical size and thickness; original cover aspect is preserved to approximately 0.04 percent.",
+        "sourceIds": [
+          "sonic-pal-ricardo-manual",
+          "sonic-pal-original-manual"
+        ]
+      },
+      "templateFitCorrection": {
+        "templateAssetId": "mega-drive-box",
+        "fromVersion": "0.2.0",
+        "toVersion": "0.3.0",
+        "previousSourceSha256": "f893cb316d7ae9b4a95f75533388b03bdacc13e2393bfd7d61d0dd45ba5441fa",
+        "finalSourceSha256": "cb593b12d7c9e329f8401e51c3a49156a04e34d0639d3cd9f2363d54439f72c5",
+        "previousGlbSha256": "a230cb75c258016ef770a03d307f86bace5bbfcb20e1c00946e43b9019948831",
+        "finalGlbSha256": "8432c26972e7f315a241d479e669c5192d09dbc2b07ce3fae4e3f0084a1cff44",
+        "reason": "Four support corners penetrated the published cartridge by 0.3 mm, and two spring tongues crossed its rounded cheeks.",
+        "supportCenterAbsXmm": {
+          "before": 36.2,
+          "after": 36.6
+        },
+        "springUpperProfileLiftMm": 1.8,
+        "springFootZmm": -11.45,
+        "changedObjects": [
+          {
+            "object": "CartridgeCornerSupport",
+            "fields": [
+              "matrix"
+            ],
+            "translationDeltaMm": [
+              -0.39999932050704956,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "object": "CartridgeCornerSupport.001",
+            "fields": [
+              "matrix"
+            ],
+            "translationDeltaMm": [
+              -0.39999932050704956,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "object": "CartridgeCornerSupport.002",
+            "fields": [
+              "matrix"
+            ],
+            "translationDeltaMm": [
+              0.39999932050704956,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "object": "CartridgeCornerSupport.003",
+            "fields": [
+              "matrix"
+            ],
+            "translationDeltaMm": [
+              0.39999932050704956,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "object": "LowerCartridgeSpringClip",
+            "fields": [
+              "vertices"
+            ],
+            "changedVertexIndices": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              9,
+              10,
+              11,
+              12,
+              13
+            ],
+            "deltaZmm": 1.8
+          },
+          {
+            "object": "UpperCartridgeSpringClip",
+            "fields": [
+              "vertices"
+            ],
+            "changedVertexIndices": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              9,
+              10,
+              11,
+              12,
+              13
+            ],
+            "deltaZmm": 1.8
+          }
+        ],
+        "unchangedSourceObjects": 73,
+        "sourceUVTopologyMaterialsAndParentsUnchanged": true,
+        "finalSourceMatchesIndependentCorrection": true,
+        "idempotent": true,
+        "sampledMinimumGaps": {
+          "CartridgeCornerSupport": {
+            "minimumEvaluatedVertexToMediaTriangleDistanceMm": 0.10000169277191162,
+            "sampleCount": 96
+          },
+          "CartridgeCornerSupport.001": {
+            "minimumEvaluatedVertexToMediaTriangleDistanceMm": 0.10000169277191162,
+            "sampleCount": 96
+          },
+          "CartridgeCornerSupport.002": {
+            "minimumEvaluatedVertexToMediaTriangleDistanceMm": 0.10000169277191162,
+            "sampleCount": 96
+          },
+          "CartridgeCornerSupport.003": {
+            "minimumEvaluatedVertexToMediaTriangleDistanceMm": 0.10000169277191162,
+            "sampleCount": 96
+          },
+          "LowerCartridgeSpringClip": {
+            "minimumEvaluatedVertexToMediaTriangleDistanceMm": 0.2638191217556596,
+            "sampleCount": 168
+          },
+          "UpperCartridgeSpringClip": {
+            "minimumEvaluatedVertexToMediaTriangleDistanceMm": 0.26378751499578357,
+            "sampleCount": 168
+          }
+        },
+        "sampledGapMethod": "Minimum evaluated source vertex to published cartridge triangle distance; a sampled diagnostic, not a certified global manufacturing tolerance.",
+        "exportNotes": [
+          "Blender reindexes and retriangulates portions of the two affected static material groups; raw index arrays are not identical across releases.",
+          "Joined polypropylene group origin shifts -0.4 mm in X with compensating local vertices; unrelated objects remain fixed in world space.",
+          "Native polygon topology, all printed UV arrays, materials, embedded image bytes, hierarchy, hinge metadata and decoded Open animation are unchanged.",
+          "Final exported positions, normals and indices exactly match the independently audited six-object correction; tiny float32 UV export rounding occurs only on unprinted surfaces."
+        ],
+        "validationFiles": [
+          "final-source-fit-refinement.json",
+          "exported-fit-migration.json",
+          "neutral-media-fit.json"
+        ]
+      }
+    },
+    {
+      "sourceIds": [
+        "nes-original-packaging-guide",
+        "smb-early-us-box-specimen"
+      ],
+      "worldTranslationMm": [
+        0,
+        42.4,
+        0
+      ],
+      "worldRotationZDegrees": 0,
+      "orientation": "Cartridge label faces the open front of the sleeve, connector downward; sleeve and cartridge sit above the bottom foam spacer.",
+      "clearances": [
+        {
+          "location": "Cartridge bottom to sleeve floor inner face",
+          "nominalMm": 0.05
+        },
+        {
+          "location": "Cartridge bottom to foam top",
+          "nominalMm": 0.85
+        },
+        {
+          "location": "Cartridge front to sleeve inner face",
+          "nominalMm": 0.625
+        }
+      ],
+      "limitations": [
+        "Sleeve geometry is unbranded; the selected first-party game originally used Nintendo-branded sleeves.",
+        "Manual, plastic bag and additional pack-in leaflets are not included.",
+        "Sleeve and foam dimensions are modeled approximations."
+      ],
+      "assetId": "nes-super-mario-bros-box",
+      "mediaSource": {
+        "assetId": "nes-super-mario-bros",
+        "version": "0.2.0",
+        "manifestSha256": "363e1886c703b75e3f8ce895e084447c479821adf6c9edb92b0182dfd0c05b60",
+        "archiveSha256": "afd91d49a03826226498e7e0d75d73e7354e4757282205fb30570985b260dad6",
+        "releaseUrl": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/nes-super-mario-bros-v0.2.0/nes-super-mario-bros-0.2.0.zip",
+        "glbFile": "nes-super-mario-bros.glb",
+        "glbSha256": "7ce50d88379e8c3498d61267cca7a20fe237c17bde3d229cf852e532378ad9f1",
+        "blendFile": "nes-super-mario-bros.blend",
+        "blendSha256": "46af8f09744b5504d0f2f2ca9bfa9c6b877d826cf983daa52af51b4cebcf6e3b"
+      },
+      "composedGlbSha256": "d788df907dcd3725345dba90267f2ac7f8eada1d50bb4a32b50370a16a0d346b",
+      "contentsLocalTransform": {
+        "nodeName": "Contents",
+        "nodeIndex": 45,
+        "parentName": "RemovableBlackSleeve",
+        "parentIndex": 20,
+        "translationMeters": [
+          0,
+          0.0424,
+          0
+        ],
+        "rotationXyzw": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "mediaOriginalBounds": {
+        "minMm": [
+          -59.85,
+          0.0,
+          -8.375
+        ],
+        "maxMm": [
+          59.85,
+          134.0,
+          8.375
+        ]
+      },
+      "surfaceFit": {
+        "status": "passed",
+        "method": "Decoded GLB world triangles; Blender BVHTree overlap, epsilon=0.",
+        "poses": {
+          "closed": {
+            "mediaBounds": {
+              "minMm": [
+                -59.849999845027924,
+                42.4,
+                -8.375000208616257
+              ],
+              "maxMm": [
+                59.849999845027924,
+                176.4000033378601,
+                8.375000208616257
+              ]
+            },
+            "mediaMeshCount": 9,
+            "packagingMeshCount": 23,
+            "intersectionPairs": []
+          },
+          "open": {
+            "mediaBounds": {
+              "minMm": [
+                -59.849999845027924,
+                42.4,
+                -8.375000208616257
+              ],
+              "maxMm": [
+                59.849999845027924,
+                176.4000033378601,
+                8.375000208616257
+              ]
+            },
+            "mediaMeshCount": 9,
+            "packagingMeshCount": 23,
+            "intersectionPairs": []
+          }
+        }
+      }
+    },
+    {
+      "sourceIds": [
+        "sm64-us-original-kit",
+        "n64-edition-guide"
+      ],
+      "worldTranslationMm": [
+        0,
+        25.7,
+        -3.4
+      ],
+      "worldRotationZDegrees": 0,
+      "orientation": "Cartridge is upright with label facing the open front of the folded tray.",
+      "clearances": [
+        {
+          "location": "Cartridge rear to tray inner base",
+          "nominalMm": 0.05
+        }
+      ],
+      "trayOpeningMm": [
+        119.4,
+        80.8
+      ],
+      "limitations": [
+        "The specimen has a more specifically shaped folded cradle; the current rectangular tray is a functional visual approximation, not its exact die line.",
+        "Manual and precaution inserts are not included."
+      ],
+      "assetId": "nintendo-64-super-mario-64-box",
+      "mediaSource": {
+        "assetId": "nintendo-64-super-mario-64",
+        "version": "0.3.0",
+        "manifestSha256": "d3739ce2f181a1654a6cbf057457e159e28330bdaaca919fcbb51d09e20a62b8",
+        "archiveSha256": "f96ffad4f6ee86e17d0f50b1088ca4d73bc339b8c9bed7fa9a4d7e842b43dc6b",
+        "releaseUrl": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/nintendo-64-super-mario-64-v0.3.0/nintendo-64-super-mario-64-0.3.0.zip",
+        "glbFile": "nintendo-64-super-mario-64.glb",
+        "glbSha256": "45dcbc7c847b40dca5f58849f44f504cc57ce1b71897e8431dbfdc7bfd50359c",
+        "blendFile": "nintendo-64-super-mario-64.blend",
+        "blendSha256": "e497ee568f2000692fc80353a22faaed8feb16f86ce136af39919887d3cd26c8"
+      },
+      "composedGlbSha256": "276f6a64bf2342e0a40e0ac5186993e2fd0cb60ccf1924306e304600d8f18a4a",
+      "contentsLocalTransform": {
+        "nodeName": "Contents",
+        "nodeIndex": 41,
+        "parentName": "InsertTray",
+        "parentIndex": 5,
+        "translationMeters": [
+          0,
+          0.0257,
+          -0.0034
+        ],
+        "rotationXyzw": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "mediaOriginalBounds": {
+        "minMm": [
+          -58.0,
+          0.0,
+          -9.25
+        ],
+        "maxMm": [
+          58.0,
+          76.6,
+          9.25
+        ]
+      },
+      "surfaceFit": {
+        "status": "passed",
+        "method": "Decoded GLB world triangles; Blender BVHTree overlap, epsilon=0.",
+        "poses": {
+          "closed": {
+            "mediaBounds": {
+              "minMm": [
+                -57.999998331069946,
+                25.7,
+                -12.65000011920929
+              ],
+              "maxMm": [
+                57.999998331069946,
+                102.30000026226044,
+                5.850000119209289
+              ]
+            },
+            "mediaMeshCount": 10,
+            "packagingMeshCount": 20,
+            "intersectionPairs": []
+          },
+          "open": {
+            "mediaBounds": {
+              "minMm": [
+                -57.999998331069946,
+                25.7,
+                -12.65000011920929
+              ],
+              "maxMm": [
+                57.999998331069946,
+                102.30000026226044,
+                5.850000119209289
+              ]
+            },
+            "mediaMeshCount": 10,
+            "packagingMeshCount": 20,
+            "intersectionPairs": []
+          }
+        }
+      }
+    },
+    {
+      "sourceIds": [
+        "crash-us-clear-tray-specimen",
+        "cmc-standard-jewel-case",
+        "ecma130-cd-dimensions"
+      ],
+      "worldTranslationMm": [
+        6.4,
+        2.375,
+        -0.15
+      ],
+      "worldRotationZDegrees": 0,
+      "orientation": "Disc label faces the open interior; the dark reading face points toward the clear tray. Published disc center is offset 60 mm above its bottom pivot.",
+      "hubCenterMm": [
+        6.4,
+        62.375,
+        -0.15
+      ],
+      "discNominalDimensionsMm": {
+        "diameter": 120,
+        "centralHoleDiameter": 15,
+        "thickness": 1.2
+      },
+      "caseNominalDimensionsMm": [
+        142.35,
+        124.75,
+        10.4
+      ],
+      "clearances": [],
+      "limitations": [
+        "Jewel-case envelope is compatible with manufacturer dimensions; exact original Sony tooling and spring-finger deformation are not certified.",
+        "Booklet thickness and page construction remain visual approximations."
+      ],
+      "assetId": "playstation-1-crash-bandicoot-box",
+      "mediaSource": {
+        "assetId": "playstation-1-crash-bandicoot",
+        "version": "0.1.0",
+        "manifestSha256": "176f9e253a7682b9a5b648f8f755d6588a8e03ed89c8430245dce08b4dde0538",
+        "archiveSha256": "380e01aa42a2d207d2d0c23aa75dc0bbf5a2bdef3a6330142ad4bf2b71b1c2dc",
+        "releaseUrl": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/playstation-1-crash-bandicoot-v0.1.0/playstation-1-crash-bandicoot-0.1.0.zip",
+        "glbFile": "playstation-1-crash-bandicoot.glb",
+        "glbSha256": "afe6252cc190753371e2ce071803150a51bb448f137c719c5d117b45d08cf21b",
+        "blendFile": "playstation-1-crash-bandicoot.blend",
+        "blendSha256": "e4040237abafcbfa553596d570744b14a682f47a2cd25ce863499d15bf40c827"
+      },
+      "composedGlbSha256": "de8734e82e65369de24e3dd45a1a777db169d02c828bf6f4d3a538c5dfaaf590",
+      "contentsLocalTransform": {
+        "nodeName": "Contents",
+        "nodeIndex": 20,
+        "parentName": "RemovableTray",
+        "parentIndex": 12,
+        "translationMeters": [
+          0.0064,
+          0.002375,
+          -0.00015
+        ],
+        "rotationXyzw": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "mediaOriginalBounds": {
+        "minMm": [
+          -60.0,
+          0.0,
+          -0.6
+        ],
+        "maxMm": [
+          60.0,
+          120.0,
+          0.6
+        ]
+      },
+      "surfaceFit": {
+        "status": "passed",
+        "method": "Decoded GLB world triangles; Blender BVHTree overlap, epsilon=0.",
+        "poses": {
+          "closed": {
+            "mediaBounds": {
+              "minMm": [
+                -53.59999865889549,
+                2.375,
+                -0.7500000284984707
+              ],
+              "maxMm": [
+                66.3999986588955,
+                122.37499731779099,
+                0.4500000284984708
+              ]
+            },
+            "mediaMeshCount": 5,
+            "packagingMeshCount": 11,
+            "intersectionPairs": []
+          },
+          "open": {
+            "mediaBounds": {
+              "minMm": [
+                -53.59999865889549,
+                2.375,
+                -0.7500000284984707
+              ],
+              "maxMm": [
+                66.3999986588955,
+                122.37499731779099,
+                0.4500000284984708
+              ]
+            },
+            "mediaMeshCount": 5,
+            "packagingMeshCount": 11,
+            "intersectionPairs": []
+          }
+        }
+      }
+    },
+    {
+      "sourceIds": [
+        "smw-us-tray-specimen"
+      ],
+      "worldTranslationMm": [
+        0,
+        20,
+        -4.23998
+      ],
+      "worldRotationZDegrees": 0,
+      "orientation": "Cartridge is upright with label facing the open front of the folded tray. Placement uses its actual rear extent because the published media is not centered on its Z depth.",
+      "clearances": [
+        {
+          "location": "Cartridge rear to tray inner base",
+          "nominalMm": 0.05
+        }
+      ],
+      "trayOpeningMm": [
+        138,
+        89.5
+      ],
+      "limitations": [
+        "Fold geometry and finger notches are inferred; the tray is not an exact measured factory die line.",
+        "Manual, poster and plastic bag are not included.",
+        "The inspected US retail specimen does not certify every SNS-MW-USA packaging revision."
+      ],
+      "assetId": "snes-super-mario-world-box",
+      "mediaSource": {
+        "assetId": "snes-super-mario-world",
+        "version": "0.2.0",
+        "manifestSha256": "826a01d13edb4fe8c9911e9dbd5793571cb914a026cc9ed2ac401ac61c2e8ce6",
+        "archiveSha256": "1f85931726dba15a187d2f40c76c8a77f6f4b757562bcce3531215a12ffaefd3",
+        "releaseUrl": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/snes-super-mario-world-v0.2.0/snes-super-mario-world-0.2.0.zip",
+        "glbFile": "snes-super-mario-world.glb",
+        "glbSha256": "d09b524248281932a8b875f6c245aca81270b390372be28ef686a6f998a4fd73",
+        "blendFile": "snes-super-mario-world.blend",
+        "blendSha256": "9cbfd3e102e29268d2bc2ef36a94ab0c259f3bb629f52967407cdc586d32d900"
+      },
+      "composedGlbSha256": "b5e2d805c52ab99a6edf361d6ec49af1ac91fa513ccbc6772a2e780e0f2c3110",
+      "contentsLocalTransform": {
+        "nodeName": "Contents",
+        "nodeIndex": 54,
+        "parentName": "InsertTray",
+        "parentIndex": 5,
+        "translationMeters": [
+          0,
+          0.02,
+          -0.0042399802
+        ],
+        "rotationXyzw": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "mediaOriginalBounds": {
+        "minMm": [
+          -67.7,
+          -0.1,
+          -8.41002
+        ],
+        "maxMm": [
+          67.7,
+          87.99126,
+          11.35
+        ]
+      },
+      "surfaceFit": {
+        "status": "passed",
+        "method": "Decoded GLB world triangles; Blender BVHTree overlap, epsilon=0.",
+        "poses": {
+          "closed": {
+            "mediaBounds": {
+              "minMm": [
+                -67.69999861717224,
+                19.900000169873238,
+                -12.650000000066948
+              ],
+              "maxMm": [
+                67.69999861717224,
+                107.99125999212265,
+                7.1100200771615985
+              ]
+            },
+            "mediaMeshCount": 23,
+            "packagingMeshCount": 20,
+            "intersectionPairs": []
+          },
+          "open": {
+            "mediaBounds": {
+              "minMm": [
+                -67.69999861717224,
+                19.900000169873238,
+                -12.650000000066948
+              ],
+              "maxMm": [
+                67.69999861717224,
+                107.99125999212265,
+                7.1100200771615985
+              ]
+            },
+            "mediaMeshCount": 23,
+            "packagingMeshCount": 20,
+            "intersectionPairs": []
+          }
+        }
+      }
+    }
+  ]
+}

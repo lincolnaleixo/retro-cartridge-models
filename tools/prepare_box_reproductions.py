@@ -21,7 +21,7 @@ from inspect_glb import read_glb
 from prepare_box_templates import CONFIG as TEMPLATES, VIEWS, png_dimensions, write_json
 from verify import ROOT, SEMVER, safe, sha, verify_package
 
-VERSION = '0.2.0'
+VERSION = '0.3.0'
 DATE = '2026-10-16'
 RIGHTS = ('Original modeling contributions only: CC BY-NC-ND 4.0. Game artwork, '
           'marks, product designs, scans and source photography are excluded. '
@@ -30,27 +30,27 @@ GAMES = {
     'nes': {
         'game': 'super-mario-bros', 'name': 'Super Mario Bros.',
         'consoleName': 'NES', 'edition': 'Early US black-box edition with an integrated rear hanger',
-        'description': 'A pristine early Super Mario Bros. carton with its printed outer panels, articulated tuck lid and dust ears, empty black sleeve and foam spacer.',
+        'description': 'A pristine early Super Mario Bros. carton with articulated tuck lid, dust ears, black sleeve, foam spacer and the matching removable cartridge.',
     },
     'snes': {
         'game': 'super-mario-world', 'name': 'Super Mario World',
         'consoleName': 'Super Nintendo', 'edition': 'US retail cardboard-box presentation',
-        'description': 'A pristine Super Mario World retail carton with printed panels, two articulated end closures and a removable folded cartridge tray.',
+        'description': 'A pristine Super Mario World retail carton with printed panels, two articulated end closures and the matching cartridge in its removable folded tray.',
     },
     'nintendo-64': {
         'game': 'super-mario-64', 'name': 'Super Mario 64',
         'consoleName': 'Nintendo 64', 'edition': 'Original US K-A retail presentation',
-        'description': 'A pristine original-edition Super Mario 64 carton with printed panels, articulated end closures and a removable folded Game Pak cradle.',
+        'description': 'A pristine original-edition Super Mario 64 carton with printed panels, articulated end closures and the matching Game Pak in its removable folded cradle.',
     },
     'mega-drive': {
         'game': 'sonic-the-hedgehog', 'name': 'Sonic the Hedgehog',
         'consoleName': 'Mega Drive', 'edition': 'Western PAL Mega Drive presentation',
-        'description': 'A fresh Sonic the Hedgehog clamshell with the PAL wrap, restored booklet covers, intact retail hanger and articulated spine.',
+        'description': 'A fresh Sonic the Hedgehog clamshell with the PAL wrap, restored booklet covers, intact retail hanger, articulated spine and matching removable cartridge.',
     },
     'playstation-1': {
         'game': 'crash-bandicoot', 'name': 'Crash Bandicoot',
         'consoleName': 'PlayStation 1', 'edition': 'Original US black-label SCUS-94900 presentation',
-        'description': 'A clean Crash Bandicoot clear-tray jewel case with original-edition booklet covers, both sides of the folded tray card and an articulated lid.',
+        'description': 'A clean Crash Bandicoot clear-tray jewel case with original-edition paper inserts, articulated lid and the matching removable disc on the hub.',
     },
 }
 
@@ -78,6 +78,34 @@ REFINEMENTS = {
         'Reduced coarse scanned halftone and color noise across the four paper inserts, using a gentler filter for fine rear legal type.',
         'Restored the plain black spine fields and narrow booklet trim, retaining the original SCUS-94900 lettering and complete rear layout.',
         'Adopted the neutral template clear-plastic revision: shell, rim and tray alpha of 0.16, 0.35 and 0.25 make molded details visible while retaining the Godot Compatibility transparency fallback.',
+    ],
+}
+
+PRINT_POLISH = {
+    'nes': [
+        'Replaced the enlarged specimen-photo front with sharper Nintendo-attributed original illustration and reconstructed original title/console glyph contours at 4096-pixel height.',
+        'Restored clean flat ink, angular Mario/block color regions, smooth lettering and readable edge panels; documented the reconstructed round seal and exact-wording typography where factory vector artwork is unavailable.',
+        'Preserved the early no-REV-A layout and original rear screenshots; removed photographed paper wear rather than baking it into a newly unboxed reproduction.',
+    ],
+    'snes': [
+        'Separated flat printed graphics from illustration shading to restore clean colors, typography and dark fields across all six panels.',
+        'Rebuilt rear promotional and legal copy from the original wording while preserving the matching US edition layout and four original screenshots.',
+        'Prepared close-up print proofs and documented approximations instead of treating enlarged scan pixels as recovered detail.',
+    ],
+    'nintendo-64': [
+        'Retained the clean original K-A front and rebuilt the narrow duotone panels with matching period character artwork.',
+        'Restored title/console marks and typeset the exact original rear wording independently of the illustration; preserved the original screenshots.',
+        'Recorded source selections, reconstructed graphic elements and remaining original-art resolution limits per face.',
+    ],
+    'mega-drive': [
+        'Adopted the independently published Mega Drive template with corrected spine lettering and cartridge retention geometry fitted to the unchanged full-size media.',
+        'Traced original Sonic title and copy contours into clean antialiased ink; rebuilt the measured grid and restored cream/pink paper fields without photographed wear.',
+        'Reconstructed the chrome Mega Drive plate and reflection bands, reused the archived clean SEGA wordmark and retained the original shaded character art, screenshots and multilingual rear copy.',
+    ],
+    'playstation-1': [
+        'Refined all four original SCUS-94900 inserts for cleaner close-up print, treating illustrations, small type and solid fields separately.',
+        'Preserved the original booklet/rear composition and the previously validated transparent case materials and articulation.',
+        'Restored the matching 1994–2009 PlayStation vector wordmark and exact-wording NTSC U/C print; documented per-face changes and reconstruction limits.',
     ],
 }
 
@@ -109,6 +137,11 @@ def release_changes(console, version, template_version):
         return ['Added ' + game['edition'] + ' artwork to the independently released neutral box.',
                 'Preserved complete template geometry and Open animation.',
                 'Included prepared face PNGs, exact source/edit provenance and documented restoration limits.']
+    if version == '0.3.0':
+        return [*PRINT_POLISH[console],
+                f'Preserved the box subset geometry and Open animation from the independently released {console} template v{template_version}; artwork UVs match that selected template.',
+                'Included the matching published cartridge or disc at its original scale beneath a removable Contents parent, preserving its geometry, materials and embedded images exactly.',
+                'Included lossless prepared PNGs, source/edit provenance, six standard previews and exact-hash Blender/Godot validation; separately reviewed close-up renders of every exported face.']
     return [*REFINEMENTS[console],
             f'Used the independently released {console} box template v{template_version}; retained its decoded geometry, artwork UVs and Open animation.',
             'Included the revised prepared PNGs, transformation provenance and hash-bound Blender/Godot validation.']
@@ -274,16 +307,101 @@ def audit_inputs(console, args, validation, source_report, source_catalog):
         raise ValueError('Construction metadata differs from audited artwork slots')
     for view in VIEWS:
         png_dimensions(folder / (view + '.png'))
+    render_proof = None
+    inspection_views = {}
+    if args.version == '0.3.0':
+        render_proof = json.loads((folder / 'render-proof.json').read_text())
+        if render_proof.get('sha256') != sha(glb):
+            raise ValueError('Previews were rendered from a different export: ' + asset_id)
+        render_records = {item['view']: item for item in render_proof['renders']}
+        selected_views = list(VIEWS)
+        if console in ('nes', 'snes', 'nintendo-64'):
+            selected_views.append('contents')
+        for view in selected_views:
+            record = render_records[view]
+            path = folder / safe(record['file'])
+            if record['sha256'] != sha(path) or record['pixels'] != list(png_dimensions(path)):
+                raise ValueError('Stale preview render: ' + asset_id + ': ' + view)
+            if view == 'contents':
+                if not record.get('inspectionPose'):
+                    raise ValueError('Extracted contents view needs an explicit inspection pose')
+                inspection_views['contents.png'] = path
+                record['file'] = 'inspection-views/contents.png'
+        render_proof['renders'] = [render_records[view] for view in selected_views]
     artwork = artwork_inputs(asset_id, args.base / 'artwork' / asset_id, glb, construction)
     references = selected_artwork_sources(source_catalog, asset_id)
     if set(references['selection'].get('slots', {})) != set(artwork[0]):
         raise ValueError('Source catalog does not identify every prepared artwork slot')
     evidence = geometry_evidence(console)
+    composition = None
+    content_sources = {}
+    content_fit = None
+    if args.version == '0.3.0':
+        composition = json.loads((folder / 'content-composition.json').read_text())
+        if (composition.get('status') != 'passed' or composition.get('assetId') != asset_id
+                or composition.get('output') != {'glbSha256': sha(glb), 'blendSha256': sha(blend)}
+                or composition.get('preservation', {}).get('status') != 'passed'
+                or composition.get('contents', {}).get('scale') != [1, 1, 1]):
+            raise ValueError('Missing, stale or rescaled media composition: ' + asset_id)
+        media = composition['mediaSource']
+        preservation = composition['preservation']
+        if (preservation.get('composedGlbSha256') != sha(glb)
+                or preservation.get('boxGlbSha256') != composition['boxSource']['glbSha256']
+                or preservation.get('mediaGlbSha256') != media['glbSha256']
+                or preservation.get('mediaScale') != [1, 1, 1]):
+            raise ValueError('Stale media byte-preservation proof: ' + asset_id)
+        catalog = json.loads((ROOT / 'catalog.json').read_text())
+        media_entry = next(item for item in catalog['assets'] if item['id'] == asset_id[:-4])
+        media_manifest_path = ROOT / safe(media_entry['manifest'])
+        media_manifest = json.loads(media_manifest_path.read_text())
+        if (media['assetId'] != media_entry['id'] or media['version'] != media_entry['latest']
+                or media['manifestSha256'] != sha(media_manifest_path)
+                or media['archiveSha256'] != media_manifest['release']['archive']['sha256']
+                or media['glbSha256'] != media_manifest['files'][media['glbFile']]['sha256']
+                or media['blendSha256'] != media_manifest['files'][media['blendFile']]['sha256']):
+            raise ValueError('Media composition differs from its pinned published release: ' + asset_id)
+        content_folder = folder / 'content-source'
+        if (content_folder / 'release-manifest.json').read_bytes() != media_manifest_path.read_bytes():
+            raise ValueError('Missing exact pinned media manifest: ' + asset_id)
+        for path in content_folder.rglob('*'):
+            if not path.is_file():
+                continue
+            name = path.relative_to(content_folder).as_posix()
+            if name != 'release-manifest.json':
+                expected = media_manifest['files'].get(name)
+                if expected is None or expected['sha256'] != sha(path) or expected['bytes'] != path.stat().st_size:
+                    raise ValueError('Media provenance file differs from its source release: ' + name)
+            content_sources[name] = path
+        required_evidence = {'release-manifest.json', 'CREDITS.md', 'LICENSE', 'NOTICE.md'}
+        required_evidence.update(name for name in ('artwork-provenance.json', 'measurement-evidence.json')
+                                 if name in media_manifest['files'])
+        if not required_evidence <= set(content_sources):
+            raise ValueError('Missing pinned media source credits/license: ' + asset_id)
+        if composition.get('pinnedMediaEvidence', {}).get('files') != {name: sha(path) for name, path in content_sources.items()}:
+            raise ValueError('Media evidence receipt differs from included source files: ' + asset_id)
+        fit_catalog = json.loads((ROOT / 'docs' / 'box-content-fit.json').read_text())
+        fit = next(item for item in fit_catalog['assets'] if item['assetId'] == asset_id)
+        if (fit['composedGlbSha256'] != sha(glb) or fit['mediaSource'] != media
+                or fit['contentsLocalTransform'] != composition['contents']
+                or fit['surfaceFit']['status'] != 'passed'
+                or set(fit['surfaceFit']['poses']) != {'closed', 'open'}
+                or any(pose['intersectionPairs'] for pose in fit['surfaceFit']['poses'].values())):
+            raise ValueError('Incomplete or stale final media fit audit: ' + asset_id)
+        content_fit = {key: value for key, value in fit_catalog.items() if key not in ('assets', 'sources')}
+        content_fit['assets'] = [fit]
+        content_fit['sources'] = [source for source in fit_catalog['sources'] if source['id'] in fit['sourceIds']]
+        if set(fit['sourceIds']) != {source['id'] for source in content_fit['sources']}:
+            raise ValueError('Unresolved media fit reference: ' + asset_id)
+        assert_public(content_fit)
+        assert_public(composition)
     for value in (construction, structural, engine_asset, source_asset, references, evidence):
         assert_public(value)
     return {'folder': folder, 'structural': structural, 'engine': engine_asset,
             'source': source_asset, 'construction': construction, 'artwork': artwork,
             'references': references, 'evidence': evidence,
+            'composition': composition, 'contentSources': content_sources,
+            'renderProof': render_proof, 'inspectionViews': inspection_views,
+            'contentFit': content_fit,
             'template': {'id': template_manifest['id'], 'version': template_manifest['version'],
                          'manifest': template_path.relative_to(ROOT).as_posix(), 'sha256': sha(template)}}
 
@@ -321,6 +439,14 @@ def documents(console, version, date, data, engine_version, blender_version):
         edition_notes = [edition_notes]
     limitations = ' '.join([limitations, *edition_notes])
     parity = data['structural']['geometryParity']
+    media = data['composition']['mediaSource'] if data.get('composition') else None
+    content_note = (f"The matching [{media['assetId']} v{media['version']}]({media['releaseUrl']}) is enclosed at its original scale beneath a removable `Contents` parent. Its published geometry, materials and embedded artwork are preserved exactly; its pinned manifest, original credits and provenance are included in `content-source/`. "
+                    'The standalone cartridge/disc release remains unchanged. Contact positions are approximate rigid visualizations; flexible paper and plastic deformation are not simulated.'
+                    if media else 'Cartridge and CD models remain separate assets; no game media is enclosed.')
+    inspection_note = ('\nThe normal `Open` pose keeps the sleeve/tray seated inside the carton. '
+                       'The release also includes `inspection-views/contents.png`, showing the original insert and cartridge moved out together for inspection. '
+                       'This documented inspection pose does not change the exported default pose or animation.\n'
+                       if data.get('inspectionViews') else '')
     rounding = parity.get('nonArtworkUvFloat32Rounding', [])
     parity_note = ''
     if rounding:
@@ -340,7 +466,8 @@ def documents(console, version, date, data, engine_version, blender_version):
 
 ## Edition and contents
 
-Selected edition: **{game['edition']}**. This reproduction uses the independently released [{console} neutral box template v{template_version}](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/{console}-box-v{template_version}), with the same packaging geometry, hinge hierarchy, normalized print UVs and opening animation. Cartridge and CD models remain separate assets; no game media is enclosed. Printed booklet covers, where present, surround approximate blank interior leaves rather than a complete reproduced manual.
+Selected edition: **{game['edition']}**. This reproduction uses the independently released [{console} neutral box template v{template_version}](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/{console}-box-v{template_version}), with the same packaging geometry, hinge hierarchy, normalized print UVs and opening animation. {content_note} Printed booklet covers, where present, surround approximate blank interior leaves rather than a complete reproduced manual.
+{inspection_note}
 
 The shell and print aim for a pristine, newly unboxed appearance. {method} {limitations} Restoration is a visual approximation rather than proof of original ink values, manufacturing tolerances or missing lettering. Upsampling does not add authentic detail. Paper texture, scan blur and small source imperfections may remain visible at close range.
 
@@ -362,11 +489,11 @@ Every listed PNG is embedded byte-for-byte in its GLB artwork slot and included 
 | Initial pose | Closed |
 | Animation | `Open`, 0 to 2 seconds |
 
-The self-contained GLB passed structural, image, UV, hierarchy and animation checks. Direct comparison with its neutral template verified identical positions, normals, artwork UVs, triangle indices, node transforms and animation keys.{parity_note} Godot {engine_version} imported and evaluated both animation endpoints; Blender {blender_version} reopened the packed editable source and checked both poses. Release reports bind these checks to exact binary hashes.
+The self-contained GLB passed structural, image, UV, hierarchy and animation checks. Direct comparison of its box subset with the neutral template verified identical positions, normals, artwork UVs, triangle indices, node transforms and animation keys.{parity_note} The added contents are checked separately against their pinned source release. Godot {engine_version} imported and evaluated both animation endpoints; Blender {blender_version} reopened the packed editable source and checked both poses. Release reports bind these checks to exact binary hashes.
 
 {TEMPLATES[console]['limitations']} Transparent materials and printed-paper highlights can vary between renderers. Godot does not honor the exported specular extension; apply a printed-material specular level of 0.18 when matching the Blender preview lighting.
 
-The release includes editable `.blend`, portable `.glb`, six previews, construction and reference evidence, prepared PNGs, provenance and validation reports. Run the repository's `tools/create_game_boxes.py` from the unpacked release directory, passing `--console {console} --asset-id {asset_id} --source {asset_id}.blend --artwork artwork-mapping.json --output regenerated`, to rebuild with the included artwork mapping while preserving the published source geometry.
+The release includes editable `.blend`, portable `.glb`, six previews, construction and reference evidence, prepared PNGs, provenance and validation reports. The editable source supports moving or removing `Contents`. Re-exporting through a DCC tool may alter buffer precision. To preserve the original media bytes, use the repository's `tools/compose_box_contents.py` with a print-only box source and the pinned media release. See `content-composition.json` for exact source hashes, parent, placement and preservation checks, and the repository's restoration documentation for the rebuild workflow.
 
 See [credits](CREDITS.md) and [changelog](CHANGELOG.md). {RIGHTS}
 '''
@@ -386,13 +513,17 @@ The bundled `artwork-sources.json` identifies this edition's selected references
 
 The independent neutral {console} box release supplies the construction. Its relevant sources and measurement caveats are retained in `geometry-reference-evidence.json`. {TEMPLATES[console]['limitations']}
 
+## Enclosed game media
+
+{content_note}
+
 ## Rights scope
 
 {RIGHTS} The maintainer requested these game-specific reproductions and their publication, but that request is not a license from the respective artwork or photograph owners. No redistribution license in third-party print, trademarks or source photography is asserted. Source attribution documents provenance and does not establish permission. The included prepared images and editable source do not expand the collection license. Read `LICENSE` and `NOTICE.md`.
 '''
     history = ROOT/'assets'/'reproductions'/console/game['game']/'box'/'CHANGELOG.md'
     notes = release_changes(console, version, template_version)
-    notes += ['Preserved template positions, normals, artwork UVs, indices, hinge transforms and the two-second Open clip, verified through a complete decoded-data comparison.' + parity_note,
+    notes += ['Preserved the box subset template positions, normals, artwork UVs, indices, hinge transforms and the two-second Open clip, verified through a complete decoded-data comparison.' + parity_note,
               'Validated the self-contained export, exact embedded artwork, Godot import and both animation endpoints, then reopened the editable Blender source.',
               'Kept all previously published template, box, cartridge and disc releases unchanged.']
     changelog = changelog_with_history(title, version, date, notes, history.read_text() if history.exists() else '')
@@ -420,6 +551,13 @@ def stage(console, args, data, audit, source_report):
             (payload / name).write_text(text)
         for slot, path in images.items():
             shutil.copy2(path, payload / 'artwork' / (slot + '.png'))
+        for name, path in data.get('contentSources', {}).items():
+            destination = payload / 'content-source' / name
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(path, destination)
+        for name, path in data.get('inspectionViews', {}).items():
+            (payload / 'inspection-views').mkdir(exist_ok=True)
+            shutil.copy2(path, payload / 'inspection-views' / name)
         engine_report = {'status': 'passed', 'engine': audit['godot']['engine'], 'assets': [data['engine']]}
         source = {key: value for key, value in source_report.items() if key != 'assets'}
         source['assets'] = [data['source']]
@@ -428,6 +566,11 @@ def stage(console, args, data, audit, source_report):
                       'artwork-mapping.json': mapping, 'artwork-embedding-report.json': embedding,
                       'glb-inspection.json': data['structural'], 'godot-import-report.json': engine_report,
                       'source-reopen-report.json': source}
+        if data.get('composition'):
+            json_files['content-composition.json'] = data['composition']
+            json_files['content-fit-evidence.json'] = data['contentFit']
+        if data.get('renderProof'):
+            json_files['preview-render-report.json'] = data['renderProof']
         for name, value in json_files.items():
             assert_public(value)
             write_json(payload / name, value)
@@ -447,7 +590,9 @@ def stage(console, args, data, audit, source_report):
                            'godot': {'version': audit['godot']['engine'], 'headlessImport': 'passed',
                                      'endpointInspection': 'Closed/Open world bounds, named parts, decoded images and artwork UVs verified.'},
                            'editableSource': 'Reopened in Blender ' + source_report['blender'] + '; packed resources and both poses checked.',
-                           'previewLighting': 'Actual GLB reimport in a neutral white studio, Standard view transform, exposure -1.0; dimensions recorded per preview.'})
+                           'previewLighting': 'Actual GLB reimport in a neutral white studio, Standard view transform, exposure -1.0; bottom views add an angled underside softbox for legible print; model materials are unchanged and dimensions are recorded per preview.'})
+        if data.get('composition'):
+            validation['mediaPreservation'] = data['composition']['preservation']
         manifest = {'schemaVersion': 1, 'id': asset_id, 'version': args.version, 'title': title,
                     'creator': 'Lincoln Aleixo', 'license': 'CC-BY-NC-ND-4.0', 'licenseScope': RIGHTS,
                     'date': args.date, 'coordinateSystem': {'units': 'meters', 'axes': 'X width, Y up, positive Z front',
@@ -457,6 +602,8 @@ def stage(console, args, data, audit, source_report):
                     'changes': release_changes(console, args.version, data['template']['version']),
                     'template': data['template'],
                     'validation': validation, 'previews': previews, 'release': {'tag': tag, 'archive': {}}, 'files': {}}
+        if data.get('composition'):
+            manifest['contents'] = data['composition']['mediaSource']
         draft = temporary / 'manifest.json'
         write_json(draft, manifest)
         archive_name = asset_id + '-' + args.version + '.zip'
@@ -506,7 +653,7 @@ def stage(console, args, data, audit, source_report):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--base', type=Path, default=ROOT / 'dist' / 'box-refinement-20261016')
+    parser.add_argument('--base', type=Path, default=ROOT / 'dist' / 'box-polish-20261016')
     parser.add_argument('--version', default=VERSION)
     parser.add_argument('--date', default=DATE)
     parser.add_argument('--console', action='append', choices=tuple(GAMES))

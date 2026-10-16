@@ -447,7 +447,119 @@
       ],
       "sha256": "7a28bc1bcb7cc1aa40c3ca40bc5c29c7bbc72a632abaddbf642cbb5a925ba4cb",
       "rights": "Third-party copyrighted artwork; no separate redistribution license established.",
-      "notes": "Original Super Mario 64 title artwork; source-layout proportions retained, registration mark replaced with the TM from the selected original front."
+      "notes": "Clean period title artwork used for restored panels. The final TM uses exact wording in approximate Arial; it is not cropped from the front."
+    },
+    {
+      "id": "smb-nintendo-front-archived-2048",
+      "localReference": "dist/nes-print-sharpness-20261016/references/mariowiki-10.jpg",
+      "sourcePage": "https://www.mariowiki.com/File:SMB_USA_box_art.jpg",
+      "imageUrl": "https://www.mariowiki.com/images/archive/6/6b/20230713105640%21SMB_USA_box_art.jpg",
+      "credit": "Nintendo; historical image archived by Super Mario Wiki, attributed to Nintendo Facebook.",
+      "pixelSize": [
+        1390,
+        2048
+      ],
+      "sha256": "8366257b366ad5f4b0980db867d8064e791cdc699fe2287b604b035c037fcdfe",
+      "rights": "Copyright remains with Nintendo and the original source contributor. No redistribution license established.",
+      "notes": "Archived Nintendo-attributed 1390×2048 front; matching illustration and letterforms are restored as components in the early round-seal composition. Source REV-A marker is not used; this is a disclosed composite reconstruction, not a claim that the later front is an early scan."
+    },
+    {
+      "id": "playstation-1994-wordmark-vector",
+      "localReference": "dist/box-polish-20261016/references/ps1/PlayStation_wordmark_1994.svg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:PlayStation_wordmark_(1994-2009).svg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/28/PlayStation_wordmark_%281994-2009%29.svg",
+      "credit": "Sony Computer Entertainment; vector archived by Techtri from Sony SCPH-90002/90003 instruction manual.",
+      "pixelSize": [
+        327,
+        63
+      ],
+      "sha256": "ca4d02d844dcb4237c860d3a082b2ebb5ca4468082c34bc1b44b049fd5b3929f",
+      "rights": "Wikimedia Commons classifies this text logo as PD-textlogo. Trademark restrictions remain. This does not license the game artwork.",
+      "notes": "Resolution-independent original 1994–2009 lettering. Replaces only the worn front, booklet-back and rear-spine wordmarks. Registered symbol omitted to retain original cover TM; newer wordmarks rejected because their letter shapes differ. A 6000px transparent PNG render prepares the alpha coverage."
+    },
+    {
+      "id": "sega-clean-wordmark",
+      "localReference": "dist/box-polish-20261016/references/sega-logo.png",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:SEGA_logo_(no_R_mark).svg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/SEGA_logo_%28no_R_mark%29.svg/3840px-SEGA_logo_%28no_R_mark%29.svg.png",
+      "credit": "SEGA wordmark; vector archived by Wikimedia Commons, uploaded by Tkgd2007 / Coffeeandcrumbs; source attributed to Keane Ideas portfolio",
+      "pixelSize": [
+        3840,
+        1280
+      ],
+      "sha256": "3b8d07cd9771abc0b04163d10cf8efdedd84ff47208d315ec82740950f0cdeea",
+      "rights": "Wordmark/trademark remains associated with SEGA; archive describes geometric text-logo as public domain.",
+      "notes": "Clean vector raster supplies the wordmark shape; restored period colors and white keylines are documented transformations."
+    },
+    {
+      "id": "nintendo-period-capsule-vector",
+      "localReference": "dist/box-polish-20261016/references/Nintendo-red-logo-3840.png",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Nintendo_red_logo.svg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Nintendo_red_logo.svg/3840px-Nintendo_red_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+      "credit": "Nintendo; archival contributor credited at the linked source page",
+      "pixelSize": [
+        3840,
+        946
+      ],
+      "sha256": "d4583ff9f4b0bb92b0de127fa14c97f271089fd899d05e074aeb14e856fcd6d0",
+      "rights": "Third-party copyrighted artwork. No separate redistribution license established.",
+      "notes": "Vector-derived raster of the period racetrack Nintendo logo; used to reconstruct clean capsules and the interior wordmark of the reconstructed quality seal."
+    },
+    {
+      "id": "sm64-period-diving-render",
+      "localReference": "dist/box-polish-20261016/references/n64/Mario_Diving_Artwork_-_Super_Mario_64.png",
+      "sourcePage": "https://www.mariowiki.com/File:Mario_Diving_Artwork_-_Super_Mario_64.png",
+      "imageUrl": "https://www.mariowiki.com/images/2/22/Mario_Diving_Artwork_-_Super_Mario_64.png?737db",
+      "credit": "Nintendo; archival contributor credited at the linked source page",
+      "pixelSize": [
+        1080,
+        665
+      ],
+      "sha256": "33a8e203fe9708eb548a0ea204a59e8bd90114679b7c5ad4d3f16b6a6576391e",
+      "rights": "Third-party copyrighted artwork. No separate redistribution license established.",
+      "notes": "Original period character render, used in a documented duotone reconstruction of the corresponding carton edge. Placement and print colors are visual approximations."
+    },
+    {
+      "id": "sm64-period-jump-render",
+      "localReference": "dist/box-polish-20261016/references/n64/SM64_Artwork_Mario_(Jump).png",
+      "sourcePage": "https://www.mariowiki.com/File:SM64_Artwork_Mario_(Jump).png",
+      "imageUrl": "https://www.mariowiki.com/images/b/b2/SM64_Artwork_Mario_%28Jump%29.png?b4355",
+      "credit": "Nintendo; archival contributor credited at the linked source page",
+      "pixelSize": [
+        330,
+        330
+      ],
+      "sha256": "d68fb3a3ca97319a57efa61d76de890f5ebf2814f6c97094c4a625f71644d98c",
+      "rights": "Third-party copyrighted artwork. No separate redistribution license established.",
+      "notes": "Original period character render, used in a documented duotone reconstruction of the corresponding carton edge. Placement and print colors are visual approximations."
+    },
+    {
+      "id": "sm64-period-penguin-front-render",
+      "localReference": "dist/box-polish-20261016/references/n64/SM64PenguinFront.png",
+      "sourcePage": "https://www.mariowiki.com/File:SM64PenguinFront.png",
+      "imageUrl": "https://www.mariowiki.com/images/4/44/SM64PenguinFront.png?e878c",
+      "credit": "Nintendo; archival contributor credited at the linked source page",
+      "pixelSize": [
+        587,
+        647
+      ],
+      "sha256": "88c1c01c9a94ef342d775cd7755dc797500e5b5702e950e92a503364483d377a",
+      "rights": "Third-party copyrighted artwork. No separate redistribution license established.",
+      "notes": "Original period character render, used in a documented duotone reconstruction of the corresponding carton edge. Placement and print colors are visual approximations."
+    },
+    {
+      "id": "sm64-period-bowser-fire-render",
+      "localReference": "dist/box-polish-20261016/references/n64/BowserLeaks.jpg",
+      "sourcePage": "https://www.mariowiki.com/File:BowserLeaks.jpg",
+      "imageUrl": "https://www.mariowiki.com/images/c/c3/BowserLeaks.jpg?5083d",
+      "credit": "Nintendo; archival contributor credited at the linked source page",
+      "pixelSize": [
+        1213,
+        1010
+      ],
+      "sha256": "34b6d770c73430e94af29636e2c8105cb257b6f45a65a82c5de4770bc3d66755",
+      "rights": "Third-party copyrighted artwork. No separate redistribution license established.",
+      "notes": "Original period character render, used in a documented duotone reconstruction of the corresponding carton edge. Placement and print colors are visual approximations."
     }
   ],
   "assets": [
@@ -460,42 +572,56 @@
           "sm64-clean-us-front"
         ],
         "Back": [
-          "sm64-launchbox-1927"
+          "sm64-launchbox-1927",
+          "sm64-clean-title",
+          "nintendo-period-capsule-vector",
+          "smw-cibby-retail-back"
         ],
         "SpineLeft": [
           "sm64-launchbox-1952581",
           "sm64-clean-title",
-          "sm64-clean-us-front"
+          "sm64-clean-us-front",
+          "sm64-period-penguin-front-render"
         ],
         "SpineRight": [
           "sm64-1904-full-4",
-          "sm64-clean-us-front"
+          "sm64-clean-us-front",
+          "sm64-period-bowser-fire-render"
         ],
         "Top": [
           "sm64-1904-full-2",
           "sm64-clean-title",
-          "sm64-clean-us-front"
+          "sm64-clean-us-front",
+          "sm64-period-diving-render"
         ],
         "Bottom": [
           "sm64-1904-full-2",
           "sm64-clean-title",
-          "sm64-clean-us-front"
+          "sm64-clean-us-front",
+          "sm64-period-jump-render"
         ]
       },
       "usedSourceIds": [
+        "nintendo-period-capsule-vector",
         "sm64-1904-full-2",
         "sm64-1904-full-4",
         "sm64-clean-title",
         "sm64-clean-us-front",
         "sm64-launchbox-1927",
-        "sm64-launchbox-1952581"
+        "sm64-launchbox-1952581",
+        "sm64-period-bowser-fire-render",
+        "sm64-period-diving-render",
+        "sm64-period-jump-render",
+        "sm64-period-penguin-front-render",
+        "smw-cibby-retail-back"
       ],
       "limitations": [
-        "Original US K-A front uses clean 1548 × 1080 Nintendo artwork; rear uses the 4170 × 2916 original scan prepared at 3072 × 2155.",
-        "Narrow panels preserve the photographed duotone character art, with exposure and scan-noise correction and clean original title/console marks. Empty fields behind logos are reconstructed approximations; small character details remain limited by the source photograph.",
-        "Color normalization is visual, not a calibrated match to physical factory inks."
+        "Duotone edge illustrations are source-based reconstructions with approximate placement and ink colors, not newly discovered flat original scans.",
+        "Nintendo Classics front source remains 1548 × 1080 pixels; original rear comes from the 4170 × 2916 scan.",
+        "Small jump illustration is 330 × 330 pixels; enlargement cannot add source detail.",
+        "Replacement typography, seal/recycle geometry and warm background repairs are visual approximations, not calibrated factory print."
       ],
-      "restorationMethod": "Original artwork replacement for the front; original full-resolution rear descreen; bounded compositing of original title/console marks over repaired narrow-panel fields. No generated game illustration."
+      "restorationMethod": "Clean original K-A front retained. Exact original rear promotional/legal wording re-typeset after bounded ink removal; original five screenshots and gold background retained. Clean screenshot frames, valid UPC-A with original digits, reconstructed quality/recycling marks and period Nintendo capsule. Four edge duotones reconstructed from original period character renders, preserving the documented title/badge layout and template orientation. No generated imagery."
     },
     {
       "assetId": "nes-super-mario-bros-box",
@@ -503,22 +629,27 @@
       "publicationRights": "not-established",
       "slots": {
         "Front": [
-          "smb-specimen-2"
+          "smb-specimen-2",
+          "smb-nintendo-front-archived-2048",
+          "smb-launchbox-1178"
         ],
         "Back": [
           "smb-launchbox-1178"
         ],
         "SpineLeft": [
-          "smb-specimen-3",
-          "smb-launchbox-1178"
+          "smb-launchbox-1178",
+          "smb-nintendo-front-archived-2048",
+          "smb-specimen-3"
         ],
         "SpineRight": [
-          "smb-specimen-5",
-          "smb-launchbox-1178"
+          "smb-launchbox-1178",
+          "smb-nintendo-front-archived-2048",
+          "smb-specimen-5"
         ],
         "Top": [
-          "smb-specimen-6",
-          "smb-launchbox-1178"
+          "smb-launchbox-1178",
+          "smb-nintendo-front-archived-2048",
+          "smb-specimen-6"
         ],
         "Bottom": [
           "smb-specimen-7"
@@ -526,6 +657,7 @@
       },
       "usedSourceIds": [
         "smb-launchbox-1178",
+        "smb-nintendo-front-archived-2048",
         "smb-specimen-2",
         "smb-specimen-3",
         "smb-specimen-5",
@@ -533,10 +665,13 @@
         "smb-specimen-7"
       ],
       "limitations": [
-        "The original early non-REV-A front illustration and small photographed console wordmark retain limited optical detail. Enlargement does not recover missing print detail.",
-        "Top and side title/Nintendo glyphs are recomposited from the matching original rear scan in the specimen layout; readable address and warranty wording is transcribed with an approximate narrow sans-serif.",
-        "Fresh black fields replace photographed scuffs. Identifiable printed stars remain; explicitly bounded irregular abrasion and tiny empty-field scan debris are locally repaired. Color is estimated from uncalibrated references."
-      ]
+        "Restored composite, not an untouched factory print or complete new scan.",
+        "Front title, Nintendo and console wordmark shapes are traced from original print, not substitute typefaces. Contour smoothing removes optical roughness; colors are visual estimates.",
+        "Round seal border is reconstructed; exact original wording uses approximate Arial Narrow Bold while the Nintendo capsule preserves original glyph contours.",
+        "Mario/block illustration uses fitted flat ink colors and polygonal contours from the original print. This restores its pixel-art appearance rather than recovering new scan detail. Fine speed lines and original rear CRT screenshots remain optical source imagery.",
+        "Earlier documented edge address/warranty typeface remains an approximation."
+      ],
+      "restorationMethod": "Higher-detail original-print component substitution and subpixel-smoothed original letter contours. Front title and console glyphs are rectified for all three printed narrow panels, retaining the documented layout. Front and rear round seals use original Nintendo glyphs and exact wording in approximate Arial Narrow Bold. Original rear CRT screenshots remain; flat fresh black fields exclude abrasion. Mario/block ink regions are restored to a fitted 14-color palette with straight polygon contours, preserving the angular pixel silhouette, original blue offsets and protected fine speed lines; no invented illustrated detail."
     },
     {
       "assetId": "snes-super-mario-world-box",
@@ -544,22 +679,27 @@
       "publicationRights": "not-established",
       "slots": {
         "Front": [
-          "smw-launchbox-19789364"
+          "smw-launchbox-19789364",
+          "nintendo-period-capsule-vector"
         ],
         "Back": [
-          "smw-cibby-retail-back"
+          "smw-cibby-retail-back",
+          "smw-clean-international-title",
+          "nintendo-period-capsule-vector"
         ],
         "Top": [
           "smw-specimen-8",
           "smw-period-shell-stomp",
           "smw-clean-international-title",
-          "smw-launchbox-19789364"
+          "smw-launchbox-19789364",
+          "nintendo-period-capsule-vector"
         ],
         "Bottom": [
           "smw-specimen-10",
           "smw-period-dry-bones-landing",
           "smw-clean-international-title",
-          "smw-launchbox-19789364"
+          "smw-launchbox-19789364",
+          "nintendo-period-capsule-vector"
         ],
         "SpineLeft": [
           "smw-specimen-12",
@@ -575,6 +715,7 @@
         ]
       },
       "usedSourceIds": [
+        "nintendo-period-capsule-vector",
         "smw-cibby-retail-back",
         "smw-clean-international-title",
         "smw-launchbox-19789364",
@@ -588,13 +729,12 @@
         "smw-specimen-8"
       ],
       "limitations": [
-        "Edges are a documented reconstruction, not a claim of a new factory-flat scan.",
-        "Original rear source is 1143 × 800 pixels; enlargement does not add fine print information.",
-        "Original Dry Bones landing artwork is 429 × 438 pixels.",
-        "Colors are visually normalized; no physical ink calibration is available.",
-        "Gray striped motif and legal-line typeface are close reconstructions with approximately placed layout."
+        "Digital reconstruction, not an untouched original scan or a factory-calibrated print.",
+        "Colors, replacement typography, quality-seal geometry and gray stripe motif are visual approximations.",
+        "Original rear screenshots remain limited by the 1143 × 800 source; the original Dry Bones artwork is 429 × 438 pixels.",
+        "4K preparation improves raster output and fresh typed/vector details; it does not create new source illustration information."
       ],
-      "restorationMethod": "Original full rear scan restored with a continuous dark-ink curve; three creased lower-right trademark/copyright lines re-typeset with their exact original wording. Four edges reconstructed from archived matching period illustrations, title lettering and front-scan Nintendo capsule, with clean flat ink fields. Original side legal line re-typeset and gray striped motif traced from specimen. No generative imagery.",
+      "restorationMethod": "Native-resolution edge-preserving halftone removal preserves original front and edge character contours. Complete rear promotional/legal text re-typeset with exact original wording; original four printed screenshots retained. Clean title, valid UPC-A with original digits, reconstructed quality/recycling marks, period Nintendo capsule and flat ink fields. Front tiny green TM re-typeset explicitly. No generated imagery.",
       "editionEvidence": "The retained front and original rear share the US black-label layout; rear retains copyright 1992, SNS P MW, UPC 045496830014, original four printed screenshots and North American legal copy. Original side specimen photographs establish the different flying/diving poses and the original Nintendo of America address."
     },
     {
@@ -603,29 +743,36 @@
       "publicationRights": "not-established",
       "slots": {
         "Front": [
-          "sonic-eu-wrap"
+          "sonic-eu-wrap",
+          "sega-clean-wordmark"
         ],
         "Back": [
-          "sonic-eu-wrap"
+          "sonic-eu-wrap",
+          "sega-clean-wordmark"
         ],
         "Spine": [
-          "sonic-eu-wrap"
+          "sonic-eu-wrap",
+          "sega-clean-wordmark"
         ],
         "BookletFront": [
-          "sonic-eu-manual"
+          "sonic-eu-manual",
+          "sega-clean-wordmark"
         ],
         "BookletBack": [
           "sonic-eu-manual"
         ]
       },
       "usedSourceIds": [
+        "sonic-eu-wrap",
         "sonic-eu-manual",
-        "sonic-eu-wrap"
+        "sega-clean-wordmark"
       ],
       "limitations": [
-        "Complete original European outer wrap and manual covers; no printed reverse-side outer wrap is asserted.",
-        "The spine empty black/grid field is reconstructed from measured spacing to remove fold glare and dust; original title and logo pixels remain. Luminance/chroma filtering reduces scanner noise without recovering unseen detail."
-      ]
+        "Original Sonic title and type contours are traced into antialiased flat ink; the decorative grid is measured and redrawn. These are restored approximations, not recovered factory vectors.",
+        "Chrome Mega Drive plate silhouette and silver/gold reflection bands are reconstructed from the documented original logo; the archived clean SEGA wordmark supplies the logo lettering.",
+        "Original shaded Sonic illustration and four rear screenshots retain source-resolution limits. Pink/cream paper fields and black fields are cleaned independently of character shading. Colors are visually estimated, not calibrated."
+      ],
+      "restorationMethod": "Deterministic contour tracing, bounded original illustration denoise, clean solid/grid fields, documented chrome-plate reconstruction and clean archived SEGA vector. Mega Drive template 0.2.0 corrects the original mirrored spine UV."
     },
     {
       "assetId": "playstation-1-crash-bandicoot-box",
@@ -633,13 +780,16 @@
       "publicationRights": "not-established",
       "slots": {
         "Front": [
-          "crash-F-ALL"
+          "crash-F-ALL",
+          "playstation-1994-wordmark-vector"
         ],
         "WrapBack": [
-          "crash-B-ALL"
+          "crash-B-ALL",
+          "playstation-1994-wordmark-vector"
         ],
         "BookletBack": [
-          "crash-I-1"
+          "crash-I-1",
+          "playstation-1994-wordmark-vector"
         ],
         "WrapInside": [
           "crash-I-2"
@@ -649,13 +799,15 @@
         "crash-B-ALL",
         "crash-F-ALL",
         "crash-I-1",
-        "crash-I-2"
+        "crash-I-2",
+        "playstation-1994-wordmark-vector"
       ],
       "limitations": [
-        "Complete four-part original SCUS-94900 print set, including both exterior rear spines. Separate luminance/chroma descreen reduces coarse scan grain; fine rear type uses a gentler kernel.",
-        "Known plain-black spine and trim fields are restored while original artwork remains; scans are not color-calibrated print proofs.",
-        "Clear tray is verified by the documented physical US specimen. Updated neutral-template clear-plastic alpha fallback preserves readability in Godot Compatibility while making molded edges visible; exact reflections vary by renderer."
-      ]
+        "The original four-part SCUS-94900 K-A set and all game illustrations remain. Matching classic 1994 wordmarks replace only worn console branding.",
+        "NTSC U/C and TM copy is reproduced exactly using approximate Arial Bold, not a verified original production font.",
+        "Original rear copy and screenshot detail remain source-limited; output enlargement does not recover new photographic detail. Printed inner ribbed design remains artwork; only unprinted outside trim loses crease glare. Colors are visual estimates."
+      ],
+      "restorationMethod": "Deterministic non-local scan-grain filtering, gentler treatment of fine rear legal copy, matching 1994 Sony-manual-derived vector wordmarks, exact NTSC U/C and TM copy in approximate Arial Bold, original spine glyph contours and bounded dark-field normalization. No generative artwork or geometry/material changes."
     }
   ],
   "rejectedCandidates": [
@@ -677,7 +829,7 @@
     },
     {
       "source": "MarioWiki SMB_USA_box_art.jpg",
-      "reason": "Official Nintendo image but clearly marked REV-A; wrong requested edition."
+      "reason": "Complete REV-A front rejected for the requested early edition. In v0.3.0 only matching illustration and letterform components from the archived Nintendo-attributed front are used in a documented early round-seal reconstruction; the REV-A marker and later seal layout are not used."
     },
     {
       "source": "LaunchBox SMW 1113 rear",

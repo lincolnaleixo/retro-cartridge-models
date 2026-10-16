@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 1,
+  "id": "nes-super-mario-bros-box",
+  "version": "0.3.0",
+  "title": "NES \u2014 Super Mario Bros. box reproduction",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original modeling contributions only: CC BY-NC-ND 4.0. Game artwork, marks, product designs, scans and source photography are excluded. Attribution and the maintainer's request do not grant rights to those elements.",
+  "date": "2026-10-16",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center of nominal closed envelope"
+  },
+  "nominalDimensionsMm": [
+    128.0,
+    179.0,
+    24.0
+  ],
+  "measurementBasis": "Protector manufacturer fit dimensions and inspected retail specimen photographs; see docs/nintendo-box-reference-evidence.json. Dimensions, die cuts, foam size and paper gauge are inferred. The early hanger is a selected US variant, not a claim about every NES printing. Foam pore shading is procedural in the source; the portable export retains its clean base material.",
+  "changes": [
+    "Replaced the enlarged specimen-photo front with sharper Nintendo-attributed original illustration and reconstructed original title/console glyph contours at 4096-pixel height.",
+    "Restored clean flat ink, angular Mario/block color regions, smooth lettering and readable edge panels; documented the reconstructed round seal and exact-wording typography where factory vector artwork is unavailable.",
+    "Preserved the early no-REV-A layout and original rear screenshots; removed photographed paper wear rather than baking it into a newly unboxed reproduction.",
+    "Preserved the box subset geometry and Open animation from the independently released nes template v0.1.0; artwork UVs match that selected template.",
+    "Included the matching published cartridge or disc at its original scale beneath a removable Contents parent, preserving its geometry, materials and embedded images exactly.",
+    "Included lossless prepared PNGs, source/edit provenance, six standard previews and exact-hash Blender/Godot validation; separately reviewed close-up renders of every exported face."
+  ],
+  "template": {
+    "id": "nes-box",
+    "version": "0.1.0",
+    "manifest": "assets/templates/nes/box/versions/0.1.0.json",
+    "sha256": "1a3308cffad7e261417d693332d321b748a0133cee19a47f5d13112f4b3adafb"
+  },
+  "validation": {
+    "meshes": 32,
+    "primitives": 55,
+    "triangles": 28096,
+    "materials": 20,
+    "images": 11,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "embeddedImages": 11,
+    "externalImages": 0,
+    "artworkSlots": {
+      "ArtworkBack": "Back",
+      "ArtworkFront": "Front",
+      "ArtworkSpineLeft": "SpineLeft",
+      "ArtworkSpineRight": "SpineRight",
+      "ArtworkBottom": "Bottom",
+      "ArtworkBottomRear": "Bottom",
+      "ArtworkBackHangtab": "Back",
+      "ArtworkTop": "Top"
+    },
+    "animation": {
+      "name": "Open",
+      "durationSeconds": 2.0,
+      "channels": 9
+    },
+    "geometryPreservation": {
+      "status": "passed",
+      "templateFile": "nes-box.glb",
+      "templateSha256": "1a3308cffad7e261417d693332d321b748a0133cee19a47f5d13112f4b3adafb",
+      "reproductionFile": "nes-super-mario-bros-box.glb",
+      "reproductionSha256": "d788df907dcd3725345dba90267f2ac7f8eada1d50bb4a32b50370a16a0d346b",
+      "meshNodes": 23,
+      "primitives": 45,
+      "comparedAttributeValues": 65196,
+      "comparedIndices": 16848,
+      "hierarchyTransformsHingesIdentical": true,
+      "positionsNormalsIndicesIdentical": true,
+      "artworkUvsIdentical": true,
+      "positionsNormalsUvsIndicesIdentical": false,
+      "animationKeysIdentical": true,
+      "namedSemanticPartsIdentical": true,
+      "staticMeshNameAliases": {},
+      "nonArtworkUvFloat32Rounding": [
+        {
+          "node": "WhiteFoamBottomSpacer",
+          "attribute": "TEXCOORD_0",
+          "changedScalars": 4,
+          "maximumDelta": 2.9802322387695312e-08,
+          "maximumFloat32Steps": 1
+        }
+      ],
+      "nonArtworkUvTolerance": "two representable float32 steps",
+      "declaredArtworkUvMirrors": [],
+      "scope": "packaging-only",
+      "excludedContents": {
+        "template": null,
+        "reproduction": {
+          "nodeName": "Contents",
+          "nodeIndex": 45,
+          "nodeIndices": [
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ],
+          "mediaAssetId": "nes-super-mario-bros",
+          "mediaVersion": "0.2.0",
+          "receiptSha256": "d4bb64e7a407e70514d5b419df0f30a51f75275048f6559d435ec7f184797d38"
+        }
+      }
+    },
+    "artworkPreservation": "Every prepared face PNG is embedded byte-for-byte in its named artwork slot.",
+    "godot": {
+      "version": "4.7.2-stable (official)",
+      "headlessImport": "passed",
+      "endpointInspection": "Closed/Open world bounds, named parts, decoded images and artwork UVs verified."
+    },
+    "editableSource": "Reopened in Blender 5.2.2 LTS; packed resources and both poses checked.",
+    "previewLighting": "Actual GLB reimport in a neutral white studio, Standard view transform, exposure -1.0; bottom views add an angled underside softbox for legible print; model materials are unchanged and dimensions are recorded per preview.",
+    "mediaPreservation": {
+      "status": "passed",
+      "boxGlbSha256": "c6c1756a8466c8227ee00be62d01168e691a6a619dce7cde046390112524f145",
+      "mediaGlbSha256": "7ce50d88379e8c3498d61267cca7a20fe237c17bde3d229cf852e532378ad9f1",
+      "composedGlbSha256": "d788df907dcd3725345dba90267f2ac7f8eada1d50bb4a32b50370a16a0d346b",
+      "boxBinaryBytesPreserved": 7479864,
+      "mediaBinaryBytesPreserved": 14906440,
+      "mediaNodeCount": 10,
+      "mediaImagesPreserved": 5,
+      "mediaScale": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/reproductions/nes/super-mario-bros/box/previews/0.3.0/hero.png",
+      "bytes": 2803307,
+      "sha256": "83f690914808d7cb0f1a06d0a4c77c9cb140c790c8e690642acee0d1f439a65d",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "view": "front",
+      "path": "assets/reproductions/nes/super-mario-bros/box/previews/0.3.0/front.png",
+      "bytes": 2713767,
+      "sha256": "cd7448081e72468ff8527959f9a1e21f84581e8c09015210af7b1ca2658ae4f7",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "view": "rear",
+      "path": "assets/reproductions/nes/super-mario-bros/box/previews/0.3.0/rear.png",
+      "bytes": 3282850,
+      "sha256": "39ba6b325489d9dc2f7899f79eb2cc26f1ac756794c4e4f00f2aff2aadfb3aed",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "view": "top",
+      "path": "assets/reproductions/nes/super-mario-bros/box/previews/0.3.0/top.png",
+      "bytes": 2989150,
+      "sha256": "ef694caba3dfef9fbe200bc7ed04acb7fb4e29caabe9063783b46ea99be96904",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "view": "bottom",
+      "path": "assets/reproductions/nes/super-mario-bros/box/previews/0.3.0/bottom.png",
+      "bytes": 2774410,
+      "sha256": "ce6f1fe65a203a4cf33f08d68b39f7d65a0ebdd6b438426dc0132d46e30e8566",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "view": "open",
+      "path": "assets/reproductions/nes/super-mario-bros/box/previews/0.3.0/open.png",
+      "bytes": 2687758,
+      "sha256": "99cf22bffee3c354362874317c5d6594ab6a17f241d24c10338a9256d45eb575",
+      "width": 1800,
+      "height": 1500
+    }
+  ],
+  "release": {
+    "tag": "nes-super-mario-bros-box-v0.3.0",
+    "archive": {
+      "name": "nes-super-mario-bros-box-0.3.0.zip",
+      "bytes": 68173902,
+      "sha256": "43d01ee069cc36a14ea79af2bf8b00a3b89a29967d2be2523dba6e1f69a47766",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/nes-super-mario-bros-box-v0.3.0/nes-super-mario-bros-box-0.3.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 3662,
+      "sha256": "a0ff3eebcbbef98c93a09fe22a16769019617848d60ca108b8f2901850af4d92"
+    },
+    "CREDITS.md": {
+      "bytes": 6114,
+      "sha256": "015dad1062c6de623605a73c43c2c2024a3d99f1cbccd23482be624d5e8197d2"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 4351,
+      "sha256": "04602588f5708dd1ca0b26f7194ce5ea5fcb2a12fb1ece283fbd9321ab814033"
+    },
+    "README.md": {
+      "bytes": 6977,
+      "sha256": "7651409f72a9a3b705391507899e1d210d22a1305630f7a4d9a28c63a7de1a5e"
+    },
+    "artwork/Back.png": {
+      "bytes": 5230209,
+      "sha256": "18160a9a23cd0c86f2a684e92756a90f2e010009a1b8bf8c5c67e7c234d19422"
+    },
+    "artwork/Bottom.png": {
+      "bytes": 8750,
+      "sha256": "13f1abf79572a73ecb7f9fee51775ba870adb1c753cfc6879c781416e4495552"
+    },
+    "artwork/Front.png": {
+      "bytes": 1335045,
+      "sha256": "c08782626d0f8f30c98d531c677bfb2c5d37ea2f63fe18ce0fc7b589c46515f8"
+    },
+    "artwork/SpineLeft.png": {
+      "bytes": 216279,
+      "sha256": "56aa81d44ae3b1f0e92ee78b6329d9c781a2b7e0573b9dc17490223da9fdaad6"
+    },
+    "artwork/SpineRight.png": {
+      "bytes": 219811,
+      "sha256": "0eda9beb925a7a98bfab691e49ec6e8ffb0bce40b801e70907489f52c2ba8434"
+    },
+    "artwork/Top.png": {
+      "bytes": 175166,
+      "sha256": "6cd2100eebbcb2d58a645ee6b0fccae808c2f559be0ebc95d7f8b58fc45f8199"
+    },
+    "artwork-embedding-report.json": {
+      "bytes": 1487,
+      "sha256": "7d457d0056de1b6f0802adb0b28a4598ac7794a382c512abcf24fc3d30f33210"
+    },
+    "artwork-mapping.json": {
+      "bytes": 209,
+      "sha256": "6be57f98fa27bc5e58f7d3728c086c6d85d837b99d02d5116a32bb1f5d7769bc"
+    },
+    "artwork-provenance.json": {
+      "bytes": 8023,
+      "sha256": "2fa3347db283e462dfedc17e4badb6ae039eb7ef76b96025009ab0fc155caf5b"
+    },
+    "artwork-sources.json": {
+      "bytes": 8586,
+      "sha256": "37b2e1536f79e68aea2212be1af261e7dcaa39570db28ae11d3da1e875a485d1"
+    },
+    "bottom.png": {
+      "bytes": 2774410,
+      "sha256": "ce6f1fe65a203a4cf33f08d68b39f7d65a0ebdd6b438426dc0132d46e30e8566"
+    },
+    "construction.json": {
+      "bytes": 4919,
+      "sha256": "e5c582bf0a108c943c1ebe645b88fa89f173ff15001ffbdf8662556b31d77844"
+    },
+    "content-composition.json": {
+      "bytes": 7293,
+      "sha256": "d4bb64e7a407e70514d5b419df0f30a51f75275048f6559d435ec7f184797d38"
+    },
+    "content-fit-evidence.json": {
+      "bytes": 6254,
+      "sha256": "419d8a67c72fa286f96963555600ef040b276b52c32f53eab8b3064facfbbb9a"
+    },
+    "content-source/CREDITS.md": {
+      "bytes": 3914,
+      "sha256": "d3a6bf73c828a8fcbe0d626b2bfaa503de515e8af1040e939436b818ec2570be"
+    },
+    "content-source/LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "content-source/NOTICE.md": {
+      "bytes": 3257,
+      "sha256": "eb244c2f26524e433bed6806fa3ac6576adffc808e8b496e8669cfd4927ab5f6"
+    },
+    "content-source/artwork-provenance.json": {
+      "bytes": 8070,
+      "sha256": "3842d5740842d580fd888cd183d6368cb06b88c68ab9364ba9ea84ca969a3035"
+    },
+    "content-source/measurement-evidence.json": {
+      "bytes": 6350,
+      "sha256": "30ffd25aeb7190f6218a08a7a1726746608220af4d10b21bc3475a0184e21f05"
+    },
+    "content-source/release-manifest.json": {
+      "bytes": 6593,
+      "sha256": "363e1886c703b75e3f8ce895e084447c479821adf6c9edb92b0182dfd0c05b60"
+    },
+    "front.png": {
+      "bytes": 2713767,
+      "sha256": "cd7448081e72468ff8527959f9a1e21f84581e8c09015210af7b1ca2658ae4f7"
+    },
+    "geometry-reference-evidence.json": {
+      "bytes": 4731,
+      "sha256": "92dc5386f53e26d3f1646db229e785c1c462ea4f46a2841330fa39b032ea44e5"
+    },
+    "glb-inspection.json": {
+      "bytes": 4849,
+      "sha256": "eb47fd5cd28629ad497253eb219651ec89e5bd5e5b35f790fff2bd84b47e6ec3"
+    },
+    "godot-import-report.json": {
+      "bytes": 2265,
+      "sha256": "8ad8f0708019bd605a4ab97ef3d657e6569c2b8a9adef7ee8691099fe8cbb925"
+    },
+    "hero.png": {
+      "bytes": 2803307,
+      "sha256": "83f690914808d7cb0f1a06d0a4c77c9cb140c790c8e690642acee0d1f439a65d"
+    },
+    "inspection-views/contents.png": {
+      "bytes": 2916739,
+      "sha256": "35ab01a8fede6fefb8fa139ee4867e02a3c4e1f50d4b55b9790e8c0fef1a02fc"
+    },
+    "nes-super-mario-bros-box.blend": {
+      "bytes": 20493141,
+      "sha256": "b11530da4c1b5337146a6ac5d913445f0def27ae937ab14ae7e47ee59ab838e3"
+    },
+    "nes-super-mario-bros-box.glb": {
+      "bytes": 22450548,
+      "sha256": "d788df907dcd3725345dba90267f2ac7f8eada1d50bb4a32b50370a16a0d346b"
+    },
+    "open.png": {
+      "bytes": 2687758,
+      "sha256": "99cf22bffee3c354362874317c5d6594ab6a17f241d24c10338a9256d45eb575"
+    },
+    "preview-render-report.json": {
+      "bytes": 3626,
+      "sha256": "7f23bf487a9280a16047a273d08a1a29dac03e25b4155a248834219eba4f12a8"
+    },
+    "rear.png": {
+      "bytes": 3282850,
+      "sha256": "39ba6b325489d9dc2f7899f79eb2cc26f1ac756794c4e4f00f2aff2aadfb3aed"
+    },
+    "source-reopen-report.json": {
+      "bytes": 2963,
+      "sha256": "09a0c3672b9b253b33728b98a9d719a79a02e34bd77e5e78a406622d9d1b93d7"
+    },
+    "top.png": {
+      "bytes": 2989150,
+      "sha256": "ef694caba3dfef9fbe200bc7ed04acb7fb4e29caabe9063783b46ea99be96904"
+    }
+  },
+  "contents": {
+    "assetId": "nes-super-mario-bros",
+    "version": "0.2.0",
+    "manifestSha256": "363e1886c703b75e3f8ce895e084447c479821adf6c9edb92b0182dfd0c05b60",
+    "archiveSha256": "afd91d49a03826226498e7e0d75d73e7354e4757282205fb30570985b260dad6",
+    "releaseUrl": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/nes-super-mario-bros-v0.2.0/nes-super-mario-bros-0.2.0.zip",
+    "glbFile": "nes-super-mario-bros.glb",
+    "glbSha256": "7ce50d88379e8c3498d61267cca7a20fe237c17bde3d229cf852e532378ad9f1",
+    "blendFile": "nes-super-mario-bros.blend",
+    "blendSha256": "46af8f09744b5504d0f2f2ca9bfa9c6b877d826cf983daa52af51b4cebcf6e3b"
+  }
+}

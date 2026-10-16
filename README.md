@@ -44,23 +44,23 @@ python3 tools/build_library.py --output dist/library-review --cache-dir path/to/
 
 The cache accepts the original ZIP filenames directly, such as `mega-drive-0.1.0.zip`. Missing packages are downloaded from their immutable GitHub release URLs. Existing cache files must pass verification. The output must be a new directory: the builder never overwrites an existing folder, even if empty. Generated binaries stay in ignored `dist/` by default. Git tracks the asset records, previews and tooling; release packages hold the model binaries. Templates retain their published licensing terms, and reproductions retain explicit third-party artwork exclusions.
 
-## Pristine print restoration
+## Pristine cartridge and disc print restoration
 
-The latest Super Mario 64, Super Mario Bros., Super Mario World and Sonic reproductions remove source-photo wear or restore blurred top lettering. Original game editions, geometry and mesh UVs remain unchanged. Crash already has clean restored print and stays at 0.1.0. See the [restoration method and validation](docs/pristine-label-restoration.md). Earlier release packages remain available for comparison.
+The latest Super Mario 64, Super Mario Bros., Super Mario World and Sonic cartridge reproductions remove source-photo wear or restore blurred top lettering. Their original game editions, geometry and mesh UVs remain unchanged. The separate Crash disc already has clean restored print and stays at 0.1.0; box versions are listed below. See the [restoration method and validation](docs/pristine-label-restoration.md). Earlier release packages remain available for comparison.
 
 ## Models
 
 ### Articulated box templates
 
-Neutral packaging lives in `assets/templates/<console>/box/`, alongside each existing cartridge or disc. Each box has a closed default pose and a two-second `Open` animation, separate hinges, removable inserts and named UV artwork surfaces. In the gallery, use **Closed** and **Open** to inspect either state. The existing media are separate assets.
+Neutral packaging lives in `assets/templates/<console>/box/`, alongside each existing cartridge or disc. Each empty template has a closed default pose and a two-second `Open` animation, separate hinges, removable inserts and named UV artwork surfaces. In the gallery, use **Closed** and **Open** to inspect either state. Game reproductions include their matching removable cartridge or disc.
 
 | Template | Construction | Release |
 | --- | --- | --- |
 | [NES](assets/templates/nes/box/README.md) | Early portrait carton, integrated rear hang tab, top tuck flap, dust flaps, black sleeve and foam spacer | [0.1.0](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nes-box-v0.1.0) |
 | [SNES](assets/templates/snes/box/README.md) | Landscape carton, two tuck ends and folded card insert | [0.1.0](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/snes-box-v0.1.0) |
 | [Nintendo 64](assets/templates/nintendo-64/box/README.md) | Landscape carton, articulated end flaps and removable card cradle | [0.1.0](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nintendo-64-box-v0.1.0) |
-| [Mega Drive](assets/templates/mega-drive/box/README.md) | Black clamshell, folding spine, cartridge supports, booklet clips and clear cover sleeve | [0.1.0](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/mega-drive-box-v0.1.0) |
-| [PlayStation 1](assets/templates/playstation-1/box/README.md) | Standard clear jewel case, hinged lid, removable tray, retaining hub and booklet | [0.1.0](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/playstation-1-box-v0.1.0) |
+| [Mega Drive](assets/templates/mega-drive/box/README.md) | Black clamshell, folding spine, cartridge supports, booklet clips and clear cover sleeve | [0.3.0](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/mega-drive-box-v0.3.0) |
+| [PlayStation 1](assets/templates/playstation-1/box/README.md) | Standard clear jewel case, hinged lid, removable tray, retaining hub and booklet | [0.2.0](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/playstation-1-box-v0.2.0) |
 
 These are pristine visualization reconstructions. Fine folded and molded details are inferred from specimen photographs; they are not manufacturing drawings. Generate an editable template and actual-export renders with:
 
@@ -72,17 +72,17 @@ Use `--artwork mapping.json` to assign local print files by the slot names recor
 
 ### Game-box reproductions
 
-Each game's `box/` subfolder adds a separate packaging asset alongside its cartridge or disc. All five start at 0.1.0, using the independently released templates above.
+Each game's `box/` subfolder adds a complete packaging reproduction alongside its standalone cartridge or disc. All five are at 0.3.0, with clean restored print and matching published media enclosed at its original scale. Sonic uses the Mega Drive 0.3.0 template with corrected spine UV and cartridge supports; Crash uses the clearer PlayStation 0.2.0 template. The removable `Contents` hierarchy preserves the pinned media's geometry, materials and textures.
 
 | Game | Packaging edition | Files |
 | --- | --- | --- |
-| [Super Mario Bros.](assets/reproductions/nes/super-mario-bros/box/README.md) | Early US NES carton with rear hang tab | [Release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nes-super-mario-bros-box-v0.1.0) |
-| [Super Mario World](assets/reproductions/snes/super-mario-world/box/README.md) | US SNES retail carton | [Release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/snes-super-mario-world-box-v0.1.0) |
-| [Super Mario 64](assets/reproductions/nintendo-64/super-mario-64/box/README.md) | Original US K-A carton | [Release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nintendo-64-super-mario-64-box-v0.1.0) |
-| [Sonic the Hedgehog](assets/reproductions/mega-drive/sonic-the-hedgehog/box/README.md) | PAL cream/grid clamshell and landscape manual covers | [Release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/mega-drive-sonic-the-hedgehog-box-v0.1.0) |
-| [Crash Bandicoot](assets/reproductions/playstation-1/crash-bandicoot/box/README.md) | US black-label SCUS-94900 clear-tray jewel case | [Release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/playstation-1-crash-bandicoot-box-v0.1.0) |
+| [Super Mario Bros.](assets/reproductions/nes/super-mario-bros/box/README.md) | Early US NES carton with rear hang tab | [Release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nes-super-mario-bros-box-v0.3.0) |
+| [Super Mario World](assets/reproductions/snes/super-mario-world/box/README.md) | US SNES retail carton | [Release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/snes-super-mario-world-box-v0.3.0) |
+| [Super Mario 64](assets/reproductions/nintendo-64/super-mario-64/box/README.md) | Original US K-A carton | [Release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nintendo-64-super-mario-64-box-v0.3.0) |
+| [Sonic the Hedgehog](assets/reproductions/mega-drive/sonic-the-hedgehog/box/README.md) | PAL cream/grid clamshell and landscape manual covers | [Release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/mega-drive-sonic-the-hedgehog-box-v0.3.0) |
+| [Crash Bandicoot](assets/reproductions/playstation-1/crash-bandicoot/box/README.md) | US black-label SCUS-94900 clear-tray jewel case | [Release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/playstation-1-crash-bandicoot-box-v0.3.0) |
 
-Print surfaces use reviewed original scans or rectified specimen photographs with local wear cleanup. NES photographs and some Nintendo side/rear panels remain softer than high-resolution scans; prepared-image size is not a claim of new captured detail. Source editions, effective resolutions and restoration methods are documented per game. Original artwork and marks remain excluded from the modeling license.
+Print restoration separates illustrations from flat ink, lettering and paper wear. Original letter contours, matching period artwork and selected vector marks improve close-up clarity; exact wording uses documented approximate typefaces where necessary. The [print-restoration workflow](docs/box-print-restoration.md) explains each treatment and its limits. Source editions, effective resolutions and transformations are recorded per game; larger prepared images do not create new archival detail. Original artwork and marks remain excluded from the modeling license.
 
 ### Cartridges and discs
 
