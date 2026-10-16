@@ -4,6 +4,8 @@ Model release histories also live in each asset directory's `CHANGELOG.md`, unde
 
 ## Unreleased
 
+- Fixed missing Open/Closed controls in the published gallery by reading animation metadata from each release manifest's validation section and pose bounds from its verified packaged GLB inspection. The generated catalog now carries both animation and finite world-space closed/open envelopes; a full site-build regression covers the actual release schema and static media. A finite camera-distance limit based on the selected pose allows the entire opened case to fit in view. Published manifests, packages and model bytes remain unchanged.
+
 - Added five game-box reproductions, each 0.1.0, after the independent templates: Super Mario Bros., Super Mario World, Super Mario 64, Sonic the Hedgehog and Crash Bandicoot. Each lives in `assets/reproductions/<console>/<game>/box/` with separate release metadata, editable source, articulated GLB, prepared print PNGs and six actual-export views.
 - Prepared edition-matched artwork with deterministic crops, perspective correction, masked wear cleanup and preserved original lettering/illustrations. Recorded 24 reference sources and rejected mixed-edition or altered alternatives. Original source resolution limits remain explicit, particularly NES and Nintendo side/rear photographs.
 - Verified all five reproduction packages, packed Blender sources and Godot 4.7.2 closed/Open poses. Geometry, artwork UVs, indices, hierarchy and animation match the template releases; documented only minor exporter rounding of unprinted plastic/page-edge UVs on Sonic and Crash. Added the boxes to the organized offline library without changing existing media releases.
