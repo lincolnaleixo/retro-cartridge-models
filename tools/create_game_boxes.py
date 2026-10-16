@@ -77,8 +77,9 @@ def reopen_source(path, console):
         from boxes_playstation import refine_clear_materials
         refine_clear_materials()
     elif console == 'mega-drive':
-        from boxes_mega_drive import refine_spine_uvs
+        from boxes_mega_drive import refine_spine_uvs, refine_media_fit
         refine_spine_uvs()
+        refine_media_fit(root)
     return root
 
 
@@ -302,6 +303,12 @@ def main():
         contract['previousSource'] = {'filename': args.source.name,
             'sha256': hashlib.sha256(args.source.read_bytes()).hexdigest(),
             'method': 'Reopened the previous released source; preserved all packaging geometry and articulation.'}
+    if args.console == 'mega-drive' and root.get('cartridgeFitRefinement'):
+        contract['cartridgeFitRefinement'] = json.loads(root['cartridgeFitRefinement'])
+        if args.source and contract['cartridgeFitRefinement']['changed']:
+            contract['previousSource']['method'] = (
+                'Reopened the previous released source; applied the six-object cartridge-fit refinement. '
+                'Other packaging geometry, UV arrays, materials and articulation remain unchanged.')
     source_animation(root)
     api.studio(root, neutral_print=True)
     sanitize_source_paths()

@@ -1,5 +1,6 @@
 """Reject packaging exports with broken artwork, pivots or opening animation."""
 import copy
+import json
 import math
 from pathlib import Path
 import struct
@@ -9,6 +10,7 @@ import unittest
 from inspect_game_box import compare_geometry, inspect
 from inspect_glb import ValidationError, inspect as inspect_cartridge
 from test_inspect_glb import encode, fixture as geometry_fixture
+from box_contents import compose
 
 
 def fixture():
@@ -194,6 +196,60 @@ class PackagingContractTests(unittest.TestCase):
         document, binary = fixture()
         document['textures'] = [{'source': 3}]
         self.invalid(document, binary, 'out of range')
+
+
+class ComposedPackagingTests(unittest.TestCase):
+    def make_files(self, directory, parent='Lid'):
+        box, raw = fixture()
+        media, media_raw = geometry_fixture()
+        media_raw += b'\0' * (-len(media_raw) % 4)
+        model, binary, receipt = compose(box, raw, media, media_raw, parent,
+            [0, 0, .2], [0, 0, 0, 1], 'test-cartridge', '1.0.0')
+        receipt.update(schemaVersion=1, status='passed',
+                       mediaSource={'assetId': 'test-cartridge', 'version': '1.0.0'})
+        template = Path(directory) / 'template' / 'box.glb'
+        output = Path(directory) / 'composed' / 'box.glb'
+        template.parent.mkdir(); output.parent.mkdir()
+        template.write_bytes(encode(box, raw))
+        output.write_bytes(encode(model, binary))
+        output.with_name('content-composition.json').write_text(json.dumps(receipt))
+        return template, output, model, binary, receipt
+
+    def test_full_scene_bounds_and_contents_follow_their_parent(self):
+        with tempfile.TemporaryDirectory() as directory:
+            _, output, _, _, _ = self.make_files(directory)
+            result = inspect(output)
+            self.assertEqual(result['contents']['mediaAssetId'], 'test-cartridge')
+            self.assertEqual(result['contents']['meshNodes'], 2)
+            self.assertEqual(result['artworkSlots'], {'FrontPrint': 'Front', 'BackPrint': 'Back'})
+            self.assertEqual(result['hinges'], ['Lid'])
+            bounds = result['contents']['worldVertexBounds']
+            self.assertNotEqual(bounds['closed'], bounds['open'])
+            self.assertLess(bounds['open']['min'][0], -.19)
+            self.assertEqual(compare_geometry(Path(directory) / 'template' / 'box.glb', output)['scope'], 'packaging-only')
+
+    def test_composition_needs_a_valid_receipt(self):
+        with tempfile.TemporaryDirectory() as directory:
+            _, output, _, _, _ = self.make_files(directory)
+            output.with_name('content-composition.json').unlink()
+            with self.assertRaisesRegex(ValidationError, 'adjacent receipt'):
+                inspect(output)
+
+    def test_box_geometry_changes_are_not_hidden_by_contents(self):
+        with tempfile.TemporaryDirectory() as directory:
+            template, output, model, binary, _ = self.make_files(directory)
+            binary = struct.pack('<f', .25) + binary[4:]
+            output.write_bytes(encode(model, binary))
+            with self.assertRaisesRegex(ValidationError, 'POSITION values changed'):
+                compare_geometry(template, output)
+
+    def test_media_resources_are_still_validated(self):
+        with tempfile.TemporaryDirectory() as directory:
+            _, output, model, binary, _ = self.make_files(directory)
+            model['images'] = [{'uri': 'missing-media.png'}]
+            output.write_bytes(encode(model, binary))
+            with self.assertRaisesRegex(ValidationError, 'embedded'):
+                inspect(output)
 
 
 class TemplateParityTests(unittest.TestCase):

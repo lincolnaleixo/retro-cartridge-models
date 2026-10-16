@@ -1,0 +1,389 @@
+{
+  "schemaVersion": 1,
+  "id": "mega-drive-box",
+  "version": "0.3.0",
+  "title": "Mega Drive \u2014 western clamshell box template",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions: CC BY-NC-ND 4.0. Product designs and third-party marks are excluded. No game artwork, source photograph or copied logo is included.",
+  "date": "2026-10-16",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center of nominal closed envelope"
+  },
+  "nominalDimensionsMm": [
+    129.0,
+    188.0,
+    26.0
+  ],
+  "measurementBasis": "Original Sonic PAL case photograph; auction specimen description; manufacturer protector fit envelope. The 129 \u00d7 177 \u00d7 26 mm body and 188 mm height including hanger are nominal estimates from protector fit and specimen photographs. Mold revision, clip offsets, sleeve thickness and booklet pagination are approximate. Flexible spine folds use rigid pivots.",
+  "changes": [
+    "Cleared the published full-size Mega Drive cartridge by moving four internal corner supports outward by 0.4 mm and lifting the upper profiles of the two spring clips by 1.8 mm while retaining their anchored feet.",
+    "Reopened the 0.2.0 editable source and confined the geometry change to those six internal parts; preserved exterior dimensions, artwork UVs, materials, insertion anchor, hinges and opening animation.",
+    "Recorded exporter reindexing in the two affected static material groups, compensated group-origin movement and tiny rounding on unprinted UVs; the native polygon topology and UV arrays remain unchanged.",
+    "Retained an empty neutral template. Matching published game media is composed separately into game reproductions at its original scale.",
+    "Verified the final exported scene and both opening endpoints in Godot, reopened the editable source, and recorded scoped migration and approximate fit evidence. Published earlier versions remain unchanged."
+  ],
+  "validation": {
+    "meshes": 18,
+    "primitives": 18,
+    "triangles": 13872,
+    "materials": 10,
+    "images": 3,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "embeddedImages": 3,
+    "externalImages": 0,
+    "artworkSlots": {
+      "BackPrint": "Back",
+      "BookletBackPrint": "BookletBack",
+      "BookletFrontPrint": "BookletFront",
+      "FrontPrint": "Front",
+      "SpinePrint": "Spine"
+    },
+    "animation": {
+      "name": "Open",
+      "durationSeconds": 2.0,
+      "channels": 2
+    },
+    "godot": {
+      "version": "4.7.2-stable (official)",
+      "headlessImport": "passed",
+      "endpointInspection": "Closed/Open world vertex bounds, named packaging parts and artwork UVs verified."
+    },
+    "previewLighting": "Actual GLB reimport in a neutral white studio, Standard view transform, exposure -1.0. Pixel dimensions are recorded per preview. Detached-insert views are separate inspection arrangements.",
+    "editableSource": "Reopened in Blender 5.2.2 LTS; packed resources, named parts and both poses checked.",
+    "geometryMigration": {
+      "status": "passed",
+      "previousGLBSha256": "a230cb75c258016ef770a03d307f86bace5bbfcb20e1c00946e43b9019948831",
+      "correctedGLBSha256": "8432c26972e7f315a241d479e669c5192d09dbc2b07ce3fae4e3f0084a1cff44",
+      "independentSixObjectCandidateSha256": "16b6e37d4d459172dcde7f4dfdb3daac77123d0f9089e68fa278dcd2cd890da9",
+      "changedAttributes": [
+        {
+          "node": "MegaDriveGameBox \u00b7 Case molded polypropylene",
+          "primitive": 0,
+          "attribute": "POSITION",
+          "changedRows": 1536,
+          "totalRows": 4608,
+          "maximumAbsoluteDelta": 0.00039999932050704956,
+          "oldChangedBoundsMm": [
+            [
+              -37.700001848861575,
+              33.99999858811498,
+              -11.40000019222498
+            ],
+            [
+              37.70000487565994,
+              142.99999549984932,
+              -4.800000227987766
+            ]
+          ],
+          "newChangedBoundsMm": [
+            [
+              -38.100001169368625,
+              33.99999858811498,
+              -11.40000019222498
+            ],
+            [
+              38.10000419616699,
+              142.99999549984932,
+              -4.800000227987766
+            ]
+          ]
+        },
+        {
+          "node": "MegaDriveGameBox \u00b7 Case molded polypropylene",
+          "primitive": 0,
+          "attribute": "NORMAL",
+          "changedRows": 295,
+          "totalRows": 4608,
+          "maximumAbsoluteDelta": 0.47249817848205566
+        },
+        {
+          "node": "MegaDriveGameBox \u00b7 Case molded polypropylene",
+          "primitive": 0,
+          "attribute": "TEXCOORD_1",
+          "changedRows": 12,
+          "totalRows": 4608,
+          "maximumAbsoluteDelta": 17.035378456115723
+        },
+        {
+          "node": "MegaDriveGameBox \u00b7 Case satin rims and flexures",
+          "primitive": 0,
+          "attribute": "POSITION",
+          "changedRows": 960,
+          "totalRows": 6960,
+          "maximumAbsoluteDelta": 0.0018000003474298865,
+          "oldChangedBoundsMm": [
+            [
+              -4.4999998062849045,
+              30.699998140335083,
+              -1.9380596932023764
+            ],
+            [
+              4.4999998062849045,
+              146.30000293254852,
+              -0.3778555546887219
+            ]
+          ],
+          "newChangedBoundsMm": [
+            [
+              -4.4999998062849045,
+              30.699998140335083,
+              -0.13805966591462493
+            ],
+            [
+              4.4999998062849045,
+              146.30000293254852,
+              1.4221444725990295
+            ]
+          ]
+        },
+        {
+          "node": "MegaDriveGameBox \u00b7 Case satin rims and flexures",
+          "primitive": 0,
+          "attribute": "NORMAL",
+          "changedRows": 157,
+          "totalRows": 6960,
+          "maximumAbsoluteDelta": 0.42869071662425995
+        },
+        {
+          "node": "MegaDriveGameBox \u00b7 Case satin rims and flexures",
+          "primitive": 0,
+          "attribute": "TEXCOORD_0",
+          "changedRows": 636,
+          "totalRows": 6960,
+          "maximumAbsoluteDelta": 0.0035842955112457275
+        },
+        {
+          "node": "MegaDriveGameBox \u00b7 Case satin rims and flexures",
+          "primitive": 0,
+          "attribute": "TEXCOORD_1",
+          "changedRows": 4,
+          "totalRows": 6960,
+          "maximumAbsoluteDelta": 5.960464477539063e-08
+        }
+      ],
+      "comparedAttributeValues": 263824,
+      "affectedStaticGroupsReindexedByExporter": [
+        "MegaDriveGameBox \u00b7 Case molded polypropylene",
+        "MegaDriveGameBox \u00b7 Case satin rims and flexures"
+      ],
+      "allIndexCountsIdentical": true,
+      "allUnaffectedGroupIndicesAndGeometryAttributesIdentical": true,
+      "allPrintUVArraysIdentical": true,
+      "nativeSourceUVArraysAndPolygonTopologyIdentical": true,
+      "attributeDeltaNote": "Changed-row counts in the two static groups include exporter vertex reordering and regrouping; physical displacements are quantified by the six-object native-source audit.",
+      "allMaterialRecordsIdentical": true,
+      "allEmbeddedImageBytesIdentical": true,
+      "allHierarchyAndHingeMetadataIdentical": true,
+      "allOtherNodeTransformsIdentical": true,
+      "mergedPolypropyleneOriginShiftMm": [
+        -0.4,
+        0,
+        0
+      ],
+      "originShiftNote": "Blender joins static material groups at an active support origin. Its compensated local vertices keep unrelated parts fixed in world space; source audit proves73objects unchanged.",
+      "worldPositionRoundingToleranceMeters": 1e-07,
+      "openAnimationDecodedDataIdentical": true,
+      "correctedPositionsNormalsAndIndicesExactlyMatchIndependentlyAuditedSixObjectCandidate": true,
+      "candidateUVExportRounding": [
+        {
+          "node": "MegaDriveGameBox \u00b7 Case satin rims and flexures",
+          "attribute": "TEXCOORD_0",
+          "components": "U/V on unprinted molded plastic",
+          "changedValues": 20,
+          "maximumFloat32Steps": 1,
+          "sourceUVArraysUnchanged": true
+        },
+        {
+          "node": "MegaDriveGameBox \u00b7 Case satin rims and flexures",
+          "attribute": "TEXCOORD_1",
+          "components": "U/V on unprinted molded plastic",
+          "changedValues": 8,
+          "maximumFloat32Steps": 2,
+          "sourceUVArraysUnchanged": true
+        },
+        {
+          "node": "Booklet \u00b7 Unprinted booklet page edges",
+          "attribute": "TEXCOORD_0",
+          "components": "U/V on unprinted molded plastic",
+          "changedValues": 4,
+          "maximumFloat32Steps": 2,
+          "sourceUVArraysUnchanged": true
+        },
+        {
+          "node": "Booklet \u00b7 Unprinted booklet page edges",
+          "attribute": "TEXCOORD_0",
+          "basis": "previous released GLB",
+          "changedValues": 4,
+          "maximumFloat32Steps": 2,
+          "sourceUVArraysUnchanged": true
+        },
+        {
+          "node": "FrontLid \u00b7 Case satin rims and flexures",
+          "attribute": "TEXCOORD_0",
+          "components": "U/V on unprinted molded plastic",
+          "changedValues": 20,
+          "maximumFloat32Steps": 2,
+          "sourceUVArraysUnchanged": true
+        },
+        {
+          "node": "FrontLid \u00b7 Case satin rims and flexures",
+          "attribute": "TEXCOORD_0",
+          "basis": "previous released GLB",
+          "changedValues": 20,
+          "maximumFloat32Steps": 2,
+          "sourceUVArraysUnchanged": true
+        }
+      ]
+    }
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/templates/mega-drive/box/previews/0.3.0/hero.png",
+      "bytes": 2464913,
+      "sha256": "e3331e539425084c534f8d016a855682a010f09466856c52bfec0b63d0b3f693",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "view": "front",
+      "path": "assets/templates/mega-drive/box/previews/0.3.0/front.png",
+      "bytes": 2154164,
+      "sha256": "19dbeccc9c0ec62afec08bbe0335cb9bcd6f74668407cd09f0019a207960bc42",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "view": "rear",
+      "path": "assets/templates/mega-drive/box/previews/0.3.0/rear.png",
+      "bytes": 2515325,
+      "sha256": "a44c89d76231be59267f4f05de2aa68316b36398f3a7c0c7f27d95dca7655671",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "view": "top",
+      "path": "assets/templates/mega-drive/box/previews/0.3.0/top.png",
+      "bytes": 2531310,
+      "sha256": "7bbc8b7986b8298d6510ee4cf59f3a4fb2ef1d235ab06d73ad3285db4762166e",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "view": "bottom",
+      "path": "assets/templates/mega-drive/box/previews/0.3.0/bottom.png",
+      "bytes": 2127185,
+      "sha256": "edbcb95061e21187f1bfa1e5f0d4b2dbf4e385ac890b0325c864e2b164d9488d",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "view": "open",
+      "path": "assets/templates/mega-drive/box/previews/0.3.0/open.png",
+      "bytes": 2300354,
+      "sha256": "06167a5f04c85be39b170c7aaaed4ed35a9a41904ddc2c69a4c4c5bf5a7ed21f",
+      "width": 1800,
+      "height": 1500
+    }
+  ],
+  "release": {
+    "tag": "mega-drive-box-v0.3.0",
+    "archive": {
+      "name": "mega-drive-box-0.3.0.zip",
+      "bytes": 15712619,
+      "sha256": "07868c644f8bb4c7e79379d2c43fe45aad198867768e91c729ad24c0a4a60ea7",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/mega-drive-box-v0.3.0/mega-drive-box-0.3.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 2657,
+      "sha256": "ef49e1a43f2f77892057c287ba898755e0e0cb99e9a1d2fde67132bab9184e63"
+    },
+    "CREDITS.md": {
+      "bytes": 2633,
+      "sha256": "49f2b104e1bd3d57547365ca92f413ca45a867fa5010319774321169cb26e5b4"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 4351,
+      "sha256": "04602588f5708dd1ca0b26f7194ce5ea5fcb2a12fb1ece283fbd9321ab814033"
+    },
+    "README.md": {
+      "bytes": 4621,
+      "sha256": "68fed4d6d9d0c91b575a64eb771264fec8d5329b03bc79821790a99875c16f58"
+    },
+    "bottom.png": {
+      "bytes": 2127185,
+      "sha256": "edbcb95061e21187f1bfa1e5f0d4b2dbf4e385ac890b0325c864e2b164d9488d"
+    },
+    "construction.json": {
+      "bytes": 3075,
+      "sha256": "f2820e8394d1813835251bf07a947a1242531442435852ce91d517bca347e5b6"
+    },
+    "fit-evidence.json": {
+      "bytes": 6049,
+      "sha256": "33fd903d0b1923ae896df1c40ea8ee82a04250f73c8aa33ea5ba28a2892dbd61"
+    },
+    "front.png": {
+      "bytes": 2154164,
+      "sha256": "19dbeccc9c0ec62afec08bbe0335cb9bcd6f74668407cd09f0019a207960bc42"
+    },
+    "geometry-migration.json": {
+      "bytes": 5796,
+      "sha256": "0bbb606a57c77ea927ea26bd7e8d9e4f028fef8ba0ded47888c511399c5a6dbd"
+    },
+    "glb-inspection.json": {
+      "bytes": 14412,
+      "sha256": "d5e6a32fbae8f45c5ce41ac46af88923d62d9b323f5bc8c24e1fbdc19f866182"
+    },
+    "godot-import-report.json": {
+      "bytes": 1402,
+      "sha256": "469ef83f581971a879c60b238ce97fa1e47eb2350135f8a9e11dcf6286a696b9"
+    },
+    "hero.png": {
+      "bytes": 2464913,
+      "sha256": "e3331e539425084c534f8d016a855682a010f09466856c52bfec0b63d0b3f693"
+    },
+    "mega-drive-box.blend": {
+      "bytes": 806564,
+      "sha256": "cb593b12d7c9e329f8401e51c3a49156a04e34d0639d3cd9f2363d54439f72c5"
+    },
+    "mega-drive-box.glb": {
+      "bytes": 1791352,
+      "sha256": "8432c26972e7f315a241d479e669c5192d09dbc2b07ce3fae4e3f0084a1cff44"
+    },
+    "open.png": {
+      "bytes": 2300354,
+      "sha256": "06167a5f04c85be39b170c7aaaed4ed35a9a41904ddc2c69a4c4c5bf5a7ed21f"
+    },
+    "rear.png": {
+      "bytes": 2515325,
+      "sha256": "a44c89d76231be59267f4f05de2aa68316b36398f3a7c0c7f27d95dca7655671"
+    },
+    "reference-evidence.json": {
+      "bytes": 6232,
+      "sha256": "19b5a314616aeddb41b1f738c2552b072ac8850cd78eb8f25618edb4de7a24e1"
+    },
+    "render-proof.json": {
+      "bytes": 1744,
+      "sha256": "cf465e30aaa591b8ecb5359754763e01baba9dd0167f92bb2ecf4d8742f738db"
+    },
+    "source-reopen-report.json": {
+      "bytes": 1662,
+      "sha256": "f8212dcfdc1215d73a3e919b20643c1e9565d48b4ae34d318dbfa084b7745c2a"
+    },
+    "top.png": {
+      "bytes": 2531310,
+      "sha256": "7bbc8b7986b8298d6510ee4cf59f3a4fb2ef1d235ab06d73ad3285db4762166e"
+    }
+  }
+}
