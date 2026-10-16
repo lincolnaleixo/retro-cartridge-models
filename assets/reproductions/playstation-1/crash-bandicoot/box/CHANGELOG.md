@@ -1,5 +1,17 @@
 # Changelog — PlayStation 1 — Crash Bandicoot box reproduction
 
+## 0.3.0 — 2026-10-16
+
+- Refined all four original SCUS-94900 inserts for cleaner close-up print, treating illustrations, small type and solid fields separately.
+- Preserved the original booklet/rear composition and the previously validated transparent case materials and articulation.
+- Restored the matching 1994–2009 PlayStation vector wordmark and exact-wording NTSC U/C print; documented per-face changes and reconstruction limits.
+- Preserved the box subset geometry and Open animation from the independently released playstation-1 template v0.2.0; artwork UVs match that selected template.
+- Included the matching published cartridge or disc at its original scale beneath a removable Contents parent, preserving its geometry, materials and embedded images exactly.
+- Included lossless prepared PNGs, source/edit provenance, six standard previews and exact-hash Blender/Godot validation; separately reviewed close-up renders of every exported face.
+- Preserved the box subset template positions, normals, artwork UVs, indices, hinge transforms and the two-second Open clip, verified through a complete decoded-data comparison. The exporter rounded 64 non-artwork UV scalars by at most 5.96e-08; this is recorded separately and does not change any printed-face UV coordinates.
+- Validated the self-contained export, exact embedded artwork, Godot import and both animation endpoints, then reopened the editable Blender source.
+- Kept all previously published template, box, cartridge and disc releases unchanged.
+
 ## 0.2.0 — 2026-10-16
 
 - Reduced coarse scanned halftone and color noise across the four paper inserts, using a gentler filter for fine rear legal type.

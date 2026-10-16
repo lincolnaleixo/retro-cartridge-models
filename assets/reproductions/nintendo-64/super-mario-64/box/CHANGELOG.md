@@ -1,5 +1,17 @@
 # Changelog — Nintendo 64 — Super Mario 64 box reproduction
 
+## 0.3.0 — 2026-10-16
+
+- Retained the clean original K-A front and rebuilt the narrow duotone panels with matching period character artwork.
+- Restored title/console marks and typeset the exact original rear wording independently of the illustration; preserved the original screenshots.
+- Recorded source selections, reconstructed graphic elements and remaining original-art resolution limits per face.
+- Preserved the box subset geometry and Open animation from the independently released nintendo-64 template v0.1.0; artwork UVs match that selected template.
+- Included the matching published cartridge or disc at its original scale beneath a removable Contents parent, preserving its geometry, materials and embedded images exactly.
+- Included lossless prepared PNGs, source/edit provenance, six standard previews and exact-hash Blender/Godot validation; separately reviewed close-up renders of every exported face.
+- Preserved the box subset template positions, normals, artwork UVs, indices, hinge transforms and the two-second Open clip, verified through a complete decoded-data comparison.
+- Validated the self-contained export, exact embedded artwork, Godot import and both animation endpoints, then reopened the editable Blender source.
+- Kept all previously published template, box, cartridge and disc releases unchanged.
+
 ## 0.2.0 — 2026-10-16
 
 - Replaced the soft front with clean original US K-A artwork and returned to the full-resolution original rear scan for a 3072-pixel descreened print.
