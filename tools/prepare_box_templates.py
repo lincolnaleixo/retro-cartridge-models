@@ -129,6 +129,13 @@ def release_changes(console, config, version):
             'Updated the previous released editable source while preserving positions, normals, triangle indices, artwork UVs, hinge transforms and opening animation.',
             'Included new actual-export previews, exact-input engine and source validation reports; preserved the 0.1.0 release and separate CD models unchanged.',
         ]
+    if console == 'mega-drive' and version == '0.2.0':
+        return [
+            'Corrected the spine artwork U direction so lettering reads normally from outside the left edge rather than appearing mirrored.',
+            'Applied the same idempotent correction when reopening a previous editable source; only SpinePrint U coordinates change, with V, vertices, normals, indices, hinges and animation retained.',
+            'Added a printed-face handedness regression check, actual-export spine proofs and hash-bound Blender/Godot validation.',
+            'Preserved the 0.1.0 release and every separate cartridge, disc and other box release unchanged.',
+        ]
     raise ValueError('Explicit template release notes are required for ' + console + ' ' + version)
 
 
@@ -156,6 +163,16 @@ def texts(console, config, construction, structural, engine, source, version, da
                          'transmission extension and uses the alpha fallback. The actual tray/hub '
                          'remains visible and the art remains readable; reflections, tint and '
                          'transmission differ between engines.\n')
+    if console == 'mega-drive' and version == '0.2.0':
+        material_note = ('\nThe spine UV contract is corrected in this release: viewed from outside the left '
+                         'edge (-X) with +Y up, U increases from the rear edge (-Z) to the front edge (+Z). '
+                         'The previous release mirrored spine print. Only `SpinePrint` U coordinates changed; '
+                         'the mesh, V coordinates, other print targets and opening animation are preserved.\n')
+        rounding = structural.get('geometryParity', {}).get('nonArtworkUvFloat32Rounding', [])
+        if rounding:
+            material_note += (f"\nExport also rounded {sum(item['changedScalars'] for item in rounding)} "
+                              'unprinted UV scalars by at most two representable float32 steps. '
+                              'The exact migration and rounding are recorded in `glb-inspection.json`.\n')
     body = f'''# {config['title']}
 
 **Version:** {version} · **Date:** {date} · **Creator:** Lincoln Aleixo
@@ -308,6 +325,8 @@ def stage(console, config, args, audit, source_report, inputs):
                                   'endpointInspection': 'Closed/Open world vertex bounds, named packaging parts and artwork UVs verified.'},
                         'previewLighting': 'Actual GLB reimport in a neutral white studio, Standard view transform, exposure -1.0. Pixel dimensions are recorded per preview. Detached-insert views are separate inspection arrangements.',
                         'editableSource': 'Reopened in Blender ' + source_report['blender'] + '; packed resources, named parts and both poses checked.'})
+        if structural.get('geometryParity'):
+            summary['geometryPreservation'] = structural['geometryParity']
         manifest = {'schemaVersion': 1, 'id': asset_id, 'version': args.version,
                     'title': config['title'], 'creator': 'Lincoln Aleixo', 'license': 'CC-BY-NC-ND-4.0',
                     'licenseScope': RIGHTS, 'date': args.date,

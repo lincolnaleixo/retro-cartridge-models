@@ -110,13 +110,14 @@ def _slot(api, name, slot, width, height, center, material, parent, rear=False):
 
 
 def _spine_surface(api, name, x, width, height, material, parent, artwork=False):
-    """Spine UV: upright along Y, U increases from front edge to rear edge."""
+    """Printed spine reads from left to right when viewed from outside (-X)."""
     y0, y1 = (HEIGHT - height) / 2, (HEIGHT + height) / 2
     z0, z1 = -width / 2, width / 2
     vertices = [(x, y0, z1), (x, y0, z0), (x, y1, z0), (x, y1, z1)]
     obj = api.mesh(name, vertices, [(0, 3, 2, 1)], material)
     uv = obj.data.uv_layers.new(name='ArtworkUV')
-    coordinates = [(0, 0), (1, 0), (1, 1), (0, 1)]
+    coordinates = ([(1, 0), (0, 0), (0, 1), (1, 1)] if artwork
+                   else [(0, 0), (1, 0), (1, 1), (0, 1)])
     for face in obj.data.polygons:
         for loop_index in face.loop_indices:
             uv.data[loop_index].uv = coordinates[obj.data.loops[loop_index].vertex_index]
@@ -125,9 +126,36 @@ def _spine_surface(api, name, x, width, height, material, parent, artwork=False)
         obj['artworkAspectRatio'] = width / height
         obj['artworkWidthMm'] = width
         obj['artworkHeightMm'] = height
-        obj['artworkOrientation'] = 'upright; U increases front edge to rear edge'
+        obj['artworkOrientation'] = 'upright from outside (-X); U increases rear edge to front edge'
         obj['paperConstruction'] = 'Continuous wrap insert, partitioned at the two flexures'
     return _adopt(obj, parent)
+
+
+def refine_spine_uvs():
+    """Correct a released spine's U direction once without changing its mesh."""
+    obj = bpy.data.objects.get('SpinePrint')
+    if obj is None or obj.type != 'MESH' or obj.get('artworkSlot') != 'Spine':
+        raise ValueError('Expected the named Mega Drive spine artwork surface')
+    layer = obj.data.uv_layers.get('ArtworkUV')
+    if layer is None:
+        raise ValueError('Mega Drive spine has no ArtworkUV layer')
+    bpy.context.view_layer.update()
+    samples = [(float((obj.matrix_world @ obj.data.vertices[loop.vertex_index].co).z),
+                float(layer.data[index].uv.x)) for index, loop in enumerate(obj.data.loops)]
+    low, high = min(z for z, _ in samples), max(z for z, _ in samples)
+    if high - low < .001:
+        raise ValueError('Mega Drive spine is not in its closed inspection pose')
+    expected = [(z - low) / (high - low) for z, _ in samples]
+    correct = all(abs(u - target) < 1e-6 for (_, u), target in zip(samples, expected))
+    mirrored = all(abs((1 - u) - target) < 1e-6 for (_, u), target in zip(samples, expected))
+    if not correct and not mirrored:
+        raise ValueError('Unexpected Mega Drive spine UV layout; refusing a broad rewrite')
+    if mirrored and not correct:
+        for value in layer.data:
+            value.uv.x = 1.0 - value.uv.x
+    obj['artworkOrientation'] = 'upright from outside (-X); U increases rear edge to front edge'
+    return {'node': obj.name, 'changed': mirrored and not correct,
+            'operation': 'U = 1 - U; V, geometry and articulation unchanged'}
 
 
 def _spring_clip(api, name, x, y, z0, mat, parent, horizontal=False):

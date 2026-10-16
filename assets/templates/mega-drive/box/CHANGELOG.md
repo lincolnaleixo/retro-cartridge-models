@@ -1,5 +1,12 @@
 # Changelog — Mega Drive — western clamshell box template
 
+## 0.2.0 — 2026-10-16
+
+- Corrected the spine artwork U direction so lettering reads normally from outside the left edge rather than appearing mirrored.
+- Applied the same idempotent correction when reopening a previous editable source; only SpinePrint U coordinates change, with V, vertices, normals, indices, hinges and animation retained.
+- Added a printed-face handedness regression check, actual-export spine proofs and hash-bound Blender/Godot validation.
+- Preserved the 0.1.0 release and every separate cartridge, disc and other box release unchanged.
+
 ## 0.1.0 — 2026-10-16
 
 - Added the first independent neutral box release with pristine materials, real packaging parts and separately addressable artwork targets.

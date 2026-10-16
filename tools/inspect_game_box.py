@@ -191,6 +191,17 @@ def inspect(path):
                 require(reader.items[uv_index]['type'] == 'VEC2', node['name'] + ': artwork UV must be VEC2')
                 require(all(-1e-6 <= v <= 1 + 1e-6 for row in reader.read(uv_index) for v in row),
                         node['name'] + ': artwork UV lies outside normalized 0..1 space')
+                # glTF image V points downward. A printed triangle must therefore
+                # have clockwise image UVs on its outward-facing mesh winding.
+                # Range/parity checks alone miss a mirrored neutral template.
+                uvs = reader.read(uv_index)
+                indices = ([row[0] for row in reader.read(primitive['indices'])]
+                           if 'indices' in primitive else list(range(len(uvs))))
+                require(primitive.get('mode', 4) == 4, node['name'] + ': artwork must use triangles')
+                for offset in range(0, len(indices), 3):
+                    a, b, c = [uvs[index] for index in indices[offset:offset + 3]]
+                    signed_area = (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0])
+                    require(signed_area <= 1e-12, node['name'] + ': mirrored artwork UV orientation')
                 require('material' in primitive, node['name'] + ': artwork has no material')
         if extra.get('boxHinge'):
             require(extra.get('hingeAxis') in ('X', 'Y', 'Z'), node['name'] + ': invalid hinge axis')
@@ -250,7 +261,7 @@ def inspect(path):
     return base
 
 
-def compare_geometry(template, reproduction):
+def compare_geometry(template, reproduction, allowed_uv_mirrors=()):
     """Prove artwork application preserved the template's complete geometry.
 
     Compare decoded accessor values, not buffer offsets: embedded images and
@@ -290,6 +301,7 @@ def compare_geometry(template, reproduction):
     require(old_nodes.keys() == new_nodes.keys(), 'geometry parity: named scene parts changed')
     count = {'meshNodes': 0, 'primitives': 0, 'comparedAttributeValues': 0, 'comparedIndices': 0}
     uv_rounding = []
+    uv_mirrors = []
     metadata = ('artworkSlot', 'artworkAspectRatio', 'artworkWidthMm', 'artworkHeightMm',
                 'boxHinge', 'hingeAxis', 'closedAngleDegrees', 'openAngleDegrees',
                 'closedQuaternion', 'openQuaternion', 'animationPhase')
@@ -320,6 +332,17 @@ def compare_geometry(template, reproduction):
                 old_values = old_reader.read(accessor)
                 new_values = new_reader.read(new_attributes[semantic])
                 if old_values != new_values:
+                    if name in allowed_uv_mirrors and semantic == 'TEXCOORD_0':
+                        require(old.get('extras', {}).get('artworkSlot')
+                                and len(old_values) == len(new_values)
+                                and all(len(a) == len(b) == 2 and b == (1.0 - a[0], a[1])
+                                        for a, b in zip(old_values, new_values)),
+                                context + ' targeted U reflection differs from the declared migration')
+                        uv_mirrors.append({'node': name, 'attribute': semantic,
+                                           'operation': 'U = 1 - U; V unchanged',
+                                           'changedScalars': sum(a[0] != b[0] for a, b in zip(old_values, new_values))})
+                        count['comparedAttributeValues'] += sum(len(row) for row in old_values)
+                        continue
                     # Blender can round an unprinted surface UV by two float32
                     # steps while rebuilding a material graph. Artwork UVs and
                     # every geometric attribute still require exact equality.
@@ -357,16 +380,19 @@ def compare_geometry(template, reproduction):
 
     require(curves(before, old_reader) == curves(after, new_reader),
             'geometry parity: opening animation key data changed')
+    require(set(allowed_uv_mirrors) == {item['node'] for item in uv_mirrors},
+            'geometry parity: declared UV migration was not applied exactly once')
     return {'status': 'passed', 'templateFile': Path(template).name,
             'templateSha256': hashlib.sha256(Path(template).read_bytes()).hexdigest(),
             'reproductionFile': Path(reproduction).name,
             'reproductionSha256': hashlib.sha256(Path(reproduction).read_bytes()).hexdigest(),
             **count, 'hierarchyTransformsHingesIdentical': True,
-            'positionsNormalsIndicesIdentical': True, 'artworkUvsIdentical': True,
-            'positionsNormalsUvsIndicesIdentical': not uv_rounding, 'animationKeysIdentical': True,
+            'positionsNormalsIndicesIdentical': True, 'artworkUvsIdentical': not uv_mirrors,
+            'positionsNormalsUvsIndicesIdentical': not uv_rounding and not uv_mirrors, 'animationKeysIdentical': True,
             'namedSemanticPartsIdentical': True, 'staticMeshNameAliases': aliases,
             'nonArtworkUvFloat32Rounding': uv_rounding,
-            'nonArtworkUvTolerance': 'two representable float32 steps'}
+            'nonArtworkUvTolerance': 'two representable float32 steps',
+            'declaredArtworkUvMirrors': uv_mirrors}
 
 
 GODOT_AUDIT = r'''extends SceneTree

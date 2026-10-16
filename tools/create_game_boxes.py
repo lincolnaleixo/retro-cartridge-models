@@ -76,6 +76,9 @@ def reopen_source(path, console):
     if console == 'playstation-1':
         from boxes_playstation import refine_clear_materials
         refine_clear_materials()
+    elif console == 'mega-drive':
+        from boxes_mega_drive import refine_spine_uvs
+        refine_spine_uvs()
     return root
 
 
