@@ -1,12 +1,15 @@
 # PlayStation 1 — clear-tray jewel case template
 
-**Version:** 0.1.0 · **Date:** 2026-10-16 · **Creator:** Lincoln Aleixo
+**Version:** 0.2.0 · **Date:** 2026-10-16 · **Creator:** Lincoln Aleixo
 
 A clean standard jewel case with a clear removable tray, hinged lid, disc-retaining hub, blank booklet and a two-sided folded tray card.
 
-![Closed box](previews/0.1.0/hero.png)
+The clear shell, rims/catches and tray use alpha coverage 0.16, 0.35 and 0.25, respectively, alongside transmission 1.0 and IOR 1.59. This is a reviewed portable approximation: Godot 4.7.2 Compatibility does not import the transmission extension and uses the alpha fallback. The actual tray/hub remains visible and the art remains readable; reflections, tint and transmission differ between engines.
 
-![Open box](previews/0.1.0/open.png)
+
+![Closed box](previews/0.2.0/hero.png)
+
+![Open box](previews/0.2.0/open.png)
 
 - A standard-compatible 142.35 × 124.75 × 10.4 mm envelope with a separate front-lid pivot.
 - Clear molded lid and removable tray with a central retaining hub and approximate rib, clip and hinge detail.

@@ -5,6 +5,7 @@ Blender usage: blender -b --python tools/create_game_boxes.py -- --console nes
 Each result has one packed editable source and one closed GLB with an Open clip.
 """
 import argparse
+import hashlib
 import json
 import math
 import sys
@@ -53,6 +54,29 @@ def build(console):
     else:
         from boxes_playstation import build as builder
     return builder(api)
+
+
+def reopen_source(path, console):
+    """Refine a released editable source without reconstructing its geometry."""
+    bpy.ops.wm.open_mainfile(filepath=str(path.resolve()))
+    bpy.context.scene.frame_set(1)
+    roots = [obj for obj in bpy.context.scene.objects
+             if obj.parent is None and obj.get('nominalDimensionsMm')]
+    if len(roots) != 1:
+        raise ValueError('Expected exactly one packaging root in previous source')
+    root = roots[0]
+    keep = {root, *root.children_recursive}
+    for obj in list(bpy.data.objects):
+        if obj not in keep:
+            bpy.data.objects.remove(obj, do_unlink=True)
+        else:
+            obj.animation_data_clear()
+    api.ROOT = root
+    set_pose(root, False)
+    if console == 'playstation-1':
+        from boxes_playstation import refine_clear_materials
+        refine_clear_materials()
+    return root
 
 
 def xyzw(quaternion):
@@ -188,6 +212,9 @@ def apply_artwork(root, mapping):
                 raise ValueError('Artwork slot has no UVs: ' + obj.name)
             mat = obj.data.materials[0]
             shader = mat.node_tree.nodes['Principled BSDF']
+            for node in list(mat.node_tree.nodes):
+                if node.type == 'TEX_IMAGE':
+                    mat.node_tree.nodes.remove(node)
             image_node = mat.node_tree.nodes.new('ShaderNodeTexImage')
             image_node.image = image
             mat.node_tree.links.new(image_node.outputs['Color'], shader.inputs['Base Color'])
@@ -195,6 +222,9 @@ def apply_artwork(root, mapping):
             # Ink on coated carton or paper retains the pristine finish; it is
             # not metallic, emissive or faded into the underlying paper color.
             shader.inputs['Roughness'].default_value = 0.48
+    for image in list(bpy.data.images):
+        if image.users == 0:
+            bpy.data.images.remove(image)
 
 
 def render(glb, destination, view='hero', opened=False, samples=24, resolution=1200):
@@ -226,6 +256,7 @@ def main():
     parser.add_argument('--output', type=Path, default=Path('dist/game-boxes-20261016/templates'))
     parser.add_argument('--asset-id')
     parser.add_argument('--artwork', type=Path)
+    parser.add_argument('--source', type=Path, help='Previous released Blender source to refine in place in memory')
     parser.add_argument('--no-render', action='store_true')
     parser.add_argument('--samples', type=int, default=24)
     parser.add_argument('--resolution', type=int, default=1200)
@@ -233,10 +264,19 @@ def main():
     asset_id = args.asset_id or args.console + '-box'
     destination = args.output.resolve() / asset_id
     destination.mkdir(parents=True, exist_ok=True)
-    root = build(args.console)
+    root = reopen_source(args.source, args.console) if args.source else build(args.console)
     if args.artwork:
         apply_artwork(root, json.loads(args.artwork.read_text()))
-    hinges = record_hinges(root)
+    if args.source:
+        hinges = [{'name': obj.name, 'axis': obj['hingeAxis'],
+                   'closedQuaternion': list(obj['closedQuaternion']),
+                   'openQuaternion': list(obj['openQuaternion']),
+                   'animationPhase': float(obj.get('animationPhase', 0))}
+                  for obj in root.children_recursive if obj.get('boxHinge')]
+        if not hinges:
+            raise ValueError('Previous source has no articulated packaging hinges')
+    else:
+        hinges = record_hinges(root)
     set_pose(root, False)
     closed = precise_bounds(root)
     set_pose(root, True)
@@ -255,6 +295,10 @@ def main():
                                  if obj.get('artworkSlot')},
                 'referenceBasis': root.get('referenceBasis', ''),
                 'geometryLimitations': root.get('geometryLimitations', '')}
+    if args.source:
+        contract['previousSource'] = {'filename': args.source.name,
+            'sha256': hashlib.sha256(args.source.read_bytes()).hexdigest(),
+            'method': 'Reopened the previous released source; preserved all packaging geometry and articulation.'}
     source_animation(root)
     api.studio(root, neutral_print=True)
     sanitize_source_paths()

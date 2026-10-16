@@ -7,8 +7,34 @@ import math
 from media_playstation import build as build_case_with_disc
 
 
+def refine_clear_materials(alpha_coverage=None):
+    """Update the box's stable clear-material names, including a loaded source."""
+    import bpy
+    coverage = alpha_coverage or {'Clear molded polystyrene': .16,
+                                 'Polystyrene rims and catches': .35,
+                                 'Clear injection molded tray': .25}
+    # Transmission describes light passing through solid polystyrene. The old
+    # disc assembly also lowers coverage alpha, which removes most reflections
+    # and makes the empty tray/hub nearly disappear. Keep alpha fallback for
+    # importers that ignore transmission, with enough coverage to retain the
+    # molded details. This helper is used only by the independent box variant.
+    for name, roughness in [('Clear molded polystyrene', .035),
+                            ('Polystyrene rims and catches', .05),
+                            ('Clear injection molded tray', .045)]:
+        mat = bpy.data.materials[name]
+        alpha = coverage[name]
+        mat.diffuse_color = (*mat.diffuse_color[:3], alpha)
+        mat.surface_render_method = 'BLENDED' if alpha < 1.0 else 'DITHERED'
+        shader = mat.node_tree.nodes['Principled BSDF']
+        shader.inputs['Alpha'].default_value = alpha
+        shader.inputs['Transmission Weight'].default_value = 1.0
+        shader.inputs['Roughness'].default_value = roughness
+        shader.inputs['IOR'].default_value = 1.59
+
+
 def build(api):
     root = build_case_with_disc(api)
+    refine_clear_materials()
     root.name = 'PLAYSTATION_1_BOX'
     root['variant'] = 'North American standard single-disc jewel case; blank paper inserts'
     root['referenceBasis'] = 'CMC original jewel-case inspection dimensions and standard-tray drawings; NTSC-U/C specimen photographs'

@@ -8,6 +8,7 @@ never replaced. Use a new version or a separate staging directory for changes.
 """
 import argparse
 import json
+import re
 from pathlib import Path
 import shutil
 import struct
@@ -114,16 +115,53 @@ def source_links(console, evidence):
                      for source in sources)
 
 
-def texts(console, config, construction, structural, engine, source, version, date, evidence):
+def release_changes(console, config, version):
+    if version == '0.1.0':
+        return ['Added the first independent neutral box release with pristine materials, real packaging parts and separately addressable artwork targets.'] + config['features'] + [
+            'Preserved meter scale, +Y up, +Z front and a bottom-center closed-envelope pivot; included one two-second Open animation in the portable export.',
+            'Verified the actual exported poses, self-contained resources, named parts and UVs; imported and evaluated the animation in Godot and reopened the editable Blender source.',
+            'Recorded source-specific approximation limits and retained existing cartridge and disc releases unchanged.',
+        ]
+    if console == 'playstation-1' and version == '0.2.0':
+        return [
+            'Restored visibility of the clear disc tray, circular recess, retaining hub, ribs and lid rims by increasing transparent-material coverage and refining surface roughness.',
+            'Retained transmission shading plus an alpha fallback for engines that do not import KHR_materials_transmission; reviewed the actual clear-plastic appearance in Blender and Godot.',
+            'Updated the previous released editable source while preserving positions, normals, triangle indices, artwork UVs, hinge transforms and opening animation.',
+            'Included new actual-export previews, exact-input engine and source validation reports; preserved the 0.1.0 release and separate CD models unchanged.',
+        ]
+    raise ValueError('Explicit template release notes are required for ' + console + ' ' + version)
+
+
+def versioned_changelog(title, version, date, changes, previous=''):
+    """Prepend this release while retaining every earlier release section."""
+    sections = re.split(r'(?m)(?=^## )', previous)
+    history = ''.join(section for section in sections
+                      if section.startswith('## ') and not re.match(
+                          r'## ' + re.escape(version) + r'(?:\s|$)', section))
+    entry = '# Changelog — ' + title + '\n\n## ' + version + ' — ' + date + '\n\n'
+    entry += '\n'.join('- ' + change for change in changes) + '\n'
+    return entry + ('\n' + history if history else '')
+
+
+def texts(console, config, construction, structural, engine, source, version, date, evidence, previous_changelog=''):
     dimensions = ' × '.join(f'{value:g}' for value in construction['nominalDimensionsMm'])
     slots = '\n'.join(f'| `{name}` | `{slot}` |' for name, slot in construction['artworkSlots'].items())
     features = '\n'.join('- ' + feature for feature in config['features'])
     hinge_names = ', '.join('`' + name + '`' for name in structural['hinges'])
+    material_note = ''
+    if console == 'playstation-1' and version == '0.2.0':
+        material_note = ('\nThe clear shell, rims/catches and tray use alpha coverage 0.16, 0.35 and 0.25, '
+                         'respectively, alongside transmission 1.0 and IOR 1.59. This is a reviewed '
+                         'portable approximation: Godot 4.7.2 Compatibility does not import the '
+                         'transmission extension and uses the alpha fallback. The actual tray/hub '
+                         'remains visible and the art remains readable; reflections, tint and '
+                         'transmission differ between engines.\n')
     body = f'''# {config['title']}
 
 **Version:** {version} · **Date:** {date} · **Creator:** Lincoln Aleixo
 
 {config['description']}
+{material_note}
 
 ![Closed box](hero.png)
 
@@ -191,16 +229,8 @@ The release includes `reference-evidence.json` with exact source URLs, observati
 
 Original contributions are licensed under **Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International**. Attribution is required; commercial use and redistribution of adaptations are not granted by this license. The editable source does not change those terms. Read `LICENSE` and `NOTICE.md` in the release.
 '''
-    changelog = f'''# Changelog — {config['title']}
-
-## {version} — {date}
-
-- Added the first independent neutral box release with pristine materials, real packaging parts and separately addressable artwork targets.
-{features}
-- Preserved meter scale, +Y up, +Z front and a bottom-center closed-envelope pivot; included one two-second Open animation in the portable export.
-- Verified the actual exported poses, self-contained resources, named parts and UVs; imported and evaluated the animation in Godot and reopened the editable Blender source.
-- Recorded source-specific approximation limits and retained existing cartridge and disc releases unchanged.
-'''
+    changelog = versioned_changelog(config['title'], version, date,
+                                   release_changes(console, config, version), previous_changelog)
     return {'README.md': body, 'CREDITS.md': credits, 'CHANGELOG.md': changelog}
 
 
@@ -238,8 +268,10 @@ def stage(console, config, args, audit, source_report, inputs):
     engine = {'status': 'passed', 'engine': audit['godot']['engine'], 'assets': [engine_asset]}
     source = {key: value for key, value in source_report.items() if key != 'assets'}
     source['assets'] = [source_asset]
+    previous_changelog = directory / 'CHANGELOG.md'
     docs = texts(console, config, construction, structural, engine, source,
-                 args.version, args.date, evidence)
+                 args.version, args.date, evidence,
+                 previous_changelog.read_text() if previous_changelog.is_file() else '')
     if (folder / 'insert-inspection.png').is_file():
         docs['README.md'] += '\n## Detached insert inspection\n\n![Detached packaging insert](insert-inspection.png)\n'
     with tempfile.TemporaryDirectory(prefix=asset_id + '-', dir=args.base) as temporary:
@@ -283,7 +315,7 @@ def stage(console, config, args, audit, source_report, inputs):
                                          'pivot': 'bottom center of nominal closed envelope'},
                     'nominalDimensionsMm': construction['nominalDimensionsMm'],
                     'measurementBasis': construction['referenceBasis'] + '. ' + config['limitations'],
-                    'changes': config['features'] + ['Added self-contained editable source, a named Open clip, reviewed previews and exact-input validation reports.'],
+                    'changes': release_changes(console, config, args.version),
                     'validation': summary, 'previews': previews,
                     'release': {'tag': tag, 'archive': {}}, 'files': {}}
         draft_manifest = temporary / 'manifest.json'
