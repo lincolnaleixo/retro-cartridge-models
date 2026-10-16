@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "id": "mega-drive-box",
+  "version": "0.2.0",
+  "title": "Mega Drive \u2014 western clamshell box template",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original contributions: CC BY-NC-ND 4.0. Product designs and third-party marks are excluded. No game artwork, source photograph or copied logo is included.",
+  "date": "2026-10-16",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center of nominal closed envelope"
+  },
+  "nominalDimensionsMm": [
+    129.0,
+    188.0,
+    26.0
+  ],
+  "measurementBasis": "Original Sonic PAL case photograph; auction specimen description; manufacturer protector fit envelope. The 129 \u00d7 177 \u00d7 26 mm body and 188 mm height including hanger are nominal estimates from protector fit and specimen photographs. Mold revision, clip offsets, sleeve thickness and booklet pagination are approximate. Flexible spine folds use rigid pivots.",
+  "changes": [
+    "Corrected the spine artwork U direction so lettering reads normally from outside the left edge rather than appearing mirrored.",
+    "Applied the same idempotent correction when reopening a previous editable source; only SpinePrint U coordinates change, with V, vertices, normals, indices, hinges and animation retained.",
+    "Added a printed-face handedness regression check, actual-export spine proofs and hash-bound Blender/Godot validation.",
+    "Preserved the 0.1.0 release and every separate cartridge, disc and other box release unchanged."
+  ],
+  "validation": {
+    "meshes": 18,
+    "primitives": 18,
+    "triangles": 13872,
+    "materials": 10,
+    "images": 3,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "embeddedImages": 3,
+    "externalImages": 0,
+    "artworkSlots": {
+      "BackPrint": "Back",
+      "BookletBackPrint": "BookletBack",
+      "BookletFrontPrint": "BookletFront",
+      "FrontPrint": "Front",
+      "SpinePrint": "Spine"
+    },
+    "animation": {
+      "name": "Open",
+      "durationSeconds": 2.0,
+      "channels": 2
+    },
+    "godot": {
+      "version": "4.7.2-stable (official)",
+      "headlessImport": "passed",
+      "endpointInspection": "Closed/Open world vertex bounds, named packaging parts and artwork UVs verified."
+    },
+    "previewLighting": "Actual GLB reimport in a neutral white studio, Standard view transform, exposure -1.0. Pixel dimensions are recorded per preview. Detached-insert views are separate inspection arrangements.",
+    "editableSource": "Reopened in Blender 5.2.2 LTS; packed resources, named parts and both poses checked.",
+    "geometryPreservation": {
+      "status": "passed",
+      "templateFile": "mega-drive-box.glb",
+      "templateSha256": "8e0db2ca1973c4dc7b54c12ff7d67489b88df0de68f0b3f6b64c7fe3d64c44ad",
+      "reproductionFile": "mega-drive-box.glb",
+      "reproductionSha256": "a230cb75c258016ef770a03d307f86bace5bbfcb20e1c00946e43b9019948831",
+      "meshNodes": 18,
+      "primitives": 18,
+      "comparedAttributeValues": 263824,
+      "comparedIndices": 41616,
+      "hierarchyTransformsHingesIdentical": true,
+      "positionsNormalsIndicesIdentical": true,
+      "artworkUvsIdentical": false,
+      "positionsNormalsUvsIndicesIdentical": false,
+      "animationKeysIdentical": true,
+      "namedSemanticPartsIdentical": true,
+      "staticMeshNameAliases": {},
+      "nonArtworkUvFloat32Rounding": [
+        {
+          "node": "MegaDriveGameBox \u00b7 Case satin rims and flexures",
+          "attribute": "TEXCOORD_0",
+          "changedScalars": 13,
+          "maximumDelta": 1.9073486328125e-06,
+          "maximumFloat32Steps": 1
+        },
+        {
+          "node": "Booklet \u00b7 Unprinted booklet page edges",
+          "attribute": "TEXCOORD_0",
+          "changedScalars": 4,
+          "maximumDelta": 5.960464477539063e-08,
+          "maximumFloat32Steps": 2
+        },
+        {
+          "node": "FrontLid \u00b7 Case satin rims and flexures",
+          "attribute": "TEXCOORD_0",
+          "changedScalars": 8,
+          "maximumDelta": 5.960464477539063e-08,
+          "maximumFloat32Steps": 2
+        },
+        {
+          "node": "FrontLid \u00b7 Case satin rims and flexures",
+          "attribute": "TEXCOORD_1",
+          "changedScalars": 4,
+          "maximumDelta": 4.76837158203125e-07,
+          "maximumFloat32Steps": 1
+        }
+      ],
+      "nonArtworkUvTolerance": "two representable float32 steps",
+      "declaredArtworkUvMirrors": [
+        {
+          "node": "SpinePrint",
+          "attribute": "TEXCOORD_0",
+          "operation": "U = 1 - U; V unchanged",
+          "changedScalars": 4
+        }
+      ]
+    }
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/templates/mega-drive/box/previews/0.2.0/hero.png",
+      "bytes": 1392331,
+      "sha256": "3328e4dc7ea19cac0a02e9c389c9fed82a840dea68a74be64f5b1b082b6ae3ef",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "front",
+      "path": "assets/templates/mega-drive/box/previews/0.2.0/front.png",
+      "bytes": 1310044,
+      "sha256": "2a8898c34e85be9b56e5707aca56c45977c5cbf812b39b4e0b8d3f6b329dc582",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "rear",
+      "path": "assets/templates/mega-drive/box/previews/0.2.0/rear.png",
+      "bytes": 1459066,
+      "sha256": "df728d20f61ac7bb9b742982e90a43d1da00abc59f29df4eedcbf1578c9ad60c",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "top",
+      "path": "assets/templates/mega-drive/box/previews/0.2.0/top.png",
+      "bytes": 1562407,
+      "sha256": "f364ebe095095824aac4674720543ba6b05e985060bcd832ed7165d00ac648bb",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "bottom",
+      "path": "assets/templates/mega-drive/box/previews/0.2.0/bottom.png",
+      "bytes": 1345717,
+      "sha256": "0468b7736f2f32d538523c79bec2b94ba18f97ef00c6201d930c03acc702c1b8",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "open",
+      "path": "assets/templates/mega-drive/box/previews/0.2.0/open.png",
+      "bytes": 1409746,
+      "sha256": "37d517ae50d7c2482f3ac815217c6c22e2168494f06c825bc349889105e63377",
+      "width": 1400,
+      "height": 1167
+    }
+  ],
+  "release": {
+    "tag": "mega-drive-box-v0.2.0",
+    "archive": {
+      "name": "mega-drive-box-0.2.0.zip",
+      "bytes": 10114396,
+      "sha256": "fc6116c15fde7a3695da5b3f95571ebc5bb444a1b82c9ce480029dfe2f3788c0",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/mega-drive-box-v0.2.0/mega-drive-box-0.2.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 1663,
+      "sha256": "41d9ba6daf4e4a207c72ec898c108d6b51d7cb8239acf3d6461870afe06d42a7"
+    },
+    "CREDITS.md": {
+      "bytes": 2633,
+      "sha256": "49f2b104e1bd3d57547365ca92f413ca45a867fa5010319774321169cb26e5b4"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 4351,
+      "sha256": "04602588f5708dd1ca0b26f7194ce5ea5fcb2a12fb1ece283fbd9321ab814033"
+    },
+    "README.md": {
+      "bytes": 4302,
+      "sha256": "422dad55ca35d51b407cff050f5e20520a450054eb2bc190d11bbf9354663352"
+    },
+    "bottom.png": {
+      "bytes": 1345717,
+      "sha256": "0468b7736f2f32d538523c79bec2b94ba18f97ef00c6201d930c03acc702c1b8"
+    },
+    "construction.json": {
+      "bytes": 2395,
+      "sha256": "87fb58b787f4b2c536a0187ab67ae0c72d2c8d05394665a3f1b3b901769981e3"
+    },
+    "front.png": {
+      "bytes": 1310044,
+      "sha256": "2a8898c34e85be9b56e5707aca56c45977c5cbf812b39b4e0b8d3f6b329dc582"
+    },
+    "glb-inspection.json": {
+      "bytes": 3666,
+      "sha256": "1446cac414289abf410b83b9fbaf2359a860a86ec1ff075dc8dc455816c0588e"
+    },
+    "godot-import-report.json": {
+      "bytes": 1402,
+      "sha256": "e4898850b619379041f1be240cf39669903fea2870ddee3d7819a454ec9bccf6"
+    },
+    "hero.png": {
+      "bytes": 1392331,
+      "sha256": "3328e4dc7ea19cac0a02e9c389c9fed82a840dea68a74be64f5b1b082b6ae3ef"
+    },
+    "mega-drive-box.blend": {
+      "bytes": 804338,
+      "sha256": "f893cb316d7ae9b4a95f75533388b03bdacc13e2393bfd7d61d0dd45ba5441fa"
+    },
+    "mega-drive-box.glb": {
+      "bytes": 1790776,
+      "sha256": "a230cb75c258016ef770a03d307f86bace5bbfcb20e1c00946e43b9019948831"
+    },
+    "open.png": {
+      "bytes": 1409746,
+      "sha256": "37d517ae50d7c2482f3ac815217c6c22e2168494f06c825bc349889105e63377"
+    },
+    "rear.png": {
+      "bytes": 1459066,
+      "sha256": "df728d20f61ac7bb9b742982e90a43d1da00abc59f29df4eedcbf1578c9ad60c"
+    },
+    "reference-evidence.json": {
+      "bytes": 6232,
+      "sha256": "19b5a314616aeddb41b1f738c2552b072ac8850cd78eb8f25618edb4de7a24e1"
+    },
+    "source-reopen-report.json": {
+      "bytes": 1662,
+      "sha256": "3457726aa335921b15a05d48e8180c7e9cc5c268e3d8785e8b87952ff247191e"
+    },
+    "top.png": {
+      "bytes": 1562407,
+      "sha256": "f364ebe095095824aac4674720543ba6b05e985060bcd832ed7165d00ac648bb"
+    }
+  }
+}

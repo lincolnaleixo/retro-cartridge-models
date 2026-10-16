@@ -14,6 +14,10 @@ from test_inspect_glb import encode, fixture as geometry_fixture
 def fixture():
     document, raw = geometry_fixture()
     binary = bytearray(raw)
+    # glTF image V grows downward, opposite the outward-facing XY triangle.
+    for offset in (16, 36, 56):
+        value, = struct.unpack_from('<f', binary, offset)
+        struct.pack_into('<f', binary, offset, 1.0 - value)
     binary.extend(b'\0' * (-len(binary) % 4))
 
     def accessor(rows, kind):
@@ -86,6 +90,22 @@ class PackagingContractTests(unittest.TestCase):
         document, binary = fixture()
         document['nodes'][1]['extras']['artworkSlot'] = 'WrapBack'
         self.assertEqual(self.check_model(document, binary)['status'], 'passed')
+
+    def test_mirrored_print_is_rejected_even_with_normalized_uvs(self):
+        document, raw = fixture()
+        binary = bytearray(raw)
+        for offset in (12, 32, 52):
+            value, = struct.unpack_from('<f', binary, offset)
+            struct.pack_into('<f', binary, offset, 1.0 - value)
+        self.invalid(document, bytes(binary), 'mirrored artwork UV orientation')
+
+    def test_rotated_print_keeps_readable_handedness(self):
+        document, raw = fixture()
+        binary = bytearray(raw)
+        for offset in (12, 32, 52):
+            u, v = struct.unpack_from('<2f', binary, offset)
+            struct.pack_into('<2f', binary, offset, v, 1.0 - u)
+        self.assertEqual(self.check_model(document, bytes(binary))['status'], 'passed')
 
     def test_out_of_range_and_nonfinite_uvs_fail(self):
         for value, message in [(1.25, 'outside normalized'), (float('nan'), 'non-finite')]:
@@ -177,12 +197,32 @@ class PackagingContractTests(unittest.TestCase):
 
 
 class TemplateParityTests(unittest.TestCase):
-    def compare(self, before, after):
+    def compare(self, before, after, allowed_uv_mirrors=()):
         with tempfile.TemporaryDirectory() as directory:
             template, reproduction = Path(directory) / 'template.glb', Path(directory) / 'reproduction.glb'
             template.write_bytes(encode(*before))
             reproduction.write_bytes(encode(*after))
-            return compare_geometry(template, reproduction)
+            return compare_geometry(template, reproduction, allowed_uv_mirrors)
+
+    def test_declared_u_migration_is_exact_and_required(self):
+        before = fixture()
+        document, raw = copy.deepcopy(before)
+        binary = bytearray(raw)
+        for offset in (12, 32, 52):
+            value, = struct.unpack_from('<f', binary, offset)
+            struct.pack_into('<f', binary, offset, 1.0 - value)
+        names = ('FrontPrint', 'BackPrint')  # This fixture shares one mesh.
+        result = self.compare(before, (document, bytes(binary)), names)
+        self.assertFalse(result['artworkUvsIdentical'])
+        self.assertTrue(result['positionsNormalsIndicesIdentical'])
+        self.assertEqual({item['node'] for item in result['declaredArtworkUvMirrors']}, set(names))
+        with self.assertRaisesRegex(ValidationError, 'TEXCOORD_0 values changed'):
+            self.compare(before, (document, bytes(binary)), ('FrontPrint',))
+        with self.assertRaisesRegex(ValidationError, 'not applied exactly once'):
+            self.compare(before, before, names)
+        struct.pack_into('<f', binary, 16, .5)
+        with self.assertRaisesRegex(ValidationError, 'targeted U reflection'):
+            self.compare(before, (document, bytes(binary)), names)
 
     def test_print_material_changes_preserve_geometry(self):
         before = fixture()

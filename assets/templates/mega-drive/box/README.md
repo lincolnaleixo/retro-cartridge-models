@@ -1,12 +1,17 @@
 # Mega Drive — western clamshell box template
 
-**Version:** 0.1.0 · **Date:** 2026-10-16 · **Creator:** Lincoln Aleixo
+**Version:** 0.2.0 · **Date:** 2026-10-16 · **Creator:** Lincoln Aleixo
 
 A fresh black clamshell with two spine folds, transparent cover sleeve, sideways cartridge guides, booklet retainers and an intact retail hanger.
 
-![Closed box](previews/0.1.0/hero.png)
+The spine UV contract is corrected in this release: viewed from outside the left edge (-X) with +Y up, U increases from the rear edge (-Z) to the front edge (+Z). The previous release mirrored spine print. Only `SpinePrint` U coordinates changed; the mesh, V coordinates, other print targets and opening animation are preserved.
 
-![Open box](previews/0.1.0/open.png)
+Export also rounded 29 unprinted UV scalars by at most two representable float32 steps. The exact migration and rounding are recorded in `glb-inspection.json`.
+
+
+![Closed box](previews/0.2.0/hero.png)
+
+![Open box](previews/0.2.0/open.png)
 
 - Hollow black molded front and rear shells with two separate spine pivots and a 180-degree open spread.
 - Independent clear cover sleeve above the unprinted front, spine and rear paper surfaces.

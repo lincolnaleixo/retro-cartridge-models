@@ -160,8 +160,8 @@
     {
       "id": "mega-drive-box",
       "title": "Mega Drive — western clamshell box template",
-      "latest": "0.1.0",
-      "manifest": "assets/templates/mega-drive/box/versions/0.1.0.json",
+      "latest": "0.2.0",
+      "manifest": "assets/templates/mega-drive/box/versions/0.2.0.json",
       "displayTitle": "Mega Drive · Empty clamshell",
       "kind": "BOX TEMPLATE",
       "description": "A fresh black clamshell with two spine folds, transparent cover sleeve, sideways cartridge guides, booklet retainers and an intact retail hanger.",
