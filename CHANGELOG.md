@@ -4,6 +4,10 @@ Model release histories also live in each asset directory's `CHANGELOG.md`, unde
 
 ## Unreleased
 
+- Added five game-box reproductions, each 0.1.0, after the independent templates: Super Mario Bros., Super Mario World, Super Mario 64, Sonic the Hedgehog and Crash Bandicoot. Each lives in `assets/reproductions/<console>/<game>/box/` with separate release metadata, editable source, articulated GLB, prepared print PNGs and six actual-export views.
+- Prepared edition-matched artwork with deterministic crops, perspective correction, masked wear cleanup and preserved original lettering/illustrations. Recorded 24 reference sources and rejected mixed-edition or altered alternatives. Original source resolution limits remain explicit, particularly NES and Nintendo side/rear photographs.
+- Verified all five reproduction packages, packed Blender sources and Godot 4.7.2 closed/Open poses. Geometry, artwork UVs, indices, hierarchy and animation match the template releases; documented only minor exporter rounding of unprinted plastic/page-edge UVs on Sonic and Crash. Added the boxes to the organized offline library without changing existing media releases.
+
 - Fixed the gallery's blank 3D view: the bundled loader treated descriptive `extras.pivot` text as a numeric vector, producing invalid root transforms. A narrowly scoped compatibility guard now interprets only finite three-number arrays as pivots. Existing GLBs remain unchanged; the patch, upstream checksum and regression checks are documented with the viewer license. Confirmed the N64 box renders and switches between closed/open in the browser.
 
 - Added five separately versioned pristine packaging templates, each 0.1.0: NES, SNES, Nintendo 64, Mega Drive and PlayStation 1. Cardboard models include folded flaps and removable inserts; plastic cases include articulated lids, retaining details and blank paper surfaces. One self-contained GLB per asset contains a two-second `Open` clip and a closed default pose. Editable sources, six actual-export renders, dimensional evidence and checksums are packaged independently under each console's `box/` directory.

@@ -70,6 +70,20 @@ blender --factory-startup --background --python tools/create_game_boxes.py -- --
 
 Use `--artwork mapping.json` to assign local print files by the slot names recorded in `construction.json`. Embedded images use sRGB. Each GLB retains the same articulated structure and opens at two seconds; Blender sources use frames 1–61 at 30 fps.
 
+### Game-box reproductions
+
+Each game's `box/` subfolder adds a separate packaging asset alongside its cartridge or disc. All five start at 0.1.0, using the independently released templates above.
+
+| Game | Packaging edition | Files |
+| --- | --- | --- |
+| [Super Mario Bros.](assets/reproductions/nes/super-mario-bros/box/README.md) | Early US NES carton with rear hang tab | [Release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nes-super-mario-bros-box-v0.1.0) |
+| [Super Mario World](assets/reproductions/snes/super-mario-world/box/README.md) | US SNES retail carton | [Release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/snes-super-mario-world-box-v0.1.0) |
+| [Super Mario 64](assets/reproductions/nintendo-64/super-mario-64/box/README.md) | Original US K-A carton | [Release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nintendo-64-super-mario-64-box-v0.1.0) |
+| [Sonic the Hedgehog](assets/reproductions/mega-drive/sonic-the-hedgehog/box/README.md) | PAL cream/grid clamshell and landscape manual covers | [Release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/mega-drive-sonic-the-hedgehog-box-v0.1.0) |
+| [Crash Bandicoot](assets/reproductions/playstation-1/crash-bandicoot/box/README.md) | US black-label SCUS-94900 clear-tray jewel case | [Release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/playstation-1-crash-bandicoot-box-v0.1.0) |
+
+Print surfaces use reviewed original scans or rectified specimen photographs with local wear cleanup. NES photographs and some Nintendo side/rear panels remain softer than high-resolution scans; prepared-image size is not a claim of new captured detail. Source editions, effective resolutions and restoration methods are documented per game. Original artwork and marks remain excluded from the modeling license.
+
 ### Cartridges and discs
 
 | Model | Current version | Files | Changes |

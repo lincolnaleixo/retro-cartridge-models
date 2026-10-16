@@ -1,0 +1,547 @@
+{
+  "schemaVersion": 1,
+  "researchDate": "2026-10-16",
+  "publicationRights": "not-established",
+  "scope": "Provenance for local private-review artwork only. Original third-party images and prepared textures remain in ignored dist. Public code and metadata do not grant rights to the referenced art.",
+  "sources": [
+    {
+      "id": "sm64-front-cover",
+      "localReference": "dist/game-boxes-20261016/references/sm64-front-cover.jpg",
+      "sourcePage": "https://cibby.app/games/super-mario-64-n64/",
+      "imageUrl": "https://media.cibby.app/games/b34da8cf-8324-42b7-8ab9-34e8df3ba6df/media/17be449a-74e1-4b14-a295-97d622e63797.jpg",
+      "credit": "Nintendo; Cibby archive; scan contributor not identified",
+      "pixelSize": [
+        1044,
+        732
+      ],
+      "sha256": "46688b45490e01829b172f05a4d7346482853e469e9b920d55e6edb7faccd3cc",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Original US K-A front. Cibby rear on the same page is a later 1998 edition and was rejected."
+    },
+    {
+      "id": "sm64-launchbox-1927",
+      "localReference": "dist/game-boxes-20261016/references/sm64-launchbox-1927.jpg",
+      "sourcePage": "https://gamesdb.launchbox-app.com/games/images/204-super-mario-64",
+      "imageUrl": "https://images.launchbox-app.com/acd359ff-a7d5-457f-893a-8b0a3b66ed61.jpg",
+      "credit": "Nintendo; LaunchBox Games Database; individual scan contributor not identified",
+      "pixelSize": [
+        4170,
+        2916
+      ],
+      "sha256": "00f6604c5d026ae979b8e050c112e125b172903d42f3f9d5d58f3f2b35805484",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Printed-art layout cross-checked against physical specimen; database category alone was not treated as authenticity evidence."
+    },
+    {
+      "id": "sm64-launchbox-1952581",
+      "localReference": "dist/game-boxes-20261016/references/sm64-launchbox-1952581.jpg",
+      "sourcePage": "https://gamesdb.launchbox-app.com/games/images/204-super-mario-64",
+      "imageUrl": "https://images.launchbox-app.com/7cc16bd1-27a0-4e74-be83-87d2a9f6abdf.jpg",
+      "credit": "Nintendo; LaunchBox Games Database; individual scan contributor not identified",
+      "pixelSize": [
+        367,
+        1476
+      ],
+      "sha256": "fa63346b3032b586d43f0c96dc3ea2ddb9aa52bf97c397b51c7e29b450956391",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Printed-art layout cross-checked against physical specimen; database category alone was not treated as authenticity evidence."
+    },
+    {
+      "id": "smb-launchbox-1178",
+      "localReference": "dist/game-boxes-20261016/references/smb-launchbox-1178.jpg",
+      "sourcePage": "https://gamesdb.launchbox-app.com/games/images/135-super-mario-bros",
+      "imageUrl": "https://images.launchbox-app.com/829fc885-7b63-4e64-934d-104f5e939340.jpg",
+      "credit": "Nintendo; LaunchBox Games Database; individual scan contributor not identified",
+      "pixelSize": [
+        1532,
+        2100
+      ],
+      "sha256": "0946f7763f6e1de2f27e29aa5a0dfc606293a45f07c89f2d9387efed6ea45654",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Printed-art layout cross-checked against physical specimen; database category alone was not treated as authenticity evidence."
+    },
+    {
+      "id": "smw-launchbox-19789364",
+      "localReference": "dist/game-boxes-20261016/references/smw-launchbox-19789364.png",
+      "sourcePage": "https://gamesdb.launchbox-app.com/games/images/131-super-mario-world",
+      "imageUrl": "https://images.launchbox-app.com/00fb4aca-c22f-4ca9-84d0-90cf8c22d4af.png",
+      "credit": "Nintendo; LaunchBox Games Database; individual scan contributor not identified",
+      "pixelSize": [
+        2460,
+        1716
+      ],
+      "sha256": "721251b329f5d91b05d650ea6a326e37d11bcb3b75bd7c829916c33271447bc0",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Printed-art layout cross-checked against physical specimen; database category alone was not treated as authenticity evidence."
+    },
+    {
+      "id": "sm64-1904-full-2",
+      "localReference": "dist/game-boxes-20261016/references/sm64-1904-full-2.jpg",
+      "sourcePage": "https://1904comics.com/products/n64-super-mario-64-us",
+      "imageUrl": "https://1904comics.com/cdn/shop/products/image_9f715918-aae5-48eb-ae3b-66457c08d938.jpg?v=1644506953",
+      "credit": "Nintendo; original physical specimen photography by 1904 Comics",
+      "pixelSize": [
+        2048,
+        2048
+      ],
+      "sha256": "7cc331a876ed6cc5c083019af9fe2fe35e3a00827cbdf3aaafa39661cd83c828",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Original K-A US box. Top is purple Mario, bottom green Mario, left gold penguins, right red Bowser. Lighting is photographed and uncalibrated."
+    },
+    {
+      "id": "sm64-1904-full-4",
+      "localReference": "dist/game-boxes-20261016/references/sm64-1904-full-4.jpg",
+      "sourcePage": "https://1904comics.com/products/n64-super-mario-64-us",
+      "imageUrl": "https://1904comics.com/cdn/shop/products/image_525c0a76-72c6-487e-a69e-8fa0d883d923.jpg?v=1644506953",
+      "credit": "Nintendo; original physical specimen photography by 1904 Comics",
+      "pixelSize": [
+        2048,
+        2048
+      ],
+      "sha256": "8a020074af0c20d388a39813ea7aef1fed8788e9ce9dbc217b748d976c26267e",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Original K-A US box. Top is purple Mario, bottom green Mario, left gold penguins, right red Bowser. Lighting is photographed and uncalibrated."
+    },
+    {
+      "id": "smb-specimen-2",
+      "localReference": "dist/game-boxes-20261016/references/smb-specimen-2.webp",
+      "sourcePage": "https://www.ebay.com/itm/385662571091",
+      "imageUrl": "https://i.ebayimg.com/images/g/PfgAAOSwaepkfn~T/s-l1600.webp",
+      "credit": "Nintendo; VintageNintendoGameCollective specimen photographs",
+      "pixelSize": [
+        817,
+        1009
+      ],
+      "sha256": "71e21ecaf38a124334ac612587fdf83bb4a10bb8b80673b4da9ff3db97917676",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Early US round-seal non-REV-A hangtab box with glued bottom. Wear and low optical resolution remain source limitations; not a factory color proof."
+    },
+    {
+      "id": "smb-specimen-3",
+      "localReference": "dist/game-boxes-20261016/references/smb-specimen-3.webp",
+      "sourcePage": "https://www.ebay.com/itm/385662571091",
+      "imageUrl": "https://i.ebayimg.com/images/g/AL4AAOSwAExkfn~g/s-l1600.webp",
+      "credit": "Nintendo; VintageNintendoGameCollective specimen photographs",
+      "pixelSize": [
+        500,
+        1287
+      ],
+      "sha256": "2949f7c709d4f155087d4fbebe8f9da0c09cd8c2866565c512821ef65f1001da",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Early US round-seal non-REV-A hangtab box with glued bottom. Wear and low optical resolution remain source limitations; not a factory color proof."
+    },
+    {
+      "id": "smb-specimen-5",
+      "localReference": "dist/game-boxes-20261016/references/smb-specimen-5.webp",
+      "sourcePage": "https://www.ebay.com/itm/385662571091",
+      "imageUrl": "https://i.ebayimg.com/images/g/j9IAAOSwMJJkfn~4/s-l1600.webp",
+      "credit": "Nintendo; VintageNintendoGameCollective specimen photographs",
+      "pixelSize": [
+        502,
+        1242
+      ],
+      "sha256": "5ee9b018c2c8b60887e8baa2983774b1c57d431e2fc86aa9e8c3620c77e7ca07",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Early US round-seal non-REV-A hangtab box with glued bottom. Wear and low optical resolution remain source limitations; not a factory color proof."
+    },
+    {
+      "id": "smb-specimen-6",
+      "localReference": "dist/game-boxes-20261016/references/smb-specimen-6.webp",
+      "sourcePage": "https://www.ebay.com/itm/385662571091",
+      "imageUrl": "https://i.ebayimg.com/images/g/B3IAAOSwkjFkfoAH/s-l1600.webp",
+      "credit": "Nintendo; VintageNintendoGameCollective specimen photographs",
+      "pixelSize": [
+        892,
+        1306
+      ],
+      "sha256": "968dd33a143f13c18b9556866a47aa3002817eea638af4b1792b9c3e32b3804a",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Early US round-seal non-REV-A hangtab box with glued bottom. Wear and low optical resolution remain source limitations; not a factory color proof."
+    },
+    {
+      "id": "smb-specimen-7",
+      "localReference": "dist/game-boxes-20261016/references/smb-specimen-7.webp",
+      "sourcePage": "https://www.ebay.com/itm/385662571091",
+      "imageUrl": "https://i.ebayimg.com/images/g/YOsAAOSwk~VkfoAR/s-l1600.webp",
+      "credit": "Nintendo; VintageNintendoGameCollective specimen photographs",
+      "pixelSize": [
+        697,
+        1086
+      ],
+      "sha256": "6f779b440fd4c578ac648027f1795e1fe41e655812fac177879073cd04cc01ed",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Early US round-seal non-REV-A hangtab box with glued bottom. Wear and low optical resolution remain source limitations; not a factory color proof."
+    },
+    {
+      "id": "smw-specimen-8",
+      "localReference": "dist/game-boxes-20261016/references/smw-specimen-8.webp",
+      "sourcePage": "https://www.ebay.com/itm/126545179695",
+      "imageUrl": "https://i.ebayimg.com/images/g/UsoAAOSwEwxmebfD/s-l1600.webp",
+      "credit": "Nintendo; vegetatwar specimen photographs",
+      "pixelSize": [
+        1600,
+        1200
+      ],
+      "sha256": "c16e60d9b477f78fce6822df8646ddcca57283c3c970ca67f4dea7629792de0e",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Original US black-label box, copyright 1992, SNS P MW, UPC 045496830014. Original printed screenshots retained. Edge photos are oblique, worn and partially cropped."
+    },
+    {
+      "id": "smw-specimen-9",
+      "localReference": "dist/game-boxes-20261016/references/smw-specimen-9.webp",
+      "sourcePage": "https://www.ebay.com/itm/126545179695",
+      "imageUrl": "https://i.ebayimg.com/images/g/-UMAAOSwZMlmebfK/s-l1600.webp",
+      "credit": "Nintendo; vegetatwar specimen photographs",
+      "pixelSize": [
+        1600,
+        1200
+      ],
+      "sha256": "3408c58920e8ef3a5f790dbeb7f6e2a72f16b5d672258c29b7f59dd96f1a96b6",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Original US black-label box, copyright 1992, SNS P MW, UPC 045496830014. Original printed screenshots retained. Edge photos are oblique, worn and partially cropped."
+    },
+    {
+      "id": "smw-specimen-10",
+      "localReference": "dist/game-boxes-20261016/references/smw-specimen-10.webp",
+      "sourcePage": "https://www.ebay.com/itm/126545179695",
+      "imageUrl": "https://i.ebayimg.com/images/g/OmsAAOSweShmebfK/s-l1600.webp",
+      "credit": "Nintendo; vegetatwar specimen photographs",
+      "pixelSize": [
+        1600,
+        1200
+      ],
+      "sha256": "dd118b519158ff9fdcc33b30709f1eaed96ba847343fbbfb689813345bed3baa",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Original US black-label box, copyright 1992, SNS P MW, UPC 045496830014. Original printed screenshots retained. Edge photos are oblique, worn and partially cropped."
+    },
+    {
+      "id": "smw-specimen-11",
+      "localReference": "dist/game-boxes-20261016/references/smw-specimen-11.webp",
+      "sourcePage": "https://www.ebay.com/itm/126545179695",
+      "imageUrl": "https://i.ebayimg.com/images/g/r6sAAOSwyNZmebfK/s-l1600.webp",
+      "credit": "Nintendo; vegetatwar specimen photographs",
+      "pixelSize": [
+        1600,
+        1200
+      ],
+      "sha256": "448725f7050ced2a1a14e9e2416dcd5bc2335b0c035e9d9db77ed1c82c0df386",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Original US black-label box, copyright 1992, SNS P MW, UPC 045496830014. Original printed screenshots retained. Edge photos are oblique, worn and partially cropped."
+    },
+    {
+      "id": "smw-specimen-12",
+      "localReference": "dist/game-boxes-20261016/references/smw-specimen-12.webp",
+      "sourcePage": "https://www.ebay.com/itm/126545179695",
+      "imageUrl": "https://i.ebayimg.com/images/g/bkIAAOSwh8hmebfL/s-l1600.webp",
+      "credit": "Nintendo; vegetatwar specimen photographs",
+      "pixelSize": [
+        1600,
+        1200
+      ],
+      "sha256": "8514e8c991d02e38fd1eb6e8e8be9300eaf4dc485573c8c3a90c2213d767a013",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Original US black-label box, copyright 1992, SNS P MW, UPC 045496830014. Original printed screenshots retained. Edge photos are oblique, worn and partially cropped."
+    },
+    {
+      "id": "sonic-eu-wrap",
+      "localReference": "dist/game-boxes-20261016/references/sonic-eu-wrap.jpg",
+      "sourcePage": "https://info.sonicretro.org/File:Sonic1_box_eu.jpg",
+      "imageUrl": "https://info.sonicretro.org/images/5/56/Sonic1_box_eu.jpg",
+      "credit": "SEGA; Sonic Retro scan uploaded by ScarredSun on April 18, 2009",
+      "pixelSize": [
+        3180,
+        2035
+      ],
+      "sha256": "91bc75e65783836c344ac6dd9055f9792e4b0fb76c049dff484dde03a46a2456",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Complete European cream/pink-grid wrap with English-first multilingual rear, code 670-1470-50S, UPC 4974365610098. Archive fair-use statement is not a redistribution license."
+    },
+    {
+      "id": "sonic-eu-manual",
+      "localReference": "dist/game-boxes-20261016/references/sonic-eu-manual.pdf",
+      "sourcePage": "https://info.sonicretro.org/File:Sonic1_MD_EU_manual.pdf",
+      "imageUrl": "https://info.sonicretro.org/images/1/15/Sonic1_MD_EU_manual.pdf",
+      "credit": "SEGA; Sonic Retro manual archive",
+      "pixelSize": null,
+      "sha256": "c4c44be3302133e6cb9e554e0a49f9c76ad9ba3b7cb5932b9bfd0b25191f960a",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "European manual supplied by parent task. Front and back only; pages and pixel dimensions recorded by the manual preparation workflow."
+    },
+    {
+      "id": "crash-F-ALL",
+      "localReference": "dist/game-boxes-20261016/references/crash-F-ALL.jpg",
+      "sourcePage": "https://psxdatacenter.com/games/U/C/SCUS-94900.html",
+      "imageUrl": "https://psxdatacenter.com/images/hires/U/C/SCUS-94900/SCUS-94900-F-ALL.jpg",
+      "credit": "Sony Computer Entertainment / Naughty Dog; PSX Data Center; SPECIALT1212 and XEX0DIUSX",
+      "pixelSize": [
+        1442,
+        1411
+      ],
+      "sha256": "b01634e69eb64c12f357e7b3104e3be772d221f750f05d8cba745ec47f1fe72a",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "US SCUS-94900 original black-label K-A print set. F-ALL is booklet front, B-ALL is exterior tray card including both spines, I-1 is booklet back, I-2 is inner tray card. Use actual pixel dimensions; nominal archive DPI is not verified."
+    },
+    {
+      "id": "crash-B-ALL",
+      "localReference": "dist/game-boxes-20261016/references/crash-B-ALL.jpg",
+      "sourcePage": "https://psxdatacenter.com/games/U/C/SCUS-94900.html",
+      "imageUrl": "https://psxdatacenter.com/images/hires/U/C/SCUS-94900/SCUS-94900-B-ALL.jpg",
+      "credit": "Sony Computer Entertainment / Naughty Dog; PSX Data Center; SPECIALT1212 and XEX0DIUSX",
+      "pixelSize": [
+        1776,
+        1372
+      ],
+      "sha256": "e6420d3bc763184a075cd715fb4a5ecc80d677275479a4f79b62b609d2254bc2",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "US SCUS-94900 original black-label K-A print set. F-ALL is booklet front, B-ALL is exterior tray card including both spines, I-1 is booklet back, I-2 is inner tray card. Use actual pixel dimensions; nominal archive DPI is not verified."
+    },
+    {
+      "id": "crash-I-1",
+      "localReference": "dist/game-boxes-20261016/references/crash-I-1.jpg",
+      "sourcePage": "https://psxdatacenter.com/games/U/C/SCUS-94900.html",
+      "imageUrl": "https://psxdatacenter.com/images/hires/U/C/SCUS-94900/SCUS-94900-I-1.jpg",
+      "credit": "Sony Computer Entertainment / Naughty Dog; PSX Data Center; SPECIALT1212 and XEX0DIUSX",
+      "pixelSize": [
+        1427,
+        1411
+      ],
+      "sha256": "0af31faaf2b7a2e1233aac8260e14c84b73eaa0024866d1dd2f847efbaf4d001",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "US SCUS-94900 original black-label K-A print set. F-ALL is booklet front, B-ALL is exterior tray card including both spines, I-1 is booklet back, I-2 is inner tray card. Use actual pixel dimensions; nominal archive DPI is not verified."
+    },
+    {
+      "id": "crash-I-2",
+      "localReference": "dist/game-boxes-20261016/references/crash-I-2.jpg",
+      "sourcePage": "https://psxdatacenter.com/games/U/C/SCUS-94900.html",
+      "imageUrl": "https://psxdatacenter.com/images/hires/U/C/SCUS-94900/SCUS-94900-I-2.jpg",
+      "credit": "Sony Computer Entertainment / Naughty Dog; PSX Data Center; SPECIALT1212 and XEX0DIUSX",
+      "pixelSize": [
+        1763,
+        1388
+      ],
+      "sha256": "938eec8572d0613dd3e25f1d183b6962af355b590a1f986aab43a0b2c12048dd",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "US SCUS-94900 original black-label K-A print set. F-ALL is booklet front, B-ALL is exterior tray card including both spines, I-1 is booklet back, I-2 is inner tray card. Use actual pixel dimensions; nominal archive DPI is not verified."
+    },
+    {
+      "id": "crash-clear-tray-specimen",
+      "localReference": "dist/game-boxes-20261016/references/crash-clear-tray-specimen.jpg",
+      "sourcePage": "https://www.ebay.com/itm/306104343253",
+      "imageUrl": "https://i.ebayimg.com/images/g/1NIAAOSwP5FnqjAB/s-l960.jpg",
+      "credit": "Sony Computer Entertainment / Naughty Dog; drpa-15 specimen photograph",
+      "pixelSize": [
+        720,
+        960
+      ],
+      "sha256": "fdd31d3fbf33e435770e321b83c2fad96024da945d98a185fd94c25f46b70ef2",
+      "rights": "Copyright retained by the original game publisher and respective source photographer or scan contributor. No publication license established.",
+      "notes": "Geometry reference only. Visible orange US SCUS-94900 disc and printed inner tray card establish clear tray. Listing PAL metadata conflicts with the photographed US disc; rely on visible edition markings."
+    }
+  ],
+  "assets": [
+    {
+      "assetId": "nintendo-64-super-mario-64-box",
+      "edition": "United States, original K-A, NUS-NSME, copyright 1996",
+      "publicationRights": "not-established",
+      "slots": {
+        "Front": [
+          "sm64-front-cover"
+        ],
+        "Back": [
+          "sm64-launchbox-1927"
+        ],
+        "SpineLeft": [
+          "sm64-launchbox-1952581"
+        ],
+        "SpineRight": [
+          "sm64-1904-full-4"
+        ],
+        "Top": [
+          "sm64-1904-full-2"
+        ],
+        "Bottom": [
+          "sm64-1904-full-2"
+        ]
+      },
+      "usedSourceIds": [
+        "sm64-1904-full-2",
+        "sm64-1904-full-4",
+        "sm64-front-cover",
+        "sm64-launchbox-1927",
+        "sm64-launchbox-1952581"
+      ],
+      "limitations": [
+        "All six face layouts verified. Top, bottom and right derive from underexposed specimen photographs. No high-resolution flat scan of those faces found.",
+        "Front 1044\u00d7732 is softer than the 4170\u00d72916 rear. Rectification and enlargement do not add print detail."
+      ]
+    },
+    {
+      "assetId": "nes-super-mario-bros-box",
+      "edition": "United States, early round seal, no REV-A, five-screw-era hangtab box",
+      "publicationRights": "not-established",
+      "slots": {
+        "Front": [
+          "smb-specimen-2"
+        ],
+        "Back": [
+          "smb-launchbox-1178"
+        ],
+        "SpineLeft": [
+          "smb-specimen-3"
+        ],
+        "SpineRight": [
+          "smb-specimen-5"
+        ],
+        "Top": [
+          "smb-specimen-6"
+        ],
+        "Bottom": [
+          "smb-specimen-7"
+        ]
+      },
+      "usedSourceIds": [
+        "smb-launchbox-1178",
+        "smb-specimen-2",
+        "smb-specimen-3",
+        "smb-specimen-5",
+        "smb-specimen-6",
+        "smb-specimen-7"
+      ],
+      "limitations": [
+        "All six face layouts verified. Original front is approximately 590\u00d7840 effective pixels; thin edges are optically soft.",
+        "Source photographs have warm lighting and wear. Black-field repair is local; no new glyphs, stars or character art are drawn.",
+        "Clean Nintendo/MarioWiki REV-A front was rejected because it does not match the requested early box."
+      ]
+    },
+    {
+      "assetId": "snes-super-mario-world-box",
+      "edition": "United States, black label, SNS P MW, copyright 1992",
+      "publicationRights": "not-established",
+      "slots": {
+        "Front": [
+          "smw-launchbox-19789364"
+        ],
+        "Back": [
+          "smw-specimen-9"
+        ],
+        "SpineLeft": [
+          "smw-specimen-12",
+          "smw-specimen-11"
+        ],
+        "SpineRight": [
+          "smw-specimen-12",
+          "smw-specimen-11"
+        ],
+        "Top": [
+          "smw-specimen-8"
+        ],
+        "Bottom": [
+          "smw-specimen-10",
+          "smw-specimen-8"
+        ]
+      },
+      "usedSourceIds": [
+        "smw-launchbox-19789364",
+        "smw-specimen-10",
+        "smw-specimen-11",
+        "smw-specimen-12",
+        "smw-specimen-8",
+        "smw-specimen-9"
+      ],
+      "limitations": [
+        "All six face layouts verified. Front is a 2460\u00d71716 scan; remaining faces derive from original specimen photographs.",
+        "Complementary edge photographs retain the original typography and character poses. The top has shell-riding Mario; bottom has caped Mario.",
+        "Rear has creases near its upper screenshots; fine print and screenshot detail are limited by the photograph."
+      ]
+    },
+    {
+      "assetId": "mega-drive-sonic-the-hedgehog-box",
+      "edition": "European Mega Drive, cream/pink grid, 670-1470-50S, copyright 1991",
+      "publicationRights": "not-established",
+      "slots": {
+        "Front": [
+          "sonic-eu-wrap"
+        ],
+        "Back": [
+          "sonic-eu-wrap"
+        ],
+        "Spine": [
+          "sonic-eu-wrap"
+        ],
+        "BookletFront": [
+          "sonic-eu-manual"
+        ],
+        "BookletBack": [
+          "sonic-eu-manual"
+        ]
+      },
+      "usedSourceIds": [
+        "sonic-eu-manual",
+        "sonic-eu-wrap"
+      ],
+      "limitations": [
+        "Complete outer wrap; no evidence of printed reverse-side wrap. Multilingual English-first rear is authentic to this edition.",
+        "Small dust and spine fold marks in scan require conservative local repair."
+      ]
+    },
+    {
+      "assetId": "playstation-1-crash-bandicoot-box",
+      "edition": "United States, SCUS-94900, original black label K-A, standard clear-tray jewel case",
+      "publicationRights": "not-established",
+      "slots": {
+        "Front": [
+          "crash-F-ALL"
+        ],
+        "WrapBack": [
+          "crash-B-ALL"
+        ],
+        "BookletBack": [
+          "crash-I-1"
+        ],
+        "WrapInside": [
+          "crash-I-2"
+        ]
+      },
+      "usedSourceIds": [
+        "crash-B-ALL",
+        "crash-F-ALL",
+        "crash-I-1",
+        "crash-I-2"
+      ],
+      "limitations": [
+        "Complete four-part paper print set, including both rear spines. Mild edge wear.",
+        "Clear tray verified by a physical US specimen with matching disc code. Case envelope uses midpoints of CMC assembly inspection ranges (142.35 \u00d7 124.75 \u00d7 10.4 mm); fine molding is approximate, and CMC is not established as the original Sony case supplier. See docs/playstation-box-reference-evidence.json."
+      ]
+    }
+  ],
+  "rejectedCandidates": [
+    {
+      "source": "Cibby Super Mario 64 rear / sm64-back-cover.jpg",
+      "reason": "Later copyright 1996,1998 Player\u2019s Choice-era rear; mismatches original 1996 K-A front."
+    },
+    {
+      "source": "LaunchBox SM64 10986398 and 701804 edge images",
+      "reason": "Reconstructed artwork changes white Nintendo logo panel to red and alters title layout."
+    },
+    {
+      "source": "LaunchBox SM64 20038734",
+      "reason": "Explicit fan artwork."
+    },
+    {
+      "source": "LaunchBox SMB 1177 front and 1927270 spine",
+      "reason": "Digital reconstruction, not original print pixels."
+    },
+    {
+      "source": "MarioWiki SMB_USA_box_art.jpg",
+      "reason": "Official Nintendo image but clearly marked REV-A; wrong requested edition."
+    },
+    {
+      "source": "LaunchBox SMW 1113 rear",
+      "reason": "Digital reconstruction replaces the four original printed screenshots and changes typography."
+    },
+    {
+      "source": "LaunchBox SMW 2056514 spine",
+      "reason": "Reconstructed generic title spine omits the original Mario artwork."
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "id": "mega-drive-sonic-the-hedgehog-box",
+  "version": "0.1.0",
+  "title": "Mega Drive \u2014 Sonic the Hedgehog box reproduction",
+  "creator": "Lincoln Aleixo",
+  "license": "CC-BY-NC-ND-4.0",
+  "licenseScope": "Original modeling contributions only: CC BY-NC-ND 4.0. Game artwork, marks, product designs, scans and source photography are excluded. Attribution and the maintainer's request do not grant rights to those elements.",
+  "date": "2026-10-16",
+  "coordinateSystem": {
+    "units": "meters",
+    "axes": "X width, Y up, positive Z front",
+    "pivot": "bottom center of nominal closed envelope"
+  },
+  "nominalDimensionsMm": [
+    129.0,
+    188.0,
+    26.0
+  ],
+  "measurementBasis": "Original Sonic PAL case photograph; auction specimen description; manufacturer protector fit envelope. The 129 \u00d7 177 \u00d7 26 mm body and 188 mm height including hanger are nominal estimates from protector fit and specimen photographs. Mold revision, clip offsets, sleeve thickness and booklet pagination are approximate. Flexible spine folds use rigid pivots.",
+  "changes": [
+    "Added Western PAL Mega Drive presentation artwork to the independently released neutral box.",
+    "Preserved complete template geometry and Open animation.",
+    "Included prepared face PNGs, exact source/edit provenance and documented restoration limits."
+  ],
+  "validation": {
+    "meshes": 18,
+    "primitives": 18,
+    "triangles": 13872,
+    "materials": 10,
+    "images": 8,
+    "selfContained": true,
+    "cameras": 0,
+    "lights": 0,
+    "embeddedImages": 8,
+    "externalImages": 0,
+    "artworkSlots": {
+      "BackPrint": "Back",
+      "BookletBackPrint": "BookletBack",
+      "BookletFrontPrint": "BookletFront",
+      "FrontPrint": "Front",
+      "SpinePrint": "Spine"
+    },
+    "animation": {
+      "name": "Open",
+      "durationSeconds": 2.0,
+      "channels": 2
+    },
+    "geometryPreservation": {
+      "status": "passed",
+      "templateFile": "mega-drive-box.glb",
+      "templateSha256": "8e0db2ca1973c4dc7b54c12ff7d67489b88df0de68f0b3f6b64c7fe3d64c44ad",
+      "reproductionFile": "mega-drive-sonic-the-hedgehog-box.glb",
+      "reproductionSha256": "fea37d63332f37825639b066fb29e90d144f309fe26026ce3e304040434e7a39",
+      "meshNodes": 18,
+      "primitives": 18,
+      "comparedAttributeValues": 263824,
+      "comparedIndices": 41616,
+      "hierarchyTransformsHingesIdentical": true,
+      "positionsNormalsIndicesIdentical": true,
+      "artworkUvsIdentical": true,
+      "positionsNormalsUvsIndicesIdentical": false,
+      "animationKeysIdentical": true,
+      "namedSemanticPartsIdentical": true,
+      "staticMeshNameAliases": {},
+      "nonArtworkUvFloat32Rounding": [
+        {
+          "node": "MegaDriveGameBox \u00b7 Case satin rims and flexures",
+          "attribute": "TEXCOORD_0",
+          "changedScalars": 21,
+          "maximumDelta": 1.9073486328125e-06,
+          "maximumFloat32Steps": 1
+        },
+        {
+          "node": "MegaDriveGameBox \u00b7 Case satin rims and flexures",
+          "attribute": "TEXCOORD_1",
+          "changedScalars": 4,
+          "maximumDelta": 5.960464477539063e-08,
+          "maximumFloat32Steps": 2
+        },
+        {
+          "node": "FrontLid \u00b7 Case satin rims and flexures",
+          "attribute": "TEXCOORD_0",
+          "changedScalars": 20,
+          "maximumDelta": 5.960464477539063e-08,
+          "maximumFloat32Steps": 2
+        }
+      ],
+      "nonArtworkUvTolerance": "two representable float32 steps"
+    },
+    "artworkPreservation": "Every prepared face PNG is embedded byte-for-byte in its named artwork slot.",
+    "godot": {
+      "version": "4.7.2-stable (official)",
+      "headlessImport": "passed",
+      "endpointInspection": "Closed/Open world bounds, named parts, decoded images and artwork UVs verified."
+    },
+    "editableSource": "Reopened in Blender 5.2.2 LTS; packed resources and both poses checked.",
+    "previewLighting": "Actual GLB reimport in a neutral white studio, Standard view transform, exposure -1.0; dimensions recorded per preview."
+  },
+  "previews": [
+    {
+      "view": "hero",
+      "path": "assets/reproductions/mega-drive/sonic-the-hedgehog/box/previews/0.1.0/hero.png",
+      "bytes": 1923686,
+      "sha256": "522c129ae97a4666cd2b1db800b8d9676f83e99b60116da6d8cde5a0560b01cc",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "front",
+      "path": "assets/reproductions/mega-drive/sonic-the-hedgehog/box/previews/0.1.0/front.png",
+      "bytes": 1819485,
+      "sha256": "37a31b84795a23d4fd3eadaff11ba1ad262c4e5b9eb6c3fe9e8a6095c8e2c4d3",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "rear",
+      "path": "assets/reproductions/mega-drive/sonic-the-hedgehog/box/previews/0.1.0/rear.png",
+      "bytes": 2127983,
+      "sha256": "2b8659ae74e3e2b9fcc6272c8a9b4bbaca1eb24d35d7ca632d42251ef90d498d",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "top",
+      "path": "assets/reproductions/mega-drive/sonic-the-hedgehog/box/previews/0.1.0/top.png",
+      "bytes": 1831814,
+      "sha256": "74cd971eceb6aa4bc7a9f3ffcc2781ad0a34f2a50ce0f9a955b04d0fb701c05d",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "bottom",
+      "path": "assets/reproductions/mega-drive/sonic-the-hedgehog/box/previews/0.1.0/bottom.png",
+      "bytes": 1814133,
+      "sha256": "dfd73ad5803462b0c6b166cce0fc8e3629a8df611d17591f015775d31a216f7b",
+      "width": 1400,
+      "height": 1167
+    },
+    {
+      "view": "open",
+      "path": "assets/reproductions/mega-drive/sonic-the-hedgehog/box/previews/0.1.0/open.png",
+      "bytes": 1610942,
+      "sha256": "415483033048acfb286b366af47c44fb5a24e53ffde8aae39f5276c7210edaf4",
+      "width": 1400,
+      "height": 1167
+    }
+  ],
+  "release": {
+    "tag": "mega-drive-sonic-the-hedgehog-box-v0.1.0",
+    "archive": {
+      "name": "mega-drive-sonic-the-hedgehog-box-0.1.0.zip",
+      "bytes": 43633276,
+      "sha256": "6fc17e6182d846b3052b63b7efa1528f5e5b6e242424fb974af0166160780326",
+      "url": "https://github.com/lincolnaleixo/retro-cartridge-models/releases/download/mega-drive-sonic-the-hedgehog-box-v0.1.0/mega-drive-sonic-the-hedgehog-box-0.1.0.zip"
+    }
+  },
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 1020,
+      "sha256": "d73625ffb5aff99b7f109d44a015211951ee14b0942e12f1e1f406a7c1d659f8"
+    },
+    "CREDITS.md": {
+      "bytes": 2931,
+      "sha256": "c3f509a0dc96abbe2fabe074a5f5d294bc1bf2bfa9b764101e7b1e6bc2fec66b"
+    },
+    "LICENSE": {
+      "bytes": 17452,
+      "sha256": "4f3c4a321eb0c73182eee7afa3fe0111e24dec193f2d6febcf4207f26af26839"
+    },
+    "NOTICE.md": {
+      "bytes": 4351,
+      "sha256": "04602588f5708dd1ca0b26f7194ce5ea5fcb2a12fb1ece283fbd9321ab814033"
+    },
+    "README.md": {
+      "bytes": 4702,
+      "sha256": "722b1c73ae8ddc49cb9f2ac06099d485222d5a03eb22504d201ec9ac35997ba9"
+    },
+    "artwork/Back.png": {
+      "bytes": 3404957,
+      "sha256": "a96fa61c06ddb62267957413a9b264e268c5a7d708d13ec18befda298a25e540"
+    },
+    "artwork/BookletBack.png": {
+      "bytes": 108167,
+      "sha256": "297a61fd7f9a653b20fb600c4e751a99212d7c1e3a2b9072c1ff24436865bdba"
+    },
+    "artwork/BookletFront.png": {
+      "bytes": 2426910,
+      "sha256": "e7cb56c758f93cf6505458f605a566228c90c187be981e32c8ee8179d64a8f88"
+    },
+    "artwork/Front.png": {
+      "bytes": 3886307,
+      "sha256": "2d8f8d041c8e1d9fa4015c6a933b1306d858ba9d95e76fed6febb52d6d2031b8"
+    },
+    "artwork/Spine.png": {
+      "bytes": 463334,
+      "sha256": "228a0540e721646693fdfa9f4eb8a402e59f3d6b1e92d76aaa9d1c40a587afdc"
+    },
+    "artwork-embedding-report.json": {
+      "bytes": 1038,
+      "sha256": "c56dbbeeeb03b8d7919c85a6656ff1eaaf5b5cd1f9d02ed40975cb3cad737071"
+    },
+    "artwork-mapping.json": {
+      "bytes": 187,
+      "sha256": "bb16b82367af3cdfa7105d4363ec8a981226540ddd590e10a1f95f54be737bae"
+    },
+    "artwork-provenance.json": {
+      "bytes": 3613,
+      "sha256": "584799b3b96bc1aeedd85fa9a12c160db048ce43c6af0315b292e4764ec1bb38"
+    },
+    "artwork-sources.json": {
+      "bytes": 2565,
+      "sha256": "a331413bbfa8cb6857b60a6d76281be52f4429a24e1a728a6bf6693729cb44b4"
+    },
+    "bottom.png": {
+      "bytes": 1814133,
+      "sha256": "dfd73ad5803462b0c6b166cce0fc8e3629a8df611d17591f015775d31a216f7b"
+    },
+    "construction.json": {
+      "bytes": 2160,
+      "sha256": "317f527ef45ac77936629baf47a7593843080924b71385475ada00e57eee8a99"
+    },
+    "front.png": {
+      "bytes": 1819485,
+      "sha256": "37a31b84795a23d4fd3eadaff11ba1ad262c4e5b9eb6c3fe9e8a6095c8e2c4d3"
+    },
+    "geometry-reference-evidence.json": {
+      "bytes": 6508,
+      "sha256": "919d89ca9e5cd330a6c1ebefa421733edeacf893939af201970e81960aa61fca"
+    },
+    "glb-inspection.json": {
+      "bytes": 3297,
+      "sha256": "2793926a1eb7a260067e355a15da38724a39730975ba69f52c976dceaa5fbbc2"
+    },
+    "godot-import-report.json": {
+      "bytes": 1421,
+      "sha256": "dbfdc9ab4c8315ca6fb7e5626195ad3d2a20607bf0ed401d4abb32b5ed4d575d"
+    },
+    "hero.png": {
+      "bytes": 1923686,
+      "sha256": "522c129ae97a4666cd2b1db800b8d9676f83e99b60116da6d8cde5a0560b01cc"
+    },
+    "mega-drive-sonic-the-hedgehog-box.blend": {
+      "bytes": 11088394,
+      "sha256": "92ac50c4b18e5f1cc4e2dec265f892256658f9a242eee3cb9de584ac28a4c2ce"
+    },
+    "mega-drive-sonic-the-hedgehog-box.glb": {
+      "bytes": 12081648,
+      "sha256": "fea37d63332f37825639b066fb29e90d144f309fe26026ce3e304040434e7a39"
+    },
+    "open.png": {
+      "bytes": 1610942,
+      "sha256": "415483033048acfb286b366af47c44fb5a24e53ffde8aae39f5276c7210edaf4"
+    },
+    "rear.png": {
+      "bytes": 2127983,
+      "sha256": "2b8659ae74e3e2b9fcc6272c8a9b4bbaca1eb24d35d7ca632d42251ef90d498d"
+    },
+    "source-reopen-report.json": {
+      "bytes": 1700,
+      "sha256": "6ae7efd7a1df8aad66773c31dcb5110aef2de0bba006bcda6eb1ef3fdd7ef612"
+    },
+    "top.png": {
+      "bytes": 1831814,
+      "sha256": "74cd971eceb6aa4bc7a9f3ffcc2781ad0a34f2a50ce0f9a955b04d0fb701c05d"
+    }
+  }
+}
