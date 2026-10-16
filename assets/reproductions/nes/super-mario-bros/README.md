@@ -1,15 +1,17 @@
 # NES — Super Mario Bros. reproduction
 
-**Version:** 0.1.0 · **Date:** 2026-10-15 · **Reconstruction:** Lincoln Aleixo
+**Version:** 0.2.0 · **Date:** 2026-10-16 · **Reconstruction:** Lincoln Aleixo
 
-Super Mario Bros. (1985) on the early western five-screw gray NES Game Pak. The front uses the round gold Nintendo quality seal and early label layout; the rear warning label has no REV-A marking. The title continues over the top fold. Later three-screw labels are not used as the reference for this reproduction.
+![Super Mario Bros.](previews/0.2.0/hero.png)
 
-The front label comes from the original 3,750 × 4,216 Golden Apple Comics product photograph. The top fold and rear warning label use photographs of a matching five-screw specimen from Fenyx Games. UV rectangles or quadrilaterals select the artwork regions without changing their source pixels. No generated, repainted, recolored or retouched label art is included. See [credits](CREDITS.md) for the exact sources and rights limitations.
+[Explore in 3D](https://lincolnaleixo.github.io/retro-cartridge-models/#nes-super-mario-bros) · [Download release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nes-super-mario-bros-v0.2.0) · [Previous release](https://github.com/lincolnaleixo/retro-cartridge-models/releases/tag/nes-super-mario-bros-v0.1.0) · [Changelog](CHANGELOG.md)
 
-Geometry, original ABS surface detail, scale and axes follow the [NES template](../../../templates/nes/README.md): a nominal 119.7 × 134 × 16.75 mm envelope, meters, X width, Y up, +Z front and a bottom-center origin. `FrontLabel` has a continuous approximately 55 × 97 mm unfolded artwork domain, with a 7 mm top fold; `RearLabel` is separate. The reconstruction targets the visual appearance of the early shell, not a manufacturing or replacement-part specification.
+Super Mario Bros. with clean black front ink, preserved original pixel art and stars, a crisp folded top title and a restored early rear warning label without REV-A.
 
-Printed artwork uses sRGB input, a white base-color tint, roughness 0.68 and reduced dielectric specular reflection. The main front has substantially more source detail than the small photographed top fold. Top-title lettering is limited by that source's resolution and oblique angle. Photographic wear, lighting and perspective remain; UV mapping does not restore detail or guarantee an exact physical color match. See the [owner-artwork workflow](../../../../docs/owner-artwork.md) for mapping and consumer material settings.
+The front uses a soft mask over neutral low-value wear, plus one localized scratch repair. Built-in image generation restores the top title and rear warning print. Measured image registration retains the existing mesh UVs; the top strip retains its original physical orientation.
 
-Version 0.1.0 includes an editable Blender source, a self-contained GLB, seven actual-export preview views and checksummed release files. The reproduction remains separately maintained from the unprinted template. Publish and verify the model package before updating a consumer application.
+Nominal dimensions: 119.7 × 134 × 16.75 mm. The published shell, vertex/index data, normals, transforms, material definitions and every mesh UV byte are preserved. Only the selected packed artwork images change. Units remain meters, Y is up and +Z is front; the existing pivot and label surfaces remain compatible. This is a visualization reconstruction, not manufacturing CAD.
 
-Original modeling contributions are CC BY-NC-ND 4.0. Nintendo artwork, marks, underlying product design and source photography are excluded from that grant. The maintainer's request and source attribution do not grant rights in those third-party elements. See [credits](CREDITS.md), [changes](CHANGELOG.md) and the root [NOTICE.md](../../../../NOTICE.md).
+The package contains editable packed Blender source, a self-contained GLB, five actual-export views, attribution and restoration/validation records. Blender and Godot compare the previous and restored geometry directly. New and previous exports were rendered under the same neutral studio, Standard view transform, exposure -1.0, 32 Cycles samples and 1200 × 1000 output. Historical previews remain unchanged; the new matched renders isolate the artwork changes.
+
+The target is clean, newly unboxed print. Original edition marks and illustration are preserved; colors and restored fine lettering are approximate, not color-calibrated factory masters. Third-party artwork, marks, product design and photography are excluded from CC BY-NC-ND 4.0, which applies only to original modeling contributions. The maintainer request does not grant those third-party rights. See [credits](CREDITS.md), [changes](CHANGELOG.md) and [NOTICE.md](../../../../NOTICE.md).

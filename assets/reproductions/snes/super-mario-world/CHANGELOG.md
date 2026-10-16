@@ -6,6 +6,14 @@
 
 - Translated gallery descriptions, rights summaries and descriptive manifest notes into English at the owner's request. No geometry, artwork, release files, tags or checksums changed.
 
+## 0.2.0 — 2026-10-16
+
+- Repaired blue-field scan blemishes with localized original-print cloning and a thin scratch repair; retained the deliberate halftone, speed streaks, illustration, code and fold layout.
+- Applied a restrained 4% saturation/contrast recovery only to the color panel; kept the subtle SNES emblem, rear label and other textures unchanged.
+- Updated the standalone front PNG to exactly match the embedded GLB image; the standalone rear PNG remains byte-identical to 0.1.1. Geometry, UVs and materials remain unchanged.
+- Validated packed-source reopening, unchanged non-image GLB buffers and UVs, actual-export render comparisons, and Godot 4.7.2 decoded textures with identical imported geometry, normals, UVs and transforms.
+- Previous published packages, manifests and previews remain byte-identical. Restored title/warning typography and color are approximate; this is not a factory print master.
+
 ## 0.1.1 — 2026-09-17
 
 - Added `labels/front.png` and `labels/rear.png`, extracted unchanged from the published GLB, so an application can paint the real label on the shared neutral `snes-ntsc-u` shell without loading the complete textured model.

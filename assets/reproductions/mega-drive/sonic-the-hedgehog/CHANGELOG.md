@@ -4,6 +4,14 @@
 
 - Moved this asset into `assets/reproductions/mega-drive/sonic-the-hedgehog/` so the repository groups actual files by console and game. Published manifests, preview images, packages, identifiers and import contracts are unchanged.
 
+## 0.2.0 — 2026-10-16
+
+- Restored the folded SONIC THE HEDGEHOG title to clear blue/white ink on the black grid, removing the old photograph's glare and blur.
+- Registered the replacement title for the existing reversed-U mapping and checked glyph orientation on the exported model.
+- Preserved the complete original front artwork bytes, intentional cream/peach palette, rear land, shell geometry, material settings and all UV bytes.
+- Validated packed-source reopening, unchanged non-image GLB buffers and UVs, actual-export render comparisons, and Godot 4.7.2 decoded textures with identical imported geometry, normals, UVs and transforms.
+- Previous published packages, manifests and previews remain byte-identical. Restored title/warning typography and color are approximate; this is not a factory print master.
+
 ## 0.1.0 — 2026-10-13
 
 - First separately versioned Sonic the Hedgehog (1991) example on the existing western Mega Drive shell; neutral mega-drive 0.1.0 remains unchanged.

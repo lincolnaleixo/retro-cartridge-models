@@ -4,6 +4,14 @@
 
 No pending changes.
 
+## 0.3.0 — 2026-10-16
+
+- Removed the front photograph's thin scratch and isolated green-field spots with localized retouch; preserved the K-A rating, NUS-006 (USA), NUS-NSME-USA and original illustration.
+- Restored the 1996 NUS-USA/CAN rear label to an even charcoal field and clean ivory print, removing scratches, chips and faded spots.
+- Registered the restored rear image into the existing UV footprint; geometry, normals, indices, node transforms, all UV bytes, plastic maps and print material settings remain unchanged.
+- Validated packed-source reopening, unchanged non-image GLB buffers and UVs, actual-export render comparisons, and Godot 4.7.2 decoded textures with identical imported geometry, normals, UVs and transforms.
+- Previous published packages, manifests and previews remain byte-identical. Restored title/warning typography and color are approximate; this is not a factory print master.
+
 ## 0.2.0 — 2026-10-15
 
 - Removed broad faceted crown highlights and pinched cheek/channel transitions by refining curved geometry, recess rims and split/weighted normals. The same camera and studio setup make the difference comparable with 0.1.0.
